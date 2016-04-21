@@ -17,10 +17,10 @@ function run($rootScope, $location){
 		$rootScope.activetab = newVal;
 	});
 }
+
 angular.module('app', ['ngRoute'])
     .config(config)
     .controller('mainController', mainController)
     .service('todoService', todoService)
     /*.factory('', )*/
     .run(run);
-
