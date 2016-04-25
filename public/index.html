@@ -2,16 +2,14 @@
 <html ng-app="app">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi"/>
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" type="image/png" href=""/>
         <title>Perche-entreprendre</title>
         <!-- CSS | Bootstrap | jQuery -->
         <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
         <link rel="stylesheet" href="css/style.css">
         <!-- AngularJS -->
         <script src="js/libs/angular.min.js"></script>
@@ -22,7 +20,13 @@
         <script src="js/app.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-fixed-top">
+        <header>
+            <div class="col-md-4 mainlogo"><img src="img/logo_pole.png" alt="logo Perche" alt="Logo WCS"/></div>
+            <a href="https://www.facebook.com/vivredansleperche/?fref=ts"><img src="img/facebook.png" class="facebook" alt="Logo Facebook"/></a>
+            <a href="https://twitter.com/PaysPerche28?lang=fr"><img src="img/twitter.png" class="twitter" alt="Logo twitter"/></a>
+        </header>
+
+        <nav class="navbar ">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
@@ -31,55 +35,78 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                  <!--  <a class="navbar-brand" href="#">bannane</a>-->
+                    <!--  <a class="navbar-brand" href="#">bannane</a>-->
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="">Accueil</a>
+                            <a href="#/accueil" class="">Accueil</a>
                         </li>
                         <li class=" dropdown">
-                            <a href="#" class="">Ma carte de visite</a>
+                            <a href="#/ma-carte" class="">Ma carte de visite</a>
                         </li>
                         <li>
-                            <a href="#">Mes contacts</a>
+                            <a href="#/mes-contacts">Mes contacts</a>
                         </li>
                         <li class=" dropdown">
-                            <a href="#" class="">Les élus</a>
+                            <a href="#/les-elus" class="">Les élus</a>
                         </li>
                         <li class=" dropdown">
-                            <a href="#" class="">Le programme LEADER</a>
+                            <a href="#/programme-leader" class="">Le programme LEADER</a>
                         </li>
                     </ul>
 
                     <ul class="nav navbar-nav pull-right">
+
                         <li class=" dropdown">
-                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mon compte
+                            <a class="dropdown-toggle active" data-toggle="dropdown" role="button">Mon compte
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="#">Editer mon profil</a>
                                 </li>
                                 <li>
-                                    <a href="#">Panneau d'administration</a>
+                                    <a href="#/mon-profil">Editer mon profil</a>
+                                </li>
+                                <li>
+                                    <a href="#/administration">Panneau d'administration</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#">Deconnexion</a>
+                        <li ng-hide="isLogged">
+                          <li>
+                            <a class="page-scroll" href="#main">Connexion</a>
+                          </li>
                         </li>
-                    </div>
-
+                    </li>
                 </div>
-            </nav>
-        </div>
-        <div class="container">
-            <ng-view></ng-view>
-        </div>
 
+            </div>
+        </nav>
+
+        <div class="container2">
+            <ng-view></ng-view>
+
+        </div>
         <!-- Script pour le dropdown -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <div class="footer">
+            <div class="col-md-3 col-sm-3 perche">
+                <a href="#/">Perche Entreprendre ©</a>
+            </div>
+            <div class="col-md-3 col-sm-3 mentions">
+                <a href="#/mentions">Mentions légales</a>
+            </div>
+            <div class="col-md-6 col-sm-6 reallogo">
+                <div class="col-md-9 col-sm-9 realisation">Réalisé par la
+                    <a href="http://wildcodeschool.fr/">Wild Code School</a>
+                    de la Loupe</div>
+                <div class="col-md-3 col-sm-3 logo"><img class="logoImg" src="http://leperche.perche-entreprendre.fr/wp-content/themes/pays-perche/img/WCS.png" alt="Logo WCS"/></div>
+            </div>
+        </div>
+
     </body>
 </html>

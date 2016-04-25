@@ -4,8 +4,37 @@ function config($routeProvider) {
 			templateUrl: 'views/main.html',
 			controller: 'mainController'
 		})
-		.when('/about', {
-			templateUrl: 'views/about.html'
+		.when('/mentions', {
+			templateUrl: 'views/mentions.html',
+			controller: 'mainController'
+		})
+		.when('/accueil', {
+			templateUrl: 'views/accueil.html',
+			controller: 'mainController'
+		})
+		.when('/ma-carte', {
+			templateUrl: 'views/ma-carte.html',
+			controller: 'mainController'
+		})
+		.when('/mes-contacts', {
+			templateUrl: 'views/mes-contacts.html',
+			controller: 'mainController'
+		})
+		.when('/les-elus', {
+			templateUrl: 'views/les-elus.html',
+			controller: 'mainController'
+		})
+		.when('/programme-leader', {
+			templateUrl: 'views/programme-leader.html',
+			controller: 'mainController'
+		})
+		.when('/mon-profil', {
+			templateUrl: 'views/mon-profil.html',
+			controller: 'mainController'
+		})
+		.when('/administration', {
+			templateUrl: 'views/administration.html',
+			controller: 'mainController'
 		})
 		.otherwise({
 			redirectTo: '/'
