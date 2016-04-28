@@ -1,15 +1,15 @@
 function config($routeProvider) {
 	$routeProvider
 		.when('/', {
-			templateUrl: 'views/main.html',
+			templateUrl: 'views/accueil.html',
 			controller: 'mainController'
 		})
 		.when('/mentions', {
 			templateUrl: 'views/mentions.html',
 			controller: 'mainController'
 		})
-		.when('/accueil', {
-			templateUrl: 'views/accueil.html',
+		.when('/login', {
+			templateUrl: 'views/login.html',
 			controller: 'mainController'
 		})
 		.when('/ma-carte', {
