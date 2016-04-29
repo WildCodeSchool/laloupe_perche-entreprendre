@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <title>{{ .Name }}</title>
+</head>
+
+<body>
+    <h1>{{ .Name }}</h1>
+    <ul>
+        {{ range $content := .Content }}
+        <li>{{ $content }} </li>
+        {{end}}
+    </ul>
+</body>
+
+</html>

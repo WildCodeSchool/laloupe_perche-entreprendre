@@ -1,0 +1,27 @@
+<h1>Connexion</h1>
+
+
+<div class="container">
+    <div class="row  col-md-6 col-md-offset-3">
+
+        <div class="account-wall">
+            <center>
+                <img src="img/logo_pole.png" alt="" width="280px">
+            </center>
+            <form class="form-signin" style="text-align:center;">
+                <input type="text" class="form-control" ng-model="userEmail" placeholder="Nom d'utilisateur" required autofocus>
+                <input type="password" class="form-control" ng-model="userMdp" placeholder="Mot de Passe" required>
+                <!--<div class="alert alert-danger" ng-show="connection==1" role="alert">Veuillez entrer un email ou un mot de passe valide.</div>-->
+                <button class="btn btn-lg btn-success btn-block" ng-click="connection()" type="submit">
+                    Se Connecter</button>
+                <label class="checkbox">
+                    <input type="checkbox" value="remember-me" ng-click="rememberMe()"> Se souvenir de moi
+                </label>
+                <a href="#/createprofile" class="need-help">Créer un compte !</a><span class="clearfix"></span>
+                <a href="#/forgetPassword" class="need-help">Mot de passe oublié ?</a><span class="clearfix"></span>
+            </form>
+
+        </div>
+
+    </div>
+</div>
