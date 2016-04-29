@@ -1,3 +1,4 @@
+/* INDEX */
 body {
     padding-top: 70px;
     background-image: url(/img/toile.png);
@@ -33,9 +34,7 @@ h2 {
     padding-bottom: 0;
     margin-top: 130px;
 }
-.container2 {
-    height: 1500px;
-}
+
 .nav>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a, .dropdown-menu>li {
     border-bottom: 3px solid transparent;
 }
@@ -118,6 +117,28 @@ h2 {
     margin-left: 50%;
     margin-top: 5px;
     transform: translateX(-50%);
+}
+
+/* VUE ACCUEIL */
+
+.accroche {
+    width: 100%;
+    text-align: center;
+}
+
+.ecosysteme {
+    text-align: left;
+}
+
+.position {
+    
+}
+.programme {
+    
+}
+
+.environnement {
+    
 }
 
 /*      MENTIONS LEGALES PAGE      */
@@ -223,7 +244,8 @@ header img {
     border-top-right-radius: 0;
 }
 .account-wall {
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-bottom: 100px;
     padding: 40px 0px 20px 0px;
     background-color: rgba(247, 247, 247, 0.5);
     border-radius: 20px;
