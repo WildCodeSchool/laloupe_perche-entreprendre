@@ -455,10 +455,9 @@ header {
     text-align: center;
     margin-bottom: 40px;
 }
-.scoopit {
+/*.scoopit {
     margin-top: 50px;
-    /*margin-left: 220px;*/
-}
+}*/
 .container {
   margin-top: 50px;
 }
@@ -585,7 +584,7 @@ body{
 	background:#C3C;
 	border-color:#F60;
 	height:200px;
-	width:300px;
+	width:500px;
 	position:relative;
 	margin-left:10px;
 	margin-top:30px;
@@ -601,8 +600,8 @@ body{
 #btn5{
 	background:#F36;
 	border-color:#F60;
-	height:200px;
-	width:200px;
+	height:400px;
+	width:400px;
 	position:relative;
 	margin-left:10px;
 	margin-top:30px;
@@ -612,7 +611,6 @@ body{
 	color:#FFF;
 	font-size:25px;
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	line-height:300px;
 	padding-left:10px;
 	text-align:left;
 }
