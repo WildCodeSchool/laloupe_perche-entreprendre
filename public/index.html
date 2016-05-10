@@ -15,75 +15,25 @@
         <script src="js/libs/angular.min.js"></script>
         <script src="js/libs/angular-route.min.js"></script>
         <script src="js/controllers/mainController.js"></script>
+        <script src="js/controllers/connexionController.js"></script>
         <script src="js/services/todoService.js"></script>
+        <script src="js/services/connexionService.js"></script>
 
         <script src="js/nav.js"></script>
         <script src="js/app.js"></script>
+
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="js/TweenLite.min.js"></script>
+        <script type="text/javascript" src="js/TweenMax.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+
     </head>
     <body>
         <header>
           <img src="img/logo_pole.png" class="logoperche" alt="logo Perche"/>
-
         </header>
-
-        <!-- <nav class="navbar ">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#/accueil" class="">Accueil</a>
-                        </li>
-                        <li class=" dropdown">
-                            <a href="#/ma-carte" class="">Ma carte de visite</a>
-                        </li>
-                        <li>
-                            <a href="#/mes-contacts">Mes contacts</a>
-                        </li>
-                        <li class=" dropdown">
-                            <a href="#/les-elus" class="">Les élus</a>
-                        </li>
-                        <li class=" dropdown">
-                            <a href="#/programme-leader" class="">Le programme LEADER</a>
-                        </li>
-                    </ul>
-
-                    <ul class="nav navbar-nav pull-right">
-
-                        <li class=" dropdown">
-                            <a class="dropdown-toggle active" data-toggle="dropdown" role="button">Mon compte
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" style="padding-bottom: 0">
-                                <li>
-                                </li>
-                                <li>
-                                    <a href="#/mon-profil">Editer mon profil</a>
-                                </li>
-                                <li>
-                                    <a href="#/administration">Panneau d'administration</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                        <li ng-hide="isLogged">
-                          <li>
-                            <a class="page-scroll" href="#main">Connexion</a>
-                          </li>
-                        </li>
-                    </li>
-                </div>
-
-            </div>
-        </nav> -->
-
 
         <div id="wrapper">
     <div class="overlay"></div>
@@ -92,22 +42,22 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
         <ul class="nav sidebar-nav">
             <li class="sidebar-brand">
-                  <a href="#/">Home</a>
+                  <a href="#/" class="links">Home</a>
             </li>
             <li>
-                <a href="#ma-carte">Ma carte de visite</a>
+                <a href="#ma-carte" class="links">Ma carte de visite</a>
             </li>
             <li>
-                <a href="#mes-contacts">Mes contacts</a>
+                <a href="#mes-contacts" class="links">Mes contacts</a>
             </li>
             <li>
-                <a href="#login">Je me connecte !</a>
+                <a href="#connexion" class="links">Je me connecte !</a>
             </li>
             <li class="dropdown">
               <a href="" class="dropdown-toggle" data-toggle="dropdown">Mon compte <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#mon-profil">Editer mon profil</a></li>
-                <li><a href="#administration">Mon panneau d'administration</a></li>
+                <li><a href="#mon-profil" class="links">Editer mon profil</a></li>
+                <li><a href="#administration" class="links">Mon panneau d'administration</a></li>
               </ul>
             </li>
             <!--
@@ -127,22 +77,17 @@
         </button>
     </div>
     <!-- /#page-content-wrapper -->
-<script>
 
-
-</script>
 </div>
 <!-- /#wrapper -->
 
-        <div class="container2">
             <ng-view></ng-view>
 
-        </div>
         <!-- Script pour le dropdown -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-        <div class="footer">
+        <div class="footer fixed-bottom">
             <div class="col-md-3 col-sm-3 perche">
                 <a href="#/">Perche Entreprendre ©</a>
             </div>

@@ -8,9 +8,17 @@ function config($routeProvider) {
 			templateUrl: 'views/mentions.html',
 			controller: 'mainController'
 		})
-		.when('/login', {
-			templateUrl: 'views/login.html',
-			controller: 'mainController'
+		.when('/connexion', {
+			templateUrl: 'views/connexion.html',
+			controller: 'connexionController'
+		})
+		.when('/createprofile', {
+		templateUrl: 'views/createprofile.html',
+		controller: 'connexionController'
+		})
+		.when('/forgetPassword', {
+		templateUrl: 'views/forgetPassword.html',
+		controller: 'connexionController'
 		})
 		.when('/ma-carte', {
 			templateUrl: 'views/ma-carte.html',
@@ -32,8 +40,8 @@ function config($routeProvider) {
 			templateUrl: 'views/mon-profil.html',
 			controller: 'mainController'
 		})
-		.when('/administration', {
-			templateUrl: 'views/administration.html',
+		.when('/1', {
+			templateUrl: 'views/1.html',
 			controller: 'mainController'
 		})
 		.otherwise({
@@ -50,6 +58,8 @@ function run($rootScope, $location){
 angular.module('app', ['ngRoute'])
     .config(config)
     .controller('mainController', mainController)
+		.controller('connexionController', connexionController)
     .service('todoService', todoService)
+		.service('connexionService', connexionService)
     /*.factory('', )*/
     .run(run);
