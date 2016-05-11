@@ -6,7 +6,21 @@ body {
     padding-top: 70px;
     background-image: url(/img/toile.png);
     background-size: contain;
+    margin-top: 50px;
 }
+.password {
+  text-align: center;
+  color: #F6A327;
+}
+.connect {
+  text-align: center;
+  color: #F6A327;
+}
+.account {
+  text-align: center;
+  color: #F6A327;
+}
+
 
 /*=================================================================
                               NAVBAR
@@ -258,10 +272,10 @@ body {
     padding: 1rem;
     padding-top: 0;
     padding-bottom: 0;
-    background-color: lightgoldenrodyellow;
     text-align: center;
     box-shadow: inset 0 20px 2px -20px black;
     height: 65px;
+    margin-top: 30px;
 }
 .footer a {
     text-decoration-color: midnightblue;
@@ -438,14 +452,24 @@ header {
     color: grey;
     margin-top: 7%;
     text-align: center;
+    margin-bottom: 40px;
 }
 .scoopit {
     margin-top: 50px;
-    margin-left: 80px;
+    /*margin-left: 220px;*/
 }
-#ytplayer {
-    margin-left: 80px;
-    margin-top: 50px;
+.container {
+  margin-top: 50px;
+}
+p {
+  margin-top: 50px;
+}
+.imgvtt {
+    width: 640px;
+}
+.imgemploi {
+  width: 200px;
+  margin-top: 10px;
 }
 
 /*=================================================================
@@ -462,5 +486,219 @@ header {
     .accroche {
         margin-top: 20%;
     }
+    #ytplayer {
+        margin-left: 3px;
+    }
+    .scoopit {
+      margin-left: -1px;
+    }
+    .connect {
+      margin-top: 70px;
+    }
+    .account {
+      margin-top: 70px;
+    }
+    .password {
+      margin-top: 70px;
+    }
+    .logoWCS {
+      margin-left: 80px;
+    }
+}
+@media (min-width: 900px) {
+    .footer {
+      /*margin-top: 130px;*/
+    }
+    .scoopit {
+        margin-top: 50px;
+        /*margin-left: 220px;*/
+    }
+}
+
+
+/*=================================================================
+                         MERDIER D'ACCUEIL
+=================================================================*/
+
+
+body{
+	margin:0;
+	overflow:auto;
+}
+
+#btn1{
+	background:#06F;
+	height:200px;
+	width:500px;
+	position:relative;
+	margin-left:10px;
+  margin-top:30px;
+	left:1200px;
+	cursor:pointer;
+
+	color:#FFF;
+	font-size:25px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	padding-left:10px;
+	text-align:left;
+
 
 }
+#btn2{
+	background:#C30;
+	height:200px;
+	width:500px;
+	position:relative;
+	margin-left:10px;
+  margin-top:30px;
+	left:1200px;
+	cursor:pointer;
+
+	color:#FFF;
+	font-size:25px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	line-height:300px;
+	padding-left:10px;
+	text-align:left;
+}
+
+#btn3{
+	background:#F60;
+	border-color:#F60;
+	height:200px;
+	width:500px;
+	position:relative;
+	margin-left:10px;
+  margin-top:30px;
+	left:1200px;
+	cursor:pointer;
+
+	color:#FFF;
+	font-size:25px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	padding-left:10px;
+	text-align:left;
+}
+
+#btn4{
+	background:#C3C;
+	border-color:#F60;
+	height:200px;
+	width:300px;
+	position:relative;
+	margin-left:10px;
+	margin-top:30px;
+	left:1200px;
+	cursor:pointer;
+
+	color:#FFF;
+	font-size:25px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	padding-left:10px;
+	text-align:left;
+}
+#btn5{
+	background:#F36;
+	border-color:#F60;
+	height:200px;
+	width:200px;
+	position:relative;
+	margin-left:10px;
+	margin-top:30px;
+	left:1200px;
+	cursor:pointer;
+
+	color:#FFF;
+	font-size:25px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	line-height:300px;
+	padding-left:10px;
+	text-align:left;
+}
+
+#btn6{
+	background:#6C0;
+	height:200px;
+	width:200px;
+	position:relative;
+	margin-left:10px;
+	margin-top:30px;
+	left:1200px;
+	cursor:pointer;
+
+	color:#FFF;
+	font-size:25px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	line-height:300px;
+	padding-left:10px;
+	text-align:left;
+}
+#content{
+	background:#FFF;
+  -moz-box-shadow: 1px 1px 1px 1px #656565;
+-webkit-box-shadow: 1px 1px 1px 1px #656565;
+-o-box-shadow: 0px 0px 5px 0px #656565;
+box-shadow: 0px 0px 5px 0px #656565;
+	position:relative;
+	top:1000px;
+	z-index:0;
+}
+#backbutton{
+	position:relative;
+	left:760px;
+	cursor:pointer;
+}
+
+#caption{
+	position:relative;
+	top:-60px;
+
+	color:#FFF;
+	font-size:25px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#pagecaption{
+	position:relative;
+	top:-60px;
+
+	color:#FFF;
+	font-size:25px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/*=================================================================
+                        PAGE ADMIN
+=================================================================*/
+
+button {
+    display:block;
+		color: black;
+		font-weight:bold;
+		height:30px;
+		line-height:29px;
+		margin-bottom:14px;
+        margin-left: 220px;
+		text-decoration:none;
+		width: 300px; 
+        background-color: #1F6F6F;
+    
+}
+/*=================================================================
+                        MA CARTE
+=================================================================*/
+.carte {
+    
+    text-align: center;
+    border: solid 1px black;
+    width: 250px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.photo {
+    height: 100px;
+    width: 100px;
+}
+
