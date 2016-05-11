@@ -455,8 +455,7 @@ header {
     margin-bottom: 40px;
 }
 .scoopit {
-    margin-top: 50px;
-    /*margin-left: 220px;*/
+    margin-left: 15px;
 }
 .container {
   margin-top: 50px;
@@ -509,10 +508,7 @@ p {
     .footer {
       /*margin-top: 130px;*/
     }
-    .scoopit {
-        margin-top: 50px;
-        /*margin-left: 220px;*/
-    }
+
 }
 
 
@@ -584,7 +580,7 @@ body{
 	background:#C3C;
 	border-color:#F60;
 	height:200px;
-	width:300px;
+	width:500px;
 	position:relative;
 	margin-left:10px;
 	margin-top:30px;
@@ -600,18 +596,16 @@ body{
 #btn5{
 	background:#F36;
 	border-color:#F60;
-	height:200px;
-	width:200px;
+	height:400px;
+	width:400px;
 	position:relative;
 	margin-left:10px;
 	margin-top:30px;
 	left:1200px;
-	cursor:pointer;
 
 	color:#FFF;
 	font-size:25px;
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	line-height:300px;
 	padding-left:10px;
 	text-align:left;
 }

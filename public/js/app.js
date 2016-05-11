@@ -6,7 +6,7 @@ function config($routeProvider) {
 		})
 		.when('/mentions', {
 			templateUrl: 'views/mentions.html',
-			controller: 'mainController'
+			controller: 'mentionsController'
 		})
 		.when('/connexion', {
 			templateUrl: 'views/connexion.html',
@@ -22,27 +22,20 @@ function config($routeProvider) {
 		})
 		.when('/ma-carte', {
 			templateUrl: 'views/ma-carte.html',
-			controller: 'mainController'
+			controller: 'carteController'
 		})
 		.when('/mes-contacts', {
 			templateUrl: 'views/mes-contacts.html',
-			controller: 'mainController'
+			controller: 'contactController'
+		})
+		
+		.when('/mon-profil', {
+			templateUrl: 'views/mon-profil.html',
+			controller: 'profilController'
 		})
 		.when('/administration', {
 			templateUrl: 'views/administration.html',
-			controller: 'mainController'
-		})
-		.when('/programme-leader', {
-			templateUrl: 'views/programme-leader.html',
-			controller: 'mainController'
-		})
-		.when('/mon-profil', {
-			templateUrl: 'views/mon-profil.html',
-			controller: 'mainController'
-		})
-		.when('/1', {
-			templateUrl: 'views/1.html',
-			controller: 'mainController'
+			controller: 'adminController'
 		})
 		.otherwise({
 			redirectTo: '/'
@@ -59,6 +52,11 @@ angular.module('app', ['ngRoute'])
     .config(config)
     .controller('mainController', mainController)
 		.controller('connexionController', connexionController)
+		.controller('contactController', contactController)
+		.controller('carteController', carteController)
+		.controller('mentionsController', mentionsController)
+		.controller('adminController', adminController)
+		.controller('profilController', profilController)
     .service('todoService', todoService)
 		.service('connexionService', connexionService)
     /*.factory('', )*/
