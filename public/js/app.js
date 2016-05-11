@@ -1,10 +1,13 @@
 function config($routeProvider) {
     $routeProvider
+
+
         .when('/', {
-            templateUrl: 'views/connexion.html',
-            controller: 'connexionController'
-        })
-        .when('/createprofile', {
+        templateUrl: 'views/connexion.html',
+        controller: 'connexionController'
+    })
+
+    .when('/createprofile', {
             templateUrl: 'views/createprofile.html',
             controller: 'connexionController'
         })

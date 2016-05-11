@@ -1,5 +1,5 @@
 // CONNEXION CONTROLLER
-function mainController($scope, $http, connexionService) {
+function connexionController($scope, $http, connexionService) {
 
 
     function load() {
@@ -12,7 +12,6 @@ function mainController($scope, $http, connexionService) {
         userName: "",
         userEmail: "",
         password: "",
-        confirmPassword: "",
         firstName: "",
         lastName: "",
         userEnterprise: "",
@@ -22,29 +21,30 @@ function mainController($scope, $http, connexionService) {
 
     $scope.signUp = function () {
         var data = {};
-        data.userName = $scope.userName;
-        data.userEmail = $scope.userEmail;
-        data.password = $scope.password;
-        data.confirmPassword = $scope.confirmPassword;
-        data.firstName = $scope.firstName;
-        data.lastName = $scope.lastName;
-        data.userEnterprise = $scope.userEnterprise;
-        data.userFunction = $scope.userFunction;
-        data.userPhone = $scope.userPhone;
+        data.registration.userName = $scope.userName;
+        data.registration.userEmail = $scope.userEmail;
+        data.registration.password = $scope.password;
+        data.registration.confirmPassword = $scope.confirmPassword;
+        data.registration.firstName = $scope.firstName;
+        data.registration.lastName = $scope.lastName;
+        data.registration.userEnterprise = $scope.userEnterprise;
+        data.registration.userFunction = $scope.userFunction;
+        data.registration.userPhone = $scope.userPhone;
         connexionService.create(data).then(function (res) {
             load();
         });
         $scope.description = "";
     }
 
-    $scope.add = function () {
+    /*$scope.add = function () {
         var data = {};
         data.description = $scope.description;
         connexionService.create(data).then(function (res) {
             load();
         });
         $scope.description = "";
-    }
+    }*/
+
     $scope.update = function (todo) {
         connexionService.update(todo._id, todo).then(function (res) {
             load();
