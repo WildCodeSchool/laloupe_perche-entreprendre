@@ -6,7 +6,6 @@ body {
     padding-top: 70px;
     background-image: url(/img/toile.png);
     background-size: contain;
-    text-align: center;
     margin-top: 50px;
 }
 .password {
@@ -455,9 +454,9 @@ header {
     text-align: center;
     margin-bottom: 40px;
 }
-/*.scoopit {
-    margin-top: 50px;
-}*/
+.scoopit {
+    margin-left: 15px;
+}
 .container {
   margin-top: 50px;
 }
@@ -509,10 +508,7 @@ p {
     .footer {
       /*margin-top: 130px;*/
     }
-    .scoopit {
-        margin-top: 50px;
-        /*margin-left: 220px;*/
-    }
+
 }
 
 
@@ -606,7 +602,6 @@ body{
 	margin-left:10px;
 	margin-top:30px;
 	left:1200px;
-	cursor:pointer;
 
 	color:#FFF;
 	font-size:25px;
