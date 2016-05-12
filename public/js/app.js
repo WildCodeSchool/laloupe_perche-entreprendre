@@ -28,6 +28,7 @@ function config($routeProvider) {
 			templateUrl: 'views/mes-contacts.html',
 			controller: 'contactController'
 		})
+		
 		.when('/mon-profil', {
 			templateUrl: 'views/mon-profil.html',
 			controller: 'profilController'

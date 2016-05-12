@@ -677,5 +677,37 @@ box-shadow: 0px 0px 5px 0px #656565;
 }
 
 /*=================================================================
-                        FIN MERDIER D'ACCUEIL
+                        PAGE ADMIN
 =================================================================*/
+
+button {
+    display:block;
+		color: black;
+		font-weight:bold;
+		height:30px;
+		line-height:29px;
+		margin-bottom:14px;
+        margin-left: 220px;
+		text-decoration:none;
+		width: 300px; 
+        background-color: #1F6F6F;
+    
+}
+/*=================================================================
+                        MA CARTE
+=================================================================*/
+.carte {
+    
+    text-align: center;
+    border: solid 1px black;
+    width: 250px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.photo {
+    height: 100px;
+    width: 100px;
+}
+
