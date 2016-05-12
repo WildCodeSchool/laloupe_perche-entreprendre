@@ -58,7 +58,10 @@
                     <a href="#mes-contacts" ng-show = 'connect == 1' class="links">Mes contacts</a>
                 </li>
                 <li>
-                    <a href="#connexion" class="links">Je me connecte !</a>
+                    <a href="#connexion" ng-hide = 'connect == 1' class="links">Je me connecte !</a>
+                </li>
+                <li>
+                    <a href="#connexion"  ng-show = 'connect == 1' class="links">Je me déconnecte !</a>
                 </li>
                 <li class="dropdown" ng-show = 'connect == 1'>
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">Mon compte <span class="caret"></span></a>
