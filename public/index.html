@@ -1,108 +1,110 @@
 <!DOCTYPE html>
 <html ng-app="app">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi"/>
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" type="image/png" href=""/>
-        <title>Perche-entreprendre</title>
-        <!-- CSS | Bootstrap | jQuery -->
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-        <!-- AngularJS -->
-        <script src="js/libs/angular.min.js"></script>
-        <script src="js/libs/angular-route.min.js"></script>
-        <script src="js/controllers/mainController.js"></script>
-        <script src="js/controllers/connexionController.js"></script>
-        <script src="js/controllers/contactController.js"></script>
-        <script src="js/controllers/carteController.js"></script>
-        <script src="js/controllers/profilController.js"></script>
-        <script src="js/controllers/mentionsController.js"></script>
-        <script src="js/controllers/adminController.js"></script>
-        <script src="js/services/todoService.js"></script>
-        <script src="js/services/connexionService.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="" />
+    <title>Perche-entreprendre</title>
+    <!-- CSS | Bootstrap | jQuery -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/kiku.css">
+    <!-- AngularJS -->
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/libs/angular-route.min.js"></script>
+    <script src="js/controllers/mainController.js"></script>
+    <script src="js/controllers/connexionController.js"></script>
+    <script src="js/controllers/carteController.js"></script>
+    <script src="js/controllers/profilController.js"></script>
+    <script src="js/controllers/mentionsController.js"></script>
+    <script src="js/controllers/adminController.js"></script>
+    <script src="js/services/todoService.js"></script>
 
-        <script src="js/nav.js"></script>
-        <script src="js/app.js"></script>
+    <script src="js/services/connexionService.js"></script>
+
+    <script src="js/nav.js"></script>
+    <script src="js/app.js"></script>
 
 
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <script type="text/javascript" src="js/TweenLite.min.js"></script>
-        <script type="text/javascript" src="js/TweenMax.min.js"></script>
-        <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="js/TweenLite.min.js"></script>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 
-    </head> 
-    <body>
-        <header>
-          <img src="img/logo_pole.png" class="logoperche" alt="logo Perche"/>
-        </header>
+</head>
 
-        <div id="wrapper">
-    <div class="overlay"></div>
+<body>
+    <header>
+        <img src="img/logo_pole.png" class="logoperche" alt="logo Perche" />
+    </header>
 
-    <!-- Sidebar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-        <ul class="nav sidebar-nav">
-            <li class="sidebar-brand">
-                  <a href="#/" class="links">Home</a>
-            </li>
-            <li>
-                <a href="#ma-carte" ng-show = 'connect == 1' class="links">Ma carte de visite</a>
-            </li>
-            <li>
-                <a href="#mes-contacts" ng-show = 'connect == 1' class="links">Mes contacts</a>
-            </li>
-            <li>
-                <a href="#connexion" class="links">Je me connecte !</a>
-            </li>
-            <li class="dropdown" ng-show = 'connect == 1'>
-              <a href="" class="dropdown-toggle" data-toggle="dropdown">Mon compte <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#mon-profil" class="links">Editer mon profil</a></li>
-                <li><a href="#administration" class="links">Mon panneau d'administration</a></li>
-              </ul>
-            </li>
+    <div id="wrapper">
+        <div class="overlay"></div>
 
-        </ul>
-    </nav>
-    <!-- /#sidebar-wrapper -->
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#/" class="links">Home</a>
+                </li>
+                <li>
+                    <a href="#ma-carte" ng-show = 'connect == 1' class="links">Ma carte de visite</a>
+                </li>
+                <li>
+                    <a href="#mes-contacts" ng-show = 'connect == 1' class="links">Mes contacts</a>
+                </li>
+                <li>
+                    <a href="#connexion" class="links">Je me connecte !</a>
+                </li>
+                <li class="dropdown" ng-show = 'connect == 1'>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Mon compte <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#mon-profil" class="links">Editer mon profil</a></li>
+                        <li><a href="#administration" class="links">Mon panneau d'administration</a></li>
+                    </ul>
+                </li>
 
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-        <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
-            <span class="hamb-top"></span>
-      <span class="hamb-middle"></span>
-    <span class="hamb-bottom"></span>
-        </button>
-    </div>
-    <!-- /#page-content-wrapper -->
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
 
-</div>
-<!-- /#wrapper -->
-
-            <ng-view></ng-view>
-
-        <!-- Script pour le dropdown -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-        <div class="footer fixed-bottom">
-            <div class="col-md-3 col-sm-3 perche">
-                <a href="#/">Perche Entreprendre ©</a>
-            </div>
-            <div class="col-md-3 col-sm-3 mentions">
-                <a href="#/mentions">Mentions légales</a>
-            </div>
-            <div class="col-md-6 col-sm-6 reallogo">
-                <div class="col-md-9 col-sm-9 realisation">Réalisé par la
-                    <a href="http://wildcodeschool.fr/">Wild Code School</a>
-                    de la Loupe</div>
-                <div class="col-md-3 col-sm-3 logo"><img class="logoWCS" src="http://leperche.perche-entreprendre.fr/wp-content/themes/pays-perche/img/WCS.png" alt="Logo WCS"/></div>
-            </div>
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+                <span class="hamb-middle"></span>
+                <span class="hamb-bottom"></span>
+            </button>
         </div>
+        <!-- /#page-content-wrapper -->
 
-    </body>
+    </div>
+    <!-- /#wrapper -->
+
+    <ng-view></ng-view>
+
+    <!-- Script pour le dropdown -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <div class="footer fixed-bottom">
+        <div class="col-md-3 col-sm-3 perche">
+            <a href="#/">Perche Entreprendre ©</a>
+        </div>
+        <div class="col-md-3 col-sm-3 mentions">
+            <a href="#/mentions">Mentions légales</a>
+        </div>
+        <div class="col-md-6 col-sm-6 reallogo">
+            <div class="col-md-9 col-sm-9 realisation">Réalisé par la
+                <a href="http://wildcodeschool.fr/">Wild Code School</a> de la Loupe</div>
+            <div class="col-md-3 col-sm-3 logo"><img class="logoWCS" src="http://leperche.perche-entreprendre.fr/wp-content/themes/pays-perche/img/WCS.png" alt="Logo WCS" /></div>
+        </div>
+    </div>
+
+</body>
+
 </html>

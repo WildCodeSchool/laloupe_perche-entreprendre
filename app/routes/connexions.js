@@ -1,4 +1,3 @@
-
 // ROUTES CONNEXIONS
 var Connexion = require('../models/connexion.js');
 module.exports = function (app) {

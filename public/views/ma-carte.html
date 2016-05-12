@@ -1,4 +1,4 @@
-<div class="carte">
+<!-- <div class="carte">
 <h1> Keita Julien </h1>
 <img class="photo" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif"/>
 <div class="description">
@@ -9,15 +9,37 @@
 </div>
 <div class="qrcode"></div>
 <a href="#">lien vers page</a>
-<div class="logo"> 
+<div class="logo">
 <div class="Facebook"></div>
 <div class="LinkedIn"></div>
 <div class="Twitter"></div>
 <img class="photo" src="http://www.techmagz.com/wp-content/uploads/2013/03/QR-code-for-iGoogle.jpg"/>
 </div>
+</div> -->
+
+
+
+<div class="globale">
+    <div class="card">
+
+        <h1 class="fullName">{{connexion.userName + " " + connexion.userFirstname }}</h1>
+
+        <img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
+
+        <h3 class="function">{{ connexion.userFunction }}</h3>
+        <h3 class="enterprise">{{ connexion.userEnterprise }}</h3>
+        <h3 class="phone">{{ connexion.userPhone }}</h3>
+        <h3 class="mail">{{ connexion.userEmail }}</h3>
+
+        <img class="imgCard" ng-src="{{connexion.userPhoto || 'http://www.techmagz.com/wp-content/uploads/2013/03/QR-code-for-iGoogle.jpg'}}" alt="qrcode" />
+
+        <a href="#/formulaire" class="contactus">Cliquez ici pour nous contacter</a>
+
+        <div class="logos">
+            <a><img class="logo" src="{{connexion.userFacebook || 'http://static.squarespace.com/static/52a5d70ce4b05998c3897aa5/t/52ebd6a7e4b085a0f5d97225/1391187625941/facebook%20icon.png'}}" alt="Facebook" /></a>
+            <a><img class="logo" src="{{connexion.userTwitter || 'http://static.squarespace.com/static/52a5d70ce4b05998c3897aa5/t/52ebd6a7e4b085a0f5d97225/1391187625941/facebook%20icon.png'}}" alt="Facebook" /></a>
+            <a><img class="logo" src="{{connexion.userLinkedin || 'http://static.squarespace.com/static/52a5d70ce4b05998c3897aa5/t/52ebd6a7e4b085a0f5d97225/1391187625941/facebook%20icon.png'}}" alt="Facebook" /></a>
+        </div>
+
+    </div>
 </div>
-
-
-
-
-

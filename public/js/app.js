@@ -28,7 +28,7 @@ function config($routeProvider) {
 			templateUrl: 'views/mes-contacts.html',
 			controller: 'contactController'
 		})
-		
+
 		.when('/mon-profil', {
 			templateUrl: 'views/mon-profil.html',
 			controller: 'profilController'
@@ -40,24 +40,29 @@ function config($routeProvider) {
 		.otherwise({
 			redirectTo: '/'
 		});
+
 }
-function run($rootScope, $location){
-	var path = function() { return $location.path(); };
-	$rootScope.$watch(path, function(newVal, oldVal){
-		$rootScope.activetab = newVal;
-	});
+
+function run($rootScope, $location) {
+    var path = function () {
+        return $location.path();
+    };
+    $rootScope.$watch(path, function (newVal, oldVal) {
+        $rootScope.activetab = newVal;
+    });
 }
 
 angular.module('app', ['ngRoute'])
     .config(config)
     .controller('mainController', mainController)
-		.controller('connexionController', connexionController)
-		.controller('contactController', contactController)
-		.controller('carteController', carteController)
-		.controller('mentionsController', mentionsController)
-		.controller('adminController', adminController)
-		.controller('profilController', profilController)
+
+.controller('connexionController', connexionController)
+    .controller('carteController', carteController)
+    .controller('mentionsController', mentionsController)
+    .controller('adminController', adminController)
+    .controller('profilController', profilController)
     .service('todoService', todoService)
-		.service('connexionService', connexionService)
-    /*.factory('', )*/
-    .run(run);
+    .service('connexionService', connexionService)
+
+/*.factory('', )*/
+.run(run);
