@@ -1,2 +1,49 @@
 
-<div class="col-md-6 accroche"><h1>UN TISSU ECONOMIQUE FORT</h1></div>
+<!--header-->
+<div style="width:100%; height:80px; overflow:hidden; margin: 100px auto; background-color:#333">
+
+  <div style="width:750px; height:80px; margin: 0 auto; overflow:hidden; position:relative">
+
+        <div id="caption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> UN TISSU ECONOMIQUE FORT </div>
+
+        <div id="backbutton" style="height:44px; width:44px; margin-top:15px; float:left; position:absolute"> <img src="img/backbtn.png" width="44" height="44" /> </div>
+
+       <div id="pagecaption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> Caption </div>
+  </div>
+
+</div>
+
+<!--buttons-->
+<div style="width:1050px; overflow:hidden; margin: 0 auto; position:relative; margin-top:35px;">
+
+	  <a href="" ng-click="btn1()" target="main"><div id="btn1" style="float:left"> <p> Un écosystème dynamique  </p><img class="imgemploi" src="/img/emploi-630x0.JPG" alt="environnement"> </div> </a>
+    <a href="" ng-click="btn2()" target="main"><div id="btn2" style="float:left"> <p> Un positionnement stratégique </p> </div> </a>
+    <a href="" ng-click="btn3()" target="main"><div id="btn3" style="float:left"> <p> Un programme d'accompagnement </br> pour les entreprises </p> </div> </a>
+    <a href="" ng-click="btn4()" target="main"><div id="btn4" style="float:left"> <p> Un environnement de qualité </p> </div> </a>
+    <a target="main"><div id="btn5" style="float:left"> <p> Scoop It </p><iframe src='//www.scoop.it/embed-topic/3050061.html?maxwidth=350' class="scoopit" width='350' height='400' frameBorder='0' scrolling='no'></iframe> </div> </a>
+    <a href="" ng-click="btn6()" target="main"><div id="btn6" style="float:left"> <p>  </p> </div> </a>
+    <div id="content" class="container" style="position:absolute">
+        <div ng-show="content=='ecosysteme'">
+            <p>un bassin de vie de plus de 57 000 habitants avec 20 000 emplois dont 13 500 salariés. </br>
+              Plus de 160 établissements (industries, PME, ...).</br>
+              4000 salariés dans l'Industrie. </br>
+              Une main d'oeuvre motivée, stable, de qualité et attachée au territoire du Perche.
+            </p>
+        </div>
+        <div ng-show="content=='positionnement'">
+            <p>À seulement 1h30 de la Région Ile de France !</p>
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div ng-show="content=='accompagnement'">
+            <p>Désormais placé sous l'autorité des Régions, le programme LEADER est dédié aux territoires ruraux et permet de bénéficier de financements spécifiques pour des actions ciblées, innovantes et co-construites avec les acteurs privés.</p>
+            <iframe src="https://player.vimeo.com/video/40416273" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        <div ng-show="content=='environnement'">
+            <p>Le Perche  propose un cadre de vie exceptionnel à proximité de Paris et sa région, tout en étant ouvert sur le Grand-Ouest de la France. L'identité percheronne reste fortement ancrée et présente un réel potentiel touristique au coeur du Parc Naturel Régional du Perche, véritable poumon vert, gage d'une qualité de vie exceptionnelle aux porte de Paris et de la Normandie.</p>
+            <img class="imgvtt" src="/img/img_2219.jpg" alt="environnement">
+        </div>
+        <div ng-show="content=='scoopit'">
+
+    </div>
+
+</div>

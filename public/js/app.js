@@ -1,13 +1,19 @@
 function config($routeProvider) {
+
     $routeProvider
-
-
         .when('/', {
-        templateUrl: 'views/connexion.html',
-        controller: 'connexionController'
-    })
-
-    .when('/createprofile', {
+            templateUrl: 'views/accueil.html',
+            controller: 'mainController'
+        })
+        .when('/mentions', {
+            templateUrl: 'views/mentions.html',
+            controller: 'mentionsController'
+        })
+        .when('/connexion', {
+            templateUrl: 'views/connexion.html',
+            controller: 'connexionController'
+        })
+        .when('/createprofile', {
             templateUrl: 'views/createprofile.html',
             controller: 'connexionController'
         })
@@ -15,45 +21,26 @@ function config($routeProvider) {
             templateUrl: 'views/forgetPassword.html',
             controller: 'connexionController'
         })
-        .when('/mentions', {
-            templateUrl: 'views/mentions.html',
-            controller: 'mainController'
-        })
-        .when('/accueil', {
-            templateUrl: 'views/accueil.html',
-            controller: 'mainController'
-        })
-        .when('/connexion', {
-            templateUrl: 'views/connexion.html',
-            controller: 'connexionController'
-        })
         .when('/ma-carte', {
             templateUrl: 'views/ma-carte.html',
-            controller: 'mainController'
+            controller: 'carteController'
         })
         .when('/mes-contacts', {
             templateUrl: 'views/mes-contacts.html',
-            controller: 'mainController'
-        })
-        .when('/les-elus', {
-            templateUrl: 'views/les-elus.html',
-            controller: 'mainController'
-        })
-        .when('/programme-leader', {
-            templateUrl: 'views/programme-leader.html',
-            controller: 'mainController'
+            controller: 'connexionController'
         })
         .when('/mon-profil', {
             templateUrl: 'views/mon-profil.html',
-            controller: 'mainController'
+            controller: 'profilController'
         })
         .when('/administration', {
             templateUrl: 'views/administration.html',
-            controller: 'mainController'
+            controller: 'adminController'
         })
         .otherwise({
             redirectTo: '/'
         });
+
 }
 
 function run($rootScope, $location) {
@@ -68,8 +55,14 @@ function run($rootScope, $location) {
 angular.module('app', ['ngRoute'])
     .config(config)
     .controller('mainController', mainController)
-    .controller('connexionController', connexionController)
+
+.controller('connexionController', connexionController)
+    .controller('carteController', carteController)
+    .controller('mentionsController', mentionsController)
+    .controller('adminController', adminController)
+    .controller('profilController', profilController)
     .service('todoService', todoService)
     .service('connexionService', connexionService)
-    /*.factory('', )*/
-    .run(run);
+
+/*.factory('', )*/
+.run(run);

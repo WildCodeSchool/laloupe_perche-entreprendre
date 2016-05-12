@@ -1,0 +1,24 @@
+<div class="globale">
+    <div class="card">
+
+        <h1 class="fullName">{{user.firstName + " " + user.lastName }} Keita Julien</h1>
+
+        <img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
+
+        <h3 class="function">{{ user.userFunction }} Studio Manager</h3>
+        <h3 class="enterprise">{{ user.userEnterprise }} Ultragramme</h3>
+        <h3 class="phone">{{ user.userPhone }} 06 12 34 56 78</h3>
+        <h3 class="mail">{{ user.userEmail }} julien.keita@gmail.com</h3>
+
+        <img class="imgCard" ng-src="{{user.userPhoto || 'http://www.techmagz.com/wp-content/uploads/2013/03/QR-code-for-iGoogle.jpg'}}" alt="qrcode" />
+
+        <a href="#" class="contactus">Cliquez ici pour nous contacter</a>
+
+        <div class="logos">
+            <a><img class="logo" src="{{user.facebook || 'http://static.squarespace.com/static/52a5d70ce4b05998c3897aa5/t/52ebd6a7e4b085a0f5d97225/1391187625941/facebook%20icon.png'}}" alt="Facebook" /></a>
+            <a><img class="logo" src="{{user.twitter || 'http://static.squarespace.com/static/52a5d70ce4b05998c3897aa5/t/52ebd6a7e4b085a0f5d97225/1391187625941/facebook%20icon.png'}}" alt="Facebook" /></a>
+            <a><img class="logo" src="{{user.linkedin || 'http://static.squarespace.com/static/52a5d70ce4b05998c3897aa5/t/52ebd6a7e4b085a0f5d97225/1391187625941/facebook%20icon.png'}}" alt="Facebook" /></a>
+        </div>
+
+    </div>
+</div>

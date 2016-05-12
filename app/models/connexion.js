@@ -3,7 +3,11 @@ var mongoose = require('mongoose');
 
 
 var connexionSchema = new mongoose.Schema({
-    description: String
+    description: String,
+    lastName: String,
+    userFunction: String,
+    userEmail: String,
+    userNote: String
 });
 
 var Connexion = {
@@ -12,7 +16,11 @@ var Connexion = {
 
     create: function (req, res) {
         Connexion.model.create({
-            description: req.body.description
+            description: req.body.description,
+            lastName: req.body.lastName,
+            userFunction: req.body.userFunction,
+            userEmail: req.body.userEmail,
+            userNote: req.body.userNote
         }, function () {
             res.sendStatus(200);
         })
@@ -26,7 +34,11 @@ var Connexion = {
 
     update: function (req, res) {
         Connexion.model.findByIdAndUpdate(req.params.id, {
-            description: req.body.description
+            description: req.body.description,
+            lastName: req.body.lastName,
+            userFunction: req.body.userFunction,
+            userEmail: req.body.userEmail,
+            userNote: req.body.userNote
         }, function () {
             res.sendStatus(200);
         })
@@ -38,5 +50,6 @@ var Connexion = {
         })
     }
 }
+
 
 module.exports = Connexion;
