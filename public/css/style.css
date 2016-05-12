@@ -410,6 +410,11 @@ header {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
 .form-signin input[type="firstname"] {
     margin-bottom: 10px;
     border-top-left-radius: 0;
@@ -687,17 +692,17 @@ button {
 		height:30px;
 		line-height:29px;
 		margin-bottom:14px;
-        margin-left: 220px;
+    margin-left: 220px;
 		text-decoration:none;
-		width: 300px; 
-        background-color: #1F6F6F;
-    
+		width: 300px;
+    background-color: #1F6F6F;
+    padding-bottom: 35px;
 }
 /*=================================================================
                         MA CARTE
 =================================================================*/
 .carte {
-    
+
     text-align: center;
     border: solid 1px black;
     width: 250px;
@@ -710,4 +715,3 @@ button {
     height: 100px;
     width: 100px;
 }
-
