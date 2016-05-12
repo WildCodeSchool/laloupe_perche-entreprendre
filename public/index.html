@@ -50,15 +50,15 @@
                   <a href="#/" class="links">Home</a>
             </li>
             <li>
-                <a href="#ma-carte" class="links">Ma carte de visite</a>
+                <a href="#ma-carte" ng-show = 'connect == 1' class="links">Ma carte de visite</a>
             </li>
             <li>
-                <a href="#mes-contacts" class="links">Mes contacts</a>
+                <a href="#mes-contacts" ng-show = 'connect == 1' class="links">Mes contacts</a>
             </li>
             <li>
                 <a href="#connexion" class="links">Je me connecte !</a>
             </li>
-            <li class="dropdown">
+            <li class="dropdown" ng-show = 'connect == 1'>
               <a href="" class="dropdown-toggle" data-toggle="dropdown">Mon compte <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#mon-profil" class="links">Editer mon profil</a></li>

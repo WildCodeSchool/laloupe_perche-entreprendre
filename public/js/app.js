@@ -12,8 +12,8 @@ function config($routeProvider) {
 			templateUrl: 'views/connexion.html',
 			controller: 'connexionController'
 		})
-		.when('/createprofile', {
-		templateUrl: 'views/createprofile.html',
+		.when('/formulaire', {
+		templateUrl: 'views/formulaire.html',
 		controller: 'connexionController'
 		})
 		.when('/forgetPassword', {

@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="connect">Mettez à jour vos informations</h1>
+  <h1 class="connect">Inscrivez vous !!</h1>
 
     <div class="row  col-md-6 col-md-offset-3">
 
@@ -8,18 +8,21 @@
                 <img src="img/logo_pole.png" alt="" width="280px">
             </center>
             <form class="form-signin" style="text-align:center;">
-                <input type="name" class="form-control" ng-model="userName" placeholder="Votre nom" required>
-                <input type="firstname" class="form-control" ng-model="userFirstname" placeholder="Votre prénom" required>
+              <h3> Vos identifiants </h3>
+                <input type="email" class="form-control" ng-model="userEmail" placeholder="Votre adresse mail" required>
                 <input type="password" class="form-control" ng-model="userMdp" placeholder="Votre mot de passe" required>
                 <input type="confirmPassword" class="form-control" ng-model="userConfirm" placeholder="Confirmez votre mot de passe" required>
+              <h3> Vos informations </h3>
+                <input type="name" class="form-control" ng-model="userName" placeholder="Votre nom" required>
+                <input type="firstname" class="form-control" ng-model="userFirstname" placeholder="Votre prénom" required>
                 <input type="fonction" class="form-control" ng-model="userFunction" placeholder="Votre fonction" required>
                 <input type="enterprise" class="form-control" ng-model="userEnterprise" placeholder="Votre structure" required>
                 <input type="phone" class="form-control" ng-model="userPhone" placeholder="Votre numéro de téléphone" required>
                 <input type="note" class="form-control" ng-model="userNote" placeholder="Note à propos de vous" required>
 
                 <!--<div class="alert alert-danger" ng-show="connection==1" role="alert">Veuillez entrer un email ou un mot de passe valide.</div>-->
-                <a href="#/"><button class="btn btn-lg btn-success btn-block" ng-click="update()" type="submit">
-                    Mettre à jour</button></a>
+                <a href="#/"><button class="btn btn-lg btn-success btn-block" ng-click="add()" type="submit">
+                    S'enregistrer et nous contacter !</button></a>
 
             </form>
 

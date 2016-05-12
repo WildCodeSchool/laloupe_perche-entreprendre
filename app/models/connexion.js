@@ -3,7 +3,9 @@ var mongoose = require('mongoose');
 
 
 var connexionSchema = new mongoose.Schema({
-    description: String
+    userEmail: String,
+    userMdp: String
+
 });
 
 var Connexion = {
@@ -12,10 +14,11 @@ var Connexion = {
 
     create: function (req, res) {
         Connexion.model.create({
-            description: req.body.description
+          userEmail: req.body.userEmail,
+          userMdp: req.body.userMdp
         }, function () {
             res.sendStatus(200);
-        })
+        });
     },
 
     findAll: function (req, res) {
