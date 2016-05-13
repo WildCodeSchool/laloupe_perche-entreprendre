@@ -221,7 +221,7 @@ function mainController($scope, $http, todoService, $rootScope) {
 
     };
 
-    $scope.btn5 = function () {
+    	$scope.btn5 = function () {
         TweenLite.to(angular.element($("#content")), 0.5, {
             css: {
                 top: 0
