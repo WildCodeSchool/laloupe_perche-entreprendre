@@ -12,23 +12,6 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
         });
     }
 
-    $scope.signUp = function () {
-        var data = {};
-
-        data.userName = $scope.userName;
-        data.userEmail = $scope.userEmail;
-        data.userMdp = $scope.userMdp;
-        data.userFirstname = $scope.userFirstname;
-        data.userEnterprise = $scope.userEnterprise;
-        data.userFunction = $scope.userFunction;
-        data.userPhone = $scope.userPhone;
-        data.userNote = $scope.userNote;
-
-        connexionService.create(data).then(function (res) {
-            load();
-        });
-        $scope.description = "";
-    };
 
     $scope.add = function () {
         var data = {};
@@ -54,10 +37,8 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
         $scope.userEnterprise = "";
         $scope.userFirstname = "";
         $scope.userPhone = "";
-
-
-
     }
+
     $scope.connexion = function (mail, mdp) {
         console.log(mail, mdp);
         for (var i = 0; i < $scope.connexions.length; i++) {
@@ -81,4 +62,7 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
         });
     }
     load();
+
+
+
 }

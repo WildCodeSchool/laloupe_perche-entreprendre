@@ -6,11 +6,10 @@
 
         <img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
 
-        <h3 class="function">{{ connexion.userFunction }}</h3>
-        <h3 class="enterprise">{{ connexion.userEnterprise }}</h3>
+        <h3 class="function">{{ connexion.userFunction }} à {{ connexion.userEnterprise }}</h3>
         <h3 class="phone">{{ connexion.userPhone }}</h3>
         <h3 class="mail">{{ connexion.userEmail }}</h3>
-
+        <h3 class="note">{{connexion.userNote}}</h3>
         <img class="imgCard" ng-src="{{connexion.userPhoto || 'http://www.techmagz.com/wp-content/uploads/2013/03/QR-code-for-iGoogle.jpg'}}" alt="qrcode" />
 
         <a href="#/formulaire" class="contactus">Cliquez ici pour nous contacter</a>
