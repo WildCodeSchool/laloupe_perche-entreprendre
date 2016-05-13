@@ -44,6 +44,7 @@ body {
     flex-grow: 3;
     flex-basis: 3;
     width: 70%;
+    min-width: 50%;
 }
 
 .two {
