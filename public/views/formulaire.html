@@ -20,6 +20,15 @@
                 <input type="phone" class="form-control" ng-model="userPhone" placeholder="Votre numéro de téléphone" required>
                 <input type="note" class="form-control" ng-model="userNote" placeholder="Note à propos de vous" required>
 
+                <!-- <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+
+                					<center>
+                						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="download" class="btn btn-success">Télécharger une image</button>
+                					</center>
+                				</div> -->
+
+
+
                 <!--<div class="alert alert-danger" ng-show="connection==1" role="alert">Veuillez entrer un email ou un mot de passe valide.</div>-->
                 <a href="#/"><button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px" ng-click="add()" type="submit">
                     S'enregistrer et nous contacter !</button></a>
