@@ -35,26 +35,35 @@
             <div class="form-group">
                 <input type="text" class="form-control" id="inputMessage" ng-model="todo.userNote">
             </div> -->
-            <!-- <div class="pull-right">
+<!-- <div class="pull-right">
                 <button type="submit" class="btn btn-default" ng-click="update()">Update</button>
                 <button type="submit" class="btn btn-danger" ng-click="delete()">Delete</button>
             </div>
         </form> -->
-    <!-- </li>
+<!-- </li>
 </ul> -->
 
 
-
-<!--
-	<h1 class="titre" id="logo" style="font-weight: bold;">Mes contacts</h2>
+	<!-- <h1 class="titre" id="logo" style="font-weight: bold;">Mes contacts</h2>
 </center>
 <div class="block">
-	<div ng-repeat="" class="inline">
+	<div ng-repeat="user in users" class="inline">
 		<div class="personnes">
 			<center> -->
-				<!-- <img data-ng-src="{{user.userPhoto}}" /> -->
-				<p ng-model="user.userName"></p>
-			<!-- </center>
+<!-- <img data-ng-src="{{user.userPhoto}}" /> -->
+<!-- <p ng-model="user.userName"></p> -->
+<!-- <p class="contact" ng-repeat="">{{user.userName}}</p>
+
+</center>
 		</div>
 	</div>
 </div> -->
+<div class="container">
+	<h2 class="connect">Rechercher par nom, ville, fonction</h2>
+	<input type="text" id="inputMessage" ng-model="searchFriend" placeholder="Chercher dans la liste">
+	<ul>
+		<li class="friend" ng-repeat="friend in friendlist | filterBySearchFriend:searchFriend:user">
+			{{friend.userName}}
+		</li>
+	</ul>
+</div>

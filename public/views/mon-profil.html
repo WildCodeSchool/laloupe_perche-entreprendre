@@ -7,18 +7,24 @@
             <center>
                 <img src="img/logo_pole.png" alt="" width="280px">
             </center>
-            <form class="form-signin" style="text-align:center;">
+            <form class="form-signin" style="text-align:center; margin-top: 40px">
                 <input type="name" class="form-control" ng-model="user.userName" placeholder="Votre nom" required>
                 <input type="firstname" class="form-control" ng-model="user.userFirstname" placeholder="Votre prénom" required>
                 <input type="password" class="form-control" ng-model="user.userMdp" placeholder="Votre mot de passe" required>
                 <input type="confirmPassword" class="form-control" ng-model="user.userConfirm" placeholder="Confirmez votre mot de passe" required>
                 <input type="fonction" class="form-control" ng-model="user.userFunction" placeholder="Votre fonction" required>
                 <input type="enterprise" class="form-control" ng-model="user.userEnterprise" placeholder="Votre structure" required>
+                <input type="ville" class="form-control" ng-model="user.userVille" placeholder="Votre ville" required>
                 <input type="phone" class="form-control" ng-model="user.userPhone" placeholder="Votre numéro de téléphone" required>
                 <input type="note" class="form-control" ng-model="user.userNote" placeholder="Note à propos de vous" required>
 
+                                        <h3> Votre photo </h3>
+                                          <div class="col-md-4">
+                                            <input id="filebutton" name="filebutton" class="input-file" type="file">
+                                          </div>
+
                 <!--<div class="alert alert-danger" ng-show="connection==1" role="alert">Veuillez entrer un email ou un mot de passe valide.</div>-->
-                <a href="#/"><button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px" ng-click="update()" type="submit">
+                <a href="#/"><button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 60px" ng-click="update()" type="submit">
                     Mettre à jour</button></a>
 
             </form>
