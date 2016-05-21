@@ -58,16 +58,26 @@
 		</div>
 	</div>
 </div> -->
-<style type="text/css">
-.friend {
-	margin-bottom: 40px;
-	margin-top: 40px;
-	list-style: none;
+<!--header-->
+<div style="width:100%; height:80px; overflow:hidden; margin-top: 140px; background-color:#333">
 
-}
-</style>
+		<div style="width:750px; height:80px; margin: 0 auto; overflow:hidden; position:relative;">
+
+				<div id="caption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> MES CONTACTS </div>
+				<div id="pagecaption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> Caption </div>
+		</div>
+
+</div>
 <div class="container">
-	<h2 class="connect">Mes contacts</h2>
+
+	<style type="text/css">
+	.friend {
+		margin-bottom: 40px;
+		margin-top: 40px;
+		list-style: none;
+	}
+	</style>
+
 	<input type="text" id="inputMessage" style="width: 40%; text-align: center" ng-model="searchFriend" placeholder="Recherchez directement par nom, fonction ou lieu !">
 	<ul>
 		<li class="col-sm-4 friend" ng-repeat="friend in friendlist | filterBySearchFriend:searchFriend:user">

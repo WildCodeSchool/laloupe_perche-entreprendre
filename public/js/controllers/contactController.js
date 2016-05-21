@@ -14,4 +14,19 @@ function contactController($scope, $http, $rootScope, contactService) {
       $scope.friendlist = res.data
 
   });
+
+  $scope.menfou = function () {
+      TweenLite.to(angular.element($("#caption")), 2, {
+          css: {
+              top: 0
+          },
+          delay: 1,
+          ease: Power2.easeOut
+      });
+
+  };
+  $scope.menfou();
+
+
+
  }
