@@ -58,12 +58,22 @@
 		</div>
 	</div>
 </div> -->
+<style type="text/css">
+.friend {
+	margin-bottom: 40px;
+	margin-top: 40px;
+	list-style: none;
+
+}
+</style>
 <div class="container">
-	<h2 class="connect">Rechercher par nom, ville, fonction</h2>
-	<input type="text" id="inputMessage" ng-model="searchFriend" placeholder="Chercher dans la liste">
+	<h2 class="connect">Mes contacts</h2>
+	<input type="text" id="inputMessage" style="width: 40%; text-align: center" ng-model="searchFriend" placeholder="Recherchez directement par nom, fonction ou lieu !">
 	<ul>
-		<li class="friend" ng-repeat="friend in friendlist | filterBySearchFriend:searchFriend:user">
-			{{friend.userName}}
+		<li class="col-sm-4 friend" ng-repeat="friend in friendlist | filterBySearchFriend:searchFriend:user">
+			<img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
+			<p>{{friend.userName}} {{friend.userFirstname}}</p>
+			<p>{{friend.userFunction}} à {{friend.userVille}}</p>
 		</li>
 	</ul>
 </div>
