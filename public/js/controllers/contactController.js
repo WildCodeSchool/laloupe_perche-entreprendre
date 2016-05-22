@@ -1,5 +1,5 @@
 
-function contactController($scope, $http, $rootScope, contactService) {
+function contactController($scope, $http, $rootScope, contactService, connexionService) {
   $scope.user = $rootScope.userId;
   // $scope.friendlist = [
 	// 	{'name': 'Sébastien'},
@@ -27,6 +27,18 @@ function contactController($scope, $http, $rootScope, contactService) {
   };
   $scope.menfou();
 
-
+  //----------- Modal ---------------
+  $scope.infoProfil = function (id){
+      contactService.get().then(function (res) {
+          $scope.friendlist = res.data;
+          $scope.index = -1;
+          $scope.friendlist.forEach(function (friend, index){
+              if (friend._id == id){
+                  $scope.index = index;
+                  return;
+              }
+          });
+      });
+  }
 
  }

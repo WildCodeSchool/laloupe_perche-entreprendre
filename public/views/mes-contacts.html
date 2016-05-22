@@ -1,29 +1,42 @@
 <!--header-->
 <div style="width:100%; height:80px; overflow:hidden; margin-top: 140px; background-color:#333">
-
 		<div style="width:750px; height:80px; margin: 0 auto; overflow:hidden; position:relative;">
-
 				<div id="caption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> MES CONTACTS </div>
 				<div id="pagecaption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> Caption </div>
 		</div>
-
 </div>
 <div class="container">
-
-	<style type="text/css">
-	.friend {
-		margin-bottom: 40px;
-		margin-top: 40px;
-		list-style: none;
-	}
-	</style>
-
 	<input type="text" id="inputMessage" style="width: 40%; text-align: center" ng-model="searchFriend" placeholder="Recherchez directement par nom, fonction ou lieu !">
 	<ul>
-		<li class="col-sm-4 friend" ng-repeat="friend in friendlist | filterBySearchFriend:searchFriend:user">
-			<img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
-			<p>{{friend.userName}} {{friend.userFirstname}}</p>
-			<p>{{friend.userFunction}} à {{friend.userVille}}</p>
+		<li class="col-sm-2 friend" ng-repeat="friend in friendlist | filterBySearchFriend:searchFriend:user">
+				<div class="item-img-wrap ">
+						<img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
+						<div class="item-img-overlay" ng-click="infoProfil(friend._id)" data-toggle="modal" data-target=".bs-example-modal-lg" href="">
+									<span></span>
+						</div>
+				</div>
+				<p>{{friend.userName}} {{friend.userFirstname}}</p>
+				<p>{{friend.userFunction}} à {{friend.userVille}}</p>
 		</li>
 	</ul>
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	  	<div class="modal-dialog modal-lg">
+	    		<div class="modal-content">
+	      			<div class="modal-body">
+									<h1 class="fullName">{{userName + " " + user[index].userFirstname }}</h1>
+	        				<img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
+	        				<h3 class="function">{{ friend.userFunction }} à {{ friend[index].userEnterprise }}</h3>
+	        				<h3 class="ville">{{ connexion.userVille }}</h3>
+	        				<h3 class="phone">{{ connexion[index].userPhone }}</h3>
+	        				<h3 class="mail">{{ friend.userEmail }}</h3>
+	        				<h3 class="note">{{friend.userNote}}</h3>
+									<div class="modal-footer">
+					              <center>
+					                	<button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+					              </center>
+					        </div>
+	      			</div>
+	    		</div>
+	  	</div>
+	</div>
 </div>
