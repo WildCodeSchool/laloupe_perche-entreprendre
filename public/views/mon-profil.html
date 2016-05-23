@@ -1,5 +1,16 @@
+<!--header-->
+<div style="width:100%; height:80px; overflow:hidden; margin-top: 140px; background-color:#333">
+
+		<div style="width:750px; height:80px; margin: 0 auto; overflow:hidden; position:relative;">
+
+				<div id="caption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> METTEZ À JOUR VOS INFORMATIONS ! </div>
+				<div id="pagecaption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> Caption </div>
+		</div>
+
+</div>
 <div class="container">
-  <h1 class="connect">Mettez à jour vos informations</h1>
+
+<div class="container">
 
     <div class="row  col-md-6 col-md-offset-3">
 
@@ -7,18 +18,24 @@
             <center>
                 <img src="img/logo_pole.png" alt="" width="280px">
             </center>
-            <form class="form-signin" style="text-align:center;">
-                <input type="name" class="form-control" ng-model="userName" placeholder="Votre nom" required>
-                <input type="firstname" class="form-control" ng-model="userFirstname" placeholder="Votre prénom" required>
-                <input type="password" class="form-control" ng-model="userMdp" placeholder="Votre mot de passe" required>
-                <input type="confirmPassword" class="form-control" ng-model="userConfirm" placeholder="Confirmez votre mot de passe" required>
-                <input type="fonction" class="form-control" ng-model="userFunction" placeholder="Votre fonction" required>
-                <input type="enterprise" class="form-control" ng-model="userEnterprise" placeholder="Votre structure" required>
-                <input type="phone" class="form-control" ng-model="userPhone" placeholder="Votre numéro de téléphone" required>
-                <input type="note" class="form-control" ng-model="userNote" placeholder="Note à propos de vous" required>
+            <form class="form-signin" style="text-align:center; margin-top: 40px">
+                <input type="name" class="form-control" ng-model="user.userName" placeholder="Votre nom" required>
+                <input type="firstname" class="form-control" ng-model="user.userFirstname" placeholder="Votre prénom" required>
+                <input type="password" class="form-control" ng-model="user.userMdp" placeholder="Votre mot de passe" required>
+                <input type="confirmPassword" class="form-control" ng-model="user.userConfirm" placeholder="Confirmez votre mot de passe" required>
+                <input type="fonction" class="form-control" ng-model="user.userFunction" placeholder="Votre fonction" required>
+                <input type="enterprise" class="form-control" ng-model="user.userEnterprise" placeholder="Votre structure" required>
+                <input type="ville" class="form-control" ng-model="user.userVille" placeholder="Votre ville" required>
+                <input type="phone" class="form-control" ng-model="user.userPhone" placeholder="Votre numéro de téléphone" required>
+                <input type="note" class="form-control" ng-model="user.userNote" placeholder="Note à propos de vous" required>
+
+                                        <h3> Votre photo </h3>
+                                          <div class="col-md-4">
+                                            <input id="filebutton" name="filebutton" class="input-file" type="file">
+                                          </div>
 
                 <!--<div class="alert alert-danger" ng-show="connection==1" role="alert">Veuillez entrer un email ou un mot de passe valide.</div>-->
-                <a href="#/"><button class="btn btn-lg btn-success btn-block" ng-click="update()" type="submit">
+                <a href="#/"><button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 60px" ng-click="update()" type="submit">
                     Mettre à jour</button></a>
 
             </form>

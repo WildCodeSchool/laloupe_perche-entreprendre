@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var connexionSchema = new mongoose.Schema({
     userEmail: String,
     userMdp: String,
-    description: String,
+    userVille: String,
     userFunction: String,
     userNote: String,
     userEnterprise: String,
@@ -22,7 +22,7 @@ var Connexion = {
         Connexion.model.create({
                 userEmail: req.body.userEmail,
                 userMdp: req.body.userMdp,
-                description: req.body.description,
+                userVille: req.body.userVille,
                 userName: req.body.userName,
                 userEnterprise: req.body.userEnterprise,
                 userFunction: req.body.userFunction,
@@ -46,11 +46,16 @@ var Connexion = {
 
     update: function(req, res) {
         Connexion.model.findByIdAndUpdate(req.params.id, {
-            description: req.body.description,
-            lastName: req.body.lastName,
-            userFunction: req.body.userFunction,
-            userEmail: req.body.userEmail,
-            userNote: req.body.userNote
+          userEmail: req.body.userEmail,
+          userMdp: req.body.userMdp,
+          userVille: req.body.userVille,
+          userName: req.body.userName,
+          userEnterprise: req.body.userEnterprise,
+          userFunction: req.body.userFunction,
+          userEmail: req.body.userEmail,
+          userNote: req.body.userNote,
+          userPhone: req.body.userPhone,
+          userFirstname: req.body.userFirstname
         }, function() {
             res.sendStatus(200);
         })

@@ -12,27 +12,10 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
         });
     }
 
-    $scope.signUp = function () {
-        var data = {};
-
-        data.userName = $scope.userName;
-        data.userEmail = $scope.userEmail;
-        data.userMdp = $scope.userMdp;
-        data.userFirstname = $scope.userFirstname;
-        data.userEnterprise = $scope.userEnterprise;
-        data.userFunction = $scope.userFunction;
-        data.userPhone = $scope.userPhone;
-        data.userNote = $scope.userNote;
-
-        connexionService.create(data).then(function (res) {
-            load();
-        });
-        $scope.description = "";
-    };
 
     $scope.add = function () {
         var data = {};
-        data.description = $scope.description;
+        data.userVille = $scope.userVille;
         data.userFunction = $scope.userFunction;
         data.userEmail = $scope.userEmail;
         data.userNote = $scope.userNote;
@@ -47,17 +30,15 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
         });
         $scope.userEmail = "";
         $scope.userMdp = "";
-        $scope.description = "";
+        $scope.userVille = "";
         $scope.userName = "";
         $scope.userFunction = "";
         $scope.userNote = "";
         $scope.userEnterprise = "";
         $scope.userFirstname = "";
         $scope.userPhone = "";
-
-
-
     }
+
     $scope.connexion = function (mail, mdp) {
         console.log(mail, mdp);
         for (var i = 0; i < $scope.connexions.length; i++) {
@@ -81,4 +62,19 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
         });
     }
     load();
+
+
+      $scope.menfou = function () {
+          TweenLite.to(angular.element($("#caption")), 2, {
+              css: {
+                  top: 0
+              },
+              delay: 1,
+              ease: Power2.easeOut
+          });
+
+      };
+      $scope.menfou();
+
+
 }
