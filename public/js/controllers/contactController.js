@@ -27,18 +27,4 @@ function contactController($scope, $http, $rootScope, contactService, connexionS
   };
   $scope.menfou();
 
-  //----------- Modal ---------------
-  $scope.infoProfil = function (id){
-      contactService.get().then(function (res) {
-          $scope.friendlist = res.data;
-          $scope.index = -1;
-          $scope.friendlist.forEach(function (friend, index){
-              if (friend._id == id){
-                  $scope.index = index;
-                  return;
-              }
-          });
-      });
-  }
-
  }

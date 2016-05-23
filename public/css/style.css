@@ -837,7 +837,7 @@ button {
     background-color: rgba(4, 4, 4, 0.8);
 }
 .modal-dialog {
-    top: 20%;
+    top: 6%;
     width: 100%;
     position: absolute;
 }
@@ -890,7 +890,7 @@ button {
   position: absolute;
   top: 0;
   left: 0;
-  background: url(http://bootstraplovers.com/templates/assan-2.2/main-template/img/plus.png) no-repeat center center rgba(0, 0, 0, 0.7);
+  background: url(http://www.icone-png.com/png/35/34768.png) no-repeat center center rgba(0, 0, 0, 0.7);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
   opacity: 0;
