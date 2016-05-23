@@ -1,5 +1,14 @@
+<!--header-->
+<div style="width:100%; height:80px; overflow:hidden; margin-top: 140px; background-color:#333">
+
+		<div style="width:750px; height:80px; margin: 0 auto; overflow:hidden; position:relative;">
+
+				<div id="caption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> INSCRIVEZ VOUS ! </div>
+				<div id="pagecaption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> Caption </div>
+		</div>
+
+</div>
 <div class="container">
-  <h1 class="connect">Inscrivez vous !!</h1>
 
     <div class="row  col-md-6 col-md-offset-3">
 
@@ -17,6 +26,7 @@
                 <input type="firstname" class="form-control" ng-model="userFirstname" placeholder="Votre prénom" required>
                 <input type="fonction" class="form-control" ng-model="userFunction" placeholder="Votre fonction" required>
                 <input type="enterprise" class="form-control" ng-model="userEnterprise" placeholder="Votre structure" required>
+                <input type="ville" class="form-control" ng-model="userVille" placeholder="Votre ville" required>
                 <input type="phone" class="form-control" ng-model="userPhone" placeholder="Votre numéro de téléphone" required>
                 <input type="note" class="form-control" ng-model="userNote" placeholder="Note à propos de vous" required>
 
@@ -28,9 +38,14 @@
                 				</div> -->
 
 
+                        <h3> Votre photo </h3>
+                          <div class="col-md-4">
+                            <input id="filebutton" name="filebutton" class="input-file" type="file">
+                          </div>
+
 
                 <!--<div class="alert alert-danger" ng-show="connection==1" role="alert">Veuillez entrer un email ou un mot de passe valide.</div>-->
-                <a href="#/"><button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px" ng-click="add()" type="submit">
+                <a href="#/"><button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 60px" ng-click="add()" type="submit">
                     S'enregistrer et nous contacter !</button></a>
 
             </form>

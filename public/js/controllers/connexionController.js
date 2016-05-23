@@ -15,7 +15,7 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
 
     $scope.add = function () {
         var data = {};
-        data.description = $scope.description;
+        data.userVille = $scope.userVille;
         data.userFunction = $scope.userFunction;
         data.userEmail = $scope.userEmail;
         data.userNote = $scope.userNote;
@@ -30,7 +30,7 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
         });
         $scope.userEmail = "";
         $scope.userMdp = "";
-        $scope.description = "";
+        $scope.userVille = "";
         $scope.userName = "";
         $scope.userFunction = "";
         $scope.userNote = "";
@@ -63,6 +63,18 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
     }
     load();
 
+
+      $scope.menfou = function () {
+          TweenLite.to(angular.element($("#caption")), 2, {
+              css: {
+                  top: 0
+              },
+              delay: 1,
+              ease: Power2.easeOut
+          });
+
+      };
+      $scope.menfou();
 
 
 }
