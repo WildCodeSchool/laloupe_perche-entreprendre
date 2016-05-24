@@ -110,9 +110,7 @@ angular.module('app', ['ngRoute'])
     .controller('mentionsController', mentionsController)
     .controller('adminController', adminController)
     .controller('profilController', profilController)
-    .service('todoService', todoService)
-    .service('connexionService', connexionService)
-    .service('contactService', contactService)
+    .service('userService', userService)
     .filter('filterBySearchFriend', filterBySearchFriend)
     /*.factory('', )*/
     .run(run);

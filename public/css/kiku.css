@@ -1,17 +1,16 @@
 .view {
     margin-top: 100px;
 }
-
 body {
     background-image: none;
 }
-
 
 /*=================================================================
                             Accueil
 =================================================================*/
 
-.tiles {
+
+/*.tiles {
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
@@ -44,6 +43,7 @@ body {
     flex-grow: 3;
     flex-basis: 3;
     width: 70%;
+    min-width: 50%;
 }
 
 .two {
@@ -84,6 +84,133 @@ body {
     width: 400px;
     height: 180px;
 }
+*/
+
+/*body {
+  background-color:#6FBF7B;
+}*/
+
+.header {
+  background-color:white;
+}
+.range {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.tile {
+    height: 250px;;
+    width:550px;
+    background-color: red;
+    box-shadow: 1px 1px 7px black;
+    margin-bottom: 30px;
+    color: white;
+    transition: 0.5s ease-in;
+}
+.tile:hover {
+    box-shadow: 1px 1px 5px black;
+}
+
+.movePerche {
+    width: 700px;
+}
+
+/********* TILE ACTIVITY *******/
+
+.createActivity {
+    background-image: url(../img/tuiletest.jpg);
+    background-size: cover;
+}
+.createActivity:hover > .justHover {
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+.createActivity:hover > .littletitle {
+  color:rgba(255, 255, 255, 1);
+}
+.littletitle {
+  color:rgba(0, 0, 0, 1);
+  font-size:2em;
+  transition:0.6s ease-in;
+  margin-top:-160px;
+}
+.justHover {
+    background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    width: 100%;
+    transition: 0.4s ease-in;
+}
+.buySociety {
+  background-image: url(http://creativefan.com/files/2010/02/12142-fullsize-500x250.jpg);
+  background-size: cover;
+  min-width:200px;
+}
+.buySociety:hover > .justHover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.buySociety:hover > .littletitle {
+  color:rgba(255, 255, 255, 1);
+}
+
+.myAgenda {
+  overflow:hidden;
+  min-width:200px;
+}
+
+.videoCard {
+    width: 400px;
+    overflow:hidden;
+}
+.youtubeVideo {
+  transform: scaleY(1.2);
+  margin-top:-4px;
+}
+
+.movePerche {
+  background-image: url(http://nilsetmareva.com/wp-content/uploads/2015/10/IMG_9212-700x300.jpg);
+  background-size: cover;
+}
+
+.littlepetittitle {
+  color:rgba(0, 0, 0, 1);
+  font-size:2em;
+  transition:0.6s ease-in;
+}
+
+/********* TILE SCOOPIT *******/
+.createActivity {
+  width:800px;
+}
+.scoopitou {
+  width: 300px;
+}
+ .myScoopit {
+    margin-top: -5px;
+    margin-left:-0px;
+    width: 300px;
+    height: 255px;
+}
+
+/********* MODAL CREATION SOCIETY *******/
+
+
+.createBox {
+  margin-top:20%;
+}
+
+.mail {
+  text-align:center;
+}
+.phone {
+  text-align:center;
+}
+.well {
+  width:100%;
+  text-align:center;
+}
+
+
 
 
 /*=================================================================
@@ -94,7 +221,6 @@ body {
     width: 100%;
     text-align: center;
 }
-
 .card {
     margin-left: 50%;
     transform: translateX(-50%);
@@ -109,20 +235,136 @@ body {
     box-shadow: 0px 0px 5px black;
     background-color: rgb (0, 0, O,1);
 }
-
 .imgCard {
     height: 150px;
     width: 140px;
     box-shadow: 1px 1px 5px black;
     background-color: white;
 }
-
 .logos {
     display: flex;
     flex-direction: row;
 }
-
 .logo {
     height: 80px;
     width: 80px;
 }
+
+
+
+.fade-carousel {
+    position: relative;
+    height: 100vh;
+}
+.fade-carousel .carousel-inner .item {
+    height: 100vh;
+}
+.fade-carousel .carousel-indicators > li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .7;
+}
+.fade-carousel .carousel-indicators > li.active {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    margin-top:-300px;
+}
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+
+/********************************/
+/*            Overlay           */
+/********************************/
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: .7;
+}
+
+/********************************/
+/*          Custom Buttons      */
+/********************************/
+.btn.btn-lg {padding: 10px 40px;}
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: rgba(0, 0, 0, 0.5);
+    outline: none;
+    margin: 20px auto;
+    padding-bottom:30px;
+}
+
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+.fade-carousel .slides .slide-1,
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.fade-carousel .slides .slide-1 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818);
+}
+.fade-carousel .slides .slide-2 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?q=75&fm=jpg&s=c39d9a3bf66d6566b9608a9f1f3765af);
+}
+.fade-carousel .slides .slide-3 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199912?q=75&fm=jpg&s=9bf9f2ef5be5cb5eee5255e7765cb327);
+}
+label {
+  color:black;
+}
+
+
+/********************************/
+/*          Media Queries       */
+/********************************/

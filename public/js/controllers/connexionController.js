@@ -1,10 +1,10 @@
 // CONNEXION CONTROLLER
-function connexionController($scope, $http, connexionService, $rootScope, $location) {
+function connexionController($scope, $http, userService, $rootScope, $location) {
   $('html, body').animate({ scrollTop: 0 }, 'swing');
   $rootScope.connect = 0;
 
     function load() {
-        connexionService.get().then(function (res) {
+        userService.get().then(function (res) {
             //console.log(res.data);
             $scope.todos = res.data;
             $scope.connexions = res.data;
@@ -25,7 +25,7 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
         data.userEnterprise = $scope.userEnterprise;
         data.userPhone = $scope.userPhone;
 
-        connexionService.create(data).then(function (res) {
+        userService.create(data).then(function (res) {
             load();
         });
         $scope.userEmail = "";
@@ -51,16 +51,7 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
         }
     }
 
-    $scope.update = function (todo) {
-        connexionService.update(todo._id, todo).then(function (res) {
-            load();
-        });
-    };
-    $scope.delete = function (todo) {
-        connexionService.delete(todo._id).then(function (res) {
-            load();
-        });
-    }
+   
     load();
 
 

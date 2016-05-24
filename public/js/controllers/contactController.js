@@ -1,5 +1,5 @@
 
-function contactController($scope, $http, $rootScope, contactService, connexionService) {
+function contactController($scope, $http, $rootScope, userService) {
   $scope.user = $rootScope.userId;
   // $scope.friendlist = [
 	// 	{'name': 'Sébastien'},
@@ -10,7 +10,7 @@ function contactController($scope, $http, $rootScope, contactService, connexionS
 	// 	{'name': 'Julien'},
 	// 	{'name': 'Marie'}
 	// ];
-  contactService.get().then(function (res) {
+  userService.get().then(function (res) {
       $scope.friendlist = res.data
 
   });
