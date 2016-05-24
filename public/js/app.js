@@ -33,6 +33,10 @@ function config($routeProvider) {
             templateUrl: 'views/mon-profil.html',
             controller: 'profilController'
         })
+     .when('/annonces', {
+            templateUrl: 'views/annonces.html',
+            controller: 'mainController'
+        })
         .when('/administration', {
             templateUrl: 'views/administration.html',
             controller: 'adminController'
