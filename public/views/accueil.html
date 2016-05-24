@@ -1,322 +1,114 @@
-<!--header-->
-<div class="header" style="width:100%; height:80px; overflow:hidden; margin-top: 140px; background-color:#333">
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="" />
+    <title>Perche-entreprendre</title>
+    <!-- CSS | Bootstrap | jQuery -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/kiku.css">
+    <!-- AngularJS -->
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/libs/angular-route.min.js"></script>
+    <script src="js/controllers/mainController.js"></script>
+    <script src="js/controllers/connexionController.js"></script>
+    <script src="js/controllers/carteController.js"></script>
+    <script src="js/controllers/profilController.js"></script>
+    <script src="js/controllers/mentionsController.js"></script>
+    <script src="js/controllers/adminController.js"></script>
+    <script src="js/controllers/contactController.js"></script>
+    <script src="js/services/todoService.js"></script>
+    <script src="js/services/contactService.js"></script>
+    <script src="js/services/connexionService.js"></script>
 
-    <div style="width:750px; height:80px; margin: 0 auto; overflow:hidden; position:relative;">
+    <script src="js/nav.js"></script>
+    <script src="js/app.js"></script>
 
-        <div id="caption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> L'EFFET RÉSEAU ... </div>
 
-        <div id="backbutton" style="height:44px; width:44px; margin-top:15px; float:left; position:absolute"> <img src="img/backbtn.png" width="44" height="44" /> </div>
 
-        <div id="pagecaption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> Caption </div>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="js/TweenLite.min.js"></script>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <img src="img/logo_pole.png" class="logoperche" alt="logo Perche" />
+    </header>
+
+    <div id="wrapper">
+        <div class="overlay"></div>
+
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#/" class="links">Home</a>
+                </li>
+                <li>
+                    <a href="#ma-carte" ng-show = 'connect == 1' class="links">Ma carte de visite</a>
+                </li>
+                <li>
+                    <a href="#mes-contacts" ng-show = 'connect == 1' class="links">Mes contacts</a>
+                </li>
+                <li>
+                    <a href="#connexion" ng-hide = 'connect == 1' class="links">Je me connecte !</a>
+                </li>
+                <li>
+                    <a href="#connexion"  ng-show = 'connect == 1' class="links">Je me déconnecte !</a>
+                </li>
+                <li class="dropdown" ng-show = 'connect == 1'>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Mon compte <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#mon-profil" class="links">Editer mon profil</a></li>
+                        <li><a href="#administration" class="links">Mon panneau d'administration</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+                <span class="hamb-middle"></span>
+                <span class="hamb-bottom"></span>
+            </button>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <ng-view></ng-view>
+
+    <!-- Script pour le dropdown -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <div class="footer fixed-bottom">
+        <div class="col-md-3 col-sm-3 perche">
+            <a href="#/">Perche Entreprendre ©</a>
+        </div>
+        <div class="col-md-3 col-sm-3 mentions">
+            <a href="#/mentions">Mentions légales</a>
+        </div>
+        <div class="col-md-6 col-sm-6 reallogo">
+            <div class="col-md-9 col-sm-9 realisation">Réalisé par la
+                <a href="http://wildcodeschool.fr/">Wild Code School</a> de la Loupe</div>
+            <div class="col-md-3 col-sm-3 logo"><img class="logoWCS" src="http://leperche.perche-entreprendre.fr/wp-content/themes/pays-perche/img/WCS.png" alt="Logo WCS" /></div>
+        </div>
     </div>
 
-</div>
+</body>
 
-<!--buttons-->
-
-<!-- <div class="tiles" style=" overflow:hidden; margin-top:35px;">
-
-    <a href="" class="essai one" ng-click="btn1()" target="main">
-        <div class="essai one" id="btn1">
-            <p> Un écosystème dynamique </p><img class="imgemploi" src="/img/emploi-630x0.JPG" alt="environnement"> </div>
-    </a>
-    <a href="" class="essai two" ng-click="btn2()" target="main">
-        <div class="essai two" id="btn2">
-            <p> Un positionnement stratégique </p>
-        </div>
-    </a>
-    <a href="" class="essai seven" ng-click="btn7()" target="main">
-        <div class="essai seven" id="btn7">
-            <p>Agenda</p>
-        </div>
-    </a>
-    <a href="" class="essai eight" ng-click="btn1()" target="main">
-        <div class="essai eight" id="btn1">
-            <p>Contactez nous !</p>
-        </div>
-    </a>
-    <a href="" class="essai three" ng-click="btn3()" target="main">
-        <div class="essai three" id="btn3">
-            <p> Un programme d'accompagnement </br> pour les entreprises </p>
-        </div>
-    </a>
-    <a href="" class="essai four" ng-click="btn4()" target="main">
-        <div class="essai four" id="btn4">
-            <p> Un environnement de qualité </p>
-        </div>
-    </a>
-    <a class="essai five" target="main">
-        <div class="essai five" id="btn5">
-            <p> Actualités </p>
-            <iframe src='//www.scoop.it/embed-topic/3050061.html?maxwidth=400' class="scoopit" frameBorder='0' scrolling='no'></iframe>
-        </div>
-    </a>
-    <a href="#/annonces" class="essai six" ng-click="btn6()" target="main">
-        <div class="essai six" id="btn6">
-            <p>Commerces et bureaux à reprendre</p>
-        </div>
-    </a>
-    <div id="content" class="container" style="position:absolute">
-        <div ng-show="content=='ecosysteme'">
-            <p>un bassin de vie de plus de 57 000 habitants avec 20 000 emplois dont 13 500 salariés. </br>
-                Plus de 160 établissements (industries, PME, ...).</br>
-                4000 salariés dans l'Industrie. </br>
-                Une main d'oeuvre motivée, stable, de qualité et attachée au territoire du Perche.
-            </p>
-        </div>
-        <div ng-show="content=='positionnement'">
-            <p>À seulement 1h30 de la Région Ile de France !</p>
-            <iframe width="640" height="360" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div ng-show="content=='accompagnement'">
-            <p>Désormais placé sous l'autorité des Régions, le programme LEADER est dédié aux territoires ruraux et permet de bénéficier de financements spécifiques pour des actions ciblées, innovantes et co-construites avec les acteurs privés.</p>
-            <iframe src="https://player.vimeo.com/video/40416273" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        </div>
-        <div ng-show="content=='environnement'">
-            <p>Le Perche propose un cadre de vie exceptionnel à proximité de Paris et sa région, tout en étant ouvert sur le Grand-Ouest de la France. L'identité percheronne reste fortement ancrée et présente un réel potentiel touristique au coeur du Parc
-                Naturel Régional du Perche, véritable poumon vert, gage d'une qualité de vie exceptionnelle aux porte de Paris et de la Normandie.</p>
-            <img class="imgvtt" src="/img/img_2219.jpg" alt="environnement">
-        </div>
-        <div ng-show="content=='scoopit'">
-
-        </div>
-
-    </div>
-
-</div> -->
-
-<div class="container accueil">
-    <div class="range">
-        <div class="tile createActivity">
-            <div class="justHover" data-toggle="modal" data-target=".bs-example-modal-lg"></div>
-            <div class="littletitle">
-                <p>Je créé mon activité</p>
-                <p>Je contacte Perche Entreprendre</p>
-            </div>
-        </div>
-        <div class="tile scoopitou">
-            <iframe src='//www.scoop.it/embed-topic/3050061.html?height=250?maxwidth=255' class="myScoopit" frameBorder='0' scrolling='no'></iframe>
-        </div>
-    </div>
-
-
-    <div class="range">
-        <div class="tile myAgenda">
-
-            <!-- CAROUSEL PROVISOIRE AGENDA-->
-            <!-- CAROUSEL PROVISOIRE AGENDA-->
-            <!-- CAROUSEL PROVISOIRE AGENDA -->
-            <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="5000" id="bs-carousel">
-                <!-- Overlay -->
-                <div class="overlay"></div>
-
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#bs-carousel" data-slide-to="1"></li>
-                    <li data-target="#bs-carousel" data-slide-to="2"></li>
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item slides active">
-                        <div class="slide-1"></div>
-                        <div class="hero">
-                            <hgroup>
-                                <h1>15/03/2017</h1>
-                                <h3>Barbecue</h3>
-                            </hgroup>
-                            <button class="btn btn-hero btn-lg" role="button">Voir</button>
-                        </div>
-                    </div>
-                    <div class="item slides">
-                        <div class="slide-2"></div>
-                        <div class="hero">
-                            <hgroup>
-                                <h1>18/05/2016</h1>
-                                <h3>Festival</h3>
-                            </hgroup>
-                            <button class="btn btn-hero btn-lg" role="button">Voir</button>
-                        </div>
-                    </div>
-                    <div class="item slides">
-                        <div class="slide-3"></div>
-                        <div class="hero">
-                            <hgroup>
-                                <h1>30/09/2016</h1>
-                                <h3>Apéro</h3>
-                            </hgroup>
-                            <button class="btn btn-hero btn-lg" role="button">Voir</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MODAL TUILE CREER MON ENTREPRISE -->
-            <!-- MODAL TUILE CREER MON ENTREPRISE -->
-            <!-- MODAL TUILE CREER MON ENTREPRISE -->
-
-
-        </div>
-
-
-
-
-
-    <div class="tile buySociety">
-        <div class="justHover" data-toggle="modal" data-target="#"></div>
-        <p class="littletitle">Je reprends une entreprise</p>
-    </div>
-  </div>
-
-<div class="range">
-    <div class="tile videoCard">
-        <iframe class="youtubeVideo" width="400" height="245" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="tile movePerche">
-        <p class="littlepetittitle">Installez-vous dans le Perche !</p>
-    </div>
-</div>
-</div>
-
-<div class="modal fade bs-example-modal-lg creationEntreprise" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-    <div class="createBox modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <h1 class="fullName">Vous pouvez prendre rendez-vous</h1>
-                <h3 class="mail" ng-click="mail = !mail">Par Mail ></h3>
-                <h3 class="mail" ng-show="mail">Mail@Mail.fr</h3>
-                <form class="well form-horizontal" action=" " method="post" id="contact_form" ng-show="mail">
-                    <fieldset>
-
-                        <!-- Text input-->
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Nom</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input name="first_name" placeholder="Nom" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Text input-->
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Prénom</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input name="last_name" placeholder="Prénom" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">E-Mail</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                    <input name="email" placeholder="Adresse E-Mail" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- Text input-->
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Téléphone</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                    <input name="phone" placeholder="(02)12 34 56 78" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Text input-->
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Adresse</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                    <input name="address" placeholder="Adresse" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Text input-->
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Ville</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                    <input name="city" placeholder="Ville" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <!-- Text input-->
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Code postal</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                    <input name="zip" placeholder="Code Postal" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- Text area -->
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Votre Message</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                    <textarea class="form-control" name="Ecrivez ici" placeholder="Project Description"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Success message -->
-                        <div class="alert alert-success" role="alert" id="success_message">Bravo <i class="glyphicon glyphicon-thumbs-up"></i> Merci de nous avoir contacté, nous viendrons à vous très prochainement.</div>
-
-                        <!-- Button -->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label"></label>
-                            <div class="col-md-4">
-                                <button type="submit" class="btn btn-warning">Envoyer <span class="glyphicon glyphicon-send"></span></button>
-                            </div>
-                        </div>
-
-                    </fieldset>
-                </form>
-                <h3 class="phone" ng-click="phone = !phone">Par Téléphone ></h3>
-                <h3 class="phone phoneNumber" ng-show="phone">02 37 34 56 78</h3>
-            </div>
-
-
-
-
-
-
-
-
-            <div class="modal-footer">
-                <center>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
-                </center>
-            </div>
-        </div>
-    </div>
-</div>
+</html>
