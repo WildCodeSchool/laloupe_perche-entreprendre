@@ -5,10 +5,8 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
 
     function load() {
         connexionService.get().then(function (res) {
-            //console.log(res.data);
             $scope.todos = res.data;
             $scope.connexions = res.data;
-            console.log($scope.connexions);
         });
     }
 
@@ -40,11 +38,9 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
     }
 
     $scope.connexion = function (mail, mdp) {
-        console.log(mail, mdp);
         for (var i = 0; i < $scope.connexions.length; i++) {
           if ($scope.connexions[i].userEmail == mail && $scope.connexions[i].userMdp == mdp){
             $rootScope.userId = $scope.connexions[i];
-            console.log($rootScope.userId);
             $rootScope.connect = 1;
             $location.path('#/')
           }

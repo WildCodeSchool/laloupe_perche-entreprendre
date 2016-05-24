@@ -30,11 +30,14 @@
             <p>Agenda</p>
         </div>
     </a>
-    <a href="" class="essai eight" ng-click="btn1()" target="main">
-        <div class="essai eight" id="btn1">
+    <a href="" class="essai eight" target="main"data-toggle="modal" data-target="#contact">
+        <div class="essai eight" id="btn1" >
             <p>Contactez nous !</p>
         </div>
     </a>
+
+
+
     <a href="" class="essai three" ng-click="btn3()" target="main">
         <div class="essai three" id="btn3">
             <p> Un programme d'accompagnement </br> pour les entreprises </p>
@@ -48,7 +51,7 @@
     <a class="essai five" target="main">
         <div class="essai five" id="btn5">
             <p> Actualités </p>
-            <iframe src='//www.scoop.it/embed-topic/3050061.html?maxwidth=400' class="scoopit" frameBorder='0' scrolling='no'></iframe>
+            <iframe src='//www.scoop.it/embed-topic/3050061.html?maxwidth=300' class="scoopit" frameBorder='0' scrolling='no'></iframe>
         </div>
     </a>
     <a href="" class="essai six" ng-click="btn6()" target="main">
@@ -82,4 +85,46 @@
 
     </div>
 
+
+    <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+         <div class="modal-dialog">
+             <div class="panel panel-primary">
+                 <div class="panel-heading">
+                     <h4 class="panel-title" id="contactLabel"> Vous cherchez des infos ? Vous souhaitez prendre un rendez-vous ? </h4><span class="glyphicons glyphicons-info-sign"></span>
+                 </div>
+                 <form action="#" method="post" accept-charset="utf-8">
+                 <div class="modal-body2" style="padding: 5px;">
+                       <div class="row">
+                             <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                                 <input class="form-control" name="firstname" placeholder="Prénom" type="text" required autofocus />
+                             </div>
+                             <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                                 <input class="form-control" name="lastname" placeholder="Nom" type="text" required />
+                             </div>
+                         </div>
+                         <div class="row">
+                             <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                                 <input class="form-control" name="email" placeholder="Mail" type="text" required />
+                             </div>
+                         </div>
+                         <div class="row">
+                             <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                                 <input class="form-control" name="subject" placeholder="Sujet" type="text" required />
+                             </div>
+                         </div>
+                         <div class="row">
+                             <div class="col-lg-12 col-md-12 col-sm-12">
+                                 <textarea style="resize:vertical;" class="form-control" placeholder="Message..." rows="6" name="comment" required></textarea>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="panel-footer" style="margin-bottom:-14px;">
+                         <input type="submit" class="btn btn-success" value="Envoyer !"/>
+                         <input type="reset" class="btn btn-danger" value="Effacer" />
+                         <button style="float: right;" type="button" class="btn btn-default btn-close" data-dismiss="modal">Fermer</button>
+                     </div>
+                   </form>
+                 </div>
+             </div>
+         </div>
 </div>
