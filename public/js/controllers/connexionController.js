@@ -60,7 +60,7 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
     load();
 
 
-      $scope.menfou = function () {
+      $scope.band = function () {
           TweenLite.to(angular.element($("#caption")), 2, {
               css: {
                   top: 0
@@ -70,7 +70,7 @@ function connexionController($scope, $http, connexionService, $rootScope, $locat
           });
 
       };
-      $scope.menfou();
+      $scope.band();
 
 
 }

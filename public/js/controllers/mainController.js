@@ -44,7 +44,7 @@ function mainController($scope, $http, todoService, $rootScope) {
 
     //========================== BOUTON =========================
 
-    $scope.menfou = function() {
+    $scope.band = function() {
         TweenLite.to(angular.element($("#caption")), 2, {
             css: {
                 top: 0
@@ -96,7 +96,7 @@ function mainController($scope, $http, todoService, $rootScope) {
         });
 
     };
-    $scope.menfou();
+    $scope.band();
 
     $scope.btn1 = function() {
         TweenLite.to(angular.element($("#content")), 0.5, {
@@ -312,5 +312,6 @@ function mainController($scope, $http, todoService, $rootScope) {
     });
 
     //========================== BOUTON =========================
+
 
 }

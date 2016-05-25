@@ -9,7 +9,7 @@ function profilController($scope, $http, $rootScope, connexionService) {
     });
   }
 
-    $scope.menfou = function () {
+    $scope.band = function () {
         TweenLite.to(angular.element($("#caption")), 2, {
             css: {
                 top: 0
@@ -19,6 +19,6 @@ function profilController($scope, $http, $rootScope, connexionService) {
         });
 
     };
-    $scope.menfou();
+    $scope.band();
 
 }

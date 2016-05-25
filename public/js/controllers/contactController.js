@@ -5,7 +5,7 @@ function contactController($scope, $http, $rootScope, contactService, connexionS
         $scope.friendlist = res.data
     });
 
-    $scope.menfou = function() {
+    $scope.band = function() {
         TweenLite.to(angular.element($("#caption")), 2, {
             css: {
                 top: 0
@@ -14,5 +14,5 @@ function contactController($scope, $http, $rootScope, contactService, connexionS
             ease: Power2.easeOut
         });
     };
-    $scope.menfou();
+    $scope.band();
 }
