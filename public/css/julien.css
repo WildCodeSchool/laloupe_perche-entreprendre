@@ -2,7 +2,12 @@
     margin-top: 100px;
 }
 body {
-    background-image: none;
+    background-image: url(../img/background.jpg);
+   	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-family: "Ubuntu", arial;
 }
 
 /*=================================================================
@@ -39,7 +44,7 @@ body {
 /********* TILE ACTIVITY *******/
 
 .createActivity {
-    background-image: url(../img/tuiletest.jpg);
+    background-color: #006666;
     background-size: cover;
 }
 .createActivity:hover > .justHover {
@@ -62,9 +67,9 @@ body {
     transition: 0.4s ease-in;
 }
 .buySociety {
-  background-image: url(http://creativefan.com/files/2010/02/12142-fullsize-500x250.jpg);
-  background-size: cover;
-  min-width:200px;
+    background-color: #00cccc;
+    background-size: cover;
+    min-width:200px;
 }
 .buySociety:hover > .justHover {
     background-color: rgba(0, 0, 0, 0.5);
@@ -88,8 +93,8 @@ body {
 }
 
 .movePerche {
-  background-image: url(http://nilsetmareva.com/wp-content/uploads/2015/10/IMG_9212-700x300.jpg);
-  background-size: cover;
+    background-color: #ff9900;
+    background-size: cover;
 }
 
 .littlepetittitle {
@@ -237,6 +242,7 @@ body {
 /********************************/
 /*            Overlay           */
 /********************************/
+/*
 .overlay {
     position: absolute;
     width: 100%;
@@ -245,6 +251,7 @@ body {
     background-color: #080d15;
     opacity: .7;
 }
+*/
 
 /********************************/
 /*          Custom Buttons      */

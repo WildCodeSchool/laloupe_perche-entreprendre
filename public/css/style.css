@@ -4,7 +4,7 @@
 
 body {
     padding-top: 70px;
-    background-image: url(/img/toile.png);
+/*    background-image: url(/img/toile.png);*/
     background-size: contain;
     margin-top: 50px;
     overflow-x: hidden;

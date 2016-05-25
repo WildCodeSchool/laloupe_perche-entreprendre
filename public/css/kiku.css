@@ -2,83 +2,18 @@
     margin-top: 100px;
 }
 body {
-    background-image: none;
+    background-image: url(../img/background.jpg);
+   	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-family: "Ubuntu", arial;
 }
 
 /*=================================================================
                             Accueil
 =================================================================*/
 
-
-/*.tiles {
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-    align-content: center;
-    align-items: center;
-    padding: 0px 50px 0px 50px;
-    max-width: 90%;
-}
-.tiles > a {
-    flex: 30 4 auto;
-    align-self: stretch;
-    height: 200px;
-    min-width: 200px;
-    max-width: 800px;
-    margin-left: 10px;
-    margin-top: 30px;
-    left: 1200px;
-    cursor: pointer;
-    color: #FFF;
-    font-size: 25px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    padding-left: 10px;
-    text-align: left;
-    transition: 1s;
-}
-.one {
-    background: #06F;
-    flex-grow: 3;
-    flex-basis: 3;
-    width: 70%;
-    min-width: 50%;
-}
-.two {
-    background: #C30;
-    flex-grow: 1;
-    flex-basis: 0;
-    width: 30%;
-}
-.three {
-    background: #F60;
-    flex-grow: 2;
-    flex-basis: 0;
-}
-.four {
-    background: #C3C;
-}
-.five {
-    background: #F36;
-}
-.six {
-    background: #6C0;
-}
-.seven {
-    background-color: yellow;
-}
-.eight {
-    background-color: yellowgreen;
-}
-.scoopit {
-  margin-top:-33px;
-    width: 400px;
-    height: 180px;
-}
-*/
-
-/*body {
-  background-color:#6FBF7B;
-}*/
 
 .header {
   background-color:white;
@@ -109,7 +44,7 @@ body {
 /********* TILE ACTIVITY *******/
 
 .createActivity {
-    background-image: url(../img/tuiletest.jpg);
+    background-color: #006666;
     background-size: cover;
 }
 .createActivity:hover > .justHover {
@@ -132,9 +67,9 @@ body {
     transition: 0.4s ease-in;
 }
 .buySociety {
-  background-image: url(http://creativefan.com/files/2010/02/12142-fullsize-500x250.jpg);
-  background-size: cover;
-  min-width:200px;
+    background-color: #00cccc;
+    background-size: cover;
+    min-width:200px;
 }
 .buySociety:hover > .justHover {
     background-color: rgba(0, 0, 0, 0.5);
@@ -158,8 +93,8 @@ body {
 }
 
 .movePerche {
-  background-image: url(http://nilsetmareva.com/wp-content/uploads/2015/10/IMG_9212-700x300.jpg);
-  background-size: cover;
+    background-color: #ff9900;
+    background-size: cover;
 }
 
 .littlepetittitle {
@@ -185,6 +120,9 @@ body {
 /********* MODAL CREATION SOCIETY *******/
 
 
+.createBox {
+  margin-top:20%;
+}
 
 .mail {
   text-align:center;
@@ -197,9 +135,6 @@ body {
   text-align:center;
 }
 
-#success_message {
-  display: none;
-}
 
 
 
@@ -223,7 +158,7 @@ body {
     width: 300px;
     height: 100%;
     box-shadow: 0px 0px 5px black;
-    background-color: gainsboro;
+    background-color: rgb (0, 0, O,1);
 }
 .imgCard {
     height: 150px;
@@ -244,10 +179,10 @@ body {
 
 .fade-carousel {
     position: relative;
-    height: 100%;;
+    height: 100vh;
 }
 .fade-carousel .carousel-inner .item {
-    height: 100%;
+    height: 100vh;
 }
 .fade-carousel .carousel-indicators > li {
     margin: 0 2px;
@@ -284,18 +219,7 @@ body {
     font-weight: bold;
     margin: 0;
     padding: 0;
-    margin-top:-270px;
-
-}
-
-
-
-hgroup {
-  background-color:rgba(0, 0, 0, 0.6);
-}
-.hbutton {
-  margin-top:-10px !important;
-  border-radius:0px;
+    margin-top:-300px;
 }
 
 .fade-carousel .carousel-inner .item .hero {
@@ -318,6 +242,7 @@ hgroup {
 /********************************/
 /*            Overlay           */
 /********************************/
+/*
 .overlay {
     position: absolute;
     width: 100%;
@@ -326,6 +251,7 @@ hgroup {
     background-color: #080d15;
     opacity: .7;
 }
+*/
 
 /********************************/
 /*          Custom Buttons      */
@@ -348,24 +274,23 @@ hgroup {
 .fade-carousel .slides .slide-2,
 .fade-carousel .slides .slide-3 {
   height: 100vh;
-  background-size: contain;
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  transform:scaleX(1.3);
-  margin-left:20px;
 }
 .fade-carousel .slides .slide-1 {
-  background-image: url(../img/affiche.jpg);
+  background-image: url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818);
 }
 .fade-carousel .slides .slide-2 {
-  background-image: url(../img/afficheart.png);
+  background-image: url(https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?q=75&fm=jpg&s=c39d9a3bf66d6566b9608a9f1f3765af);
 }
 .fade-carousel .slides .slide-3 {
-  background-image: url(../img/moisdunumerique.png);
+  background-image: url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199912?q=75&fm=jpg&s=9bf9f2ef5be5cb5eee5255e7765cb327);
 }
 label {
   color:black;
 }
+
 
 /********************************/
 /*          Media Queries       */
