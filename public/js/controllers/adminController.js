@@ -1,5 +1,5 @@
 // ADMIN CONTROLLER
-function adminController($scope, $http, todoService) {
+function adminController($scope, $http) {
 
 
 }

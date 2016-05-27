@@ -4,7 +4,7 @@
 
 body {
     padding-top: 70px;
-    background-image: url(/img/toile.png);
+/*    background-image: url(/img/toile.png);*/
     background-size: contain;
     margin-top: 50px;
     overflow-x: hidden;
@@ -454,6 +454,7 @@ header {
     height: 100px;
     margin-top: 80px;
     margin-left: 20px;
+    z-index:9000;
 }
 
 
@@ -811,6 +812,8 @@ button {
                         MA CARTE
 =================================================================*/
 
+<<<<<<< HEAD
+=======
 .carte {
     text-align: center;
     border: solid 1px black;
@@ -837,7 +840,7 @@ button {
     background-color: rgba(4, 4, 4, 0.8);
 }
 .modal-dialog {
-    top: 20%;
+    top: 6%;
     width: 100%;
     position: absolute;
 }
@@ -890,7 +893,7 @@ button {
   position: absolute;
   top: 0;
   left: 0;
-  background: url(http://bootstraplovers.com/templates/assan-2.2/main-template/img/plus.png) no-repeat center center rgba(0, 0, 0, 0.7);
+  background: url(http://www.icone-png.com/png/35/34768.png) no-repeat center center rgba(0, 0, 0, 0.7);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
   opacity: 0;
@@ -911,3 +914,4 @@ button {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+>>>>>>> 28b33a9234fde95e59b9c2b9f7582d06810d2be2
