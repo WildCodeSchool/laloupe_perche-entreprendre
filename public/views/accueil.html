@@ -9,11 +9,30 @@
         <div class="tile controlCreateActivity createActivity ">
             <!-- <div class="justHover" data-toggle="modal" data-target=".bs-example-modal-lg"></div> -->
             <div class="justHover"></div>
-            <div class="littletitle">
+            <div class="littletitle littleActivity">
                 <p>Je crée mon activité</p>
 
                 <img class="icones" src="img/phone-call.png" alt="téléphone">
                 <img class="icones" src="img/envelope.png" alt="enveloppe">
+                <div class="account-wall">
+
+                  <form class="form-signin" style="text-align:center;">
+
+                    <h3> Vos informations </h3>
+                      <input type="name" class="form-control" ng-model="contactName" placeholder="Votre nom" required>
+                      <input type="firstname" class="form-control" ng-model="contactFirstname" placeholder="Votre prénom" required>
+                      <input type="fonction" class="form-control" ng-model="contactFunction" placeholder="Votre fonction" required>
+                      <input type="enterprise2" class="form-control" ng-model="contactEnterprise" placeholder="Votre structure" required>
+                      <input type="ville2" class="form-control" ng-model="contactVille" placeholder="Votre ville" required>
+                      <input type="mail" class="form-control" ng-model="contactEmail" placeholder="Votre email" required>
+                      <input type="phone" class="form-control" ng-model="contactPhone" placeholder="Votre numéro de téléphone" required>
+                      <textarea style="resize:vertical;" class="form-control" placeholder="Message..." rows="6" name="comment" required></textarea>
+
+                        <a href="#/"><button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 60px" ng-click="add()" type="submit">
+                          Envoi !</button></a>
+
+                  </form>
+                </div>
 
             </div>
         </div>
@@ -85,7 +104,7 @@
 
         <div class="tile controlBuySociety buySociety">
             <div class="justHover" data-toggle="modal" data-target="#"></div>
-            <p class="littletitle">Je reprends une entreprise</p>
+            <p class="littletitle littleSociety">Je reprends une entreprise</p>
         </div>
     </div>
 

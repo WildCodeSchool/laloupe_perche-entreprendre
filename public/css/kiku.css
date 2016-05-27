@@ -44,6 +44,7 @@ body {
 .createActivity {
     background-color: #006666;
     background-size: cover;
+    overflow:hidden;
 }
 .createActivity:hover > .justHover {
     background-color: rgba(0, 0, 0, 0.5);
@@ -58,6 +59,10 @@ body {
     transition: 0.6s ease-in;
     margin-top: -160px;
 }
+
+.littleActivity {
+  margin-top: -50px;
+}
 .justHover {
     background-color: rgba(0, 0, 0, 0);
     height: 100%;
@@ -68,6 +73,7 @@ body {
     background-color: #00cccc;
     background-size: cover;
     min-width: 200px;
+    transition:1s ease-out;
 }
 .buySociety:hover > .justHover {
     background-color: rgba(0, 0, 0, 0.5);
@@ -128,6 +134,7 @@ body {
 }
 .scoopitou {
     width: 300px;
+    transition:0.5s ease-out;
 }
 .myScoopit {
     margin-top: -5px;
@@ -137,7 +144,9 @@ body {
 }
 
 /********* MODAL CREATION SOCIETY *******/
-
+.icones {
+  margin-bottom: 30px;
+}
 .createBox {
     margin-top: 20%;
 }
@@ -321,6 +330,7 @@ label {
     color: black;
 }
 
+
 /********************************/
 
 
@@ -331,8 +341,4 @@ label {
 
 #sidebar-wrapper {
     box-shadow: 1px 0px 3px black;
-}
-
-.footer {
-  background-color:rgba(0,0,0, 0.6);
 }
