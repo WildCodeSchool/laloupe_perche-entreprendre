@@ -7,17 +7,19 @@ function mainController($scope, $http, $rootScope) {
         scrollTop: 0
     }, 'swing');
 
-    $(".hamburger").focusin(function () {
+    $(".hamburger").focusin(function() {
         $(".tiles").css("margin-left", "200px").css("transition", "0.6s");
 
     });
-    $(".hamburger").focusout(function () {
+    $(".hamburger").focusout(function() {
         $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
     });
 
+
+
     //========================== BOUTON =========================
 
-    $scope.menfou = function () {
+    $scope.band = function() {
         TweenLite.to(angular.element($("#caption")), 2, {
             css: {
                 top: 0
@@ -69,9 +71,9 @@ function mainController($scope, $http, $rootScope) {
         });
 
     };
-    $scope.menfou();
+    $scope.band();
 
-    $scope.btn1 = function () {
+    $scope.btn1 = function() {
         TweenLite.to(angular.element($("#content")), 0.5, {
             css: {
                 top: 0
@@ -101,7 +103,7 @@ function mainController($scope, $http, $rootScope) {
         $scope.content = 'ecosysteme';
     };
 
-    $scope.btn2 = function () {
+    $scope.btn2 = function() {
         TweenLite.to(angular.element($("#content")), 0.5, {
             css: {
                 top: 0
@@ -132,7 +134,7 @@ function mainController($scope, $http, $rootScope) {
 
     };
 
-    $scope.btn3 = function () {
+    $scope.btn3 = function() {
         TweenLite.to(angular.element($("#content")), 0.5, {
             css: {
                 top: 0
@@ -163,7 +165,7 @@ function mainController($scope, $http, $rootScope) {
 
     };
 
-    $scope.btn4 = function () {
+    $scope.btn4 = function() {
         TweenLite.to(angular.element($("#content")), 0.5, {
             css: {
                 top: 0
@@ -194,7 +196,7 @@ function mainController($scope, $http, $rootScope) {
 
     };
 
-    	$scope.btn5 = function () {
+    $scope.btn5 = function() {
         TweenLite.to(angular.element($("#content")), 0.5, {
             css: {
                 top: 0
@@ -220,12 +222,12 @@ function mainController($scope, $http, $rootScope) {
             },
             ease: Power2.easeOut
         });
-        angular.element($("#pagecaption")).text("Contact Us");
+        angular.element($("#pagecaption")).text("CONTACTEZ NOUS !");
         $scope.content = 'scoopit';
 
     };
 
-    $scope.btn6 = function () {
+    $scope.btn6 = function() {
         TweenLite.to(angular.element($("#content")), 0.5, {
             css: {
                 top: 0
@@ -256,7 +258,7 @@ function mainController($scope, $http, $rootScope) {
     };
 
 
-    $("#backbutton").click(function () {
+    $("#backbutton").click(function() {
         TweenLite.to(angular.element($("#content")), 1, {
             css: {
                 top: 1000

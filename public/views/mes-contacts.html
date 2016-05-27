@@ -17,21 +17,21 @@
 									<span></span>
 						</div>
 				</div>
-				<p>{{friend.userName}} {{friend.userFirstname}}</p>
-				<p>{{friend.userFunction}} à {{friend.userVille}}</p>
+				<p>{{friend.contactName}} {{friend.contactFirstname}}</p>
+				<p>{{friend.contactFunction}} à {{friend.contactVille}}</p>
 		</li>
 	</ul>
 	<div ng-repeat="friend in friendlist | filterBySearchFriend:searchFriend:user" class="modal fade profil-{{friend._id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 	  	<div class="modal-dialog modal-lg">
 	    		<div class="modal-content">
 	      			<div class="modal-body">
-									<h1 class="fullName">{{friend.userName + " " + friend.userFirstname }}</h1>
+									<h1 class="fullName">{{friend.contactName + " " + friend.contactFirstname }}</h1>
 	        				<img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
-	        				<h3 class="function">{{ friend.userFunction }} à {{ friend.userEnterprise }}</h3>
-	        				<h3 class="ville">{{ friend.userVille }}</h3>
-	        				<h3 class="phone">{{ friend.userPhone }}</h3>
-	        				<h3 class="mail">{{ friend.userEmail }}</h3>
-	        				<h3 class="note">{{friend.userNote}}</h3>
+	        				<h3 class="function">{{ friend.contactFunction }} à {{ friend.contactEnterprise }}</h3>
+	        				<h3 class="ville">{{ friend.contactVille }}</h3>
+	        				<h3 class="phone">{{ friend.contactPhone }}</h3>
+	        				<h3 class="mail">{{ friend.contactEmail }}</h3>
+	        				<h3 class="note">{{friend.contactNote}}</h3>
 									<div class="modal-footer">
 					              <center>
 					                	<button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>

@@ -1,4 +1,4 @@
-// ROUTES CONNEXIONS
+// ROUTES USERS
 var User = require('../models/user.js');
 module.exports = function (app) {
 

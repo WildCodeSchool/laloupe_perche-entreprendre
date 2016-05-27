@@ -12,7 +12,6 @@ var userSchema = new mongoose.Schema({
     userFirstname: String,
     userName: String,
     userPhone: String,
-    isElected: {type: Boolean, default: false}
 });
 
 var User = {
@@ -33,8 +32,13 @@ var User = {
     },
 
     update: function(req, res) {
-        User.model.findByIdAndUpdate(req.params.id, req.body, function() {
-            res.sendStatus(200);
+        User.model.findByIdAndUpdate(req.params.id, req.body, function(err) {
+            if (err){
+              console.log(err);
+              res.sendStatus(500)
+            } else {
+              res.sendStatus(200);
+            }
         })
     },
 

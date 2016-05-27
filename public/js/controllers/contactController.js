@@ -1,30 +1,46 @@
-
-function contactController($scope, $http, $rootScope, userService) {
+function contactController($scope, $http, $rootScope, contactService) {
   $scope.user = $rootScope.userId;
-  // $scope.friendlist = [
-	// 	{'name': 'Sébastien'},
-	// 	{'name': 'Marion'},
-	// 	{'name': 'Youssef'},
-	// 	{'name': 'Romain'},
-	// 	{'name': 'Laura'},
-	// 	{'name': 'Julien'},
-	// 	{'name': 'Marie'}
-	// ];
-  userService.get().then(function (res) {
+
+  contactService.get().then(function (res) {
       $scope.friendlist = res.data
 
   });
 
-  $scope.menfou = function () {
-      TweenLite.to(angular.element($("#caption")), 2, {
-          css: {
-              top: 0
-          },
-          delay: 1,
-          ease: Power2.easeOut
-      });
 
-  };
-  $scope.menfou();
+      $scope.add = function () {
+          var data = {};
+          data.contactVille = $scope.contactVille;
+          data.contactFunction = $scope.contactFunction;
+          data.contactEmail = $scope.contactEmail;
+          data.contactNote = $scope.contactNote;
+          data.contactMdp = $scope.contactMdp;
+          data.contactName = $scope.contactName;
+          data.contactFirstname = $scope.contactFirstname;
+          data.contactEnterprise = $scope.contactEnterprise;
+          data.contactPhone = $scope.contactPhone;
+console.log(data);
+          contactService.create(data).then(function (res) {
+          });
+          $scope.contactEmail = "";
+          $scope.contactMdp = "";
+          $scope.contactVille = "";
+          $scope.contactName = "";
+          $scope.contactFunction = "";
+          $scope.contactNote = "";
+          $scope.contactEnterprise = "";
+          $scope.contactFirstname = "";
+          $scope.contactPhone = "";
+      }
 
- }
+
+    $scope.band = function() {
+        TweenLite.to(angular.element($("#caption")), 2, {
+            css: {
+                top: 0
+            },
+            delay: 1,
+            ease: Power2.easeOut
+        });
+    };
+    $scope.band();
+}

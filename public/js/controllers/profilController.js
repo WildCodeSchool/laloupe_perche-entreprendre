@@ -2,15 +2,16 @@
 
 function profilController($scope, $http, $rootScope, userService) {
 
+  var id = $rootScope.userId._id;
   $scope.user = $rootScope.userId;
+  delete $scope.user._id;
 
   $scope.update = function () {
-    userService.update($scope.user._id ,$scope.user).then(function (res) {
-        load();
+    userService.update(id ,$scope.user).then(function (res) {
     });
   }
 
-    $scope.menfou = function () {
+    $scope.band = function () {
         TweenLite.to(angular.element($("#caption")), 2, {
             css: {
                 top: 0
@@ -20,6 +21,6 @@ function profilController($scope, $http, $rootScope, userService) {
         });
 
     };
-    $scope.menfou();
+    $scope.band();
 
 }
