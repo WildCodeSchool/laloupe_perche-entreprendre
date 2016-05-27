@@ -9,10 +9,10 @@
             <div class="justHover" data-toggle="modal" data-target=".bs-example-modal-lg"></div>
             <div class="littletitle">
                 <p>Je crée mon activité</p>
-<!--
-                <img src="img/phone-call.png" alt="téléphone">
-                <img src="img/envelope.png" alt="enveloppe">
--->
+
+                <img class="icones" src="img/phone-call.png" alt="téléphone">
+                <img class="icones" src="img/envelope.png" alt="enveloppe">
+
             </div>
         </div>
         <div class="tile scoopitou">
@@ -25,8 +25,7 @@
         <div class="tile myAgenda">
 
             <!-- CAROUSEL PROVISOIRE AGENDA-->
-            <!-- CAROUSEL PROVISOIRE AGENDA-->
-            <!-- CAROUSEL PROVISOIRE AGENDA -->
+       
             <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="5000" id="bs-carousel">
                 <!-- Overlay -->
                 <div class="overlay"></div>
@@ -108,8 +107,12 @@
         <div class="modal-content">
             <div class="modal-body">
                 <h1 class="fullName">Vous pouvez prendre rendez-vous</h1>
-                <h3 class="mail" ng-click="mail = !mail">Par Mail ></h3>
-                <h3 class="mail" ng-show="mail">Mail@Mail.fr</h3>
+                
+                 <img class="icones" ng-click="mail = !mail" src="img/envelope.png" alt="enveloppe">
+<!--                  <h3 class="mail" ng-show="mail">Mail@Mail.fr</h3>-->
+                
+
+                             
                 <!-- <form class="well form-horizontal" action=" " method="post" id="contact_form" ng-show="mail"> -->
                   <div class="account-wall" ng-show="mail">
                     <center>
@@ -132,9 +135,15 @@
 
                     </form>
                   </div>
+<!--
 
                 <h3 class="phone" ng-click="phone = !phone">Par Téléphone ></h3>
                 <h3 class="phone phoneNumber" ng-show="phone">02 37 34 56 78</h3>
+-->
+                
+                <img class="icones" ng-click="phone = !phone" src="img/phone-call.png" alt="téléphone">
+                 <h3 class="phone phoneNumber" ng-show="phone">02 37 34 56 78</h3>
+                
             </div>
 
 
