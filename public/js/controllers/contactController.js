@@ -20,6 +20,7 @@ function contactController($scope, $http, $rootScope, contactService) {
           data.contactPhone = $scope.contactPhone;
 console.log(data);
           contactService.create(data).then(function (res) {
+
           });
           $scope.contactEmail = "";
           $scope.contactMdp = "";
