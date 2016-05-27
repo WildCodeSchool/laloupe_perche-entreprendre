@@ -15,8 +15,13 @@ body {
 =================================================================*/
 
 
-.header {
-  background-color:white;
+.title {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.accueil{
+    margin-top: 150px;
 }
 .range {
     display: flex;
@@ -46,10 +51,21 @@ body {
 .createActivity {
     background-color: #006666;
     background-size: cover;
+    opacity: 0.9;
+    width:800px;
+/*    border-radius: 10px;*/
+
+}
+
+.icones {
+    width: 80px;
+    height: auto;
+    text-align: center;
 }
 .createActivity:hover > .justHover {
     background-color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
+/*     border-radius: 10px;*/
 }
 .createActivity:hover > .littletitle {
   color:rgba(255, 255, 255, 1);
@@ -59,17 +75,22 @@ body {
   font-size:2em;
   transition:0.6s ease-in;
   margin-top:-160px;
+    opacity: 0.9;
+    
 }
 .justHover {
     background-color: rgba(0, 0, 0, 0);
     height: 100%;
     width: 100%;
+    opacity: 0.9;
     transition: 0.4s ease-in;
 }
 .buySociety {
     background-color: #00cccc;
     background-size: cover;
     min-width:200px;
+    opacity: 0.9;
+/*    border-radius: 10px;*/
 }
 .buySociety:hover > .justHover {
     background-color: rgba(0, 0, 0, 0.5);
@@ -81,40 +102,52 @@ body {
 .myAgenda {
   overflow:hidden;
   min-width:200px;
+    opacity: 0.9;
+/*    border-radius: 10px;*/
+
 }
 
 .videoCard {
     width: 400px;
     overflow:hidden;
+    opacity: 0.9;
+/*    border-radius: 10px;*/
 }
 .youtubeVideo {
   transform: scaleY(1.2);
   margin-top:-4px;
+    opacity: 0.9;
+/*    border-radius: 10px;*/
 }
 
 .movePerche {
     background-color: #ff9900;
     background-size: cover;
+    opacity: 0.9;
+/*    border-radius: 10px;*/
+
 }
 
 .littlepetittitle {
   color:rgba(0, 0, 0, 1);
   font-size:2em;
   transition:0.6s ease-in;
+    opacity: 0.9;
 }
 
 /********* TILE SCOOPIT *******/
-.createActivity {
-  width:800px;
-}
+
 .scoopitou {
   width: 300px;
+/*    border-radius: 10px;*/
+     
 }
  .myScoopit {
     margin-top: -5px;
     margin-left:-0px;
     width: 300px;
     height: 255px;
+/*     border-radius: 10px;*/
 }
 
 /********* MODAL CREATION SOCIETY *******/

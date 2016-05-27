@@ -4,10 +4,10 @@
 
 body {
     padding-top: 70px;
-/*    background-image: url(/img/toile.png);*/
     background-size: contain;
     margin-top: 50px;
     overflow-x: hidden;
+
 }
 
 .password {
@@ -343,6 +343,7 @@ body {
     height: 65px;
     max-height:100px;
     margin-top: 50px;
+
 }
 
 .footer a {
@@ -447,14 +448,13 @@ header {
     margin: auto;
     top: 0px;
     opacity: 0, 1;
-    position: absolute;
+    position: absolute;-
 }
 
 .logoperche {
-    height: 100px;
-    margin-top: 80px;
-    margin-left: 20px;
-    z-index:9000;
+    height: 150px;
+    margin-top: 40px;
+    margin-left: 200px;
 }
 
 
@@ -817,8 +817,6 @@ button {
                         MA CARTE
 =================================================================*/
 
-<<<<<<< HEAD
-=======
 .carte {
     text-align: center;
     border: solid 1px black;
@@ -919,7 +917,6 @@ button {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-<<<<<<< HEAD
 
 
 
