@@ -11,7 +11,7 @@ var contactSchema = new mongoose.Schema({
     contactEnterprise: String,
     contactFirstname: String,
     contactName: String,
-    contactPhone: String,
+    contactPhone: String
 });
 
 var Contact = {
@@ -21,14 +21,16 @@ var Contact = {
     create: function(req, res) {
       console.log(req.body);
         Contact.model.create(req.body,
-            function(err) {
+            function(err, data) {
               if (!err) {
+                console.log(data);
                 res.sendStatus(200);
               } else {
                 console.log(err);
               }
             });
     },
+
 
     findAll: function(req, res) {
         Contact.model.find(function(err, data) {

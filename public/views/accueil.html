@@ -1,12 +1,14 @@
-<div class="title"> 
+
+<div class="title">
 <h1>L'effet réseau</h1>
 </div>
 
 
 <div class="container accueil">
-    <div class="range">
-        <div class="tile createActivity">
-            <div class="justHover" data-toggle="modal" data-target=".bs-example-modal-lg"></div>
+    <div class="range first">
+        <div class="tile controlCreateActivity createActivity ">
+            <!-- <div class="justHover" data-toggle="modal" data-target=".bs-example-modal-lg"></div> -->
+            <div class="justHover"></div>
             <div class="littletitle">
                 <p>Je crée mon activité</p>
 
@@ -21,11 +23,11 @@
     </div>
 
 
-    <div class="range">
-        <div class="tile myAgenda">
+    <div class="range middle">
+              <div class="tile controleMyAgenda myAgenda">
 
             <!-- CAROUSEL PROVISOIRE AGENDA-->
-       
+
             <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="5000" id="bs-carousel">
                 <!-- Overlay -->
                 <div class="overlay"></div>
@@ -81,13 +83,13 @@
 
 
 
-        <div class="tile buySociety">
+        <div class="tile controlBuySociety buySociety">
             <div class="justHover" data-toggle="modal" data-target="#"></div>
             <p class="littletitle">Je reprends une entreprise</p>
         </div>
     </div>
 
-    <div class="range">
+    <div class="range last">
         <div class="tile videoCard">
             <iframe class="youtubeVideo" width="400" height="245" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -107,12 +109,12 @@
         <div class="modal-content">
             <div class="modal-body">
                 <h1 class="fullName">Vous pouvez prendre rendez-vous</h1>
-                
+
                  <img class="icones" ng-click="mail = !mail" src="img/envelope.png" alt="enveloppe">
 <!--                  <h3 class="mail" ng-show="mail">Mail@Mail.fr</h3>-->
-                
 
-                             
+
+
                 <!-- <form class="well form-horizontal" action=" " method="post" id="contact_form" ng-show="mail"> -->
                   <div class="account-wall" ng-show="mail">
                     <center>
@@ -140,10 +142,10 @@
                 <h3 class="phone" ng-click="phone = !phone">Par Téléphone ></h3>
                 <h3 class="phone phoneNumber" ng-show="phone">02 37 34 56 78</h3>
 -->
-                
+
                 <img class="icones" ng-click="phone = !phone" src="img/phone-call.png" alt="téléphone">
                  <h3 class="phone phoneNumber" ng-show="phone">02 37 34 56 78</h3>
-                
+
             </div>
 
 
