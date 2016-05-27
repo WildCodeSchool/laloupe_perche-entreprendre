@@ -1,11 +1,13 @@
 // PROFIL CONTROLLER
-function profilController($scope, $http, $rootScope, connexionService) {
 
+function profilController($scope, $http, $rootScope, userService) {
+
+  var id = $rootScope.userId._id;
   $scope.user = $rootScope.userId;
+  delete $scope.user._id;
 
   $scope.update = function () {
-    connexionService.update($scope.user._id ,$scope.user).then(function (res) {
-        load();
+    userService.update(id ,$scope.user).then(function (res) {
     });
   }
 

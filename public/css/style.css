@@ -4,7 +4,7 @@
 
 body {
     padding-top: 70px;
-    background-image: url(/img/toile.png);
+/*    background-image: url(/img/toile.png);*/
     background-size: contain;
     margin-top: 50px;
     overflow-x: hidden;
@@ -513,6 +513,11 @@ header {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+.form-signin input[type="ville2"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
 
 .form-signin input[type="enterprise"] {
     margin-bottom: 10px;
@@ -811,6 +816,8 @@ button {
                         MA CARTE
 =================================================================*/
 
+<<<<<<< HEAD
+=======
 .carte {
     text-align: center;
     border: solid 1px black;
@@ -911,6 +918,7 @@ button {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+<<<<<<< HEAD
 
 
 

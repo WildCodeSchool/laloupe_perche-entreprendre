@@ -15,7 +15,6 @@
 <!--buttons-->
 
 <!-- <div class="tiles" style=" overflow:hidden; margin-top:35px;">
-
     <a href="" class="essai one" ng-click="btn1()" target="main">
         <div class="essai one" id="btn1">
             <p> Un écosystème dynamique </p><img class="imgemploi" src="/img/emploi-630x0.JPG" alt="environnement"> </div>
@@ -81,10 +80,9 @@
             <img class="imgvtt" src="/img/img_2219.jpg" alt="environnement">
         </div>
         <div ng-show="content=='scoopit'">
-
         </div>
-
     </div>
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
@@ -130,6 +128,8 @@
              </div>
          </div>
 =======
+=======
+>>>>>>> 17f1988810030ac8b6cce79b31847b354d4c103d
 </div> -->
 
 <div class="container accueil">
@@ -236,121 +236,29 @@
                 <h1 class="fullName">Vous pouvez prendre rendez-vous</h1>
                 <h3 class="mail" ng-click="mail = !mail">Par Mail ></h3>
                 <h3 class="mail" ng-show="mail">Mail@Mail.fr</h3>
-                <form class="well form-horizontal" action=" " method="post" id="contact_form" ng-show="mail">
-                    <fieldset>
+                <!-- <form class="well form-horizontal" action=" " method="post" id="contact_form" ng-show="mail"> -->
+                  <div class="account-wall" ng-show="mail">
+                    <center>
+                        <img src="img/logo_pole.png" alt="" width="280px">
+                    </center>
+                    <form class="form-signin" style="text-align:center;">
 
-                        <!-- Text input-->
+                      <h3> Vos informations </h3>
+                        <input type="name" class="form-control" ng-model="contactName" placeholder="Votre nom" required>
+                        <input type="firstname" class="form-control" ng-model="contactFirstname" placeholder="Votre prénom" required>
+                        <input type="fonction" class="form-control" ng-model="contactFunction" placeholder="Votre fonction" required>
+                        <input type="enterprise2" class="form-control" ng-model="contactEnterprise" placeholder="Votre structure" required>
+                        <input type="ville2" class="form-control" ng-model="contactVille" placeholder="Votre ville" required>
+                        <input type="mail" class="form-control" ng-model="contactEmail" placeholder="Votre email" required>
+                        <input type="phone" class="form-control" ng-model="contactPhone" placeholder="Votre numéro de téléphone" required>
+                        <textarea style="resize:vertical;" class="form-control" placeholder="Message..." rows="6" name="comment" required></textarea>
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Nom</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input name="first_name" placeholder="Nom" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
+                          <a href="#/"><button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 60px" ng-click="add()" type="submit">
+                            Envoi !</button></a>
 
-                        <!-- Text input-->
+                    </form>
+                  </div>
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Prénom</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input name="last_name" placeholder="Prénom" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">E-Mail</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                    <input name="email" placeholder="Adresse E-Mail" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- Text input-->
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Téléphone</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                    <input name="phone" placeholder="(02)12 34 56 78" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Text input-->
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Adresse</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                    <input name="address" placeholder="Adresse" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Text input-->
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Ville</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                    <input name="city" placeholder="Ville" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <!-- Text input-->
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Code postal</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                    <input name="zip" placeholder="Code Postal" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- Text area -->
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Votre Message</label>
-                            <div class="col-md-4 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                    <textarea class="form-control" name="Ecrivez ici" placeholder="Project Description"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Success message -->
-                        <div class="alert alert-success" role="alert" id="success_message">Bravo <i class="glyphicon glyphicon-thumbs-up"></i> Merci de nous avoir contacté, nous viendrons à vous très prochainement.</div>
-
-                        <!-- Button -->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label"></label>
-                            <div class="col-md-4">
-                                <button type="submit" class="btn btn-warning">Envoyer <span class="glyphicon glyphicon-send"></span></button>
-                            </div>
-                        </div>
-
-                    </fieldset>
-                </form>
                 <h3 class="phone" ng-click="phone = !phone">Par Téléphone ></h3>
                 <h3 class="phone phoneNumber" ng-show="phone">02 37 34 56 78</h3>
             </div>

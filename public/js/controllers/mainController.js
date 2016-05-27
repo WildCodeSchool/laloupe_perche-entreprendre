@@ -1,5 +1,5 @@
 // MAIN CONTROLLER
-function mainController($scope, $http, todoService, $rootScope) {
+function mainController($scope, $http, $rootScope) {
     $scope.title = "Todo List";
     $scope.content = '';
     $scope.connect = $rootScope.connect;
@@ -15,31 +15,6 @@ function mainController($scope, $http, todoService, $rootScope) {
         $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
     });
 
-    function load() {
-        todoService.get().then(function(res) {
-            $scope.todos = res.data;
-        });
-    }
-
-    $scope.add = function() {
-        var data = {};
-        data.description = $scope.description;
-        todoService.create(data).then(function(res) {
-            load();
-        });
-        $scope.description = "";
-    }
-    $scope.update = function(todo) {
-        todoService.update(todo._id, todo).then(function(res) {
-            load();
-        });
-    }
-    $scope.delete = function(todo) {
-        todoService.delete(todo._id).then(function(res) {
-            load();
-        });
-    }
-    load();
 
 
     //========================== BOUTON =========================

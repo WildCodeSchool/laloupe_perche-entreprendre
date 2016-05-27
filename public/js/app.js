@@ -14,7 +14,7 @@ function config($routeProvider) {
         })
         .when('/formulaire', {
             templateUrl: 'views/formulaire.html',
-            controller: 'connexionController'
+            controller: 'contactController'
         })
         .when('/forgetPassword', {
             templateUrl: 'views/forgetPassword.html',
@@ -33,9 +33,13 @@ function config($routeProvider) {
             templateUrl: 'views/mon-profil.html',
             controller: 'profilController'
         })
+     .when('/annonces', {
+            templateUrl: 'views/annonces.html',
+            controller: 'mainController'
+        })
         .when('/administration', {
             templateUrl: 'views/administration.html',
-            controller: 'adminController'
+            controller: 'userController'
         })
         .otherwise({
             redirectTo: '/'
@@ -104,10 +108,9 @@ angular.module('app', ['ngRoute'])
     .controller('connexionController', connexionController)
     .controller('carteController', carteController)
     .controller('mentionsController', mentionsController)
-    .controller('adminController', adminController)
+    .controller('userController', userController)
     .controller('profilController', profilController)
-    .service('todoService', todoService)
-    .service('connexionService', connexionService)
+    .service('userService', userService)
     .service('contactService', contactService)
     .filter('filterBySearchFriend', filterBySearchFriend)
     /*.factory('', )*/
