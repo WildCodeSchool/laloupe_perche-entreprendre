@@ -28,9 +28,8 @@ body {
     width: 500px;
     background-color: red;
     box-shadow: 1px 1px 7px black;
-    margin-bottom: 30px;
+    margin: 5px;
     color: white;
-    transition: 0.5s ease-in;
 }
 .tile:hover {
     box-shadow: 1px 1px 5px black;
@@ -45,6 +44,7 @@ body {
     background-color: #006666;
     background-size: cover;
     overflow:hidden;
+    transition: 0.6s ease-out;
 }
 .createActivity:hover > .justHover {
     background-color: rgba(0, 0, 0, 0.5);
@@ -61,7 +61,7 @@ body {
 }
 
 .littleActivity {
-  margin-top: -50px;
+  margin-top: -80px;
 }
 .justHover {
     background-color: rgba(0, 0, 0, 0);
@@ -143,6 +143,72 @@ body {
     height: 255px;
 }
 
+/******** TILE FINANCEURS *******/
+.partners {
+  width:1128px !important;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center space-around;
+  align-items: center;
+  background-color: rgba(121, 224, 51, 0.9) !important;
+}
+.partners > .littlepetittitle {
+  color:white;
+  width:100%;
+  text-shadow: 1px 1px 4px black;
+}
+.financeur {
+  width:200px;
+  height: 100px;
+  background-color:lightgreen;
+  box-shadow:1px 1px 5px black;
+
+}
+
+.primoFinanceur {
+  background-image:url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/payPercheOrnais.gif);
+  background-size:contain;
+  background-position: center center;
+  border-right:40px white solid;
+    border-left:40px white solid;
+}
+.secondoFinanceur {
+  background-image: url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/paysDuPerche.gif);
+  background-size: contain;
+  background-position: center center;
+  border-right:50px white solid;
+    border-left:50px white solid;
+    border-top:20px white solid;
+    border-bottom:20px white solid;
+}
+  .tertioFinanceur {
+    background-image: url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/europe.gif);
+  background-size: contain;
+  background-position: center center;
+  border-right:50px darkblue solid;
+    border-left:50px darkblue solid;
+    border-top:20px darkblue solid;
+    border-bottom:20px darkblue solid;
+}
+    .quartoFinanceur {
+      background-image: url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/basseNormandie.gif);
+    background-size: contain;
+    background-position: center center;
+    border-right:40px white solid;
+      border-left:45px white solid;
+      border-top:10px white solid;
+      border-bottom:10px white solid;
+  }
+  .quintoFinanceur {
+    background-image: url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/europeEngage.gif);
+  background-size: contain;
+  background-position: center center;
+  border-right:40px white solid;
+    border-left:45px white solid;
+    border-top:10px white solid;
+    border-bottom:10px white solid;
+}
 /********* MODAL CREATION SOCIETY *******/
 .icones {
   margin-bottom: 30px;

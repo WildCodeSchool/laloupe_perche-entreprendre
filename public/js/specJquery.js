@@ -1,58 +1,354 @@
 $(window).load(function() {
-    reAdd();
+
+    bigCreateTile();
+
 
 
 
     //Grossissement tuile "créer activité/contact"
-    function reAdd() {
+    function bigCreateTile() {
         $('.controlCreateActivity').click(function() {
+            $(this).animate({
+              width: '1128px'
+            }, 800, function() {
+              $(this).css({
+              height: '800px'}).css('z-index', 4);
+            });
+
+
+            //Control scoop it tile
+            $('.scoopitou').animate({
+              transform: 'scale(0)',
+              opacity:'0',
+              transition: '0.2s'
+            }, {
+            duration: 800,
+            complete: function() {
+              $(this).animate({
+                  transform: 'translateX(-415px)'
+                }, 500, function() {
+                $(this).css({
+                  opacity: '1',
+                  transform: 'translateX(-415px)'
+                });
+              });
+            }
+            });
+
+            //Control agenda tile
+            $('.myAgenda').animate({
+              transform: 'scale(0)',
+              opacity:'0',
+              transition: '0.2s'
+            }, {
+            duration: 800,
+            complete: function() {
+              $(this).animate({
+                  transform: 'translateX(164px) translateY(-280px)'
+                }, 500, function() {
+                $(this).css({
+                  width: '800px',
+                  height: '250px',
+                  opacity: '1',
+                  transform: 'translateX(164px) translateY(-280px)'
+                });
+              });
+            }
+            });
+
+            //Control buy Society tile
+            $('.buySociety').animate({
+              transform: 'scale(0)',
+              opacity:'0',
+              transition: '0.2s'
+            }, {
+            duration: 800,
+            complete: function() {
+              $(this).animate({
+                  transform: 'translateY(-280px)'
+                }, 500, function() {
+                $(this).css({
+                  width: '1128px',
+                  opacity: '1',
+                  transform: 'translateY(-280px)'
+                });
+              });
+            }
+            });
+
+            //Control youtube and MovetoPerche tiles
+            $('.last').animate({
+              transform: 'scale(0)',
+              opacity:'0',
+              transition: '0.2s'
+            }, {
+            duration: 800,
+            complete: function() {
+              $(this).animate({
+                  transform: 'translateY(-280px)'
+                }, 500, function() {
+                $(this).css({
+                  opacity: '1',
+                  transform: 'translateY(-280px)'
+                });
+              });
+            }
+            });
+
+
+            //Control youtube and MovetoPerche tiles
+            $('.ultimate').animate({
+              transform: 'scale(0)',
+              opacity:'0',
+              transition: '0.2s',
+              marginBottom: '-280px'
+            }, {
+            duration: 800,
+            complete: function() {
+              $(this).animate({
+                  transform: 'translateY(-280px)'
+                }, 500, function() {
+                $(this).css({
+                  opacity: '1',
+                  transform: 'translateY(-280px)'
+
+                });
+              });
+            }
+            });
+
+
+
+
+
+
+
+
+
+
+
+            /*//Control Create/contact tile
+            $('.controlCreateActivity').css('width', '1128px');
+            setTimeout(function() {
+                $('.controlCreateActivity').css('height', '800px');
+            }, 1000);
+
+
+           //Control scoop it tile
             $('.scoopitou').css({
-                transform: 'translateX(-415px)'
+                transform: 'scale(0)',
+                opacity: '0',
+                transition: '0.2s'
             });
-            $(this).css({
-                width: '1128px',
-                height: '800px'
-            }).addClass('newCreateActivity').removeClass('controlCreateActivity');
-            $('.littleActivity').css('margin-top', '-780px');
+            setTimeout(function() {
+                $('.scoopitou').css({
+                    transform: 'translateX(-415px)',
+                    opacity: '1'
+                });
+            }, 1500); /*
+
+            //Control agenda tile
             $('.myAgenda').css({
-                width: '800px',
-                height: '250px',
-                transform: 'translateY(-280px) translateX(164px)'
+                transform: 'scale(0)',
+                opacity: '0',
+                transition: '0.2s'
             });
+            setTimeout(function() {
+                $('.myAgenda').css({
+                    transition: '0.5s',
+                    width: '800px',
+                    height: '250px',
+                    transform: 'translateY(-280px) translateX(164px)',
+                    opacity: '1'
+                });
+            }, 1300);
+
+            //Control Reprendre activité tile
             $('.buySociety').css({
-                width: '1128px',
-                transform: 'translateY(-280px)'
+                transform: 'scale(0)',
+                opacity: '0',
+                transition: '0.2s'
             });
-            $('.last').css('transform', 'translateY(-280px)').css('margin-bottom', '-280px');
-            add();
+            setTimeout(function() {
+                $('.buySociety').css({
+                    transition: '0.5s',
+                    width: '1128px',
+                    transform: 'translateY(-280px)',
+                    opacity: '1'
+                });
+            }, 1300);
+
+            //Control youtube and MovetoPerche tile
+            $('.last').css({
+                transform: 'scale(0)',
+                opacity: '0',
+                transition: '0.2s'
+            });
+            setTimeout(function() {
+                $('.last').css({
+                    transition: '0.5s',
+                    transform: 'translateY(-280px)',
+                    opacity: '1',
+                });
+            }, 1300);
+
+            //Control financeur tile
+            $('.ultimate').css({
+                transform: 'scale(0)',
+                opacity: '0',
+                transition: '0.2s'
+            });
+            setTimeout(function() {
+                $('.ultimate').css({
+                    transition: '0.5s',
+                    transform: 'translateY(-280px)',
+                    opacity: '1',
+                    marginBottom: '-280px'
+                });
+            }, 1300);
+
+            setTimeout (function() {
+            $('.createActivity').removeClass("controlCreateActivity").addClass("newCreateActivity");
+          }, 1100);
+          */
+            $('.createActivity').removeClass("controlCreateActivity").addClass("newCreateActivity");
+            smallCreateTile();
+
+
         });
     }
+
     // Fin fonction  Aggrandissement tuile "créer activité/contact"
 
 
     //Rétrecissement tuile "créer activité/contact"
-    function add() {
+    function smallCreateTile() {
         $('.newCreateActivity').click(function() {
-            $(this).css({
-                width: '',
-                height: ''
+
+            //Control Create/contact tile
+            $('.newCreateActivity').animate({
+              width: '800px'
+            }, 900, function() {
+              $('.createActivity').css('height', '250px');
             });
-            $(this).addClass('controlCreateActivity');
-            $('.myAgenda').css({
-                width: '',
-                heiht: '',
-                transform: 'translateY(0px) translateX(0px)'
+
+
+
+            //Control scoop it tile
+            $('.scoopitou').css('z-index', '2').animate({
+              transform: 'scale(0)',
+              opacity:'0',
+              transition: '0.2s'
+            }, {
+            duration: 800,
+            complete: function() {
+              $(this).animate({
+                  transform: 'translateX(0px)'
+                }, 500, function() {
+                $(this).css({
+                  transform: 'translateX(0px)',
+                  opacity: '1',
+                  transition: '0.2s'
+                });
+              });
+            }
             });
-            $('.littleActivity').css('margin-top', '');
-            $('.buySociety').css({
-                width: '',
-                transform: 'translateY(0px)'
+
+
+            //Control agenda tile
+            $('.myAgenda').animate({
+              transform: 'scale(0)',
+              opacity:'0',
+              transition: '0.2s'
+            }, {
+            duration: 800,
+            complete: function() {
+              $(this).animate({
+                  transform: 'translateX(0px) translateY(0px)'
+                }, 500, function() {
+                $(this).css({
+                  width: '550px',
+                  height: '250px',
+                  opacity: '1',
+                  transform: 'translateX(0px) translateY(0px)'
+                });
+              });
+            }
             });
-            $('.scoopitou').css({
-                transform: 'translateX(0px)'
+
+
+
+
+            //Control buy Society tile
+            $('.buySociety').animate({
+              transform: 'scale(0)',
+              opacity:'0',
+              transition: '0.2s'
+            }, {
+            duration: 800,
+            complete: function() {
+              $(this).animate({
+                  transform: 'translateY(0px)'
+                }, 500, function() {
+                $(this).css({
+                  width: '550px',
+                  opacity: '1',
+                  transform: 'translateY(0px)'
+                });
+              });
+            }
             });
-            $('.last').css('transform', 'translateY(0px)').css('margin-bottom', '0px');
-            reAdd();
+
+
+            //Control youtube and MovetoPerche tiles
+            $('.last').animate({
+              transform: 'scale(0)',
+              opacity:'0',
+              transition: '0.2s'
+            }, {
+            duration: 800,
+            complete: function() {
+              $(this).animate({
+                  transform: 'translateY(0px)'
+                }, 500, function() {
+                $(this).css({
+                  opacity: '1',
+                  transform: 'translateY(0px)'
+                });
+              });
+            }
+            });
+
+
+
+            //Control youtube and MovetoPerche tiles
+            $('.ultimate').animate({
+              transform: 'scale(0)',
+              opacity:'0',
+              transition: '0.2s',
+              marginBottom: '0px'
+            }, {
+            duration: 800,
+            complete: function() {
+              $(this).animate({
+                  transform: 'translateY(0px)'
+                }, 500, function() {
+                $(this).css({
+                  opacity: '1',
+                  transform: 'translateY(0px)'
+
+                });
+              });
+            }
+            });
+
+
+
+            $('.createActivity').removeClass("newCreateActivity").addClass("controlCreateActivity");
+
+            bigCreateTile();
+
+
 
         });
     }
@@ -73,11 +369,6 @@ $(window).load(function() {
             $('.buySociety').css({
                 width: '1128px'
             });
-            /*if ($('.createActivity').width() == 250) {
-              $('.myAgenda').css('transform', 'translateY(280px)');
-            } else {
-              $('.myAgenda').css('margin-top', '');
-            }*/
             agendaAdd();
 
         });
@@ -162,39 +453,33 @@ $(window).load(function() {
 
     movePercheReAdd()
 
-    //Grossissement tuile "society"
+    //Grossissement tuile "installez-vous dans le Perche"
     function movePercheReAdd() {
         $('.movePerche').click(function() {
             $(this).css({
                 width: '1128px',
                 height: '600px'
             });
+            $('.videoCard').fadeOut(200);
             movePercheAdd();
         });
     }
-    // Fin fonction  Aggrandissement tuile "society"
+    // Fin fonction  Aggrandissement tuile "installez-vous dans le Perche"
 
 
 
-    //Rétrecissement tuile "society"
+    //Rétrecissement tuile "installez-vous dans le Perche"
     function movePercheAdd() {
-      $('.movePerche').click(function() {
-          $(this).css({
-              width: '',
-              height: ''
-          });
-          movePercheReAdd();
-      });
+        $('.movePerche').click(function() {
+            $(this).css({
+                width: '',
+                height: ''
+            });
+            movePercheReAdd();
+        });
 
     }
-    // Fin fonction  Rétrécissement tuile "society"
-
-
-
-
-
-
-
+    // Fin fonction  Rétrécissement tuile "installez-vous dans le Perche"
 
 
 });
