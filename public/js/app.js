@@ -12,7 +12,7 @@ function config($routeProvider) {
             templateUrl: 'views/connexion.html',
             controller: 'connexionController'
         })
-        .when('/formulaire', {
+        .when('/formulaire/:userId', {
             templateUrl: 'views/formulaire.html',
             controller: 'contactController'
         })
@@ -101,7 +101,7 @@ function filterBySearchFriend() {
     }
 }
 
-angular.module('app', ['ngRoute'])
+angular.module('app', ['ngRoute','monospaced.qrcode'])
     .config(config)
     .controller('mainController', mainController)
     .controller('contactController', contactController)

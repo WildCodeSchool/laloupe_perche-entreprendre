@@ -1,4 +1,5 @@
-function contactController($scope, $http, $rootScope, contactService) {
+function contactController($scope, $http, $rootScope, contactService, $routeParams) {
+    console.log ($routeParams);
   $scope.user = $rootScope.userId;
 
   contactService.get().then(function (res) {
