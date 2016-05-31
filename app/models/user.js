@@ -9,6 +9,7 @@ var userSchema = new mongoose.Schema({
     userFunction: String,
     userNote: String,
     userEnterprise: String,
+    userImg: String,
     userFirstname: String,
     userName: String,
     userPhone: String,

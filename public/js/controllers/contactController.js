@@ -1,5 +1,4 @@
 function contactController($scope, $http, $rootScope, contactService, $routeParams) {
-    console.log ($routeParams);
   $scope.user = $rootScope.userId;
 
   contactService.get().then(function (res) {
@@ -20,7 +19,6 @@ function contactController($scope, $http, $rootScope, contactService, $routePara
           data.contactEnterprise = $scope.contactEnterprise;
           data.contactImg = $scope.contactImg[0];
           data.contactPhone = $scope.contactPhone;
-console.log($scope.contactImg[0]);
           contactService.create(data).then(function (res) {
 
           });

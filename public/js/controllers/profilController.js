@@ -23,4 +23,19 @@ function profilController($scope, $http, $rootScope, userService) {
     };
     $scope.band();
 
+    //  ------------   Flow   -----------
+
+    $scope.userImg = [];
+
+    $scope.processFiles = function (files) {
+      angular.forEach(files, function (flowFile, i) {
+        var fileReader = new FileReader();
+        fileReader.onload = function (event) {
+          var uri = event.target.result;
+          $scope.userImg[i] = uri;
+          console.log($scope.userImg);
+        };
+        fileReader.readAsDataURL(flowFile.file);
+      });
+    };
 }

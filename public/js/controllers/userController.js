@@ -8,6 +8,7 @@ function userController($scope, $http, userService, $rootScope, $location) {
           var data = {};
           data.userVille = $scope.userVille;
           data.userFunction = $scope.userFunction;
+          data.userImg = $scope.userImg[0];
           data.userEmail = $scope.userEmail;
           data.userNote = $scope.userNote;
           data.userMdp = $scope.userMdp;
@@ -21,6 +22,7 @@ function userController($scope, $http, userService, $rootScope, $location) {
           });
           $scope.userEmail = "";
           $scope.userMdp = "";
+          $scope.userImg = "";
           $scope.userVille = "";
           $scope.userName = "";
           $scope.userFunction = "";
@@ -29,4 +31,19 @@ function userController($scope, $http, userService, $rootScope, $location) {
           $scope.userFirstname = "";
           $scope.userPhone = "";
       }
+      //  ------------   Flow   -----------
+
+      $scope.userImg = [];
+
+      $scope.processFiles = function (files) {
+        angular.forEach(files, function (flowFile, i) {
+          var fileReader = new FileReader();
+          fileReader.onload = function (event) {
+            var uri = event.target.result;
+            $scope.userImg[i] = uri;
+            console.log($scope.userImg);
+          };
+          fileReader.readAsDataURL(flowFile.file);
+        });
+      };
 }

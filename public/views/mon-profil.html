@@ -10,7 +10,6 @@
 
 </div>
 -->
-<div class="container">
 
 <div class="container">
 
@@ -32,13 +31,31 @@
                 <input type="note" class="form-control" ng-model="user.userNote" placeholder="Note à propos de vous" required>
 
                                         <h3> Votre photo </h3>
-                                          <div class="col-md-4">
-                                            <input id="filebutton" name="filebutton" class="input-file" type="file">
-                                          </div>
+                                        <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+
+                                        					<center>
+                                        						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="download" class="btn btn-success">Télécharger une image</button>
+                                        					</center>
+
+
+                                                  <center>
+                        <span class="text"></span><img class="preview" flow-img="image" />
+                        <br>
+                        <span class="text"></span> <img class="preview" ng-src="{{friend.userImg}}" />
+                        <p>
+                          <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="image.cancel()"></span>
+
+                        </p>
+                      </center>
+
+
+                                        				</div>
 
                 <!--<div class="alert alert-danger" ng-show="connection==1" role="alert">Veuillez entrer un email ou un mot de passe valide.</div>-->
-                <a href="#/"><button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 60px" ng-click="update()" type="submit">
+                <a href="#/"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="update()" type="submit">
                     Mettre à jour</button></a>
+                  </br>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
 
             </form>
 
