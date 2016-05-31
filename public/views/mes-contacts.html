@@ -12,10 +12,15 @@
 	<ul>
 		<li class="col-sm-2 friend" ng-repeat="friend in friendlist | filterBySearchFriend:searchFriend:user">
 				<div class="item-img-wrap ">
-						<img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
-						<div class="item-img-overlay" data-toggle="modal" data-target=".profil-{{friend._id}}" href="">
-									<span></span>
-						</div>
+					<div ng-show='!friend.contactImg'>
+							<img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
+					</div>
+					<div ng-show="friend.contactImg">
+					<img class="imgCard" src="{{friend.contactImg}}" alt="Photo de profil" />
+					</div>
+					<div class="item-img-overlay" data-toggle="modal" data-target=".profil-{{friend._id}}" href="">
+							<span></span>
+					</div>
 				</div>
 				<p>{{friend.contactName}} {{friend.contactFirstname}}</p>
 				<p>{{friend.contactFunction}} à {{friend.contactVille}}</p>
@@ -26,8 +31,13 @@
 	    		<div class="modal-content">
 	      			<div class="modal-body">
 									<h1 class="fullName">{{friend.contactName + " " + friend.contactFirstname }}</h1>
-	        				<img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
-	        				<h3 class="function">{{ friend.contactFunction }} à {{ friend.contactEnterprise }}</h3>
+	        				<div ng-show='!friend.contactImg'>
+	        						<img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
+	        				</div>
+									<div ng-show="friend.contactImg">
+	        				<img class="imgCard" src="{{friend.contactImg}}" alt="Photo de profil" />
+									</div>
+									<h3 class="function">{{ friend.contactFunction }} à {{ friend.contactEnterprise }}</h3>
 	        				<h3 class="ville">{{ friend.contactVille }}</h3>
 	        				<h3 class="phone">{{ friend.contactPhone }}</h3>
 	        				<h3 class="mail">{{ friend.contactEmail }}</h3>

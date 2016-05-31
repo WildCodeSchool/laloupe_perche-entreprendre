@@ -18,8 +18,9 @@ function contactController($scope, $http, $rootScope, contactService, $routePara
           data.contactName = $scope.contactName;
           data.contactFirstname = $scope.contactFirstname;
           data.contactEnterprise = $scope.contactEnterprise;
+          data.contactImg = $scope.contactImg[0];
           data.contactPhone = $scope.contactPhone;
-console.log(data);
+console.log($scope.contactImg[0]);
           contactService.create(data).then(function (res) {
 
           });
@@ -28,6 +29,7 @@ console.log(data);
           $scope.contactVille = "";
           $scope.contactName = "";
           $scope.contactFunction = "";
+          $scope.contactImg = [];
           $scope.contactNote = "";
           $scope.contactEnterprise = "";
           $scope.contactFirstname = "";
@@ -45,4 +47,27 @@ console.log(data);
         });
     };
     $scope.band();
+
+    //  ------------   Flow   -----------
+
+  	$scope.contactImg = [];
+  	// datas.images = [];
+  	// datas.push($scope.datas);
+  	$scope.processFiles = function (files) {
+  		angular.forEach(files, function (flowFile, i) {
+  			var fileReader = new FileReader();
+  			fileReader.onload = function (event) {
+  				var uri = event.target.result;
+  				$scope.contactImg[i] = uri;
+          console.log($scope.contactImg[0]);
+  				// var image = new Object();
+  				// image["image"] = $scope.imageStrings[i];
+  				// datas.images.push(image);
+  				// console.log(datas);
+  				// console.log($scope.datas);
+  			};
+  			fileReader.readAsDataURL(flowFile.file);
+  		});
+  	};
+
 }

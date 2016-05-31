@@ -11,6 +11,7 @@ var contactSchema = new mongoose.Schema({
     contactEnterprise: String,
     contactFirstname: String,
     contactName: String,
+    contactImg: String,
     contactPhone: String
 });
 
