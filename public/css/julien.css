@@ -76,7 +76,7 @@ body {
   transition:0.6s ease-in;
   margin-top:-160px;
     opacity: 0.9;
-    
+
 }
 .justHover {
     background-color: rgba(0, 0, 0, 0);
@@ -140,7 +140,7 @@ body {
 .scoopitou {
   width: 300px;
 /*    border-radius: 10px;*/
-     
+
 }
  .myScoopit {
     margin-top: -5px;
@@ -272,7 +272,7 @@ body {
 /********************************/
 /*          Custom Buttons      */
 /********************************/
-.btn.btn-lg {padding: 10px 40px;}
+/*.btn.btn-lg {padding: 10px 40px;}*/
 .btn.btn-hero,
 .btn.btn-hero:hover,
 .btn.btn-hero:focus {
@@ -306,4 +306,3 @@ body {
 label {
   color:black;
 }
-

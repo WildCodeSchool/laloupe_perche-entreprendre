@@ -101,7 +101,7 @@ function filterBySearchFriend() {
     }
 }
 
-angular.module('app', ['ngRoute','monospaced.qrcode'])
+angular.module('app', ['ngRoute','monospaced.qrcode','flow'])
     .config(config)
     .controller('mainController', mainController)
     .controller('contactController', contactController)
@@ -114,4 +114,16 @@ angular.module('app', ['ngRoute','monospaced.qrcode'])
     .service('contactService', contactService)
     .filter('filterBySearchFriend', filterBySearchFriend)
     /*.factory('', )*/
+    .config(['flowFactoryProvider', function (flowFactoryProvider) {
+  flowFactoryProvider.defaults = {
+    target: '/upload',
+    permanentErrors: [404, 500, 501]
+  };
+  // You can also set default events:
+  flowFactoryProvider.on('catchAll', function (event) {
+    console.log('catchAll', arguments);
+  });
+  // Can be used with different implementations of Flow.js
+  // flowFactoryProvider.factory = fustyFlowFactory;
+}])
     .run(run);
