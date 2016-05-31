@@ -959,3 +959,10 @@ body { margin-top:20px; }
 .panel {
   border: none !important;
 }
+
+
+@font-face {
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: ...;
+}

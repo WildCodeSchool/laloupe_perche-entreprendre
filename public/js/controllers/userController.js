@@ -1,7 +1,7 @@
 // USER CONTROLLER
 function userController($scope, $http, userService, $rootScope, $location) {
   $('html, body').animate({ scrollTop: 0 }, 'swing');
-  $rootScope.connect = 0;
+  $scope.user = $rootScope.userId;
 
 
       $scope.add = function () {
