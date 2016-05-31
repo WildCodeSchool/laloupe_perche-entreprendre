@@ -14,3 +14,39 @@
 
 
 <button name="bouton">Exporter l'ensemble des données</button>
+
+<div class="container">
+
+    <div class="row  col-md-6 col-md-offset-3">
+
+        <div class="account-wall">
+            <center>
+                <h2>Nouvel élu</h2>
+            </center>
+            <form class="form-signin" style="text-align:center;">
+              <h3> Ses identifiants </h3>
+                <input type="email" class="form-control" ng-model="contactEmail" placeholder=" adresse mail" required>
+                <input type="password" class="form-control" ng-model="contactMdp" placeholder=" mot de passe" required>
+                <input type="password" class="form-control" placeholder="Confirmez mot de passe" required>
+              <h3> Ses informations </h3>
+                <input type="name" class="form-control" ng-model="contactName" placeholder=" nom" required>
+                <input type="firstname" class="form-control" ng-model="contactFirstname" placeholder=" prénom" required>
+                <input type="fonction" class="form-control" ng-model="contactFunction" placeholder="fonction" required>
+                <input type="enterprise" class="form-control" ng-model="contactEnterprise" placeholder="structure" required>
+                <input type="ville" class="form-control" ng-model="contactVille" placeholder="ville" required>
+                <input type="phone" class="form-control" ng-model="contactPhone" placeholder="numéro de téléphone" required>
+                <input type="note" class="form-control" ng-model="contactNote" placeholder="à propos" required>
+
+
+                        <h3> Sa photo </h3>
+                          <div class="col-md-4">
+                            <input id="filebutton" name="filebutton" class="input-file" type="file">
+                          </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
