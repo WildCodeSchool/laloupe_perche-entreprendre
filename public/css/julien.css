@@ -2,7 +2,7 @@
     margin-top: 100px;
 }
 body {
-    background-image: url(../img/background.jpg);
+    background-image: url(../img/paysage.28_perche.16.JPG);
    	background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -185,10 +185,11 @@ body {
     align-items: center;
     align-self: center;
     align-content: center;
-    width: 300px;
+    width: 400px;
     height: 100%;
     box-shadow: 0px 0px 5px black;
     background-color: rgba(0,0,0, 0.6);
+    color: aliceblue;
 }
 .imgCard {
     height: 150px;
