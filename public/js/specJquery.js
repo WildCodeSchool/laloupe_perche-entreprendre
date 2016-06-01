@@ -1,13 +1,23 @@
 $(window).load(function() {
 
+//===============================================================\\
+/////////////////////////////////////////////////////////////////||
+/////////////////////////   DEBUT   /////////////////////////////||
+////////// Utilisation de Jquery afin de d'afficher des /////////||
+//////////    modales lors d'un click sur une tuile   ///////////||
+/////////////////////////////////////////////////////////////////||
+/////////////////////////////////////////////////////////////////||
+
+
+
+    //Appel fonction grossissement de la tuile create/contact
     bigCreateTile();
-
-
-
 
     //Grossissement tuile "créer activité/contact"
     function bigCreateTile() {
         $('.controlCreateActivity').click(function() {
+
+          // Objectif : supprimer les marges pour l'aggrandissement de la tuile
             $('body').css({
                 padding: '0px',
                 overflowX: 'hidden',
@@ -20,6 +30,8 @@ $(window).load(function() {
                 width: '102%',
                 height: '100%'
             })
+
+            //Changement de la taille et de la position de la tuile
             $(this).animate({
                 marginLeft: '0px',
                 marginTop: '0px',
@@ -40,12 +52,16 @@ $(window).load(function() {
                     }, 'slow');
                 }
             });
+
+            //Cacher les tuiles (sauf la tuile concernée) et le footer
             $('.tile').not('.controlCreateActivity').css({
                 display : 'none'
             });
             $('.footer').not('.controlCreateActivity').css({
                 display: 'none'
             });
+
+            //Appel fonction rétrécissement de la tuile
             smallCreateTile()
         });
     }
@@ -55,12 +71,15 @@ $(window).load(function() {
     //Rétrecissement tuile "créer activité/contact"
     function smallCreateTile() {
         $('.close-button').click(function() {
+
+            //Changement taille de la modale
             $('.form-pop').animate({
                 height: '150px'
             }, {
                 duration: 200,
                 complete: function() {
 
+                    //Retour des éléments dans leur taille originale
                     $('.form-pop').css({
                         opacity: '0',
                     });
@@ -74,7 +93,6 @@ $(window).load(function() {
                             $('body').css({
                                 padding: ''
                             });
-
                             $('.container').css({
                                 marginLeft: '',
                                 marginRight: '',
@@ -82,7 +100,6 @@ $(window).load(function() {
                                 width: '',
                                 height: ''
                             });
-
                             $(this).animate({
                                 height: '250px',
                                 width: '800px',
@@ -102,7 +119,6 @@ $(window).load(function() {
     bigAgendaTile();
 
     //Grossissement tuile "agenda"
-
     function bigAgendaTile() {
         $('.controlMyAgenda').click(function() {
             $('body').css({
@@ -199,15 +215,6 @@ $(window).load(function() {
                                 }, 400);
                               }
                             });
-
-
-                            /*$(this).animate({
-                                height: '250px',
-                                width: '550px',
-                                opacity: '1'
-                            }, 200);
-                            $('.tile').show();
-                            $('.footer').show();*/
                         }
                     });
                 }
@@ -428,6 +435,14 @@ $(window).load(function() {
 
     }
     // Fin fonction  Rétrécissement tuile "installez-vous dans le Perche"
+
+//===============================================================\\
+/////////////////////////////////////////////////////////////////||
+//////////////////////       FIN        /////////////////////////||
+////////// Utilisation de Jquery afin de d'afficher des /////////||
+//////////    modales lors d'un click sur une tuile   ///////////||
+/////////////////////////////////////////////////////////////////||
+/////////////////////////////////////////////////////////////////||
 
 
 });
