@@ -36,7 +36,7 @@ $(window).load(function() {
               $('.icones').hide();
               $('.form-pop').animate({
                 height: '100%',
-                paddingTop:'70px',
+                paddingTop:'50px',
                 opacity: '1'
               }, 'slow');
             }
@@ -55,115 +55,43 @@ $(window).load(function() {
 
     //Rétrecissement tuile "créer activité/contact"
     function smallCreateTile() {
-        $('.newCreateActivity').click(function() {
+        $('.close-button').click(function() {
+          $('body').css({
+            padding: '',
+            overflowX: 'visible'
+          });
+          $('.container').css({
+            marginLeft: '',
+            marginRight: '',
+            marginTop: '',
+            width: '',
+            height: ''
+          })
+          $(this).animate({
+            marginLeft: '',
+            marginTop: '',
+            width: '',
+            height: '',
+            opacity: '',
+            zIndex: '3',
+            transition: ''
+          }, {
+            duration: 200,
+            complete: function(){
+              $('.littletitle').css({
+                marginTop:'-50px'
+              });
+              $('.icones').hide();
+              $('.form-pop').animate({
+                height: '100%',
+                paddingTop:'50px',
+                opacity: '1'
+              }, 'slow');
+            }
+          });
 
-            //Control Create/contact tile
-            $('.newCreateActivity').animate({
-                width: '800px'
-            }, 900, function() {
-                $('.createActivity').css('height', '250px');
-            });
 
-            //Control scoop it tile
-            $('.scoopitou').css('z-index', '2').animate({
-                transform: 'scale(0)',
-                opacity: '0',
-                transition: '0.2s'
-            }, {
-                duration: 800,
-                complete: function() {
-                    $(this).animate({
-                        transform: 'translateX(0px)'
-                    }, 500, function() {
-                        $(this).css({
-                            transform: 'translateX(0px)',
-                            opacity: '1',
-                            transition: '0.2s'
-                        });
-                    });
-                }
-            });
 
-            //Control agenda tile
-            $('.myAgenda').animate({
-                transform: 'scale(0)',
-                opacity: '0',
-                transition: '0.2s'
-            }, {
-                duration: 800,
-                complete: function() {
-                    $(this).animate({
-                        transform: 'translateX(0px) translateY(0px)'
-                    }, 500, function() {
-                        $(this).css({
-                            width: '550px',
-                            height: '250px',
-                            opacity: '1',
-                            transform: 'translateX(0px) translateY(0px)'
-                        });
-                    });
-                }
-            });
-
-            //Control buy Society tile
-            $('.buySociety').animate({
-                transform: 'scale(0)',
-                opacity: '0',
-                transition: '0.2s'
-            }, {
-                duration: 800,
-                complete: function() {
-                    $(this).animate({
-                        transform: 'translateY(0px)'
-                    }, 500, function() {
-                        $(this).css({
-                            width: '550px',
-                            opacity: '1',
-                            transform: 'translateY(0px)'
-                        });
-                    });
-                }
-            });
-
-            //Control youtube and MovetoPerche tiles
-            $('.last').animate({
-                transform: 'scale(0)',
-                opacity: '0',
-                transition: '0.2s'
-            }, {
-                duration: 800,
-                complete: function() {
-                    $(this).animate({
-                        transform: 'translateY(0px)'
-                    }, 500, function() {
-                        $(this).css({
-                            opacity: '1',
-                            transform: 'translateY(0px)'
-                        });
-                    });
-                }
-            });
-
-            //Control youtube and MovetoPerche tiles
-            $('.ultimate').animate({
-                transform: 'scale(0)',
-                opacity: '0',
-                transition: '0.2s',
-                marginBottom: '0px'
-            }, {
-                duration: 800,
-                complete: function() {
-                    $(this).animate({
-                        transform: 'translateY(0px)'
-                    }, 500, function() {
-                        $(this).css({
-                            opacity: '1',
-                            transform: 'translateY(0px)'
-
-                        });
-                    });
-                }
-            });
 
             $('.createActivity').removeClass("newCreateActivity").addClass("controlCreateActivity");
             bigCreateTile();
