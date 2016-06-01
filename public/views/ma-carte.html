@@ -3,7 +3,8 @@
 
         <h1 class="fullName">{{connexion.userName + " " + connexion.userFirstname }}</h1>
 
-        <img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
+        <img class="imgCard" ng-show="connexion.userImg" src="{{connexion.userImg}}" alt="Photo de profil" />
+        <img class="imgCard" ng-show="!connexion.userImg" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
 
         <h3 class="function">{{ connexion.userFunction }} à {{ connexion.userEnterprise }}</h3>
         <h3 class="ville">{{ connexion.userVille }}</h3>

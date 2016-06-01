@@ -41,19 +41,16 @@
                             						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="download" class="btn btn-success">Télécharger une image</button>
                             					</center>
 
-                                      <!-- <center>
 
-                          							<span class="text"></span><img ng-show="friend.contactImg" class="preview" flow-img="image" />
+                                      <center>
+            <span class="text"></span><img class="preview" flow-img="image" />
+            <br>
+            <span class="text"></span> <img class="preview" ng-src="{{friend.contactImg}}" />
+            <p>
+              <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="image.cancel()"></span>
 
-                          							<span class="text"></span> <img class="preview" ng-src="{{contactImg}}" />
-
-                          							<p>
-
-                          								<span class="btn glyphicon glyphicon-trash" ng-show="$flow.files.length" ng-click="image.cancel()"></span>
-
-                          							</p>
-
-                          						</center> -->
+            </p>
+          </center>
 
 
                             				</div>

@@ -844,7 +844,7 @@ button {
     background-color: rgba(4, 4, 4, 0.8);
 }
 .modal-dialog {
-    top: 6%;
+    /*top: 6%;*/
     width: 100%;
     position: absolute;
 }
@@ -959,4 +959,11 @@ body { margin-top:20px; }
 }*/
 .panel {
   border: none !important;
+}
+
+
+@font-face {
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: ...;
 }

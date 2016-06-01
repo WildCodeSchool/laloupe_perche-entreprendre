@@ -1,5 +1,4 @@
 function contactController($scope, $http, $rootScope, contactService, $routeParams) {
-    console.log ($routeParams);
   $scope.user = $rootScope.userId;
 
   contactService.get().then(function (res) {
@@ -20,7 +19,6 @@ function contactController($scope, $http, $rootScope, contactService, $routePara
           data.contactEnterprise = $scope.contactEnterprise;
           data.contactImg = $scope.contactImg[0];
           data.contactPhone = $scope.contactPhone;
-console.log($scope.contactImg[0]);
           contactService.create(data).then(function (res) {
 
           });
@@ -51,23 +49,34 @@ console.log($scope.contactImg[0]);
     //  ------------   Flow   -----------
 
   	$scope.contactImg = [];
-  	// datas.images = [];
-  	// datas.push($scope.datas);
+
   	$scope.processFiles = function (files) {
   		angular.forEach(files, function (flowFile, i) {
   			var fileReader = new FileReader();
   			fileReader.onload = function (event) {
   				var uri = event.target.result;
   				$scope.contactImg[i] = uri;
-          console.log($scope.contactImg[0]);
-  				// var image = new Object();
-  				// image["image"] = $scope.imageStrings[i];
-  				// datas.images.push(image);
-  				// console.log(datas);
-  				// console.log($scope.datas);
+          console.log($scope.contactImg);
   			};
   			fileReader.readAsDataURL(flowFile.file);
   		});
   	};
+
+
+  //   function readURL(input) {
+  //      if (input.files && input.files[0]) {
+  //          var reader = new FileReader();
+   //
+  //          reader.onload = function (e) {
+  //              $('#blah').attr('src', e.target.result);
+  //          }
+   //
+  //          reader.readAsDataURL(input.files[0]);
+  //      }
+  //  }
+   //
+  //  $("#imgInp").change(function(){
+  //      readURL(this);
+  //  });
 
 }

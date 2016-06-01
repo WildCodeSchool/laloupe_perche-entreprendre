@@ -5,7 +5,6 @@ function connexionController($scope, $http, userService, $rootScope, $location) 
 
     function load() {
         userService.get().then(function (res) {
-            $scope.todos = res.data;
             $scope.connexions = res.data;
         });
     }
@@ -24,18 +23,6 @@ function connexionController($scope, $http, userService, $rootScope, $location) 
 
     load();
 
-
-      $scope.band = function () {
-          TweenLite.to(angular.element($("#caption")), 2, {
-              css: {
-                  top: 0
-              },
-              delay: 1,
-              ease: Power2.easeOut
-          });
-
-      };
-      $scope.band();
 
 
 }

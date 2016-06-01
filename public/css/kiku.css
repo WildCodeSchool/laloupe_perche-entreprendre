@@ -136,6 +136,7 @@ body {
 }
 .buySociety:hover > .justHover {
     background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 .buySociety:hover > .littletitle {
     color: rgba(255, 255, 255, 1);
@@ -397,7 +398,7 @@ body {
 /********************************/
 
 
-/*
+
 .overlay {
     /*position: absolute;*/
     width: 100%;
@@ -406,7 +407,6 @@ body {
     background-color: #080d15;
     opacity: .7;
 }
-*/
 
 
 /********************************/
