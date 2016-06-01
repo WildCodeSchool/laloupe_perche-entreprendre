@@ -92,7 +92,50 @@ $(window).load(function() {
     bigAgendaTile();
 
     //Grossissement tuile "agenda"
+
     function bigAgendaTile() {
+        $('.controlMyAgenda').click(function() {
+            $('body').css({
+                padding: '0px',
+                overflowX: 'hidden'
+            });
+            $('.container').css({
+                marginLeft: '0px',
+                marginRight: '0px',
+                marginTop: '0px',
+                width: '102%',
+                height: '100%'
+            })
+            $(this).animate({
+                marginLeft: '0px',
+                marginTop: '0px',
+                width: '100%',
+                height: '100px',
+                opacity: '1',
+                zIndex: '999',
+                transition: 'easeOut'
+            }, {
+                duration: 200,
+                complete: function() {
+                    $('.littletitle').css({
+                        marginTop: '-50px'
+                    });
+                    $('.form-pop-agenda').animate({
+                        height: '100%',
+                        paddingTop: '50px',
+                        opacity: '1',
+                        zIndex: '998'
+                    }, 'slow');
+
+                }
+            });
+            $('.tile').not(this).css({
+                display: 'none'
+            });
+
+            smallAgendaTile();
+        });
+
 
 
     }
@@ -103,9 +146,44 @@ $(window).load(function() {
     ///////// Non fonctionnel !!!!!!! /////////
     ///////////////////////////////////////////
     //Rétrecissement tuile "Agenda"
-    function smallAgendaTile() {
+  function smallAgendaTile() {
 
+        $('.close-button').click(function() {
+            $('body').css({
+                padding: '',
+                overflowX: 'visible'
+            });
+            $('.container').css({
+                marginLeft: '',
+                marginRight: '',
+                marginTop: '',
+                width: '',
+                height: ''
+            });
+            $('.form-pop-agenda').animate({
+                height: '150px'
+            }, {
+                duration: 200,
+                complete: function() {
+                    $('.form-pop-agenda').css({
+                        opacity: '0',
+                    });
+                    $('.controlMyAgenda').animate({
+                        height: '250px',
+                        width: '550px'
+                    }, {
+                        duration: 400,
+                        complete: function() {
+                            $('.tile').show();
+                        }
+                    });
+
+                }
+            });
+              bigAgendaTile();
+        });
     }
+
     // Fin fonction  Rétrécissement tuile "Agenda"
     ////////////////////////////////////////
     ////////// A Terminer //////////////////
@@ -203,6 +281,8 @@ $(window).load(function() {
     }
 
 // Fin fonction  Rétrécissement tuile "society"
+    
+
 
 
 bigMovePercheTile()
