@@ -33,10 +33,8 @@ $(window).load(function() {
                     $('.littletitle').css({
                         marginTop: '-50px'
                     });
-                    $('.icones').hide();
                     $('.form-pop').animate({
                         height: '100%',
-                        paddingTop: '50px',
                         opacity: '1'
                     }, 'slow');
                 }
