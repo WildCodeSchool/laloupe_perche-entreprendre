@@ -11,29 +11,18 @@ function profilController($scope, $http, $rootScope, userService) {
     });
   }
 
-    $scope.band = function () {
-        TweenLite.to(angular.element($("#caption")), 2, {
-            css: {
-                top: 0
-            },
-            delay: 1,
-            ease: Power2.easeOut
-        });
-
-    };
-    $scope.band();
-
     //  ------------   Flow   -----------
 
-    $scope.userImg = [];
+
 
     $scope.processFiles = function (files) {
+      $scope.img = [];
       angular.forEach(files, function (flowFile, i) {
         var fileReader = new FileReader();
         fileReader.onload = function (event) {
           var uri = event.target.result;
-          $scope.userImg[i] = uri;
-          console.log($scope.userImg);
+          $scope.img[i] = uri;
+          $scope.user.userImg = $scope.img[0];
         };
         fileReader.readAsDataURL(flowFile.file);
       });

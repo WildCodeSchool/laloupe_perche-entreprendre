@@ -14,8 +14,31 @@
         </div>
     </div>
   </div>
+  <div class="range middle">
+    <div class="tile createActivity">
+        <!-- <div class="justHover" data-toggle="modal" data-target="modal-user"></div> -->
+        <div class="justHover" data-toggle="modal" data-target="#modal-user" href="">
+            <span></span>
+        </div>
+        <p class="littletitle">Gérer les utilisateurs</p>
+    </div>
+    <div class="tile createActivity">
+        <!-- <div class="justHover" data-toggle="modal" data-target="modal-user"></div> -->
+        <div class="justHover" data-toggle="modal" data-target="#modal-contact" href="">
+            <span></span>
+        </div>
+        <p class="littletitle">Gérer les contacts</p>
+    </div>
+    <div class="tile buySociety">
+        <div class="justHover" data-toggle="modal" data-target="#"></div>
+        <p class="littletitle">Exporter les données</p>
+    </div>
+    <div class="tile movePerche">
+      <div class="justHover" data-toggle="modal" data-target="#"></div>
+        <p class="littletitle">Administrer l'agenda</p>
+    </div>
+  </div>
 </div>
-</center>
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
         <div class="modal-content" style="margin-top: -250px">
@@ -62,7 +85,7 @@
 
 
                                     				</div>
-                          <a href="#/"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="add()" type="submit">
+                          <a data-dismiss="modal"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="add()" type="submit">
                             Créer !</button></a>
                           </br>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
@@ -74,3 +97,68 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modal-user" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+        <div class="modal-content" style="margin-top: -250px">
+            <div class="modal-body">
+              <ul class="list-group">
+                  <li class="list-group-item" ng-repeat="user in userlist" style="padding-bottom: 50px;">
+                      <form class="form-inline">
+                          <div class="form-group">
+                            <input type="name" class="form-control" ng-model="user.userName" placeholder="Votre nom" required>
+                            <input type="firstname" class="form-control" ng-model="user.userFirstname" placeholder="Votre prénom" required>
+                            <input type="email" class="form-control" ng-model="user.userEmail" placeholder="Votre email" required>
+                            <input type="password" class="form-control" ng-model="user.userMdp" placeholder="Votre mot de passe" required>
+                            <input type="fonction" class="form-control" ng-model="user.userFunction" placeholder="Votre fonction" required>
+                            <input type="enterprise" class="form-control" ng-model="user.userEnterprise" placeholder="Votre structure" required>
+                            <input type="ville" class="form-control" ng-model="user.userVille" placeholder="Votre ville" required>
+                            <input type="phone" class="form-control" ng-model="user.userPhone" placeholder="Votre numéro de téléphone" required>
+                            <input type="note" class="form-control" ng-model="user.userNote" placeholder="Note à propos de vous" required>
+
+                          </div>
+                          <div>
+                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" ng-click="update(user)">Mettre à jour</button></a>
+                              <a data-dismiss="modal"><button type="submit" class="btn btn-danger" ng-click="delete(user)">Supprimer</button></a>
+                          </div>
+
+                      </form>
+                  </li>
+                </br>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+
+              </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+        <div class="modal-content" style="margin-top: -250px">
+            <div class="modal-body">
+              <ul class="list-group">
+                  <li class="list-group-item" ng-repeat="contact in contactlist" style="padding-bottom: 50px;">
+                      <form class="form-inline">
+                          <div class="form-group">
+                            <input type="name" class="form-control" ng-model="contact.contactName" placeholder="Votre nom" required>
+                            <input type="firstname" class="form-control" ng-model="contact.contactFirstname" placeholder="Votre prénom" required>
+                            <input type="email" class="form-control" ng-model="contact.contactEmail" placeholder="Votre email" required>
+                            <input type="fonction" class="form-control" ng-model="contact.contactFunction" placeholder="Votre fonction" required>
+                            <input type="enterprise" class="form-control" ng-model="contact.contactEnterprise" placeholder="Votre structure" required>
+                            <input type="ville" class="form-control" ng-model="contact.contactVille" placeholder="Votre ville" required>
+                            <input type="phone" class="form-control" ng-model="contact.contactPhone" placeholder="Votre numéro de téléphone" required>
+                            <input type="note" class="form-control" ng-model="contact.contactNote" placeholder="Note à propos de vous" required>
+
+                          </div>
+                              <a data-dismiss="modal"><button type="submit" class="btn btn-danger" ng-click="delete(contact)">Supprimer</button></a>
+                      </form>
+                  </li>
+                </br>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+
+              </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</center>

@@ -1,8 +1,17 @@
 // USER CONTROLLER
-function userController($scope, $http, userService, $rootScope, $location) {
+function userController($scope, $http, userService,contactService, $rootScope, $location) {
   $('html, body').animate({ scrollTop: 0 }, 'swing');
   $scope.user = $rootScope.userId;
 
+
+    function load(){
+      userService.get().then(function (res) {
+          $scope.userlist = res.data
+      });
+      contactService.get().then(function (res) {
+          $scope.contactlist = res.data
+      });
+    }
 
       $scope.add = function () {
           var data = {};
@@ -31,6 +40,26 @@ function userController($scope, $http, userService, $rootScope, $location) {
           $scope.userFirstname = "";
           $scope.userPhone = "";
       }
+      $scope.update = function(user){
+        var id = user._id;
+        $rootScope.userId = user;
+        delete user._id;
+		    userService.update(id, user).then(function(res){
+			    load();
+		    });
+	     }
+      $scope.delete = function(user){
+        userService.delete(user._id).then(function(res){
+          load();
+
+        });
+        contactService.delete(contact.contact._id).then(function(res){
+          load();
+
+        });
+      }
+      load();
+
       //  ------------   Flow   -----------
 
       $scope.userImg = [];
