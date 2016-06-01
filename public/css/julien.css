@@ -92,6 +92,14 @@ body {
     opacity: 0.9;
     transition: 0.4s ease-in;
 }
+
+.form-pop-society {
+    background-image: url(../img/_MG_8503.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 20%;
+}
 .buySociety {
     background-color: #00cccc;
     background-size: cover;
@@ -135,6 +143,13 @@ body {
 
 }
 
+.form-pop-lePerche {
+    background-image: url(../img/belleme_trafiqu%C3%A9e.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 20%;
+}
 .littlepetittitle {
   color:rgba(0, 0, 0, 1);
   font-size:2em;
