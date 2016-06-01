@@ -19,6 +19,9 @@ body {
 }
 .title {
   position:absolute;
+  margin-left:55%;
+  transform:translateX(-50%);
+  margin-top: -150px;
 }
 
 
@@ -47,6 +50,18 @@ body {
   position:absolute;
 }
 .form-pop-agenda {
+  overflow: hidden;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:250px;
+  color:black;
+  background-color:white;
+  opacity:0;
+  z-index: 998;
+  position:absolute;
+}
+.form-pop-lePerche {
   overflow: hidden;
   left:0px;
   top:0px;

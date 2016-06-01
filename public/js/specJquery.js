@@ -132,19 +132,12 @@ $(window).load(function() {
             $('.tile').not(this).css({
                 display: 'none'
             });
-
             smallAgendaTile();
         });
-
-
-
     }
     // Fin fonction  Aggrandissement tuile "Agenda"
 
 
-    ////////////////////////////////////////////
-    ///////// Non fonctionnel !!!!!!! /////////
-    ///////////////////////////////////////////
     //Rétrecissement tuile "Agenda"
   function smallAgendaTile() {
 
@@ -185,9 +178,7 @@ $(window).load(function() {
     }
 
     // Fin fonction  Rétrécissement tuile "Agenda"
-    ////////////////////////////////////////
-    ////////// A Terminer //////////////////
-    ////////////////////////////////////////
+
 
 
     bigSocietyTile();
@@ -281,7 +272,7 @@ $(window).load(function() {
     }
 
 // Fin fonction  Rétrécissement tuile "society"
-    
+
 
 
 
@@ -289,24 +280,46 @@ bigMovePercheTile()
 
 //Grossissement tuile "installez-vous dans le Perche"
 function bigMovePercheTile() {
-    $('.movePerche').click(function() {
-        $(this).animate({
-            width: '1128px'
-        }, {
-            duration: 300,
-            complete: function() {
-                $(this).css({
-                    height: '600px',
-                    transform: 'translateY(-280px)'
-                });
-                $('.ultimate').css('transform', 'translateX(400px)', 'important');
-                $('.ultimate').animate({
-                    width: '700px',
-                    marginBottom: '-280px'
-                }, 300);
-                $('.videoCard').css('transform', 'translateY(630px) translateX(-365px)', 'important');
-            }
-        });
+  $('.movePerche').click(function() {
+      $('body').css({
+          padding: '0px',
+          overflowX: 'hidden'
+      });
+      $('.container').css({
+          marginLeft: '0px',
+          marginRight: '0px',
+          marginTop: '0px',
+          width: '102%',
+          height: '100%'
+      })
+      $(this).animate({
+          marginLeft: '0px',
+          marginTop: '0px',
+          width: '100%',
+          height: '100px',
+          opacity: '1',
+          zIndex: '999',
+          transition: 'easeOut'
+      }, {
+          duration: 200,
+          complete: function() {
+              $('.littletitle').css({
+                  marginTop: '-50px'
+              });
+              $('.form-pop-lePerche').animate({
+                  height: '100%',
+                  paddingTop: '50px',
+                  opacity: '1',
+                  zIndex: '998'
+              }, 'slow');
+
+          }
+      });
+      $('.tile').not(this).css({
+          display: 'none'
+      });
+
+
 
 
         smallMovePercheTile();
@@ -319,13 +332,40 @@ function bigMovePercheTile() {
 
 //Rétrecissement tuile "installez-vous dans le Perche"
 function smallMovePercheTile() {
-    $('.movePerche').click(function() {
-        $(this).css({
-            width: '',
-            height: ''
-        });
+  $('.close-button').click(function() {
+      $('body').css({
+          padding: '',
+          overflowX: 'visible'
+      });
+      $('.container').css({
+          marginLeft: '',
+          marginRight: '',
+          marginTop: '',
+          width: '',
+          height: ''
+      });
+      $('.form-pop-lePerche').animate({
+          height: '150px'
+      }, {
+          duration: 200,
+          complete: function() {
+              $('.form-pop-lePerche').css({
+                  opacity: '0',
+              });
+              $('.movePerche').animate({
+                  height: '250px',
+                  width:'700px'
+              }, {
+                  duration: 400,
+                  complete: function() {
+                      $('.tile').show();
+                  }
+              });
+
+          }
+      });
         bigMovePercheTile();
-    });
+  });
 
 }
 // Fin fonction  Rétrécissement tuile "installez-vous dans le Perche"
