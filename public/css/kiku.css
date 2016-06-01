@@ -1,6 +1,6 @@
-.view {
+/*.view {
     margin-top: 100px;
-}
+}*/
 body {
     background-image: url(../img/background.jpg);
     background-repeat: no-repeat;
@@ -17,6 +17,26 @@ body {
 .header {
     background-color: white;
 }
+.title {
+  position:absolute;
+}
+
+
+.form-pop {
+  overflow: hidden;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:250px;
+  color:black;
+  background-color:white;
+  opacity:0;
+  z-index: 998;
+  position:absolute;
+}
+.form-signin {
+  transform: scale(0.9);
+}
 .range {
     display: flex;
     flex-direction: row;
@@ -28,9 +48,8 @@ body {
     width: 500px;
     background-color: red;
     box-shadow: 1px 1px 7px black;
-    margin-bottom: 30px;
+    margin: 5px;
     color: white;
-    transition: 0.5s ease-in;
 }
 .tile:hover {
     box-shadow: 1px 1px 5px black;
@@ -44,6 +63,8 @@ body {
 .createActivity {
     background-color: #006666;
     background-size: cover;
+    overflow:hidden;
+    transition: 0.6s ease-out;
 }
 .createActivity:hover > .justHover {
     background-color: rgba(0, 0, 0, 0.5);
@@ -58,6 +79,10 @@ body {
     transition: 0.6s ease-in;
     margin-top: -160px;
 }
+
+.littleActivity {
+  margin-top: -80px;
+}
 .justHover {
     background-color: rgba(0, 0, 0, 0);
     height: 100%;
@@ -68,6 +93,7 @@ body {
     background-color: #00cccc;
     background-size: cover;
     min-width: 200px;
+    transition:1s ease-out;
 }
 .buySociety:hover > .justHover {
     background-color: rgba(0, 0, 0, 0.5);
@@ -128,6 +154,7 @@ body {
 }
 .scoopitou {
     width: 300px;
+    transition:0.5s ease-out;
 }
 .myScoopit {
     margin-top: -5px;
@@ -136,8 +163,76 @@ body {
     height: 255px;
 }
 
-/********* MODAL CREATION SOCIETY *******/
+/******** TILE FINANCEURS *******/
+.partners {
+  width:1128px !important;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center space-around;
+  align-items: center;
+  background-color: rgba(121, 224, 51, 0.9) !important;
+}
+.partners > .littlepetittitle {
+  color:white;
+  width:100%;
+  text-shadow: 1px 1px 4px black;
+}
+.financeur {
+  width:200px;
+  height: 100px;
+  background-color:lightgreen;
+  box-shadow:1px 1px 5px black;
 
+}
+
+.primoFinanceur {
+  background-image:url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/payPercheOrnais.gif);
+  background-size:contain;
+  background-position: center center;
+  border-right:40px white solid;
+    border-left:40px white solid;
+}
+.secondoFinanceur {
+  background-image: url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/paysDuPerche.gif);
+  background-size: contain;
+  background-position: center center;
+  border-right:50px white solid;
+    border-left:50px white solid;
+    border-top:20px white solid;
+    border-bottom:20px white solid;
+}
+  .tertioFinanceur {
+    background-image: url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/europe.gif);
+  background-size: contain;
+  background-position: center center;
+  border-right:50px darkblue solid;
+    border-left:50px darkblue solid;
+    border-top:20px darkblue solid;
+    border-bottom:20px darkblue solid;
+}
+    .quartoFinanceur {
+      background-image: url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/basseNormandie.gif);
+    background-size: contain;
+    background-position: center center;
+    border-right:40px white solid;
+      border-left:45px white solid;
+      border-top:10px white solid;
+      border-bottom:10px white solid;
+  }
+  .quintoFinanceur {
+    background-image: url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/europeEngage.gif);
+  background-size: contain;
+  background-position: center center;
+  border-right:40px white solid;
+    border-left:45px white solid;
+    border-top:10px white solid;
+    border-bottom:10px white solid;
+}
+/********* MODAL CREATION SOCIETY *******/
+.icones {
+  margin-bottom: 30px;
+}
 .createBox {
     margin-top: 20%;
 }
@@ -321,6 +416,7 @@ label {
     color: black;
 }
 
+
 /********************************/
 
 
@@ -331,8 +427,4 @@ label {
 
 #sidebar-wrapper {
     box-shadow: 1px 0px 3px black;
-}
-
-.footer {
-  background-color:rgba(0,0,0, 0.6);
 }
