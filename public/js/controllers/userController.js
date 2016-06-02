@@ -1,5 +1,5 @@
 // USER CONTROLLER
-function userController($scope, $http, userService,contactService, $rootScope, $location) {
+function userController($scope, $http, userService, contactService, agendaService, bureauService, $rootScope, $location) {
   $('html, body').animate({ scrollTop: 0 }, 'swing');
   $scope.user = $rootScope.userId;
 
@@ -10,6 +10,9 @@ function userController($scope, $http, userService,contactService, $rootScope, $
       });
       contactService.get().then(function (res) {
           $scope.contactlist = res.data
+      });
+      agendaService.get().then(function (res) {
+          $scope.agendalist = res.data
       });
     }
 
@@ -40,6 +43,28 @@ function userController($scope, $http, userService,contactService, $rootScope, $
           $scope.userFirstname = "";
           $scope.userPhone = "";
       }
+      $scope.addAgenda = function () {
+          var data = {};
+          data.agendaImg = $scope.agendaImg[0];
+          data.agendaTitle = $scope.agendaTitle;
+          data.agendaDescription = $scope.agendaDescription;
+          data.agendaDate = $scope.agendaDate;
+          data.agendaHour = $scope.agendaHour;
+          data.agendaCity = $scope.agendaCity;
+          data.agendaPrice = $scope.agendaPrice;
+
+          agendaService.create(data).then(function (res) {
+              load();
+          });
+          $scope.agendaImg = "";
+          $scope.agendaTitle = "";
+          $scope.agendaDescription = "";
+          $scope.agendaDate = "";
+          $scope.agendaHour = "";
+          $scope.agendaCity = "";
+          $scope.agendaPrice = "";
+      }
+
       $scope.update = function(user){
         var id = user._id;
         $rootScope.userId = user;
@@ -48,19 +73,35 @@ function userController($scope, $http, userService,contactService, $rootScope, $
 			    load();
 		    });
 	     }
-      $scope.delete = function(user){
-        userService.delete(user._id).then(function(res){
+       $scope.updateAgenda = function(agenda){
+         var id = agenda._id;
+         delete agenda._id;
+        agendaService.update(id,agenda).then(function(res){
           load();
-
         });
-        contactService.delete(contact.contact._id).then(function(res){
-          load();
+       }
 
-        });
+      $scope.delete = function(user,serv){
+        if (serv == 'user'){
+          userService.delete(user._id).then(function(res){
+            load();
+          });
+        }
+        else if (serv == 'contact'){
+          contactService.delete(user._id).then(function(res){
+            load();
+          });
+        }
+        else if (serv == 'agenda'){
+          agendaService.delete(user._id).then(function(res){
+            load();
+          });
+        }
+
       }
       load();
 
-      //  ------------   Flow   -----------
+      //  ------------   Flow Image User  -----------
 
       $scope.userImg = [];
 
@@ -71,6 +112,23 @@ function userController($scope, $http, userService,contactService, $rootScope, $
             var uri = event.target.result;
             $scope.userImg[i] = uri;
             console.log($scope.userImg);
+          };
+          fileReader.readAsDataURL(flowFile.file);
+        });
+      };
+
+
+      //  ------------   Flow Image Agenda  -----------
+
+      $scope.agendaImg = [];
+
+      $scope.processFiles = function (files) {
+        angular.forEach(files, function (flowFile, i) {
+          var fileReader = new FileReader();
+          fileReader.onload = function (event) {
+            var uri = event.target.result;
+            $scope.agendaImg[i] = uri;
+            console.log($scope.agendaImg);
           };
           fileReader.readAsDataURL(flowFile.file);
         });
