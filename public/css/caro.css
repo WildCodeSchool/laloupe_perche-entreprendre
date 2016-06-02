@@ -1,6 +1,10 @@
+body {
+
+}
+
 .accueilOne {
   margin-top:150px;
-  width: 90%;
+  width: 80%;
   display:flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -9,14 +13,15 @@
 
 /* Selecteur général : tuiles */
 .tilev {
-  width: 300px;
+  width: 350px;
   height:250px;
   background-color:white;
-  border:1px black solid;
+  box-shadow: 1px 1px 5px black;
   transition:0.5s;
 }
 .tilev:hover {
   transform: translateY(-10px);
+  box-shadow: 0px 0px 10px black;
 }
 
 /* Colonne 1 */
@@ -27,6 +32,9 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-around;
+}
+.columnOne > .tilev {
+  width: 300px;
 }
 
 /* Tuile Contact */
@@ -58,9 +66,9 @@
   height: 100px;
   background-image: url(http://images.clipartpanda.com/phone-icon-vector-telephone-icon-vector-png.png);
   background-size:contain;
-    border:2px solid white;
-    border-radius: 50px;
-    transition: 0.5s;
+  border:2px solid white;
+  border-radius: 50px;
+  transition: 0.5s;
 }
 .phoneIcon:hover {
   transform:translateY(-10px);
@@ -92,9 +100,10 @@
 
 /* Colonne 2 */
 .columnTwo {
-  width: 300px;
+  margin-left: -5%;
+  margin-right: -5%;
+  width:350px;
   height:800px;
-
   display:flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -103,22 +112,45 @@
 
 /* Tuile Créer son entreprise */
 .theCreation {
-  background-color: #006666;
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+}
+.theCreation > h1 {
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+/*Tuile Créer son entreprise APRES aggrandissement*/
+.bigCreation {
+  background-color: lightblue;
 }
 
 /* Tuile Reprendre une entreprise/local */
 .theSociety {
-  background-color: #00cccc;
+  background-color: orange;
+  display: flex;
+  align-items: center;
+}
+.theSociety > h1 {
+  color: white;
+  text-shadow: 1px 1px 5px black;
 }
 
-/* Tuile Reprendre une entreprise/local */
+/* Tuile Youtube */
 .theYoutube {
-  background-color: red;
+  overflow:hidden;
 }
+.theYoutubeVideo {
+  transform:scaleY(1.27);
+}
+.theYoutube:hover {
+  transform:translateY(-10px);
+}
+
 
 /* Colonne 3 */
 .columnThree {
-  width: 300px;
+  width: 350px;
   height:800px;
   display:flex;
   flex-direction: column;
@@ -126,13 +158,26 @@
   justify-content: space-around;
 }
 
-/* Tuile Reprendre une entreprise/local */
+/* Tuile  Scoopit !*/
 .theScoupit {
-  background-color: yellow;
-}/* Tuile Reprendre une entreprise/local */
+  overflow: hidden;
+  background-color: gray;
+}
+.theScoopitContent {
+  margin-top: -2px;
+  transform:scaleX(1.2) scaleY(1.005);
+}
+/* Tuile Reprendre une entreprise/local */
 .thePhoto {
-  background-color: green;
-}/* Tuile Reprendre une entreprise/local */
+  background-image: url(http://lorempixel.com/350/250/business);
+}
+/* Tuile S'installer dans le Perche */
 .theLinks {
   background-color: violet;
+  display: flex;
+  align-items: center;
+}
+.theLinks > h1 {
+  color: white;
+  text-shadow: 1px 1px 5px black;
 }

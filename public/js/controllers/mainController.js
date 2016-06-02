@@ -8,7 +8,7 @@ function mainController($scope, $http, $rootScope) {
     }, 'swing');
 
     $(".hamburger").focusin(function() {
-        $(".tiles").css("margin-left", "200px").css("transition", "0.6s");
+        $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
 
     });
     $(".hamburger").focusout(function() {
