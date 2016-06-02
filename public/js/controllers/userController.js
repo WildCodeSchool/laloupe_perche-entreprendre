@@ -1,5 +1,5 @@
 // USER CONTROLLER
-function userController($scope, $http, userService, contactService, agendaService, bureauService, $rootScope, $location) {
+function userController($scope, $http, userService, contactService, agendaService, bureauService, temoignageService, $rootScope, $location) {
   $('html, body').animate({ scrollTop: 0 }, 'swing');
   $scope.user = $rootScope.userId;
 
@@ -13,6 +13,9 @@ function userController($scope, $http, userService, contactService, agendaServic
       });
       agendaService.get().then(function (res) {
           $scope.agendalist = res.data
+      });
+      bureauService.get().then(function (res) {
+          $scope.bureaulist = res.data
       });
     }
 
@@ -64,6 +67,46 @@ function userController($scope, $http, userService, contactService, agendaServic
           $scope.agendaCity = "";
           $scope.agendaPrice = "";
       }
+      $scope.addBureau = function () {
+          var data = {};
+          data.bureauImg = $scope.bureauImg[0];
+          data.bureauType = $scope.bureauType;
+          data.bureauDescription = $scope.bureauDescription;
+          data.bureauSecteur = $scope.bureauSecteur;
+          data.bureauSurface = $scope.bureauSurface;
+          data.bureauPrice = $scope.bureauPrice;
+
+          bureauService.create(data).then(function (res) {
+              load();
+          });
+          $scope.bureauImg = "";
+          $scope.bureauType = "";
+          $scope.bureauDescription = "";
+          $scope.bureauSecteur = "";
+          $scope.bureauSurface = "";
+          $scope.bureauPrice = "";
+      }
+      $scope.addTemoignage = function () {
+          var data = {};
+          data.temoignageImg = $scope.temoignageImg[0];
+          data.temoignageAge = $scope.temoignageAge;
+          data.temoignageDescription = $scope.temoignageDescription;
+          data.temoignageName = $scope.temoignageName;
+          data.temoignageFirstname = $scope.temoignageFirstname;
+          data.temoignageSecteur = $scope.temoignageSecteur;
+          data.temoignageFunction = $scope.temoignageFunction;
+
+          temoignageService.create(data).then(function (res) {
+              load();
+          });
+          $scope.temoignageImg = "";
+          $scope.temoignageAge = "";
+          $scope.temoignageDescription = "";
+          $scope.temoignageName = "";
+          $scope.temoignageFirstname = "";
+          $scope.temoignageSecteur = "";
+          $scope.temoignageFunction = "";
+      }
 
       $scope.update = function(user){
         var id = user._id;
@@ -77,6 +120,13 @@ function userController($scope, $http, userService, contactService, agendaServic
          var id = agenda._id;
          delete agenda._id;
         agendaService.update(id,agenda).then(function(res){
+          load();
+        });
+       }
+       $scope.updateBureau = function(bureau){
+         var id = bureau._id;
+         delete bureau._id;
+        bureauService.update(id,bureau).then(function(res){
           load();
         });
        }
@@ -94,6 +144,11 @@ function userController($scope, $http, userService, contactService, agendaServic
         }
         else if (serv == 'agenda'){
           agendaService.delete(user._id).then(function(res){
+            load();
+          });
+        }
+        else if (serv == 'bureau'){
+          bureauService.delete(user._id).then(function(res){
             load();
           });
         }
@@ -129,6 +184,37 @@ function userController($scope, $http, userService, contactService, agendaServic
             var uri = event.target.result;
             $scope.agendaImg[i] = uri;
             console.log($scope.agendaImg);
+          };
+          fileReader.readAsDataURL(flowFile.file);
+        });
+      };
+
+      //  ------------   Flow Image Bureaux  -----------
+
+      $scope.bureauImg = [];
+
+      $scope.processFiles = function (files) {
+        angular.forEach(files, function (flowFile, i) {
+          var fileReader = new FileReader();
+          fileReader.onload = function (event) {
+            var uri = event.target.result;
+            $scope.bureauImg[i] = uri;
+            console.log($scope.bureauImg);
+          };
+          fileReader.readAsDataURL(flowFile.file);
+        });
+      };
+      //  ------------   Flow Image Temoignage  -----------
+
+      $scope.temoignageImg = [];
+
+      $scope.processFiles = function (files) {
+        angular.forEach(files, function (flowFile, i) {
+          var fileReader = new FileReader();
+          fileReader.onload = function (event) {
+            var uri = event.target.result;
+            $scope.temoignageImg[i] = uri;
+            console.log($scope.temoignageImg);
           };
           fileReader.readAsDataURL(flowFile.file);
         });

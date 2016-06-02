@@ -24,11 +24,23 @@
     </div>
     <div class="tile createActivity">
       <div class="justHover" data-toggle="modal" data-target="#modal-agenda"></div>
-        <p class="littletitle">Créer un évenement</p>
+        <p class="littletitle">Créer un évènement</p>
     </div>
     <div class="tile createActivity">
       <div class="justHover" data-toggle="modal" data-target="#modal-agenda-gestion"></div>
         <p class="littletitle">Administrer l'agenda</p>
+    </div>
+    <div class="tile createActivity">
+      <div class="justHover" data-toggle="modal" data-target="#modal-bureau"></div>
+        <p class="littletitle">Ajouter un commerce ou un bureau à reprendre</p>
+    </div>
+    <div class="tile createActivity">
+      <div class="justHover" data-toggle="modal" data-target="#modal-bureau-gestion"></div>
+        <p class="littletitle">Gérer les commerces et les bureaux à reprendre</p>
+    </div>
+    <div class="tile createActivity">
+      <div class="justHover" data-toggle="modal" data-target="#modal-temoignage"></div>
+        <p class="littletitle">Ajouter un témoignage</p>
     </div>
     <div class="tile buySociety">
         <div class="justHover" data-toggle="modal" data-target="#"></div>
@@ -234,12 +246,12 @@
                   <li class="list-group-item" type="checkbox" ng-repeat="agenda in agendalist" style="padding-bottom: 50px;">
                       <form class="form-inline">
                           <div class="form-group">
-                            <input type="name" class="form-control" ng-model="agenda.agendaTitle" placeholder="Titre de l'évènement" required>
-                            <input type="name" class="form-control" ng-model="agenda.agendaDescription" placeholder="Description" required>
-                            <input type="name" class="form-control" ng-model="agenda.agendaDate" placeholder="Date" required>
-                            <input type="name" class="form-control" ng-model="agenda.agendaHour" placeholder="Heure" required>
-                            <input type="name" class="form-control" ng-model="agenda.agendaCity" placeholder="Ville" required>
-                            <input type="name" class="form-control" ng-model="agenda.agendaPrice" placeholder="Prix" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaTitle" placeholder="Titre de l'évènement" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaDescription" placeholder="Description" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaDate" placeholder="Date" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaHour" placeholder="Heure" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaCity" placeholder="Ville" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaPrice" placeholder="Prix" required>
                           </div>
                               <a data-dismiss="modal"><button type="submit" class="btn btn-default" ng-click="updateAgenda(agenda)">Mettre à jour</button></a>
                               <a data-dismiss="modal"><button class="btn btn-danger" ng-click="delete(agenda,'agenda')">Supprimer</button></a>
@@ -248,6 +260,141 @@
                 </br>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
               </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------------------------------------- MODAL CREATE OFFICE --------------------------------------------- -->
+
+<div class="modal fade" id="modal-bureau" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+        <div class="modal-content" style="margin-top: -250px">
+            <div class="modal-body">
+
+                  <div class="account-wall">
+                    <center>
+                        <img src="img/logo_pole.png" alt="" width="280px">
+                    </center>
+                    <form class="form-signin" style="text-align:center;">
+
+                      <h3> Ajouter un commerce ou un bureau à reprendre </h3>
+                        <input type="text" class="form-control" ng-model="bureauType" placeholder="Renseigner le type de bureau ou de commerce" required>
+                        <input type="description" class="form-control" ng-model="bureauDescription" placeholder="Ajouter une description" required>
+                        <input type="text" class="form-control input-md" ng-model="bureauSurface" placeholder="Renseigner la surface" required>
+                        <input type="text" class="form-control" ng-model="bureauSecteur" placeholder="Renseigner le secteur" required>
+                        <input type="description" class="form-control" ng-model="bureauPrice" placeholder="Renseigner le prix" required>
+
+
+
+                                <h3> Une photo ? </h3>
+                                    <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+
+                                    					<center>
+                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="download" class="btn btn-success">Télécharger une image</button>
+                                    					</center>
+
+
+                                              <center>
+                    <span class="text"></span><img class="preview" flow-img="image" />
+                    <br>
+                    <span class="text"></span> <img class="preview" ng-src="{{bureau.bureauImg}}" />
+                    <p>
+                      <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="image.cancel()"></span>
+
+                    </p>
+                  </center>
+
+
+                                    				</div>
+                          <a data-dismiss="modal"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="addBureau()" type="submit">
+                            Ajouter !</button></a>
+                          </br>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+
+                    </form>
+
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------------------------------------- MODAL OFFICES --------------------------------------------- -->
+
+<div class="modal fade" id="modal-bureau-gestion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+        <div class="modal-content" style="margin-top: -250px">
+            <div class="modal-body">
+              <ul class="list-group">
+                  <li class="list-group-item" type="checkbox" ng-repeat="bureau in bureaulist" style="padding-bottom: 50px;">
+                      <form class="form-inline">
+                          <div class="form-group">
+                            <input type="text" class="form-control" ng-model="bureau.bureauType" placeholder="Type de commerce" required>
+                            <input type="text" class="form-control" ng-model="bureau.bureauDescription" placeholder="Description" required>
+                            <input type="text" class="form-control" ng-model="bureau.bureauSurface" placeholder="Surface" required>
+                            <input type="text" class="form-control" ng-model="bureau.bureauSecteur" placeholder="Secteur" required>
+                            <input type="text" class="form-control" ng-model="bureau.bureauPrice" placeholder="Prix" required>
+                          </div>
+                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" ng-click="updateBureau(bureau)">Mettre à jour</button></a>
+                              <a data-dismiss="modal"><button class="btn btn-danger" ng-click="delete(bureau,'bureau')">Supprimer</button></a>
+                      </form>
+                  </li>
+                </br>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+              </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------------------------------------- MODAL CREATE TESTIMONIAL --------------------------------------------- -->
+
+<div class="modal fade" id="modal-temoignage" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+        <div class="modal-content" style="margin-top: -250px">
+            <div class="modal-body">
+
+                  <div class="account-wall">
+                    <center>
+                        <img src="img/logo_pole.png" alt="" width="280px">
+                    </center>
+                    <form class="form-signin" style="text-align:center;">
+
+                      <h3> Ajouter un témoignage </h3>
+                        <input type="text" class="form-control" ng-model="temoignageName" placeholder="Renseigner le nom" required>
+                        <input type="description" class="form-control" ng-model="temoignageFirstname" placeholder="Renseigner le prénom" required>
+                        <input type="text" class="form-control input-md" ng-model="temoignageAge" placeholder="Renseigner l'âge" required>
+                        <input type="text" class="form-control" ng-model="temoignageFunction" placeholder="Renseigner la fonction" required>
+                        <input type="description" class="form-control" ng-model="temoignageSecteur" placeholder="Renseigner la ville" required>
+                        <input type="description" class="form-control" ng-model="temoignageDescription" placeholder="Ajouter la description" required>
+
+
+                                <h3> Une photo ? </h3>
+                                    <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+
+                                    					<center>
+                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="download" class="btn btn-success">Télécharger une image</button>
+                                    					</center>
+
+
+                                              <center>
+                    <span class="text"></span><img class="preview" flow-img="image" />
+                    <br>
+                    <span class="text"></span> <img class="preview" ng-src="{{bureau.bureauImg}}" />
+                    <p>
+                      <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="image.cancel()"></span>
+
+                    </p>
+                  </center>
+
+
+                                    				</div>
+                          <a data-dismiss="modal"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="addTemoignage()" type="submit">
+                            Ajouter !</button></a>
+                          </br>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+
+                    </form>
+
+                  </div>
             </div>
         </div>
     </div>
