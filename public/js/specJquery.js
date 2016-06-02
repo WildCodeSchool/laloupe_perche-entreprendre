@@ -262,7 +262,7 @@ $(window).load(function() {
                         paddingTop: '50px',
                         opacity: '1',
                         zIndex: '998'
-                    }, 'slow');
+                    }, 'slow').css('display', 'flex')
 
                 }
             });

@@ -3,186 +3,29 @@
 </div>
 
 
-<div class="container accueil">
+<div class="container accueilOne">
 
-    <div class="account-wall-contact form-pop">
-      
-     <div class="row col-md-6 col-md-offset-3">
-         
-          <P>Vous êtes porteur de projet ? Vous souhaitez installer votre activité dans le Perche ? Prenez contact avec nous !</P>
-       
-        <img class="icones" ng-click="phone = !phone" src="img/phone-call.png" alt="téléphone">
-        <h3 class="phone phoneNumber" ng-show="phone">02 37 34 56 78</h3>
-
-        <img class="icones" ng-click="envelope = !envelope" src="img/envelope.png" alt="mail">
-        <form class="form-signin" ng-show="envelope" style="text-align:center;">
-
-
-            <h3> Vos informations </h3>
-            <input type="name" class="form-control" ng-model="contactName" placeholder="Votre nom" required>
-            <input type="firstname" class="form-control" ng-model="contactFirstname" placeholder="Votre prénom" required>
-            <input type="fonction" class="form-control" ng-model="contactFunction" placeholder="Votre fonction" required>
-            <input type="enterprise2" class="form-control" ng-model="contactEnterprise" placeholder="Votre structure" required>
-            <input type="ville2" class="form-control" ng-model="contactVille" placeholder="Votre ville" required>
-            <input type="mail" class="form-control" ng-model="contactEmail" placeholder="Votre email" required>
-            <input type="phone" class="form-control" ng-model="contactPhone" placeholder="Votre numéro de téléphone" required>
-            <textarea style="resize:vertical;" class="form-control" placeholder="Message..." rows="6" name="comment" required></textarea>
-            <a href="#/">
-                <button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 10px" ng-click="add()" type="submit">
-                    Envoi !</button>
-            </a>
-        </form>
-
-    <button class="close-button" style="transform: translateY(400px);">close</button>
-    </div>
-    </div>
-    <div class="range first">
-        <div class="tile controlCreateActivity createActivity ">
-            <!-- <div class="justHover" data-toggle="modal" data-target=".bs-example-modal-lg"></div> -->
-            <div class="justHover"></div>
-            <div class="littletitle littleActivity">
-                <p>Je crée mon activité</p>
-
-                <img class="icones" src="img/phone-call.png" alt="téléphone">
-                <img class="icones" src="img/envelope.png" alt="enveloppe">
-
-            </div>
-        </div>
-        <div class="tile scoopitou">
-            <iframe src='//www.scoop.it/embed-topic/3050061.html?height=250?maxwidth=255' class="myScoopit" frameBorder='0' scrolling='no'></iframe>
-        </div>
+    <div class="columnOne">
+        <div class="tilev thePhoneMail"></div>
+        <div class="tilev theAgenda"></div>
     </div>
 
 
-    <div class="range middle">
 
-        <!-- CAROUSEL PROVISOIRE AGENDA-->
-
-        <div class="form-pop-agenda">
-            <button class="close-button" style="z-index:1000; margin-top: 300px; margin-left:500px;">close</button>
-        </div>
-
-        <div class="tile controlMyAgenda myAgenda">
-
-
-            <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="5000" id="bs-carousel">
-                <!-- Overlay -->
-                <div class="overlay"></div>
-
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#bs-carousel" data-slide-to="1"></li>
-                    <li data-target="#bs-carousel" data-slide-to="2"></li>
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item slides active">
-                        <div class="slide-1"></div>
-                        <div class="hero">
-                            <hgroup>
-                                <h1>Du 3 au 29 juin 2016</h1>
-                                <h3>Les journées du bois</h3>
-                            </hgroup>
-                            <button class="hbutton btn btn-hero btn-lg" role="button">Voir</button>
-                        </div>
-                    </div>
-                    <div class="item slides">
-                        <div class="slide-2"></div>
-                        <div class="hero">
-                            <hgroup>
-                                <h1>22 septembre 2016</h1>
-                                <h3>Artisanat Tour</h3>
-                            </hgroup>
-                            <button class="hbutton btn btn-hero btn-lg" role="button">Voir</button>
-                        </div>
-                    </div>
-                    <div class="item slides">
-                        <div class="slide-3 slidelittle"></div>
-                        <div class="hero">
-                            <hgroup>
-                                <h1>Du 6 au 30 juin 2016</h1>
-                                <h3>Le mois du numérique</h3>
-                            </hgroup>
-                            <button class="hbutton btn btn-hero btn-lg" role="button">Voir</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="form-pop-society">
-            <button class="close-button" style="z-index:1000; margin-top: 300px; margin-left:500px;">close</button>
-        </div>
-        <div class="tile controlBuySociety buySociety">
-
-            <div class="justHover" data-toggle="modal" data-target="#"></div>
-            <p class="littletitle littleSociety">Je reprends une entreprise</p>
-        </div>
+    <div class="columnTwo">
+        <div class="tilev theCreation"></div>
+        <div class="tilev theSociety"></div>
+        <div class="tilev theYoutube"></div>
     </div>
 
-    <div class="range last">
-        <div class="tile videoCard">
-            <!--  <iframe class="youtubeVideo" width="400" height="245" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>-->
-        </div>
 
-        <div class="form-pop-lePerche">
-            <button class="close-button" style="z-index:1000; margin-top: 300px; margin-left:500px;">close</button>
-        </div>
-        <div class="tile movePerche">
-            <p class="littlepetittitle">Installez-vous dans le Perche !</p>
-        </div>
+
+
+    <div class="columnThree">
+      <div class="tilev theScoupit"></div>
+      <div class="tilev thePhoto"></div>
+      <div class="tilev theLinks"></div>
     </div>
-    <div class="range ultimate">
-        <div class="tile partners">
-            <p class="littlepetittitle">Les financeurs!</p>
-            <div class="financeur primoFinanceur"></div>
-            <div class="financeur secondoFinanceur"></div>
-            <div class="financeur tertioFinanceur"></div>
-            <div class="financeur quartoFinanceur"></div>
-            <div class="financeur quintoFinanceur"></div>
-        </div>
-    </div>
+
+
 </div>
-
-<!-- MODAL TUILE CREER MON ENTREPRISE -->
-
-
-<!--
-<div class="modal fade bs-example-modal-lg creationEntreprise" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-    <div class="createBox modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="account-wall" ng-show="mail">
-
-                    <form class="form-signin" style="text-align:center;">
-
-                        <h3> Vos informations </h3>
-                        <input type="name" class="form-control" ng-model="contactName" placeholder="Votre nom" required>
-                        <input type="firstname" class="form-control" ng-model="contactFirstname" placeholder="Votre prénom" required>
-                        <input type="fonction" class="form-control" ng-model="contactFunction" placeholder="Votre fonction" required>
-                        <input type="enterprise2" class="form-control" ng-model="contactEnterprise" placeholder="Votre structure" required>
-                        <input type="ville2" class="form-control" ng-model="contactVille" placeholder="Votre ville" required>
-                        <input type="mail" class="form-control" ng-model="contactEmail" placeholder="Votre email" required>
-                        <input type="phone" class="form-control" ng-model="contactPhone" placeholder="Votre numéro de téléphone" required>
-                        <textarea style="resize:vertical;" class="form-control" placeholder="Message..." rows="6" name="comment" required></textarea>
-
-                        <a href="#/">
-                            <button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 60px" ng-click="add()" type="submit">
-                                Envoi !</button>
-                        </a>
-
-                    </form>
-                </div>
-
-            </div>
-
-
-            <div class="modal-footer">
-                <center>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
-                </center>
-            </div>
-        </div>
-    </div>
-</div>-->
