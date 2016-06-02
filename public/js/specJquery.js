@@ -1,13 +1,12 @@
 $(window).load(function() {
 
-//===============================================================\\
+/*//===============================================================\\
 /////////////////////////////////////////////////////////////////||
 /////////////////////////   DEBUT   /////////////////////////////||
 ////////// Utilisation de Jquery afin de d'afficher des /////////||
 //////////    modales lors d'un click sur une tuile   ///////////||
 /////////////////////////////////////////////////////////////////||
 /////////////////////////////////////////////////////////////////||
-
 
 
     //Appel fonction grossissement de la tuile create/contact
@@ -442,7 +441,53 @@ $(window).load(function() {
 ////////// Utilisation de Jquery afin de d'afficher des /////////||
 //////////    modales lors d'un click sur une tuile   ///////////||
 /////////////////////////////////////////////////////////////////||
-/////////////////////////////////////////////////////////////////||
+/////////////////////////////////////////////////////////////////||*/
+
+  biggerCreationTile();
+
+  function biggerCreationTile(){
+    $('.theCreation').click(function() {
+      $('.tilev').not('.thePhoneMail, .theAgenda').animate({
+        width: '0',
+        height: '0',
+        opacity: '0',
+        marginLeft: '50%',
+        transition: '0.2s ease-out'
+      }, {
+        duration: 200,
+        complete: function() {
+          $(this).fadeOut(10)
+        }
+      }).animate({
+        backgroundColor: 'green'
+      }, {
+        duration: 100,
+        complete: function() {
+          $('.theCreation').fadeIn(50).css({
+            marginLeft: '350px',
+            width: '0px',
+            height: '0px',
+            opacity: '0'
+          }).animate({
+            backgroundColor: 'green'
+          }, {
+            duration:100,
+            complete: function() {
+              $(this).css({
+                opacity: '1',
+                marginLeft: '0px',
+                width:'700px',
+                height: '780px',
+                transition: '0.2s ease-out'
+              });
+            }
+          });
+        }
+      });
+    });
+
+  }
+
 
 
 });
