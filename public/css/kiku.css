@@ -6,7 +6,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.8);
+    /*background-color: rgba(0, 0, 0, 0.8);*/
     font-family: "Ubuntu", arial;
 }
 
@@ -466,4 +466,32 @@ label {
 
 #sidebar-wrapper {
     box-shadow: 1px 0px 3px black;
+}
+
+
+/********************************/
+
+
+/*Contenu tuile Reprendre une entreprise*/
+
+
+/********************************/
+.form-pop-society {
+  display:flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center center;
+  width:100%;
+  height:100%;
+  display:none;
+}
+.text-intro {
+  margin-top: 50px;
+}
+
+.consult-announce {
+  display:flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content:space-around;
 }

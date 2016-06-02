@@ -1,0 +1,53 @@
+.accueilOne {
+  margin-top:150px;
+  width: 90%;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Selecteur général : tuiles */
+.tilev {
+  width: 300px;
+  height:250px;
+  background-color:white;
+  border:1px black solid;
+}
+
+/* Colonne 1 */
+.columnOne {
+  width: 300px;
+  height:800px;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.theAgenda {
+  height: 520px;
+}
+
+
+/* Colonne 2 */
+.columnTwo {
+  width: 300px;
+  height:800px;
+
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+/* Colonne 3 */
+.columnThree {
+  width: 300px;
+  height:800px;
+
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
