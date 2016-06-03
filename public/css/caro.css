@@ -6,6 +6,7 @@ body {
 
 .accueilOne {
   margin-top:150px;
+  margin-left:100px;
   width: 90%;
   display:flex;
   flex-wrap: wrap;
