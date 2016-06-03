@@ -6,11 +6,15 @@ body {
 
 .accueilOne {
   margin-top:150px;
-  width: 80%;
+  width: 90%;
   display:flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
+}
+.theColumn {
+  margin-left:0px;
+  margin-right: 0px;
 }
 
 /* Selecteur général : tuiles */
@@ -50,7 +54,6 @@ body {
 
 /* Colonne 1 */
 .columnOne {
-    margin-right:6px;
   width: 300px;
   height:800px;
   display:flex;
@@ -131,8 +134,7 @@ body {
 
 /* Colonne 2 */
 .columnTwo {
-  margin-left: -5%;
-  margin-right: -5%;
+
   width:350px;
   height:800px;
   display:flex;
