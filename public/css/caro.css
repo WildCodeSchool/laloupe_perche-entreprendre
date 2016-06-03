@@ -1,6 +1,7 @@
 body {
   background-image: url(../img/leperche.jpg);
   background-position:cover;
+  overflow-x: hidden;
 }
 
 .accueilOne {

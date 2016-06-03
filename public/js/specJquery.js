@@ -218,6 +218,83 @@ $(window).load(function() {
   }
 
 
+
+
+  ///////////Agenda
+
+  biggerAgendaTile();
+
+
+  function biggerAgendaTile(){
+    $('.theAgenda').click(function() {
+      $('.tilev').animate({
+        width: '0',
+        height: '0',
+        opacity: '0',
+        marginLeft: '50%',
+        transition: '0.2s ease-out'
+      }, {
+        duration: 200,
+        complete: function() {
+          $(this).fadeOut(10)
+        }
+      }).animate({
+        backgroundColor: 'green'
+      }, {
+        duration: 100,
+        complete: function() {
+          $('.theAgenda').empty().css('marginTop', '-600px');
+          $('.theAgenda').addClass("bigAgenda").removeClass('theAgenda').fadeIn(30).animate({
+            backgroundColor: 'green'
+          }, {
+            duration:70,
+            complete: function() {
+              $('.thePhoneMail').fadeIn(10).animate({
+                width: '300px',
+                height: '250px',
+                opacity: '1',
+                marginLeft: '0px'
+              }, 50);
+              $('.theYoutube').fadeIn(10).animate({
+                marginTop: '-515px',
+                width: '350px',
+                height: '250px',
+                opacity: '1',
+                marginLeft: '0px'
+              }, 50);
+              $('.theScoupit').fadeIn(10).animate({
+                marginTop: '-515px',
+                width: '350px',
+                height: '250px',
+                opacity: '1',
+                marginLeft: '0px'
+              }, 50);
+              $(this).animate({
+                marginTop:'-15px',
+                opacity: '1',
+                marginLeft: '0px',
+                width:'1075px',
+                height: '500px',
+                transition: '0.2s ease-out'
+              }, {
+                duration: 200,
+                complete: function(){
+                  $('.closeButton').css('opacity', '1');
+                }
+              });
+            }
+          });
+        }
+      });
+
+
+    });
+
+  //  smallerAgendaTile();
+
+  }
+
+
   //Slider Agenda //
 setInterval(slideImages,1000);
 
@@ -247,7 +324,7 @@ setInterval(slideImages,1000);
                     }, {
                       duration:3000,
                       complete: function(){
-                        $('.imgAgenda').css('color', 'white').setTimout(1000);
+                        $('.imgAgenda').css('color', 'transparent').setTimout(1000);
                       }
                     });
                   }
