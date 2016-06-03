@@ -208,60 +208,27 @@ body {
                             Ma carte
 =================================================================*/
 
-.globale {
-    width: 100%;
-    text-align: center;
-}
+
+
+/*
 .card {
-    margin-left: 50%;
-    transform: translateX(-50%);
-    margin-top: 0px;
+    width: 900px;
+    height: 400px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
-    align-content: center;
-    width: 400px;
-    height: 100%;
-    box-shadow: 0px 0px 5px black;
-    background-color: rgba(0,0,0, 0.6);
-    color: aliceblue;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start
 }
+*/
+/*
 .imgCard {
     height: 150px;
     width: 140px;
     box-shadow: 1px 1px 5px black;
     background-color: white;
 }
-.logos {
-    display: flex;
-    flex-direction: row;
-}
-.logo {
-    height: 80px;
-    width: 80px;
-}
 
-
-
-.fade-carousel {
-    position: relative;
-    height: 100vh;
-}
-.fade-carousel .carousel-inner .item {
-    height: 100vh;
-}
-.fade-carousel .carousel-indicators > li {
-    margin: 0 2px;
-    background-color: #f39c12;
-    border-color: #f39c12;
-    opacity: .7;
-}
-.fade-carousel .carousel-indicators > li.active {
-  width: 10px;
-  height: 10px;
-  opacity: 1;
-}
+*/
 
 /********************************/
 /*          Hero Headers        */

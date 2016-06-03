@@ -3,11 +3,16 @@
 =================================================================*/
 
 .footer {
-    height: 100px;
-   
-    background-color: rgba(0, 0, 0, 0);
+    height: auto;
+/*
+   background-image:-webkit-linear-gradient( black, white);
+   background-image:-o-linear-gradient(black, white);
+   background-image:linear-gradient(black,white);
+*/
+    background-color: white;
     margin-top: 50px;
-    margin-bottom: 0px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .lineUp {

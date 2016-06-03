@@ -1,19 +1,16 @@
 <div class="globale">
     <div class="card">
-
-        <h1 class="fullName">{{connexion.userName + " " + connexion.userFirstname }}</h1>
-
-        <img class="imgCard" ng-show="connexion.userImg" src="{{connexion.userImg}}" alt="Photo de profil" />
-        <img class="imgCard" ng-show="!connexion.userImg" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
-
-        <h3 class="function">{{ connexion.userFunction }} à {{ connexion.userEnterprise }}</h3>
-        <h3 class="ville">{{ connexion.userVille }}</h3>
-        <h3 class="phone">{{ connexion.userPhone }}</h3>
-        <h3 class="mail">{{ connexion.userEmail }}</h3>
-        <h3 class="note">{{connexion.userNote}}</h3>
-        <qrcode size="200" data="http://localhost:8000/#/formulaire/{{connexion._id}}" ></qrcode>
-
+        <img class="item imgCard" ng-show="connexion.userImg" src="{{connexion.userImg}}" alt="Photo de profil" />
+        <img class="item imgCard" ng-show="!connexion.userImg" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
+        <h1 class="item fullName">{{connexion.userFirstname + " " + connexion.userName }}</h1>
+        <h3 class="item function">{{ connexion.userFunction }} à {{ connexion.userEnterprise }}</h3>
+        <h3 class="item ville">{{ connexion.userVille }}</h3>
+        <h3 class="item phone">{{ connexion.userPhone }}</h3>
+        <h3 class="item mail">{{ connexion.userEmail }}</h3>
+        <h3 class="item note">{{connexion.userNote}}</h3>
+        <div class="qqrcode">
+        <qrcode size="200" data="http://localhost:8000/#/formulaire/{{connexion._id}}"></qrcode>
         <a href="#/formulaire/{{connexion._id}}" class="contactus">Cliquez ici pour nous contacter</a>
-
+        </div>
     </div>
 </div>
