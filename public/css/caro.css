@@ -2,16 +2,21 @@ body {
   background-image: url(../img/leperche.jpg);
   background-position:cover;
   overflow-x: hidden;
+
+}
+#wrapper.toggled #sidebar-wrapper {
+  background-color: white;
 }
 
 .accueilOne {
   margin-top:150px;
   margin-left:100px;
-  width: 90%;
+  width: 1050px;
   display:flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
+  background-color: rgba(159, 191, 255, 0) !important;
 }
 .theColumn {
   margin-left:0px;
@@ -119,8 +124,6 @@ body {
 /* Tuile Agenda */
 .theAgenda {
   height: 517px;
-  /*background-image: url(../img/afficheart.png);
-  background-size:contain;*/
   border:none;
   box-shadow: 1px 1px 5px black;
   overflow:hidden;
@@ -135,7 +138,6 @@ body {
 
 /* Colonne 2 */
 .columnTwo {
-
   width:350px;
   height:800px;
   display:flex;

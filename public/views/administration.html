@@ -1,44 +1,56 @@
 <center style="margin-top: 10%">
-<!-- <button name="bouton">Gérer les utilisateurs</button>
-<button name="bouton">Gérer les données</button>
-<button name="bouton">Exporter tous les contacts</button>
-<button name="bouton">Exporter la liste des élus</button>
-<button name="bouton">Exporter l'ensemble des données</button> -->
 <div class="container admin">
   <div class="range first">
-    <div class="tile createActivity ">
+    <div class="tile createActivity" style="width: 350px">
         <div class="justHover" data-toggle="modal" data-target=".bs-example-modal-lg"></div>
-        <!-- <div class="justHover"></div> -->
         <div class="littletitle">
             <p>Créer une carte de visite</p>
         </div>
     </div>
-  </div>
-  <div class="range middle">
-    <div class="tile createActivity">
-        <!-- <div class="justHover" data-toggle="modal" data-target="modal-user"></div> -->
+    <div class="tile createActivity" style="width: 350px">
         <div class="justHover" data-toggle="modal" data-target="#modal-user" href="">
-            <span></span>
         </div>
         <p class="littletitle">Gérer les utilisateurs</p>
     </div>
-    <div class="tile createActivity">
-        <!-- <div class="justHover" data-toggle="modal" data-target="modal-user"></div> -->
+    <div class="tile createActivity" style="width: 350px">
         <div class="justHover" data-toggle="modal" data-target="#modal-contact" href="">
-            <span></span>
         </div>
         <p class="littletitle">Gérer les contacts</p>
     </div>
-    <div class="tile buySociety">
+    <div class="tile createActivity" style="width: 350px">
+      <div class="justHover" data-toggle="modal" data-target="#modal-agenda"></div>
+        <p class="littletitle">Créer un évènement</p>
+    </div>
+    <div class="tile createActivity" style="width: 350px">
+      <div class="justHover" data-toggle="modal" data-target="#modal-agenda-gestion"></div>
+        <p class="littletitle">Administrer l'agenda</p>
+    </div>
+    <div class="tile createActivity" style="width: 350px">
+      <div class="justHover" data-toggle="modal" data-target="#modal-bureau"></div>
+        <p class="littletitle">Ajouter un commerce ou un bureau à reprendre</p>
+    </div>
+    <div class="tile createActivity" style="width: 350px">
+      <div class="justHover" data-toggle="modal" data-target="#modal-bureau-gestion"></div>
+        <p class="littletitle">Gérer les commerces et les bureaux à reprendre</p>
+    </div>
+    <div class="tile createActivity" style="width: 350px">
+      <div class="justHover" data-toggle="modal" data-target="#modal-temoignage"></div>
+        <p class="littletitle">Ajouter un témoignage</p>
+    </div>
+    <div class="tile createActivity" style="width: 350px">
+      <div class="justHover" data-toggle="modal" data-target="#modal-temoignage-gestion"></div>
+        <p class="littletitle">Gérer les témoignages</p>
+    </div>
+    <div class="tile buySociety" style="width: 350px">
         <div class="justHover" data-toggle="modal" data-target="#"></div>
         <p class="littletitle">Exporter les données</p>
     </div>
-    <div class="tile movePerche">
-      <div class="justHover" data-toggle="modal" data-target="#"></div>
-        <p class="littletitle">Administrer l'agenda</p>
-    </div>
-  </div>
 </div>
+</div>
+
+
+<!-- ----------------------------------------- MODAL CARD --------------------------------------------- -->
+
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
         <div class="modal-content" style="margin-top: -250px">
@@ -98,6 +110,8 @@
     </div>
 </div>
 
+<!-- ----------------------------------------- MODAL USERS --------------------------------------------- -->
+
 <div class="modal fade" id="modal-user" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
         <div class="modal-content" style="margin-top: -250px">
@@ -105,7 +119,7 @@
               <ul class="list-group">
                   <li class="list-group-item" ng-repeat="user in userlist" style="padding-bottom: 50px;">
                       <form class="form-inline">
-                          <div class="form-group">
+                          <div class="form-group" >
                             <input type="name" class="form-control" ng-model="user.userName" placeholder="Votre nom" required>
                             <input type="firstname" class="form-control" ng-model="user.userFirstname" placeholder="Votre prénom" required>
                             <input type="email" class="form-control" ng-model="user.userEmail" placeholder="Votre email" required>
@@ -119,7 +133,7 @@
                           </div>
                           <div>
                               <a data-dismiss="modal"><button type="submit" class="btn btn-default" ng-click="update(user)">Mettre à jour</button></a>
-                              <a data-dismiss="modal"><button type="submit" class="btn btn-danger" ng-click="delete(user)">Supprimer</button></a>
+                              <a data-dismiss="modal"><button class="btn btn-danger" ng-click="delete(user,'user')">Supprimer</button></a>
                           </div>
 
                       </form>
@@ -132,12 +146,15 @@
         </div>
     </div>
 </div>
+
+<!-- ----------------------------------------- MODAL CONTACTS --------------------------------------------- -->
+
 <div class="modal fade" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
         <div class="modal-content" style="margin-top: -250px">
             <div class="modal-body">
               <ul class="list-group">
-                  <li class="list-group-item" ng-repeat="contact in contactlist" style="padding-bottom: 50px;">
+                  <li class="list-group-item" type="checkbox" ng-repeat="contact in contactlist" style="padding-bottom: 50px;">
                       <form class="form-inline">
                           <div class="form-group">
                             <input type="name" class="form-control" ng-model="contact.contactName" placeholder="Votre nom" required>
@@ -150,11 +167,265 @@
                             <input type="note" class="form-control" ng-model="contact.contactNote" placeholder="Note à propos de vous" required>
 
                           </div>
-                              <a data-dismiss="modal"><button type="submit" class="btn btn-danger" ng-click="delete(contact)">Supprimer</button></a>
+                              <a data-dismiss="modal"><button class="btn btn-danger" ng-click="delete(contact,'contact')">Supprimer</button></a>
                       </form>
                   </li>
                 </br>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
 
-</center>
+              </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- ----------------------------------------- MODAL CREATE AGENDA --------------------------------------------- -->
+
+<div class="modal fade" id="modal-agenda" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+        <div class="modal-content" style="margin-top: -250px">
+            <div class="modal-body">
+
+                  <div class="account-wall">
+                    <center>
+                        <img src="img/logo_pole.png" alt="" width="280px">
+                    </center>
+                    <form class="form-signin" style="text-align:center;">
+
+                      <h3> Ajouter un évenement </h3>
+                        <input type="text" class="form-control" ng-model="agendaTitle" placeholder="Renseigner le titre de l'évènement" required>
+                        <input type="description" class="form-control" ng-model="agendaDescription" placeholder="Ajouter une description" required>
+                        <input type="date" class="form-control input-md" ng-model="agendaDate" placeholder="Renseigner la date" required>
+                        <input type="time" class="form-control" ng-model="agendaHour" placeholder="Ajouter l'horaire" required>
+                        <input type="description" class="form-control" ng-model="agendaPrice" placeholder="Renseigner le prix" required>
+                        <input type="ville" class="form-control" ng-model="agendaCity" placeholder="Renseigner le lieu" required>
+
+
+
+                                <h3> Une photo ? </h3>
+                                    <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+
+                                    					<center>
+                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="download" class="btn btn-success">Télécharger une image</button>
+                                    					</center>
+
+
+                                              <center>
+                    <span class="text"></span><img class="preview" flow-img="image" />
+                    <br>
+                    <span class="text"></span> <img class="preview" ng-src="{{friend.userImg}}" />
+                    <p>
+                      <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="image.cancel()"></span>
+
+                    </p>
+                  </center>
+
+
+                                    				</div>
+                          <a data-dismiss="modal"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="addAgenda()" type="submit">
+                            Créer !</button></a>
+                          </br>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+
+                    </form>
+
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ----------------------------------------- MODAL AGENDA --------------------------------------------- -->
+
+<div class="modal fade" id="modal-agenda-gestion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+        <div class="modal-content" style="margin-top: -250px">
+            <div class="modal-body">
+              <ul class="list-group">
+                  <li class="list-group-item" type="checkbox" ng-repeat="agenda in agendalist" style="padding-bottom: 50px;">
+                      <form class="form-inline">
+                          <div class="form-group">
+                            <input type="text" class="form-control" ng-model="agenda.agendaTitle" placeholder="Titre de l'évènement" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaDescription" placeholder="Description" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaDate" placeholder="Date" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaHour" placeholder="Heure" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaCity" placeholder="Ville" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaPrice" placeholder="Prix" required>
+                          </div>
+                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" ng-click="updateAgenda(agenda)">Mettre à jour</button></a>
+                              <a data-dismiss="modal"><button class="btn btn-danger" ng-click="delete(agenda,'agenda')">Supprimer</button></a>
+                      </form>
+                  </li>
+                </br>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+              </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------------------------------------- MODAL CREATE OFFICE --------------------------------------------- -->
+
+<div class="modal fade" id="modal-bureau" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+        <div class="modal-content" style="margin-top: -250px">
+            <div class="modal-body">
+
+                  <div class="account-wall">
+                    <center>
+                        <img src="img/logo_pole.png" alt="" width="280px">
+                    </center>
+                    <form class="form-signin" style="text-align:center;">
+
+                      <h3> Ajouter un commerce ou un bureau à reprendre </h3>
+                        <input type="text" class="form-control" ng-model="bureauType" placeholder="Renseigner le type de bureau ou de commerce" required>
+                        <input type="description" class="form-control" ng-model="bureauDescription" placeholder="Ajouter une description" required>
+                        <input type="text" class="form-control input-md" ng-model="bureauSurface" placeholder="Renseigner la surface" required>
+                        <input type="text" class="form-control" ng-model="bureauSecteur" placeholder="Renseigner le secteur" required>
+                        <input type="description" class="form-control" ng-model="bureauPrice" placeholder="Renseigner le prix" required>
+
+
+
+                                <h3> Une photo ? </h3>
+                                    <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+
+                                    					<center>
+                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="download" class="btn btn-success">Télécharger une image</button>
+                                    					</center>
+
+
+                                              <center>
+                    <span class="text"></span><img class="preview" flow-img="image" />
+                    <br>
+                    <span class="text"></span> <img class="preview" ng-src="{{bureau.bureauImg}}" />
+                    <p>
+                      <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="image.cancel()"></span>
+
+                    </p>
+                  </center>
+
+
+                                    				</div>
+                          <a data-dismiss="modal"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="addBureau()" type="submit">
+                            Ajouter !</button></a>
+                          </br>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+
+                    </form>
+
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------------------------------------- MODAL OFFICES --------------------------------------------- -->
+
+<div class="modal fade" id="modal-bureau-gestion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+        <div class="modal-content" style="margin-top: -250px">
+            <div class="modal-body">
+              <ul class="list-group">
+                  <li class="list-group-item" type="checkbox" ng-repeat="bureau in bureaulist" style="padding-bottom: 50px;">
+                      <form class="form-inline">
+                          <div class="form-group">
+                            <input type="text" class="form-control" ng-model="bureau.bureauType" placeholder="Type de commerce" required>
+                            <input type="text" class="form-control" ng-model="bureau.bureauDescription" placeholder="Description" required>
+                            <input type="text" class="form-control" ng-model="bureau.bureauSurface" placeholder="Surface" required>
+                            <input type="text" class="form-control" ng-model="bureau.bureauSecteur" placeholder="Secteur" required>
+                            <input type="text" class="form-control" ng-model="bureau.bureauPrice" placeholder="Prix" required>
+                          </div>
+                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" ng-click="updateBureau(bureau)">Mettre à jour</button></a>
+                              <a data-dismiss="modal"><button class="btn btn-danger" ng-click="delete(bureau,'bureau')">Supprimer</button></a>
+                      </form>
+                  </li>
+                </br>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+              </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------------------------------------- MODAL CREATE TESTIMONIAL --------------------------------------------- -->
+
+<div class="modal fade" id="modal-temoignage" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+        <div class="modal-content" style="margin-top: -250px">
+            <div class="modal-body">
+
+
+                  <div class="account-wall">
+                    <center>
+                        <img src="img/logo_pole.png" alt="" width="280px">
+                    </center>
+                    <form class="form-signin" style="text-align:center;">
+
+                      <h3> Ajouter un témoignage </h3>
+                        <input type="text" class="form-control" ng-model="temoignageName" placeholder="Renseigner le nom" required>
+                        <input type="description" class="form-control" ng-model="temoignageFirstname" placeholder="Renseigner le prénom" required>
+                        <input type="text" class="form-control input-md" ng-model="temoignageAge" placeholder="Renseigner l'âge" required>
+                        <input type="text" class="form-control" ng-model="temoignageFunction" placeholder="Renseigner la fonction" required>
+                        <input type="description" class="form-control" ng-model="temoignageSecteur" placeholder="Renseigner la ville" required>
+                        <input type="description" class="form-control" ng-model="temoignageDescription" placeholder="Ajouter le témoignage" required>
+
+
+                                <h3> Une photo ? </h3>
+                                    <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+
+                                    					<center>
+                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="download" class="btn btn-success">Télécharger une image</button>
+                                    					</center>
+
+
+                                              <center>
+                    <span class="text"></span><img class="preview" flow-img="image" />
+                    <br>
+                    <span class="text"></span> <img class="preview" ng-src="{{bureau.bureauImg}}" />
+                    <p>
+                      <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="image.cancel()"></span>
+
+                    </p>
+                  </center>
+
+
+                                    				</div>
+                          <a data-dismiss="modal"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="addTemoignage()" type="submit">
+                            Ajouter !</button></a>
+                          </br>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+
+                    </form>
+
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------------------------------------- MODAL TESTIMONIALS --------------------------------------------- -->
+
+<div class="modal fade" id="modal-temoignage-gestion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+        <div class="modal-content" style="margin-top: -250px">
+            <div class="modal-body">
+              <ul class="list-group">
+                  <li class="list-group-item" type="checkbox" ng-repeat="temoignage in temoignagelist" style="padding-bottom: 50px;">
+                      <form class="form-inline">
+                          <div class="form-group">
+                            <input type="text" class="form-control" ng-model="temoignage.temoignageName" placeholder="Nom" required>
+                            <input type="text" class="form-control" ng-model="temoignage.temoignageFirstname" placeholder="Prénom" required>
+                            <input type="text" class="form-control" ng-model="temoignage.temoignageAge" placeholder="Âge" required>
+                            <input type="text" class="form-control" ng-model="temoignage.temoignageFunction" placeholder="Fonction" required>
+                            <input type="text" class="form-control" ng-model="temoignage.temoignageSecteur" placeholder="Ville" required>
+                            <input type="text" class="form-control" ng-model="temoignage.temoignageDescription" placeholder="Témoignage" required>
+                          </div>
+                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" ng-click="updateTemoignage(temoignage)">Mettre à jour</button></a>
+                              <a data-dismiss="modal"><button class="btn btn-danger" ng-click="delete(temoignage,'temoignage')">Supprimer</button></a>
+                      </form>
+                  </li>
+                </br>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+              </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</center>

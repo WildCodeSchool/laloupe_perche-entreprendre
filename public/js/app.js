@@ -66,26 +66,26 @@ function filterBySearchFriend() {
                     newArray.push(e);
                     hasPush = true;
                 } else {
-                    if (!!e.userEnterprise) {
-                        if (e.userEnterprise.toLowerCase().indexOf(searchFriend.toLowerCase()) != -1) {
+                    if (!!e.contactEnterprise) {
+                        if (e.contactEnterprise.toLowerCase().indexOf(searchFriend.toLowerCase()) != -1) {
                             if(!hasPush) newArray.push(e);
                             hasPush = true;
                         }
                     }
-                    if (!!e.userFunction) {
-                        if (e.userFunction.toLowerCase().indexOf(searchFriend.toLowerCase()) != -1) {
+                    if (!!e.contactFunction) {
+                        if (e.contactFunction.toLowerCase().indexOf(searchFriend.toLowerCase()) != -1) {
                             if(!hasPush) newArray.push(e);
                             hasPush = true;
                         }
                     }
-                    if (!!e.userVille) {
-                        if (e.userVille.toLowerCase().indexOf(searchFriend.toLowerCase()) != -1) {
+                    if (!!e.contactVille) {
+                        if (e.contactVille.toLowerCase().indexOf(searchFriend.toLowerCase()) != -1) {
                             if(!hasPush) newArray.push(e);
                             hasPush = true;
                         }
                     }
-                    if (!!e.userName) {
-                        if (e.userName.toLowerCase().indexOf(searchFriend.toLowerCase()) != -1) {
+                    if (!!e.contactName) {
+                        if (e.contactName.toLowerCase().indexOf(searchFriend.toLowerCase()) != -1) {
                             if(!hasPush) newArray.push(e);
                             hasPush = true;
                         }
@@ -111,7 +111,10 @@ angular.module('app', ['ngRoute','monospaced.qrcode','flow'])
     .controller('userController', userController)
     .controller('profilController', profilController)
     .service('userService', userService)
+    .service('bureauService', bureauService)
     .service('contactService', contactService)
+    .service('temoignageService', temoignageService)
+    .service('agendaService', agendaService)
     .filter('filterBySearchFriend', filterBySearchFriend)
     /*.factory('', )*/
     .config(['flowFactoryProvider', function (flowFactoryProvider) {

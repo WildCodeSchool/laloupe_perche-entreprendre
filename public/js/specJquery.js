@@ -1,8 +1,10 @@
 $(window).load(function() {
 
+
+////////////////////////////////////////////////////////////////
+// Fonction Aggrandissement de la tuile Création d'entreprise //
+////////////////////////////////////////////////////////////////
   biggerCreationTile();
-
-
   function biggerCreationTile(){
     $('.theCreation').click(function() {
       $('.tilev').not('.thePhoneMail, .theAgenda').animate({
@@ -47,21 +49,21 @@ $(window).load(function() {
           }).addClass("bigCreation").removeClass('theCreation');
         }
       });
-
-
     });
-
     smallerCreationTile();
-
   }
 
+
+  ///////////////////////////////////////////////////////////////
+  // Fonction Rétrecissement de la tuile Création d'entreprise //
+  ///////////////////////////////////////////////////////////////
   function smallerCreationTile(){
     $('.closeButton').click(function() {
       $('.tilev').not('.thePhoneMail, .theAgenda').animate({
         width: '0',
         height: '0',
         opacity: '0',
-        marginLeft: '50%',
+        marginLeft: '',
         transition: '0.2s ease-out'
       }, {
         duration: 200,
@@ -83,7 +85,7 @@ $(window).load(function() {
           }, {
             duration:70,
             complete: function() {
-              $(this).css({
+              $('.theCreation').css({
                 opacity: '1',
                 marginLeft: '0px',
                 width:'350px',
@@ -107,9 +109,10 @@ $(window).load(function() {
 
 
 
-
+  ///////////////////////////////////////////////////////////////
+  // Fonction Aggrandissement de la tuile Reprendre entreprise //
+  ///////////////////////////////////////////////////////////////
   biggerSocietyTile();
-
   function biggerSocietyTile(){
     $('.theSociety').click(function() {
       $('.tilev').not('.thePhoneMail, .theAgenda').animate({
@@ -154,17 +157,15 @@ $(window).load(function() {
           }).addClass("bigSociety").removeClass('theSociety');
         }
       });
-
-
     });
-
     //smallerSocietyTile();
-
   }
 
+
+  ////////////////////////////////////////////////////////////////
+  // Fonction Aggrandissement de la tuile S'installer dans le Perche //
+  ////////////////////////////////////////////////////////////////
   biggerLinksTile();
-
-
   function biggerLinksTile(){
     $('.theLinks').click(function() {
       $('.tilev').not('.thePhoneMail, .theAgenda').animate({
@@ -209,22 +210,15 @@ $(window).load(function() {
           }).addClass("bigLinks").removeClass('theLinks');
         }
       });
-
-
     });
-
     //smallerLinksTile();
-
   }
 
 
-
-
-  ///////////Agenda
-
+  /////////////////////////////////////////////////
+  // Fonction Aggrandissement de la tuile Agenda //
+  /////////////////////////////////////////////////
   biggerAgendaTile();
-
-
   function biggerAgendaTile(){
     $('.theAgenda').click(function() {
       $('.tilev').not('.thePhoneMail').animate({
@@ -256,14 +250,14 @@ $(window).load(function() {
                 marginLeft: '0px'
               }, 50);
               $('.theYoutube').fadeIn(10).animate({
-                marginTop: '-515px',
+                marginTop: '-520px',
                 width: '350px',
                 height: '250px',
                 opacity: '1',
                 marginLeft: '0px'
               }, 50);
               $('.theScoupit').fadeIn(10).animate({
-                marginTop: '-515px',
+                marginTop: '-520px',
                 width: '350px',
                 height: '250px',
                 opacity: '1',
@@ -273,7 +267,7 @@ $(window).load(function() {
                 marginTop:'-15px',
                 opacity: '1',
                 marginLeft: '0px',
-                width:'1075px',
+                width:'1018px',
                 height: '500px',
                 transition: '0.2s ease-out'
               }, {
@@ -295,7 +289,9 @@ $(window).load(function() {
   }
 
 
-  //Slider Agenda //
+  ////////////////////////////
+  // Fonction Slider Agenda //
+  ////////////////////////////
 setInterval(slideImages,1000);
 
     function slideImages () {
