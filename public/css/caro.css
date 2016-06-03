@@ -26,7 +26,7 @@ body {
   box-shadow: 0px 0px 10px black;
 }
 
-.closeButton {
+.closeButton1 {
   width:50px;
   height:50px;
   position:absolute;
@@ -44,7 +44,7 @@ body {
   transition:0.2s;
   }
 
-  .closeButton:hover {
+  .closeButton1:hover {
     transform: scale(1.1);
   }
 

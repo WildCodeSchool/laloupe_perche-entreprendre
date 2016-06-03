@@ -40,7 +40,7 @@ $(window).load(function() {
               }, {
                 duration: 200,
                 complete: function(){
-                  $('.closeButton').css('opacity', '1');
+                  $('.closeButton1').css('opacity', '1');
                 }
               });
             }
@@ -227,7 +227,7 @@ $(window).load(function() {
 
   function biggerAgendaTile(){
     $('.theAgenda').click(function() {
-      $('.tilev').animate({
+      $('.tilev').not('.thePhoneMail').animate({
         width: '0',
         height: '0',
         opacity: '0',
@@ -243,7 +243,7 @@ $(window).load(function() {
       }, {
         duration: 100,
         complete: function() {
-          $('.theAgenda').empty().css('marginTop', '-600px');
+          $('.theAgenda').empty();
           $('.theAgenda').addClass("bigAgenda").removeClass('theAgenda').fadeIn(30).animate({
             backgroundColor: 'green'
           }, {
