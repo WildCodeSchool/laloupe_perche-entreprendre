@@ -17,6 +17,9 @@ function userController($scope, $http, userService, contactService, agendaServic
       bureauService.get().then(function (res) {
           $scope.bureaulist = res.data
       });
+      temoignageService.get().then(function (res) {
+          $scope.temoignagelist = res.data
+      });
     }
 
       $scope.add = function () {
@@ -130,6 +133,13 @@ function userController($scope, $http, userService, contactService, agendaServic
           load();
         });
        }
+       $scope.updateTemoignage = function(temoignage){
+         var id = temoignage._id;
+         delete temoignage._id;
+        temoignageService.update(id,temoignage).then(function(res){
+          load();
+        });
+       }
 
       $scope.delete = function(user,serv){
         if (serv == 'user'){
@@ -152,7 +162,11 @@ function userController($scope, $http, userService, contactService, agendaServic
             load();
           });
         }
-
+        else if (serv == 'temoignage'){
+          temoignageService.delete(user._id).then(function(res){
+            load();
+          });
+        }
       }
       load();
 
