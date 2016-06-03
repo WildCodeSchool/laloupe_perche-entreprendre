@@ -10,7 +10,7 @@ body {
 
 .accueilOne {
   margin-top:150px;
-  margin-left:100px;
+/*  margin-left:100px;*/
   width: 1050px;
   display:flex;
   flex-wrap: wrap;
