@@ -1,165 +1,52 @@
-
 <div class="title">
-<h1>L'effet réseau</h1>
+    <h1>L'effet réseau</h1>
 </div>
 
 
-<div class="container accueil">
-    <div class="range first">
-        <div class="tile controlCreateActivity createActivity ">
-            <!-- <div class="justHover" data-toggle="modal" data-target=".bs-example-modal-lg"></div> -->
-            <div class="justHover"></div>
-            <div class="littletitle">
-                <p>Je crée mon activité</p>
+<div class="container accueilOne">
 
-                <img class="icones" src="img/phone-call.png" alt="téléphone">
-                <img class="icones" src="img/envelope.png" alt="enveloppe">
-
+    <div class="theColumn columnOne">
+        <div class="tilev thePhoneMail">
+            <h1>Contact</h1>
+            <div class="phoneAndMailIcon">
+                <div class="phoneIcon"></div>
+                <div class="mailIcon"></div>
             </div>
         </div>
-        <div class="tile scoopitou">
-            <iframe src='//www.scoop.it/embed-topic/3050061.html?height=250?maxwidth=255' class="myScoopit" frameBorder='0' scrolling='no'></iframe>
+        <div class="tilev theAgenda">
+          <img class="imgAgenda imgA" src="../img/afficheart.png" alt=""/>
+          <img class="imgAgenda imgB" src="../img/moisdunumerique.png" alt=""/>
+          <img class="imgAgenda imgC" src="../img/affiche.jpg" alt=""/>
         </div>
     </div>
 
 
-    <div class="range middle">
-              <div class="tile controleMyAgenda myAgenda">
 
-            <!-- CAROUSEL PROVISOIRE AGENDA-->
-
-            <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="5000" id="bs-carousel">
-                <!-- Overlay -->
-                <div class="overlay"></div>
-
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#bs-carousel" data-slide-to="1"></li>
-                    <li data-target="#bs-carousel" data-slide-to="2"></li>
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item slides active">
-                        <div class="slide-1"></div>
-                        <div class="hero">
-                            <hgroup>
-                                <h1>Du 3 au 29 juin 2016</h1>
-                                <h3>Les journées du bois</h3>
-                            </hgroup>
-                            <button class="hbutton btn btn-hero btn-lg" role="button">Voir</button>
-                        </div>
-                    </div>
-                    <div class="item slides">
-                        <div class="slide-2"></div>
-                        <div class="hero">
-                            <hgroup>
-                                <h1>22 septembre 2016</h1>
-                                <h3>Artisanat Tour</h3>
-                            </hgroup>
-                            <button class="hbutton btn btn-hero btn-lg" role="button">Voir</button>
-                        </div>
-                    </div>
-                    <div class="item slides">
-                        <div class="slide-3 slidelittle"></div>
-                        <div class="hero">
-                            <hgroup>
-                                <h1>Du 6 au 30 juin 2016</h1>
-                                <h3>Le mois du numérique</h3>
-                            </hgroup>
-                            <button class="hbutton btn btn-hero btn-lg" role="button">Voir</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
+    <div class="theColumn columnTwo">
+        <div class="tilev theCreation">
+          <div class="closeButton1">X</div>
+          <h1>Je créé mon activité</h1>
         </div>
-
-
-
-
-
-        <div class="tile controlBuySociety buySociety">
-            <div class="justHover" data-toggle="modal" data-target="#"></div>
-            <p class="littletitle">Je reprends une entreprise</p>
+        <div class="tilev theSociety">
+          <h1>Je reprends une entreprise</h1>
+        </div>
+        <div class="tilev theYoutube">
+          <iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 
-    <div class="range last">
-        <div class="tile videoCard">
-            <iframe class="youtubeVideo" width="400" height="245" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
+
+
+
+    <div class="theColumn columnThree">
+        <div class="tilev theScoupit">
+           <iframe class="theScoopitContent" width="300" height="300" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=255"></iframe>
         </div>
-        <div class="tile movePerche">
-            <p class="littlepetittitle">Installez-vous dans le Perche !</p>
-        </div>
-    </div>
-</div>
-
-
-<!-- MODAL TUILE CREER MON ENTREPRISE -->
-<!-- MODAL TUILE CREER MON ENTREPRISE -->
-<!-- MODAL TUILE CREER MON ENTREPRISE -->
-
-<div class="modal fade bs-example-modal-lg creationEntreprise" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-    <div class="createBox modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <h1 class="fullName">Vous pouvez prendre rendez-vous</h1>
-
-                 <img class="icones" ng-click="mail = !mail" src="img/envelope.png" alt="enveloppe">
-<!--                  <h3 class="mail" ng-show="mail">Mail@Mail.fr</h3>-->
-
-
-
-                <!-- <form class="well form-horizontal" action=" " method="post" id="contact_form" ng-show="mail"> -->
-                  <div class="account-wall" ng-show="mail">
-                    <center>
-                        <img src="img/logo_pole.png" alt="" width="280px">
-                    </center>
-                    <form class="form-signin" style="text-align:center;">
-
-                      <h3> Vos informations </h3>
-                        <input type="name" class="form-control" ng-model="contactName" placeholder="Votre nom" required>
-                        <input type="firstname" class="form-control" ng-model="contactFirstname" placeholder="Votre prénom" required>
-                        <input type="fonction" class="form-control" ng-model="contactFunction" placeholder="Votre fonction" required>
-                        <input type="enterprise2" class="form-control" ng-model="contactEnterprise" placeholder="Votre structure" required>
-                        <input type="ville2" class="form-control" ng-model="contactVille" placeholder="Votre ville" required>
-                        <input type="mail" class="form-control" ng-model="contactEmail" placeholder="Votre email" required>
-                        <input type="phone" class="form-control" ng-model="contactPhone" placeholder="Votre numéro de téléphone" required>
-                        <textarea style="resize:vertical;" class="form-control" placeholder="Message..." rows="6" name="comment" required></textarea>
-
-                          <a href="#/"><button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 60px" ng-click="add()" type="submit">
-                            Envoi !</button></a>
-
-                    </form>
-                  </div>
-<!--
-
-                <h3 class="phone" ng-click="phone = !phone">Par Téléphone ></h3>
-                <h3 class="phone phoneNumber" ng-show="phone">02 37 34 56 78</h3>
--->
-
-                <img class="icones" ng-click="phone = !phone" src="img/phone-call.png" alt="téléphone">
-                 <h3 class="phone phoneNumber" ng-show="phone">02 37 34 56 78</h3>
-
-            </div>
-
-
-
-
-
-
-
-
-            <div class="modal-footer">
-                <center>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
-                </center>
-            </div>
+        <div class="tilev thePhoto"></div>
+        <div class="tilev theLinks">
+          <h1>Je m'installe dans le Perche</h1>
         </div>
     </div>
+
+
 </div>

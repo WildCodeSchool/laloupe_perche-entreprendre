@@ -271,7 +271,9 @@ body {
 }
 
 .hamburger.is-open .hamb-top {
+    -moz-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+    -moz-transition: -webkit-transform .2s cubic-bezier(.73, 1, .28, .08);
     -webkit-transition: -webkit-transform .2s cubic-bezier(.73, 1, .28, .08);
 }
 
@@ -280,6 +282,8 @@ body {
 }
 
 .hamburger.is-open .hamb-bottom {
+  -moz-transform: rotate(-45deg);
+  -moz-transition: -webkit-transform .2s cubic-bezier(.73, 1, .28, .08);
     -webkit-transform: rotate(-45deg);
     -webkit-transition: -webkit-transform .2s cubic-bezier(.73, 1, .28, .08);
 }
@@ -343,8 +347,9 @@ body {
     height: 65px;
     max-height:100px;
     margin-top: 50px;
-
 }
+
+
 
 .footer a {
     text-decoration-color: midnightblue;
