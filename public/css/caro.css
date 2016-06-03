@@ -1,5 +1,6 @@
 body {
-
+  background-image: url(../img/leperche.jpg);
+  background-position:cover;
 }
 
 .accueilOne {
@@ -24,8 +25,31 @@ body {
   box-shadow: 0px 0px 10px black;
 }
 
+.closeButton {
+  width:50px;
+  height:50px;
+  position:absolute;
+  background-color:red;
+  color:white;
+  font-size:1.5em;
+  font-weight:bold;
+  margin-top:-20px;
+  margin-left: 720px;
+  border-radius: 50px;
+  padding: 10px;
+  box-shadow: -1px 1px 3px black, 1px 0px 6px black;
+  text-shadow: 0px 0px 2px black;
+  opacity: 0;
+  transition:0.2s;
+  }
+
+  .closeButton:hover {
+    transform: scale(1.1);
+  }
+
 /* Colonne 1 */
 .columnOne {
+    margin-right:6px;
   width: 300px;
   height:800px;
   display:flex;
@@ -79,7 +103,7 @@ body {
   height: 100px;
   background-image: url(http://cdn.mysitemyway.com/icons-watermarks/flat-circle-white-on-black/raphael/raphael_mail/raphael_mail_flat-circle-white-on-black_512x512.png);
   background-size: contain;
-  border:1px solid white;
+  border:2px solid white;
   border-radius: 50px;
   transition: 0.5s;
 }
@@ -89,11 +113,17 @@ body {
 
 /* Tuile Agenda */
 .theAgenda {
-  height: 520px;
-  background-image: url(../img/afficheart.png);
-  background-size:contain;
+  height: 517px;
+  /*background-image: url(../img/afficheart.png);
+  background-size:contain;*/
   border:none;
   box-shadow: 1px 1px 5px black;
+  overflow:hidden;
+}
+
+.imgAgenda {
+  width: 100%;
+  height:100%;
 }
 
 
@@ -134,6 +164,10 @@ body {
 .theSociety > h1 {
   color: white;
   text-shadow: 1px 1px 5px black;
+}
+/*Tuile Créer son entreprise APRES aggrandissement*/
+.bigSociety {
+  background-color: orange;
 }
 
 /* Tuile Youtube */
@@ -176,6 +210,9 @@ body {
   background-color: violet;
   display: flex;
   align-items: center;
+}
+.bigLinks {
+  background-color: violet;
 }
 .theLinks > h1 {
   color: white;
