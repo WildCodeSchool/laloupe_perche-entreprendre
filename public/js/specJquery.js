@@ -214,6 +214,7 @@ $(window).load(function() {
     });
     //smallerLinksTile();
   }
+  */
 
 
   /////////////////////////////////////////////////
@@ -238,7 +239,6 @@ $(window).load(function() {
       }, {
         duration: 100,
         complete: function() {
-          $('.theAgenda').empty();
           $('.theAgenda').addClass("bigAgenda").removeClass('theAgenda').fadeIn(30).animate({
             backgroundColor: 'green'
           }, {
@@ -331,6 +331,6 @@ setInterval(slideImages,1000);
           }
         });
       }
-*/
+
 
 });

@@ -14,10 +14,19 @@
                 <div class="mailIcon"></div>
             </div>
         </div>
-        <div class="tilev theAgenda">
-            <img class="imgAgenda imgA" src="../img/afficheart.png" alt="" />
-            <img class="imgAgenda imgB" src="../img/moisdunumerique.png" alt="" />
-            <img class="imgAgenda imgC" src="../img/affiche.jpg" alt="" />
+        <div class="tilev theAgenda" ng-click="hideAgenda = !hideImgAgenda">
+            <img class="imgAgenda imgA" ng-hide="hideAgenda" src="../img/afficheart.png" alt="" />
+            <img class="imgAgenda imgB"ng-hide="hideAgenda" src="../img/moisdunumerique.png" alt="" />
+            <img class="imgAgenda imgC" ng-hide="hideAgenda" src="../img/affiche.jpg" alt="" />
+
+            <div class="imgEvent">
+              <img class="imgAgenda" ng-hide="!hideAgenda" src="../img/afficheart.png" alt="" />
+            </div>
+            <div class="textEvent" ng-hide="!hideAgenda">
+              <h1>La Loupe</h1>
+              <p>Velit velit reprehenderit culpa reprehenderit nostrud exercitation id quis officia consequat ut exercitation dolore proident nulla reprehenderit dolore.</p>
+              <p>Ex ipsum nostrud aute do eu eiusmod do anim. Elit mollit id ad adipisicing irure nulla officia ullamco amet deserunt eu laborum. Non ullamco proident laborum cillum duis nisi sint. Nulla consectetur magna in sunt consectetur et cupidatat Lorem aute occaecat Lorem dolor duis adipisicing ad. Minim esse consectetur do do velit qui ex occaecat ut. Lorem sunt est fugiat laborum aute amet ut do officia qui cillum. Elit ad quis voluptate irure nisi adipisicing eiusmod est consequat.</p>
+            </div>
         </div>
     </div>
 
