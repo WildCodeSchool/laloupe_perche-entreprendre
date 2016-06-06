@@ -1,7 +1,13 @@
-<div class="globale">
-    <div class="card">
+<div class="globale">   
+       <div class="card">
+       <div class="cardHead">
         <img class="item imgCard" ng-show="connexion.userImg" src="{{connexion.userImg}}" alt="Photo de profil" />
         <img class="item imgCard" ng-show="!connexion.userImg" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
+        <qrcode size="200" href="#/formulaire/{{connexion._id}}" class="contactus"data="http://localhost:8000/#/formulaire/{{connexion._id}}"></qrcode>
+<!--        <a href="#/formulaire/{{connexion._id}}" class="contactus">Cliquez ici pour nous contacter</a>-->
+        </div>
+        
+        <div class="cardContent"> 
         <h1 class="item fullName">identité :{{" " + connexion.userFirstname + " " + connexion.userName }}</h1>
         <h3 class="item function">fonction :{{" " + connexion.userFunction }} à {{ connexion.userEnterprise }}</h3>
         <h3 class="item ville">localité :{{" " + connexion.userVille }}</h3>
@@ -9,8 +15,7 @@
         <h3 class="item mail">mail :{{" " +connexion.userEmail }}</h3>
         <h3 class="item note">remarques :{{" " +connexion.userNote}}</h3>
         <div class="qqrcode">
-        <qrcode size="200" data="http://localhost:8000/#/formulaire/{{connexion._id}}"></qrcode>
-        <a href="#/formulaire/{{connexion._id}}" class="contactus">Cliquez ici pour nous contacter</a>
+        </div>
         </div>
     </div>
 </div>
