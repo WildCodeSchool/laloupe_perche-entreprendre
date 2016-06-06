@@ -14,7 +14,6 @@
 
     <div class="row  col-md-6 col-md-offset-3">
 
-        <div class="account-wall">
             <center>
                 <img src="img/logo_pole.png" alt="" width="280px">
             </center>
@@ -34,35 +33,21 @@
 
 
 
-                        <h3> Votre photo </h3>
-                            <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
-
-                            					<center>
-                            						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="download" class="btn btn-success">Télécharger une image</button>
-                            					</center>
-
-
-                                      <center>
-            <span class="text"></span><img class="preview" flow-img="image" />
-            <br>
-            <span class="text"></span> <img class="preview" ng-src="{{friend.contactImg}}" />
-            <p>
-              <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="image.cancel()"></span>
-
-            </p>
-          </center>
-
-
-                            				</div>
-
+              <h3> Votre photo </h3>
+                <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+                    <center>
+                        <button flow-btn flow-attrs="{accept:'image/*'}" type="file" class="btn btn-success">Télécharger une image</button>
+                        <div ng-hide="contactImg[0]"><img class="imgProfile" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="" alt="downloadicon" flow-btn flow-attrs="{accept:'image/*'}" type="file" id="btnImage"/></div>
+                        <div ng-show="contactImg[0]"><img class="imgProfile" src="{{user.img}}" alt="" alt="downloadicon" flow-btn flow-attrs="{accept:'image/*'}" type="file" id="btnImage"/></div>
+                        <p>
+                          <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="cancel(image)"></span>
+                        </p>
+                    </center>
+                </div>
 
                 <!--<div class="alert alert-danger" ng-show="connection==1" role="alert">Veuillez entrer un email ou un mot de passe valide.</div>-->
                 <a href="#/"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="add()" type="submit">
                     S'enregistrer et nous contacter !</button></a>
-
             </form>
-
-        </div>
-
     </div>
 </div>
