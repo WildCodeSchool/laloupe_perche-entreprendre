@@ -1,12 +1,13 @@
 $(window).load(function() {
 
 
+
 ////////////////////////////////////////////////////////////////
 // Fonction Aggrandissement de la tuile Création d'entreprise //
 ////////////////////////////////////////////////////////////////
   biggerCreationTile();
   function biggerCreationTile(){
-    $('.theCreation').on("click", function() {
+    $('.theCreation').click(function() {
       $('.tilev').not('.thePhoneMail, .theAgenda').animate({
         width: '0',
         height: '0',
@@ -108,13 +109,13 @@ $(window).load(function() {
   }
 
 
-/*
+
   ///////////////////////////////////////////////////////////////
   // Fonction Aggrandissement de la tuile Reprendre entreprise //
   ///////////////////////////////////////////////////////////////
   biggerSocietyTile();
   function biggerSocietyTile(){
-    $('.theSociety').click(function() {
+    $('.theSociety').one("click", function() {
       $('.tilev').not('.thePhoneMail, .theAgenda').animate({
         width: '0',
         height: '0',
@@ -161,7 +162,7 @@ $(window).load(function() {
     //smallerSocietyTile();
   }
 
-
+/*
   ////////////////////////////////////////////////////////////////
   // Fonction Aggrandissement de la tuile S'installer dans le Perche //
   ////////////////////////////////////////////////////////////////

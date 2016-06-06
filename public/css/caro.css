@@ -36,7 +36,7 @@ body {
   box-shadow: 0px 0px 10px black;
 }
 
-.closeButton1 {
+.closeButton1, .closeButton2 {
   width:50px;
   height:50px;
   position:absolute;
@@ -54,7 +54,7 @@ body {
   transition:0.2s;
   }
 
-  .closeButton1:hover {
+  .closeButton1:hover, .closeButton2:hover {
     transform: scale(1.1);
   }
 
@@ -156,6 +156,10 @@ body {
   color: white;
   text-shadow: 1px 1px 5px black;
 }
+.activityContent {
+  margin-top:30px;
+  margin-bottom: -10px;
+}
 /*Tuile Créer son entreprise APRES aggrandissement*/
 .bigCreation {
   background-color: lightblue;
@@ -171,6 +175,102 @@ body {
   color: white;
   text-shadow: 1px 1px 5px black;
 }
+.societyContent {
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.societySearchButton {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.societySearchButton > button {
+  width: 150px;
+  height:100px;
+  padding:20px;
+  border-radius:10px;
+}
+/*Gestion recherche d'entreprise*/
+.searchSociety {
+  width:720px;
+  height:550px;
+}
+.listSociety {
+  color:black;
+  list-style-type: none;
+  display:flex;
+  flex-flow: column nowrap;
+  width:100%;
+}
+.infoSocietyContainer {
+  display:flex;
+  flex-flow: row nowrap;
+  width:700px;
+  height:500px;
+  align-items: center;
+  justify-content: space-around;
+}
+.infoSociety {
+  width: 350px;
+  height:500px;
+  display:flex;
+  flex-flow: column wrap;
+
+}
+.imgSocietyContainer {
+  width: 350px;
+  height:300px;
+  display:flex;
+  flex-flow: column nowrap;
+}
+.imgSociety {
+  height:200px;
+  width:200px;
+}
+
+
+/*Gestion recherche d'un local*/
+.searchLocal {
+  width:720px;
+  height:550px;
+}
+.listLocal {
+  color:black;
+  list-style-type: none;
+  display:flex;
+  flex-flow: column nowrap;
+  width:100%;
+}
+.infoLocalContainer {
+  display:flex;
+  flex-flow: row nowrap;
+  width:700px;
+  height:500px;
+  align-items: center;
+  justify-content: space-around;
+}
+.infoLocal {
+  width: 350px;
+  height:500px;
+  display:flex;
+  flex-flow: column wrap;
+
+}
+.imgLocalContainer {
+  width: 350px;
+  height:300px;
+  display:flex;
+  flex-flow: column nowrap;
+}
+.imgLocal {
+  height:200px;
+  width:200px;
+}
+
 /*Tuile Créer son entreprise APRES aggrandissement*/
 .bigSociety {
   background-color: orange;
