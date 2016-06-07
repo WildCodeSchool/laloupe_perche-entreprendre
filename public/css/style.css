@@ -790,13 +790,25 @@ button {
     position: absolute;
 }
 .modal-content {
-    border-radius: 0px;
+    margin: 200px;
+    width: 500px;
+    border-radius: 20px;
     border: none;
     top: 40%;
 }
 .modal-body {
-    background-color: #1F6F6F;
-    color: white;
+    background: rgba(247, 247, 247, 0.5);
+    border-radius: 20px;
+    padding: 50px;
+    min-height: 400px;
+    margin: 200px;
+    width: 500px;
+    text-align:center;  
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 
