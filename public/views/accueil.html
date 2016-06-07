@@ -9,29 +9,142 @@
         <div class="tilev thePhoneMail">
             <h1>Contact</h1>
             <div class="phoneAndMailIcon">
-                <div class="phoneIcon"></div>
-                <div class="mailIcon"></div>
+                <div class="phoneIcon firstState" ng-click="iconToNumber = !iconToNumber"></div>
+                <div class="phoneIcon" ng-show="iconToNumber">02 37 12 34 56</div>
+
+                <!--<div class="mailIcon"></div>-->
             </div>
         </div>
-        <div class="tilev theAgenda">
-          <img class="imgAgenda imgA" src="../img/afficheart.png" alt=""/>
-          <img class="imgAgenda imgB" src="../img/moisdunumerique.png" alt=""/>
-          <img class="imgAgenda imgC" src="../img/affiche.jpg" alt=""/>
+        <div class="tilev theAgenda" ng-click="hideAgenda = !hideImgAgenda">
+            <img class="imgAgenda imgA" ng-hide="hideAgenda" src="../img/afficheart.png" alt="" />
+            <img class="imgAgenda imgB"ng-hide="hideAgenda" src="../img/moisdunumerique.png" alt="" />
+            <img class="imgAgenda imgC" ng-hide="hideAgenda" src="../img/affiche.jpg" alt="" />
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="imgEvent">
+              <img class="imgAgenda" ng-hide="!hideAgenda" src="../img/afficheart.png" alt="" />
+            </div>
+            <div class="textEvent" ng-hide="!hideAgenda">
+              <h1>La Loupe</h1>
+              <p>Velit velit reprehenderit culpa reprehenderit nostrud exercitation id quis officia consequat ut exercitation dolore proident nulla reprehenderit dolore.</p>
+              <p>Ex ipsum nostrud aute do eu eiusmod do anim. Elit mollit id ad adipisicing irure nulla officia ullamco amet deserunt eu laborum. Non ullamco proident laborum cillum duis nisi sint. Nulla consectetur magna in sunt consectetur et cupidatat Lorem aute occaecat Lorem dolor duis adipisicing ad. Minim esse consectetur do do velit qui ex occaecat ut. Lorem sunt est fugiat laborum aute amet ut do officia qui cillum. Elit ad quis voluptate irure nisi adipisicing eiusmod est consequat.</p>
+            </div>
         </div>
     </div>
 
 
 
+
+
     <div class="theColumn columnTwo">
-        <div class="tilev theCreation">
-          <div class="closeButton1">X</div>
-          <h1>Je créé mon activité</h1>
+        <div class="tilev theCreation" ng-click="activity = 1">
+
+            <div class="closeButton1">X</div>
+            <h1>Je créé mon activité</h1>
+
+            <div class="activityContent">
+                <div class="account-wall-activity" ng-show="activity == 1">
+
+                    <p>Vous êtes porteur de projet et souhaitez obtenir un rendez-vous afin de discuter de votre projet ?</p>
+                    <p>Remplissez simplement ce formulaire et nous vous rappellerons très prochainement.</p>
+
+
+                    <form class="form-signin" style="text-align:center;">
+
+
+                        <h3> Vos informations </h3>
+                        <input type="name" class="form-control" ng-model="contactName" placeholder="Votre nom" required>
+                        <input type="firstname" class="form-control" ng-model="contactFirstname" placeholder="Votre prénom" required>
+                        <input type="fonction" class="form-control" ng-model="contactFunction" placeholder="Votre fonction" required>
+                        <input type="enterprise2" class="form-control" ng-model="contactEnterprise" placeholder="Votre structure" required>
+                        <input type="ville2" class="form-control" ng-model="contactVille" placeholder="Votre ville" required>
+                        <input type="mail" class="form-control" ng-model="contactEmail" placeholder="Votre email" required>
+                        <input type="phone" class="form-control" ng-model="contactPhone" placeholder="Votre numéro de téléphone" required>
+                        <textarea style="resize:vertical;" class="form-control" placeholder="Message..." rows="6" name="comment" required></textarea>
+                        <a href="#/">
+                            <button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 10px" ng-click="add()" type="submit">
+                                Envoi !</button>
+                        </a>
+                    </form>
+
+                    <button class="close-button" style="transform: translateY(400px);">close</button>
+                </div>
+            </div>
+
         </div>
-        <div class="tilev theSociety">
-          <h1>Je reprends une entreprise</h1>
+        <div class="tilev theSociety" ng-click="society = 1">
+            <div class="closeButton2">X</div>
+            <h1>Je reprends une entreprise</h1>
+
+
+            <div class="societyContent" ng-show="society == 1">
+                <p class="introSociety" ng-hide="hideContent ==1">Esse aliqua minim excepteur tempor culpa non irure exercitation ea ad fugiat labore adipisicing dolor ea pariatur. Veniam commodo aute duis ullamco eu laborum deserunt sit esse. Anim sunt Lorem in nisi labore do aute nostrud minim labore
+                    laborum quis. Exercitation in sit Lorem consectetur non aliqua enim. Elit fugiat cillum laboris aute aute nulla amet.</p>
+                <div class="societySearchButton" ng-hide="hideContent == 1">
+                    <button ng-click="lookingForSociety = 1; hideContent = 1">Je recherche une entreprise</button>
+                    <button ng-click="lookingForLocal = 1; hideContent = 1">Je recherche un local</button>
+                </div>
+
+                <div class="searchSociety" ng-show="lookingForSociety == 1">
+                    <h2>Une sélection d'entreprises à reprendre</h2>
+
+
+                  <!--  Ajouter le ng-repeat au ul :) -->
+                    <ul class="listSociety">
+                        <li class="society" ng-repeat="bureau in bureaulist">
+                            <div class="infoSocietyContainer">
+                                <div class="infoSociety">
+                                  <p>{{bureau.bureauType}}</p>
+                                  <p>{{bureau.bureauDescription}}</p>
+                                  <p>{{bureau.bureauSecteur}}</p>
+                                  <p>{{bureau.bureauSurface}}</p>
+                                  <p>{{bureau.bureauPrice}}</p>
+                                </div>
+                            </div>
+                            <div class="imgSocietyContainer">
+                                  <img class="imgSociety" style="width:300px; height: 200px;" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="searchLocal" ng-show="lookingForLocal == 1">
+                    <h2>Une sélection de locaux à reprendre</h2>
+
+                    <!--  Ajouter le ng-repeat au ul :) -->
+                    <ul class="listLocal">
+                        <li class="local">
+                            <div class="infoLocalContainer">
+                                <div class="infoLocal">
+                                  <p>{{bureauType}} Type de local</p>
+                                  <p>{{bureauDescription}} Installée à 5 minutes de la Loupe l'entreprise blablabla</p>
+                                  <p>{{bureauSecteur}} La Loupe</p>
+                                  <p>{{bureauSurface}} 70m2</p>
+                                  <p>{{bureauPrice}} 120 000€</p>
+                                </div>
+                                <div class="imgLocalContainer">
+                                    <img class="imgLocal" src="{{bureauImg || 'https://cdn3.iconfinder.com/data/icons/mobiset-2/512/home_house_simple_glyph_pixel_perfect-512.png'}}" alt="Photo du local" />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
         </div>
         <div class="tilev theYoutube">
-          <iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
+            <!--<iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>-->
         </div>
     </div>
 
@@ -40,11 +153,11 @@
 
     <div class="theColumn columnThree">
         <div class="tilev theScoupit">
-           <iframe class="theScoopitContent" width="300" height="300" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=255"></iframe>
+            <!--<iframe class="theScoopitContent" width="300" height="300" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=255"></iframe>-->
         </div>
-        <div class="tilev thePhoto"></div>
+        <div class="tilev thePhotoo"></div>
         <div class="tilev theLinks">
-          <h1>Je m'installe dans le Perche</h1>
+            <h1>Je m'installe dans le Perche</h1>
         </div>
     </div>
 
