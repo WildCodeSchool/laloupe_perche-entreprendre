@@ -19,6 +19,14 @@ function userController($scope, $http, userService, contactService, agendaServic
   });
 
 
+  //ng-click function to change Agenda views
+  $scope.changeAgendaView = function() {
+    $('.subAgenda').fadeOut(300);
+    $('.textEvent').fadeIn(700);
+  }
+
+
+
     function load(){
       userService.get().then(function (res) {
           $scope.userlist = res.data

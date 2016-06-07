@@ -3,17 +3,17 @@ $(window).load(function() {
   //////////////////////////////
   // Fonction icone téléphone //
   //////////////////////////////
-  biggerIconPhone();
+/*  biggerIconPhone();
 
   function biggerIconPhone() {
-      $('.firstStatez').one("click", function() {
+      $('.firstState').one("click", function() {
           $(this).css('background', 'transparent').animate({
               width: '90%',
               borderRadius: '3px',
               border: '0px'
           }, 600);
       });
-  }
+  }*/
 
 
     ////////////////////////////////////////////////////////////////

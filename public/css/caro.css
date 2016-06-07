@@ -131,6 +131,10 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+.subAgenda {
+  height:517px;
+  width:100%;
+}
 
 .imgAgenda {
   width: 100%;
@@ -139,11 +143,25 @@ body {
 
 .imgEvent {
   width:500px;
-  height:100%;
+  height:500px;
 }
 .textEvent {
-  width: 300px;
-  height: 100%:
+  display:none;
+  width: 700px;
+  height: 500px;
+  color:black;
+}
+.imgAgendaAfter {
+  width:400px;
+}
+.infoAgenda {
+  width:300px;
+  float:right;
+  margin-top:170px;
+}
+.phoneWithoutIcon {
+  color:white;
+  font-size:2.4em;
 }
 
 
@@ -160,13 +178,12 @@ body {
 
 /* Tuile Créer son entreprise */
 .theCreation {
-  background-color: lightblue;
+  background-color: rgb(0, 180, 205);
   display: flex;
   align-items: center;
 }
 .theCreation > h1 {
   color: white;
-  text-shadow: 1px 1px 5px black;
 }
 .activityContent {
   margin-top:30px;
@@ -321,21 +338,4 @@ body {
 .theLinks > h1 {
   color: white;
   text-shadow: 1px 1px 5px black;
-}
-
-
-/* Ma carte de visite */
-.controlCard {
-  margin-left:40%;
-  height:500px;
-  width:700px;
-  margin-top:150px;
-}
-.theCard {
-  display: flex;
-  width:300px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
 }
