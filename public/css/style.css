@@ -798,6 +798,7 @@ button {
 }
 .modal-body {
     background: rgba(247, 247, 247, 0.5);
+    background-image: url(/img/marguerite.png);
     border-radius: 20px;
     padding: 50px;
     min-height: 400px;
