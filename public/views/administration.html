@@ -42,7 +42,7 @@
         <p class="littletitle">Gérer les témoignages</p>
     </div>
     <div class="tile createActivity" style="width: 350px">
-        <div class="justHover" data-toggle="modal" data-target="#"></div>
+        <div class="justHover" data-toggle="modal" data-target="#modal-export"></div>
         <p class="littletitle">Exporter les données</p>
     </div>
 </div>
@@ -78,10 +78,10 @@
 
 
                                 <h3> Votre photo </h3>
-                                    <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+                                    <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFileUser($files)">
 
                                     					<center>
-                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="download" class="btn btn-success">Télécharger une image</button>
+                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" class="btn btn-success">Télécharger une image</button>
                                     					</center>
 
 
@@ -203,10 +203,10 @@
 
 
                                 <h3> Une photo ? </h3>
-                                    <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+                                    <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFilesAgenda($files)">
 
                                     					<center>
-                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="download" class="btn btn-success">Télécharger une image</button>
+                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" class="btn btn-success">Télécharger une image</button>
                                     					</center>
 
 
@@ -286,10 +286,10 @@
 
 
                                 <h3> Une photo ? </h3>
-                                    <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+                                    <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFilesOffice($files)">
 
                                     					<center>
-                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="download" class="btn btn-success">Télécharger une image</button>
+                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" class="btn btn-success">Télécharger une image</button>
                                     					</center>
 
 
@@ -367,10 +367,10 @@
 
 
                                 <h3> Une photo ? </h3>
-                                    <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+                                    <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFilesTestimonial($files)">
 
                                     					<center>
-                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="download" class="btn btn-success">Télécharger une image</button>
+                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" class="btn btn-success">Télécharger une image</button>
                                     					</center>
 
 
@@ -398,7 +398,6 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 
 
 <!-- ----------------------------------------- MODAL TESTIMONIALS --------------------------------------------- -->
@@ -425,6 +424,17 @@
                 </br>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
               </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------------------------------------- MODAL EXPORT --------------------------------------------- -->
+
+<div class="modal fade" id="modal-export" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+        <div class="modal-content" style="margin-top: -250px">
+            <div class="modal-body">
+              <button id="buttonExport">exporter</button>
             </div>
         </div>
     </div>
