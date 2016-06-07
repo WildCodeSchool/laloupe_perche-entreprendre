@@ -212,38 +212,24 @@ body {
   height:550px;
 }
 .listSociety {
+  width:100%;
+  height:100%;
+}
+.society {
   color:black;
   list-style-type: none;
-  display:flex;
-  flex-flow: column nowrap;
+  display:inline-block;
   width:100%;
 }
+
 .infoSocietyContainer {
-  display:flex;
-  flex-flow: row nowrap;
-  width:700px;
-  height:500px;
-  align-items: center;
-  justify-content: space-around;
-}
-.infoSociety {
-  width: 350px;
-  height:500px;
-  display:flex;
-  flex-flow: column wrap;
-
-}
-.imgSocietyContainer {
-  width: 350px;
+  width: 300px;
   height:300px;
-  display:flex;
-  flex-flow: column nowrap;
 }
-.imgSociety {
-  height:200px;
-  width:200px;
+.imgSocietyContainer {
+  width: 300px;
+  height:300px;
 }
-
 
 /*Gestion recherche d'un local*/
 .searchLocal {

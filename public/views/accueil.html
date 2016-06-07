@@ -9,15 +9,27 @@
         <div class="tilev thePhoneMail">
             <h1>Contact</h1>
             <div class="phoneAndMailIcon">
-                <div class="phoneIcon"></div>
+                <div class="phoneIcon firstState" ng-click="iconToNumber = !iconToNumber"></div>
+                <div class="phoneIcon" ng-show="iconToNumber">02 37 12 34 56</div>
 
-                <div class="mailIcon"></div>
+                <!--<div class="mailIcon"></div>-->
             </div>
         </div>
         <div class="tilev theAgenda" ng-click="hideAgenda = !hideImgAgenda">
             <img class="imgAgenda imgA" ng-hide="hideAgenda" src="../img/afficheart.png" alt="" />
             <img class="imgAgenda imgB"ng-hide="hideAgenda" src="../img/moisdunumerique.png" alt="" />
             <img class="imgAgenda imgC" ng-hide="hideAgenda" src="../img/affiche.jpg" alt="" />
+
+
+
+
+
+
+
+
+
+
+
 
             <div class="imgEvent">
               <img class="imgAgenda" ng-hide="!hideAgenda" src="../img/afficheart.png" alt="" />
@@ -89,18 +101,18 @@
 
                   <!--  Ajouter le ng-repeat au ul :) -->
                     <ul class="listSociety">
-                        <li class="society">
+                        <li class="society" ng-repeat="bureau in bureaulist">
                             <div class="infoSocietyContainer">
                                 <div class="infoSociety">
-                                  <p>{{bureauType}} Type de bureau</p>
-                                  <p>{{bureauDescription}} Installée à 5 minutes de Nogent le Rotrou l'entreprise blablabla</p>
-                                  <p>{{bureauSecteur}} Nogent le Rotrou</p>
-                                  <p>{{bureauSurface}} 400m2</p>
-                                  <p>{{bureauPrice}} 700 000€</p>
+                                  <p>{{bureau.bureauType}}</p>
+                                  <p>{{bureau.bureauDescription}}</p>
+                                  <p>{{bureau.bureauSecteur}}</p>
+                                  <p>{{bureau.bureauSurface}}</p>
+                                  <p>{{bureau.bureauPrice}}</p>
                                 </div>
-                                <div class="imgSocietyContainer">
-                                    <img class="imgSociety" src="{{bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
-                                </div>
+                            </div>
+                            <div class="imgSocietyContainer">
+                                  <img class="imgSociety" style="width:300px; height: 200px;" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
                             </div>
                         </li>
                     </ul>

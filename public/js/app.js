@@ -2,7 +2,7 @@ function config($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/accueil.html',
-            controller: 'mainController'
+            controller: 'userController'
         })
         .when('/mentions', {
             templateUrl: 'views/mentions.html',
