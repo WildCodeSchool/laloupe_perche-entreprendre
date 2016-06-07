@@ -210,25 +210,46 @@ body {
 
 
 
-/*
-.card {
-    width: 900px;
-    height: 400px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: flex-start
-}
-*/
-/*
-.imgCard {
-    height: 150px;
-    width: 140px;
-    box-shadow: 1px 1px 5px black;
-    background-color: white;
+.card  {
+    background: rgba(247, 247, 247, 0.5);
+    border-radius: 20px;
+    padding: 50px;
+    min-height: 400px;
+    margin: 200px;
+    width: 500px;
+    text-align:center;   
 }
 
-*/
+.cardHead {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    
+}
+.cardContent{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardContent{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.imgCard {
+    height: 200px;
+    width: 200px;
+    box-shadow: 1px 1px 5px black;
+    background-color: white;
+    text-align: center;
+}
+
 
 /********************************/
 /*          Hero Headers        */
