@@ -1,15 +1,20 @@
 function contactController($scope, $http, $rootScope, contactService, $routeParams) {
   $scope.user = $rootScope.userId;
-
+load();
+function load (){
   contactService.get().then(function (res) {
       $scope.friendlist = res.data
+      console.log($scope.friendlist.contactImg);
 
   });
+}
+
 
 
       $scope.add = function () {
           var data = {};
           data.contactVille = $scope.contactVille;
+          data.contactImg = $scope.contactImg[0];
           data.contactFunction = $scope.contactFunction;
           data.contactEmail = $scope.contactEmail;
           data.contactNote = $scope.contactNote;
@@ -17,7 +22,6 @@ function contactController($scope, $http, $rootScope, contactService, $routePara
           data.contactName = $scope.contactName;
           data.contactFirstname = $scope.contactFirstname;
           data.contactEnterprise = $scope.contactEnterprise;
-          data.contactImg = $scope.contactImg[0];
           data.contactPhone = $scope.contactPhone;
           contactService.create(data).then(function (res) {
 
@@ -56,12 +60,15 @@ function contactController($scope, $http, $rootScope, contactService, $routePara
   			fileReader.onload = function (event) {
   				var uri = event.target.result;
   				$scope.contactImg[i] = uri;
-          console.log($scope.contactImg);
+
+
   			};
   			fileReader.readAsDataURL(flowFile.file);
   		});
   	};
-
+    $scope.cancel = function(image) {
+      image.cancel();
+    };
 
   //   function readURL(input) {
   //      if (input.files && input.files[0]) {

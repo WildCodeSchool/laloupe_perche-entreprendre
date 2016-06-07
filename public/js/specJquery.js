@@ -6,7 +6,7 @@ $(window).load(function() {
   biggerIconPhone();
 
   function biggerIconPhone() {
-      $('.firstState').one("click", function() {
+      $('.firstStatez').one("click", function() {
           $(this).css('background', 'transparent').animate({
               width: '90%',
               borderRadius: '3px',

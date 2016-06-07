@@ -295,6 +295,7 @@ body {
     width: 100%;
     text-align: center;
 }
+/*
 .card {
     margin-left: 50%;
     transform: translateX(-50%);
@@ -315,6 +316,7 @@ body {
     box-shadow: 1px 1px 5px black;
     background-color: white;
 }
+*/
 .logos {
     display: flex;
     flex-direction: row;
