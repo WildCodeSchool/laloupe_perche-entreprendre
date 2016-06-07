@@ -39,16 +39,6 @@ function load (){
       }
 
 
-    $scope.band = function() {
-        TweenLite.to(angular.element($("#caption")), 2, {
-            css: {
-                top: 0
-            },
-            delay: 1,
-            ease: Power2.easeOut
-        });
-    };
-    $scope.band();
 
     //  ------------   Flow   -----------
 
