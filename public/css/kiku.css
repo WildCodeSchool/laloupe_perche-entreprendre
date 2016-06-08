@@ -104,10 +104,11 @@ body {
     background-size: cover;
     overflow:hidden;
     transition: 0.6s ease-out;
+    cursor: pointer;
+
 }
 .createActivity:hover > .justHover {
     background-color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
 }
 .createActivity:hover > .littletitle {
     color: rgba(255, 255, 255, 1);
@@ -273,9 +274,7 @@ body {
 .icones {
   margin-bottom: 30px;
 }
-.createBox {
-    margin-top: 20%;
-}
+
 .mail {
     text-align: center;
 }

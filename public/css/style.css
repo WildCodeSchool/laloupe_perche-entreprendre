@@ -4,9 +4,8 @@
 
 body {
     padding-top: 70px;
-    background-size: contain;
     margin-top: 50px;
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0,5);
 
 }
@@ -798,19 +797,21 @@ button {
     top: 40%;
 }
 .modal-body {
-    background: rgba(247, 247, 247, 0.5);
     background-image: url(/img/marguerite.png);
-    border-radius: 20px;
-    padding: 50px;
     min-height: 400px;
-    margin: 200px;
-    width: 500px;
-    text-align:center;  
+    width: 850px;
+    text-align:center;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: flex-start;
+    padding: 40px 0px 20px 0px;
+    background-color: rgba(247, 247, 247, 0.5);
+    border-radius: 20px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 
