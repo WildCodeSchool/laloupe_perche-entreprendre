@@ -80,7 +80,6 @@ body {
 }
 .thePhoneMail > h1 {
   color: white;
-  text-shadow: 1px 1px 3px black;
 }
 
 
@@ -202,7 +201,6 @@ body {
 }
 .theSociety > h1 {
   color: white;
-  text-shadow: 1px 1px 5px black;
 }
 .societyContent {
   height:100%;
@@ -337,5 +335,4 @@ body {
 }
 .theLinks > h1 {
   color: white;
-  text-shadow: 1px 1px 5px black;
 }
