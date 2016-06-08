@@ -19,7 +19,7 @@ function userController($scope, $http, userService, contactService, agendaServic
   });
 
 
-  //ng-click function to change Agenda views
+  // ng-click function to change Agenda views
   $scope.changeAgendaView = function() {
     $('.subAgenda').fadeOut(300);
     $('.textEvent').fadeIn(700);
@@ -49,7 +49,7 @@ function userController($scope, $http, userService, contactService, agendaServic
           var data = {};
           data.userVille = $scope.userVille;
           data.userFunction = $scope.userFunction;
-          data.userImg = $scope.userImg[0];
+          data.userImg = $scope.userImg;
           data.userEmail = $scope.userEmail;
           data.userNote = $scope.userNote;
           data.userMdp = $scope.userMdp;
@@ -57,7 +57,7 @@ function userController($scope, $http, userService, contactService, agendaServic
           data.userFirstname = $scope.userFirstname;
           data.userEnterprise = $scope.userEnterprise;
           data.userPhone = $scope.userPhone;
-          
+
           userService.create(data).then(function (res) {
               load();
           });
@@ -72,9 +72,34 @@ function userController($scope, $http, userService, contactService, agendaServic
           $scope.userFirstname = "";
           $scope.userPhone = "";
       }
+      $scope.addContact = function () {
+        var data = {};
+        data.contactVille = $scope.contactVille;
+        data.contactFunction = $scope.contactFunction;
+        data.contactEmail = $scope.contactEmail;
+        data.contactNote = $scope.contactNote;
+        data.contactMdp = $scope.contactMdp;
+        data.contactName = $scope.contactName;
+        data.contactFirstname = $scope.contactFirstname;
+        data.contactEnterprise = $scope.contactEnterprise;
+        data.contactPhone = $scope.contactPhone;
+        contactService.create(data).then(function (res) {
+
+        });
+        $scope.contactEmail = "";
+        $scope.contactMdp = "";
+        $scope.contactVille = "";
+        $scope.contactName = "";
+        $scope.contactFunction = "";
+        $scope.contactImg = [];
+        $scope.contactNote = "";
+        $scope.contactEnterprise = "";
+        $scope.contactFirstname = "";
+        $scope.contactPhone = "";
+      }
       $scope.addAgenda = function () {
           var data = {};
-          data.agendaImg = $scope.agendaImg[0];
+          data.agendaImg = $scope.agendaImg;
           data.agendaTitle = $scope.agendaTitle;
           data.agendaDescription = $scope.agendaDescription;
           data.agendaDate = $scope.agendaDate;
@@ -95,7 +120,7 @@ function userController($scope, $http, userService, contactService, agendaServic
       }
       $scope.addBureau = function () {
           var data = {};
-          data.bureauImg = $scope.bureauImg[0];
+          data.bureauImg = $scope.bureauImg;
           data.bureauType = $scope.bureauType;
           data.bureauDescription = $scope.bureauDescription;
           data.bureauSecteur = $scope.bureauSecteur;
@@ -114,7 +139,7 @@ function userController($scope, $http, userService, contactService, agendaServic
       }
       $scope.addTemoignage = function () {
           var data = {};
-          data.temoignageImg = $scope.temoignageImg[0];
+          data.temoignageImg = $scope.temoignageImg;
           data.temoignageAge = $scope.temoignageAge;
           data.temoignageDescription = $scope.temoignageDescription;
           data.temoignageName = $scope.temoignageName;
@@ -195,20 +220,24 @@ function userController($scope, $http, userService, contactService, agendaServic
 
       //  ------------   Flow Image User  -----------
 
-      $scope.userImg = [];
-
+    $scope.userImg = 'http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif';
+    $scope.photo = true;
     $scope.processFileUser = function (files) {
+      $scope.photo = false;
       angular.forEach(files, function (flowFile, i) {
         var fileReader = new FileReader();
         fileReader.onload = function (event) {
           var uri = event.target.result;
-          $scope.userImg[i] = uri;
-          console.log($scope.userImg);
+          $scope.userImg = uri;
+          $scope.$apply();
         };
         fileReader.readAsDataURL(flowFile.file);
       });
     };
-
+    // $scope.cancel = function() {
+    //   $scope.userImg.cancel();
+    //
+    // };
 
       //  ------------   Flow Image Agenda  -----------
 
@@ -219,7 +248,7 @@ function userController($scope, $http, userService, contactService, agendaServic
           var fileReader = new FileReader();
           fileReader.onload = function (event) {
             var uri = event.target.result;
-            $scope.agendaImg[i] = uri;
+            $scope.agendaImg = uri;
             console.log($scope.agendaImg);
           };
           fileReader.readAsDataURL(flowFile.file);
@@ -235,7 +264,7 @@ function userController($scope, $http, userService, contactService, agendaServic
           var fileReader = new FileReader();
           fileReader.onload = function (event) {
             var uri = event.target.result;
-            $scope.bureauImg[i] = uri;
+            $scope.bureauImg = uri;
             console.log($scope.bureauImg);
           };
           fileReader.readAsDataURL(flowFile.file);
@@ -250,7 +279,7 @@ function userController($scope, $http, userService, contactService, agendaServic
           var fileReader = new FileReader();
           fileReader.onload = function (event) {
             var uri = event.target.result;
-            $scope.temoignageImg[i] = uri;
+            $scope.temoignageImg = uri;
             console.log($scope.temoignageImg);
           };
           fileReader.readAsDataURL(flowFile.file);

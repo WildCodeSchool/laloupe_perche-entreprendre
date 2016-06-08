@@ -9,29 +9,56 @@
         <div class="tilev thePhoneMail">
             <h1>Contact</h1>
             <div class="phoneAndMailIcon">
-                <div class="phoneIcon firstState" ng-click="iconToNumber = !iconToNumber" ng-hide="iconToNumber"></div>
-                <div class="phoneWithoutIcon" ng-show="iconToNumber">02 37 12 34 56</div>
+                <div class="phoneIcon firstState" ng-click="iconToNumber = !iconToNumber" ng-hide="iconToNumber; activity == 1"></div>
+                <div class="phoneWithoutIcon" ng-show="iconToNumber; activity == 1">02 37 29 09 29</div>
 
                 <!--<div class="mailIcon"></div>-->
             </div>
         </div>
-      <div class="tilev theAgenda">
-        <div class="subAgenda" ng-click="changeAgendaView()">
-          <img ng-repeat="agenda in agendalist"  class="imgAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt=""/>
-        </div>
+        <div class="tilev theAgenda">
+            <div class="subAgenda" ng-click="changeAgendaView()">
+                <img ng-repeat="agenda in agendalist" class="imgAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
+            </div>
 
-        <div class="textEvent"ng-repeat="agenda in agendalist">
-          <img class="imgAgenda imgAgendaAfter" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt=""/>
-          <div class="infoAgenda">
-          <h1>{{agenda.agendaTitle}}</h1>
-          <p>{{agenda.agendaDescription}}</p>
-          <p>{{agenda.agendaDate}}</p>
-          <p>{{agenda.agendaHour}}</p>
-          <p>{{agenda.agendaCity}}</p>
-          <p>{{agenda.agendaPrice}}</p>
+            <div class="textEvent" ng-repeat="agenda in agendalist">
+                <img class="imgAgenda imgAgendaAfter" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
+                <div class="infoAgenda">
+                    <h1>{{agenda.agendaTitle}}</h1>
+                    <p>{{agenda.agendaDescription}}</p>
+                    <p>{{agenda.agendaDate}}</p>
+                    <p>{{agenda.agendaHour}}</p>
+                    <p>{{agenda.agendaCity}}</p>
+                    <p>{{agenda.agendaPrice}}</p>
+                </div>
+            </div>
+            <div class="activityContent" ng-show="activity == 1">
+                <div class="account-wall-activity" ng-show="activity == 1">
+
+                    <p>Remplissez simplement ce formulaire et nous vous rappellerons très prochainement.</p>
+
+
+                    <form class="form-signin-activity" style="text-align:center;">
+
+
+                        <h3> Vos informations </h3>
+                        <input type="name" class="form-control" ng-model="contactName" placeholder="Votre nom" required>
+                        <input type="firstname" class="form-control" ng-model="contactFirstname" placeholder="Votre prénom" required>
+                        <input type="fonction" class="form-control" ng-model="contactFunction" placeholder="Votre fonction" required>
+                        <input type="enterprise2" class="form-control" ng-model="contactEnterprise" placeholder="Votre structure" required>
+                        <input type="ville2" class="form-control" ng-model="contactVille" placeholder="Votre ville" required>
+                        <input type="mail" class="form-control" ng-model="contactEmail" placeholder="Votre email" required>
+                        <input type="phone" class="form-control" ng-model="contactPhone" placeholder="Votre numéro de téléphone" required>
+                        <textarea style="resize:vertical;" class="form-control form-message" ng-model="contactNote" placeholder="Message..." rows="6" name="comment" required></textarea>
+                        <a href="#/">
+                            <button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 10px" ng-click="addContact()" type="submit">
+                                Envoi !</button>
+                        </a>
+                    </form>
+
+                    <button class="close-button" style="transform: translateY(400px);">close</button>
+                </div>
+            </div>
         </div>
-        </div>
-      </div>
         <!--<div class="tilev theAgenda" ng-click="hideAgenda = !hideImgAgenda">
             <img class="imgAgenda imgA" ng-hide="hideAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
             <img class="imgAgenda imgB"ng-hide="hideAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
@@ -52,35 +79,14 @@
 
             <div class="closeButton1">X</div>
             <h1>Je crée mon activité</h1>
-
-            <div class="activityContent">
-                <div class="account-wall-activity" ng-show="activity == 1">
-
-                    <p>Vous êtes porteur de projet et souhaitez obtenir un rendez-vous afin de discuter de votre projet ?</p>
-                    <p>Remplissez simplement ce formulaire et nous vous rappellerons très prochainement.</p>
-
-
-                    <form class="form-signin" style="text-align:center;">
-
-
-                        <h3> Vos informations </h3>
-                        <input type="name" class="form-control" ng-model="contactName" placeholder="Votre nom" required>
-                        <input type="firstname" class="form-control" ng-model="contactFirstname" placeholder="Votre prénom" required>
-                        <input type="fonction" class="form-control" ng-model="contactFunction" placeholder="Votre fonction" required>
-                        <input type="enterprise2" class="form-control" ng-model="contactEnterprise" placeholder="Votre structure" required>
-                        <input type="ville2" class="form-control" ng-model="contactVille" placeholder="Votre ville" required>
-                        <input type="mail" class="form-control" ng-model="contactEmail" placeholder="Votre email" required>
-                        <input type="phone" class="form-control" ng-model="contactPhone" placeholder="Votre numéro de téléphone" required>
-                        <textarea style="resize:vertical;" class="form-control" placeholder="Message..." rows="6" name="comment" required></textarea>
-                        <a href="#/">
-                            <button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 10px" ng-click="add()" type="submit">
-                                Envoi !</button>
-                        </a>
-                    </form>
-
-                    <button class="close-button" style="transform: translateY(400px);">close</button>
-                </div>
+            <div class="temoinage" ng-repeat="temoignage in temoignagelist" ng-show="activity == 1">
+                <img src="{{temoignage.temoignageImg}}"/>
+                <p>{{temoignage.temoignageName}} {{temoignage.temoignageFirstname}}, {{temoignage.temoignageAge}}</p>
+                <p>{{temoignage.temoignageFunction}}</p>
+                <p>{{temoignage.temoignageSecteur}}</p>
+                <p>{{temoignage.temoignageDescription}}</p>
             </div>
+
 
         </div>
         <div class="tilev theSociety" ng-click="society = 1">
@@ -100,20 +106,20 @@
                     <h2>Une sélection d'entreprises à reprendre</h2>
 
 
-                  <!--  Ajouter le ng-repeat au ul :) -->
+                    <!--  Ajouter le ng-repeat au ul :) -->
                     <ul class="listSociety">
                         <li class="society" ng-repeat="bureau in bureaulist">
                             <div class="infoSocietyContainer">
                                 <div class="infoSociety">
-                                  <p>{{bureau.bureauType}}</p>
-                                  <p>{{bureau.bureauDescription}}</p>
-                                  <p>{{bureau.bureauSecteur}}</p>
-                                  <p>{{bureau.bureauSurface}}</p>
-                                  <p>{{bureau.bureauPrice}}</p>
+                                    <p>{{bureau.bureauType}}</p>
+                                    <p>{{bureau.bureauDescription}}</p>
+                                    <p>{{bureau.bureauSecteur}}</p>
+                                    <p>{{bureau.bureauSurface}}</p>
+                                    <p>{{bureau.bureauPrice}}</p>
                                 </div>
                             </div>
                             <div class="imgSocietyContainer">
-                                  <img class="imgSociety" style="width:300px; height: 200px;" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
+                                <img class="imgSociety" style="width:300px; height: 200px;" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
                             </div>
                         </li>
                     </ul>
@@ -127,11 +133,11 @@
                         <li class="local">
                             <div class="infoLocalContainer">
                                 <div class="infoLocal">
-                                  <p>{{bureauType}} Type de local</p>
-                                  <p>{{bureauDescription}} Installée à 5 minutes de la Loupe l'entreprise blablabla</p>
-                                  <p>{{bureauSecteur}} La Loupe</p>
-                                  <p>{{bureauSurface}} 70m2</p>
-                                  <p>{{bureauPrice}} 120 000€</p>
+                                    <p>{{bureauType}} Type de local</p>
+                                    <p>{{bureauDescription}} Installée à 5 minutes de la Loupe l'entreprise blablabla</p>
+                                    <p>{{bureauSecteur}} La Loupe</p>
+                                    <p>{{bureauSurface}} 70m2</p>
+                                    <p>{{bureauPrice}} 120 000€</p>
                                 </div>
                                 <div class="imgLocalContainer">
                                     <img class="imgLocal" src="{{bureauImg || 'https://cdn3.iconfinder.com/data/icons/mobiset-2/512/home_house_simple_glyph_pixel_perfect-512.png'}}" alt="Photo du local" />
