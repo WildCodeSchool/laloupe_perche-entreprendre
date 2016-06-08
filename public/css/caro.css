@@ -185,12 +185,27 @@ body {
   color: white;
 }
 .activityContent {
-  margin-top:30px;
-  margin-bottom: -10px;
+  width:100%;
+  margin-top:5px;
 }
 /*Tuile Créer son entreprise APRES aggrandissement*/
+.account-wall-activity {
+  padding:10px;
+}
 .bigCreation {
   background-color: lightblue;
+}
+.form-signin-activity {
+  margin-top:-10px;
+    background-color: rgb(0, 180, 205);
+    z-index:5;
+}
+.theAgenda {
+  background-color: rgb(0, 180, 205);
+}
+
+.form-message {
+  height:90px !important;
 }
 
 /* Tuile Reprendre une entreprise/local */

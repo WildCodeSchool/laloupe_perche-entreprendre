@@ -22,8 +22,50 @@ $(window).load(function() {
     biggerCreationTile();
 
     function biggerCreationTile() {
-        $('.theCreation').click(function() {
-
+      
+          $('.theCreation').click(function() {
+            $('.tilev').not('.thePhoneMail, .theAgenda').animate({
+                width: '0',
+                height: '0',
+                opacity: '0',
+                marginLeft: '50%',
+                transition: '0.2s ease-out'
+            }, {
+                duration: 200,
+                complete: function() {
+                    $(this).fadeOut(10)
+                }
+            }).animate({
+                backgroundColor: 'green'
+            }, {
+                duration: 100,
+                complete: function() {
+                    $('.theCreation').fadeIn(30).css({
+                        marginLeft: '350px',
+                        width: '0px',
+                        height: '0px',
+                        opacity: '0'
+                    }).animate({
+                        backgroundColor: 'green'
+                    }, {
+                        duration: 70,
+                        complete: function() {
+                            $(this).animate({
+                                opacity: '1',
+                                marginLeft: '0px',
+                                width: '750px',
+                                height: '785px',
+                                transition: '0.2s ease-out'
+                            }, {
+                                duration: 200,
+                                complete: function() {
+                                    $('.closeButton1').css('opacity', '1');
+                                }
+                            });
+                        }
+                    }).addClass("bigCreation").removeClass('theCreation');
+                }
+            });
         });
         smallerCreationTile();
     }
@@ -34,7 +76,7 @@ $(window).load(function() {
     ///////////////////////////////////////////////////////////////
     function smallerCreationTile() {
         $('.closeButton').click(function() {
-            
+
         });
 
     }
