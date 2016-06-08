@@ -62,7 +62,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     padding-top: 20%;
-    
+
 }
 
 .row {
@@ -188,11 +188,6 @@ body {
 
 /********* MODAL CREATION SOCIETY *******/
 
-
-.createBox {
-  margin-top:20%;
-}
-
 .mail {
   text-align:center;
 }
@@ -218,7 +213,7 @@ body {
     min-height: 400px;
     margin: 200px;
     width: 500px;
-    text-align:center;   
+    text-align:center;
 }
 
 .cardHead {
@@ -226,7 +221,7 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    
+
 }
 .cardContent{
     display: flex;

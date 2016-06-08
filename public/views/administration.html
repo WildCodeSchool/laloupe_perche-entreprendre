@@ -1,48 +1,49 @@
 <center style="margin-top: 10%">
 <div class="container admin">
   <div class="range first">
-    <div class="tile createActivity" style="width: 350px">
-        <div class="justHover" data-toggle="modal" data-target=".bs-example-modal-lg"></div>
+    <div class="tile createActivity" style="width: 350px" data-toggle="modal" data-target=".bs-example-modal-lg">
+        <div class="justHover"></div>
         <div class="littletitle">
             <p>Créer une carte de visite</p>
         </div>
     </div>
-    <div class="tile createActivity" style="width: 350px">
-        <div class="justHover" data-toggle="modal" data-target="#modal-user" href="">
+    <div class="tile createActivity" style="width: 350px" data-toggle="modal" data-target="#modal-user">
+        <div class="justHover">
         </div>
         <p class="littletitle">Gérer les utilisateurs</p>
     </div>
-    <div class="tile createActivity" style="width: 350px">
-        <div class="justHover" data-toggle="modal" data-target="#modal-contact" href="">
+    <div class="tile createActivity" style="width: 350px" data-toggle="modal" data-target="#modal-contact">
+        <div class="justHover">
         </div>
         <p class="littletitle">Gérer les contacts</p>
     </div>
-    <div class="tile createActivity" style="width: 350px">
-      <div class="justHover" data-toggle="modal" data-target="#modal-agenda"></div>
+    <div class="tile createActivity" style="width: 350px" data-toggle="modal" data-target="#modal-agenda
+">
+      <div class="justHover"></div>
         <p class="littletitle">Créer un évènement</p>
     </div>
-    <div class="tile createActivity" style="width: 350px">
-      <div class="justHover" data-toggle="modal" data-target="#modal-agenda-gestion"></div>
+    <div class="tile createActivity" style="width: 350px" data-toggle="modal" data-target="#modal-agenda-gestion">
+      <div class="justHover"></div>
         <p class="littletitle">Administrer l'agenda</p>
     </div>
-    <div class="tile createActivity" style="width: 350px">
-      <div class="justHover" data-toggle="modal" data-target="#modal-bureau"></div>
+    <div class="tile createActivity" style="width: 350px" data-toggle="modal" data-target="#modal-bureau">
+      <div class="justHover"></div>
         <p class="littletitle">Ajouter un commerce ou un bureau à reprendre</p>
     </div>
-    <div class="tile createActivity" style="width: 350px">
-      <div class="justHover" data-toggle="modal" data-target="#modal-bureau-gestion"></div>
+    <div class="tile createActivity" style="width: 350px" data-toggle="modal" data-target="#modal-bureau-gestion">
+      <div class="justHover"></div>
         <p class="littletitle">Gérer les commerces et les bureaux à reprendre</p>
     </div>
-    <div class="tile createActivity" style="width: 350px">
-      <div class="justHover" data-toggle="modal" data-target="#modal-temoignage"></div>
+    <div class="tile createActivity" style="width: 350px" data-toggle="modal" data-target="#modal-temoignage">
+      <div class="justHover"></div>
         <p class="littletitle">Ajouter un témoignage</p>
     </div>
-    <div class="tile createActivity" style="width: 350px">
-      <div class="justHover" data-toggle="modal" data-target="#modal-temoignage-gestion"></div>
+    <div class="tile createActivity" style="width: 350px" data-toggle="modal" data-target="#modal-temoignage-gestion">
+      <div class="justHover"></div>
         <p class="littletitle">Gérer les témoignages</p>
     </div>
-    <div class="tile createActivity" style="width: 350px">
-        <div class="justHover" data-toggle="modal" data-target="#modal-export"></div>
+    <div class="tile createActivity" style="width: 350px" data-toggle="modal" data-target="#modal-export">
+        <div class="justHover"></div>
         <p class="littletitle">Exporter les données</p>
     </div>
 </div>
@@ -53,13 +54,9 @@
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
-        <div class="modal-content" style="margin-top: -250px">
             <div class="modal-body">
 
-                  <div class="account-wall">
-                    <center>
-                        <img src="img/logo_pole.png" alt="" width="280px">
-                    </center>
+
                     <form class="form-signin" style="text-align:center;">
 
                       <h3> Vos identifiants </h3>
@@ -104,8 +101,6 @@
 
                     </form>
 
-                  </div>
-            </div>
         </div>
     </div>
 </div>
@@ -114,7 +109,6 @@
 
 <div class="modal fade" id="modal-user" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
-        <div class="modal-content" style="margin-top: -250px">
             <div class="modal-body">
               <ul class="list-group">
                   <li class="list-group-item" ng-repeat="user in userlist" style="padding-bottom: 50px;">
@@ -142,7 +136,6 @@
                   <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
 
               </ul>
-            </div>
         </div>
     </div>
 </div>
@@ -151,7 +144,6 @@
 
 <div class="modal fade" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
-        <div class="modal-content" style="margin-top: -250px">
             <div class="modal-body">
               <ul class="list-group">
                   <li class="list-group-item" type="checkbox" ng-repeat="contact in contactlist" style="padding-bottom: 50px;">
@@ -174,7 +166,6 @@
                   <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
 
               </ul>
-            </div>
         </div>
     </div>
 </div>
@@ -183,13 +174,8 @@
 
 <div class="modal fade" id="modal-agenda" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
-        <div class="modal-content" style="margin-top: -250px">
             <div class="modal-body">
 
-                  <div class="account-wall">
-                    <center>
-                        <img src="img/logo_pole.png" alt="" width="280px">
-                    </center>
                     <form class="form-signin" style="text-align:center;">
 
                       <h3> Ajouter un évenement </h3>
@@ -228,9 +214,6 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
 
                     </form>
-
-                  </div>
-            </div>
         </div>
     </div>
 </div>
@@ -239,7 +222,6 @@
 
 <div class="modal fade" id="modal-agenda-gestion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
-        <div class="modal-content" style="margin-top: -250px">
             <div class="modal-body">
               <ul class="list-group">
                   <li class="list-group-item" type="checkbox" ng-repeat="agenda in agendalist" style="padding-bottom: 50px;">
@@ -259,7 +241,6 @@
                 </br>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
               </ul>
-            </div>
         </div>
     </div>
 </div>
@@ -267,13 +248,8 @@
 
 <div class="modal fade" id="modal-bureau" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
-        <div class="modal-content" style="margin-top: -250px">
             <div class="modal-body">
 
-                  <div class="account-wall">
-                    <center>
-                        <img src="img/logo_pole.png" alt="" width="280px">
-                    </center>
                     <form class="form-signin" style="text-align:center;">
 
                       <h3> Ajouter un commerce ou un bureau à reprendre </h3>
@@ -312,8 +288,6 @@
 
                     </form>
 
-                  </div>
-            </div>
         </div>
     </div>
 </div>
@@ -321,7 +295,6 @@
 
 <div class="modal fade" id="modal-bureau-gestion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
-        <div class="modal-content" style="margin-top: -250px">
             <div class="modal-body">
               <ul class="list-group">
                   <li class="list-group-item" type="checkbox" ng-repeat="bureau in bureaulist" style="padding-bottom: 50px;">
@@ -340,7 +313,6 @@
                 </br>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
               </ul>
-            </div>
         </div>
     </div>
 </div>
@@ -348,13 +320,8 @@
 
 <div class="modal fade" id="modal-temoignage" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
-        <div class="modal-content" style="margin-top: -250px">
             <div class="modal-body">
 
-                  <div class="account-wall">
-                    <center>
-                        <img src="img/logo_pole.png" alt="" width="280px">
-                    </center>
                     <form class="form-signin" style="text-align:center;">
 
                       <h3> Ajouter un témoignage </h3>
@@ -393,8 +360,6 @@
 
                     </form>
 
-                  </div>
-            </div>
         </div>
     </div>
 </div>
@@ -404,7 +369,6 @@
 
 <div class="modal fade" id="modal-temoignage-gestion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
-        <div class="modal-content" style="margin-top: -250px">
             <div class="modal-body">
               <ul class="list-group">
                   <li class="list-group-item" type="checkbox" ng-repeat="temoignage in temoignagelist" style="padding-bottom: 50px;">
@@ -424,7 +388,6 @@
                 </br>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
               </ul>
-            </div>
         </div>
     </div>
 </div>
@@ -432,10 +395,8 @@
 
 <div class="modal fade" id="modal-export" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
-        <div class="modal-content" style="margin-top: -250px">
             <div class="modal-body">
               <button id="buttonExport">exporter</button>
-            </div>
         </div>
     </div>
 </div>
