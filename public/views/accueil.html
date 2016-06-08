@@ -48,9 +48,9 @@
                         <input type="ville2" class="form-control" ng-model="contactVille" placeholder="Votre ville" required>
                         <input type="mail" class="form-control" ng-model="contactEmail" placeholder="Votre email" required>
                         <input type="phone" class="form-control" ng-model="contactPhone" placeholder="Votre numéro de téléphone" required>
-                        <textarea style="resize:vertical;" class="form-control form-message" placeholder="Message..." rows="6" name="comment" required></textarea>
+                        <textarea style="resize:vertical;" class="form-control form-message" ng-model="contactNote" placeholder="Message..." rows="6" name="comment" required></textarea>
                         <a href="#/">
-                            <button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 10px" ng-click="add()" type="submit">
+                            <button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 10px" ng-click="addContact()" type="submit">
                                 Envoi !</button>
                         </a>
                     </form>

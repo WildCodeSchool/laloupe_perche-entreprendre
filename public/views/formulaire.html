@@ -38,7 +38,7 @@
                     <center>
                         <button flow-btn flow-attrs="{accept:'image/*'}" type="file" class="btn btn-success">Télécharger une image</button>
                         <div ng-hide="contactImg[0]"><img class="imgProfile" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="" alt="downloadicon" flow-btn flow-attrs="{accept:'image/*'}" type="file" id="btnImage"/></div>
-                        <div ng-show="contactImg[0]"><img class="imgProfile" src="{{user.img}}" alt="" alt="downloadicon" flow-btn flow-attrs="{accept:'image/*'}" type="file" id="btnImage"/></div>
+                        <div ng-show="contactImg[0]"><img class="imgProfile" src="{{userImg}}" alt="" alt="downloadicon" flow-btn flow-attrs="{accept:'image/*'}" type="file" id="btnImage"/></div>
                         <p>
                           <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="cancel(image)"></span>
                         </p>
