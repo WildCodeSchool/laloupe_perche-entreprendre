@@ -71,41 +71,30 @@
                         <input type="ville" class="form-control" ng-model="userVille" placeholder="Votre ville" required>
                         <input type="phone" class="form-control" ng-model="userPhone" placeholder="Votre numéro de téléphone" required>
                         <input type="note" class="form-control" ng-model="userNote" placeholder="Note à propos de vous" required>
+                      <h3> Votre photo </h3>
 
+                        <div flow-init flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFileUser($files)">
+                            <center>
+                                <button flow-btn flow-attrs="{accept:'image/*'}" type="file" class="btn btn-success">Télécharger une image</button>
+                            </center>
 
-
-                                <h3> Votre photo </h3>
-
-                                    <div flow-init flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFileUser($files)">
-
-                                    					<center>
-                                    						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" class="btn btn-success">Télécharger une image</button>
-
-                                    					</center>
-
-
-                                              <center>
-                      <img ng-show="photo" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="" />
-                      <div ng-hide="photo">
-                        <img class="preview" flow-img="{{userImg}}" />
-                        <img class="preview" ng-src="{{userImg}}" />
-                      </div>
-
-
-                  </center>
-
-
-                                    				</div>
-                                            <p>
-                                              <span ng-hide="photo" class="btn fa fa-trash" ng-click="photo = true"></span>
-                                            </p>
-                          <a data-dismiss="modal"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="add()" type="submit">
+                            <center>
+                                <img ng-show="photo" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="" />
+                                <div ng-hide="photo">
+                                  <img class="preview" flow-img="{{userImg}}" />
+                                  <img class="preview" ng-src="{{userImg}}" />
+                                </div>
+                            </center>
+                        </div>
+                        <p>
+                            <span ng-hide="photo" class="btn fa fa-trash" ng-click="photo = true"></span>
+                        </p>
+                        <a data-dismiss="modal"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="add()" type="submit">
                             Créer !</button></a>
-                          </br>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+                        </br>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
 
-                    </form>
-
+                  </form>
         </div>
     </div>
 </div>
@@ -202,13 +191,8 @@
 
 
                                               <center>
-                    <span class="text"></span><img class="preview" flow-img="image" />
-                    <br>
-                    <span class="text"></span> <img class="preview" ng-src="{{friend.userImg}}" />
-                    <p>
-                      <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="image.cancel()"></span>
-
-                    </p>
+                                                <img class="preview" flow-img="{{agendaImg}}" />
+                                                <img class="preview" ng-src="{{agendaImg}}" />
                   </center>
 
 
@@ -275,13 +259,8 @@
 
 
                                               <center>
-                    <span class="text"></span><img class="preview" flow-img="image" />
-                    <br>
-                    <span class="text"></span> <img class="preview" ng-src="{{bureau.bureauImg}}" />
-                    <p>
-                      <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="image.cancel()"></span>
-
-                    </p>
+                                                <img class="preview" flow-img="{{bureauImg}}" />
+                                                <img class="preview" ng-src="{{bureauImg}}" />
                   </center>
 
 
@@ -347,13 +326,8 @@
 
 
                                               <center>
-                    <span class="text"></span><img class="preview" flow-img="image" />
-                    <br>
-                    <span class="text"></span> <img class="preview" ng-src="{{bureau.bureauImg}}" />
-                    <p>
-                      <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="image.cancel()"></span>
-
-                    </p>
+                                                <img class="preview" flow-img="{{temoignageImg}}" />
+                                                <img class="preview" ng-src="{{temoignageImg}}" />
                   </center>
 
 

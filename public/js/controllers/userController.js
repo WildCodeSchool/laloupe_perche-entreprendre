@@ -220,7 +220,7 @@ function userController($scope, $http, userService, contactService, agendaServic
 
       //  ------------   Flow Image User  -----------
 
-    $scope.userImg = 'http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif';
+    $scope.userImg = '';
     $scope.photo = true;
     $scope.processFileUser = function (files) {
       $scope.photo = false;
@@ -241,7 +241,7 @@ function userController($scope, $http, userService, contactService, agendaServic
 
       //  ------------   Flow Image Agenda  -----------
 
-      $scope.agendaImg = [];
+      $scope.agendaImg = '';
 
       $scope.processFilesAgenda = function (files) {
         angular.forEach(files, function (flowFile, i) {
@@ -249,6 +249,7 @@ function userController($scope, $http, userService, contactService, agendaServic
           fileReader.onload = function (event) {
             var uri = event.target.result;
             $scope.agendaImg = uri;
+            $scope.$apply();
             console.log($scope.agendaImg);
           };
           fileReader.readAsDataURL(flowFile.file);
@@ -257,7 +258,7 @@ function userController($scope, $http, userService, contactService, agendaServic
 
       //  ------------   Flow Image Bureaux  -----------
 
-      $scope.bureauImg = [];
+      $scope.bureauImg = '';
 
       $scope.processFilesOffice = function (files) {
         angular.forEach(files, function (flowFile, i) {
@@ -265,6 +266,7 @@ function userController($scope, $http, userService, contactService, agendaServic
           fileReader.onload = function (event) {
             var uri = event.target.result;
             $scope.bureauImg = uri;
+            $scope.$apply();
             console.log($scope.bureauImg);
           };
           fileReader.readAsDataURL(flowFile.file);
@@ -272,7 +274,7 @@ function userController($scope, $http, userService, contactService, agendaServic
       };
       //  ------------   Flow Image Temoignage  -----------
 
-      $scope.temoignageImg = [];
+      $scope.temoignageImg = '';
 
       $scope.processFilesTestimonial = function (files) {
         angular.forEach(files, function (flowFile, i) {
@@ -280,6 +282,7 @@ function userController($scope, $http, userService, contactService, agendaServic
           fileReader.onload = function (event) {
             var uri = event.target.result;
             $scope.temoignageImg = uri;
+            $scope.$apply();
             console.log($scope.temoignageImg);
           };
           fileReader.readAsDataURL(flowFile.file);
