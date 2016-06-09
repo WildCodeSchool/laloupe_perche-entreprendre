@@ -28,8 +28,8 @@
     </ul>
     <div ng-repeat="friend in friendlist | filterBySearchFriend:searchFriend:user" class="modal fade profil-{{friend._id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
         <div class="modal-dialog modal-lg">
-<!--            <div class="modal-content">-->
-                <div class="modal-body">
+            <div class="modal-content">
+<!--                <div class="modal-body">-->
                     <div ng-show='!friend.contactImg'>
                         <img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
                     </div>

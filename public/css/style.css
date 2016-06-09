@@ -7,7 +7,10 @@ body {
     margin-top: 50px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0,5);
-
+   	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "Ubuntu", arial;
 }
 
 .password {
@@ -24,7 +27,9 @@ body {
     text-align: center;
     color: #F6A327;
 }
-
+.view {
+    margin-top: 100px;
+}
 
 /*=================================================================
                               NAVBAR
@@ -330,6 +335,329 @@ body {
     overflow-x: hidden;
 }
 
+/*=================================================================
+                            Accueil
+=================================================================*/
+
+
+.title {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.accueil{
+    margin-top: 150px;
+}
+.range {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.tile {
+    height: 250px;;
+    width:550px;
+    background-color: red;
+    box-shadow: 1px 1px 7px black;
+    margin-bottom: 30px;
+    color: white;
+    transition: 0.5s ease-in;
+}
+.tile:hover {
+    box-shadow: 1px 1px 5px black;
+}
+
+.movePerche {
+    width: 700px;
+}
+
+/********* TILE ACTIVITY *******/
+
+.createActivity {
+    background-color: #006666;
+    background-size: cover;
+    opacity: 0.9;
+    width:800px;
+/*    border-radius: 10px;*/
+
+}
+.account-wall-contact {
+    background-image: url(../img/_MG_8447.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 20%;
+
+}
+
+.row {
+    padding: 40px 0px 20px 0px;
+    background-color: rgba(247, 247, 247, 0.5);
+    background-image: url(../img/marguerite.png);
+    border-radius: 20px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.icones {
+    width: 80px;
+    height: auto;
+    text-align: center;
+}
+.close-button{
+    margin-top: -250px;
+}
+
+.createActivity:hover > .justHover {
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+/*     border-radius: 10px;*/
+}
+.createActivity:hover > .littletitle {
+  color:rgba(255, 255, 255, 1);
+}
+.littletitle {
+  color:rgba(0, 0, 0, 1);
+  font-size:2em;
+  transition:0.6s ease-in;
+  margin-top:-160px;
+    opacity: 0.9;
+
+}
+.justHover {
+    background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+    transition: 0.4s ease-in;
+}
+
+.form-pop-society {
+/*background-image: url(../img/_MG_8503.jpg);*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 20%;
+}
+.buySociety {
+    background-color: #00cccc;
+    background-size: cover;
+    min-width:200px;
+    opacity: 0.9;
+/*    border-radius: 10px;*/
+}
+.buySociety:hover > .justHover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.buySociety:hover > .littletitle {
+  color:rgba(255, 255, 255, 1);
+}
+
+.myAgenda {
+  overflow:hidden;
+  min-width:200px;
+    opacity: 1;
+/*    border-radius: 10px;*/
+
+}
+
+.videoCard {
+    width: 400px;
+    overflow:hidden;
+    opacity: 0.9;
+/*    border-radius: 10px;*/
+}
+.youtubeVideo {
+  transform: scaleY(1.2);
+  margin-top:-4px;
+    opacity: 0.9;
+/*    border-radius: 10px;*/
+}
+
+.movePerche {
+    background-color: #ff9900;
+    background-size: cover;
+    opacity: 0.9;
+/*    border-radius: 10px;*/
+
+}
+
+.form-pop-lePerche {
+    background-image: url(../img/belleme_trafiqu%C3%A9e.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 20%;
+}
+.littlepetittitle {
+  color:rgba(0, 0, 0, 1);
+  font-size:2em;
+  transition:0.6s ease-in;
+    opacity: 0.9;
+}
+
+/********* TILE SCOOPIT *******/
+
+.scoopitou {
+  width: 300px;
+/*    border-radius: 10px;*/
+
+}
+ .myScoopit {
+    margin-top: -5px;
+    margin-left:-0px;
+    width: 300px;
+    height: 255px;
+/*     border-radius: 10px;*/
+}
+
+/********* MODAL CREATION SOCIETY *******/
+
+.mail {
+  text-align:center;
+}
+.phone {
+  text-align:center;
+}
+.well {
+  width:100%;
+  text-align:center;
+}
+
+/*=================================================================
+                            Ma carte
+=================================================================*/
+
+
+
+.card  {
+    background: rgba(247, 247, 247, 0.5);
+    background-image: url(./img/marguerite.png);
+    border-radius: 20px;
+    padding: 50px;
+    min-height: 400px;
+    margin: 200px;
+    width: 500px;
+/*
+    text-align:center;
+    display: flex;
+    align-self: center;
+*/
+ 
+}
+
+.cardHead {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+}
+.cardContent{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardContent{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.imgCard {
+    height: 200px;
+    width: 200px;
+    box-shadow: 1px 1px 5px black;
+    background-color: white;
+    text-align: center;
+}
+
+
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    margin-top:-300px;
+}
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+
+/********************************/
+/*          Custom Buttons      */
+/********************************/
+/*.btn.btn-lg {padding: 10px 40px;}*/
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: rgba(0, 0, 0, 0.5);
+    outline: none;
+    margin: 20px auto;
+    padding-bottom:30px;
+}
+
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+.fade-carousel .slides .slide-1,
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.fade-carousel .slides .slide-1 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818);
+}
+.fade-carousel .slides .slide-2 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?q=75&fm=jpg&s=c39d9a3bf66d6566b9608a9f1f3765af);
+}
+.fade-carousel .slides .slide-3 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199912?q=75&fm=jpg&s=9bf9f2ef5be5cb5eee5255e7765cb327);
+}
+label {
+  color:black;
+}
 
 
 
@@ -578,7 +906,6 @@ p {
 
 @media (min-width: 900px) {
     .footer {
-        /*margin-top: 130px;*/
     }
 }
 
@@ -591,114 +918,6 @@ body {
     margin: 0;
     overflow: auto;
 }
-
-
-/*#btn1{
-	background:#06F;
-	height:200px;
-	width:500px;
-	position:relative;
-	margin-left:10px;
-  margin-top:30px;
-	left:1200px;
-	cursor:pointer;
-
-	color:#FFF;
-	font-size:25px;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	padding-left:10px;
-	text-align:left;
-
-
-}
-#btn2{
-	background:#C30;
-	height:200px;
-	width:500px;
-	position:relative;
-	margin-left:10px;
-  margin-top:30px;
-	left:1200px;
-	cursor:pointer;
-
-	color:#FFF;
-	font-size:25px;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	line-height:300px;
-	padding-left:10px;
-	text-align:left;
-}
-
-#btn3{
-	background:#F60;
-	border-color:#F60;
-	height:200px;
-	width:500px;
-	position:relative;
-	margin-left:10px;
-  margin-top:30px;
-	left:1200px;
-	cursor:pointer;
-
-	color:#FFF;
-	font-size:25px;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	padding-left:10px;
-	text-align:left;
-}
-
-#btn4{
-	background:#C3C;
-	border-color:#F60;
-	height:200px;
-	width:500px;
-	position:relative;
-	margin-left:10px;
-	margin-top:30px;
-	left:1200px;
-	cursor:pointer;
-
-	color:#FFF;
-	font-size:25px;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	padding-left:10px;
-	text-align:left;
-}
-#btn5{
-	background:#F36;
-	border-color:#F60;
-	height:400px;
-	width:400px;
-	position:relative;
-	margin-left:10px;
-	margin-top:30px;
-	left:1200px;
-
-	color:#FFF;
-	font-size:25px;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	padding-left:10px;
-	text-align:left;
-}
-
-#btn6{
-	background:#6C0;
-	height:200px;
-	width:200px;
-	position:relative;
-	margin-left:10px;
-	margin-top:30px;
-	left:1200px;
-	cursor:pointer;
-
-	color:#FFF;
-	font-size:25px;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	line-height:300px;
-	padding-left:10px;
-	text-align:left;
-}
-*/
 
 #content {
     background: #FFF;
@@ -789,11 +1008,20 @@ button {
     position: absolute;
 }
 .modal-content {
-    margin: 200px;
+    background-image: url(/img/marguerite.png);
+    min-height: 400px;
     width: 500px;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 0px 20px 0px;
     border-radius: 20px;
-    border: none;
-    top: 40%;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 .modal-body {
     background-image: url(/img/marguerite.png);
@@ -879,16 +1107,6 @@ button {
 /*=================================================================
                         MODAL CONTACT
 =================================================================*/
-/*
-body { margin-top:20px; }
-.modal-body:not(.two-col) { padding:0px }
-.glyphicon { margin-right:5px; }
-.glyphicon-new-window { margin-left:5px; }
-.modal-body .radio,.modal-body .checkbox {margin-top: 0px;margin-bottom: 0px;}
-.modal-body .list-group {margin-bottom: 0;}
-.margin-bottom-none { margin-bottom: 0; }
-.modal-body .radio label,.modal-body .checkbox label { display:block; }
-.modal-footer {margin-top: 0px;}*/
 @media screen and (max-width: 325px){
     .btn-close {
         margin-top: 5px;
@@ -922,3 +1140,39 @@ body { margin-top:20px; }
     font-style: normal;
     font-weight: ...;
 }
+
+/*=================================================================
+                              FOOTER
+=================================================================*/
+
+.footer {
+    height: auto;
+/*
+   background-image:-webkit-linear-gradient( black, white);
+   background-image:-o-linear-gradient(black, white);
+   background-image:linear-gradient(black,white);
+*/
+    background-color: white;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.lineUp {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.lineDown {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+.logoPartenaire {
+    height: 50px;
+    max-width: 150px;
+    
+}
+
+
