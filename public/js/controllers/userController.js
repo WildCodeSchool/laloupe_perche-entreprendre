@@ -25,6 +25,8 @@ function userController($scope, $http, userService, contactService, agendaServic
     $('.textEvent').fadeIn(700);
   }
 
+// Pagination
+
 
 
     function load(){

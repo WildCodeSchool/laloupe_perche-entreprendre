@@ -101,7 +101,7 @@ function filterBySearchFriend() {
     }
 }
 
-angular.module('app', ['ngRoute','monospaced.qrcode','flow'])
+angular.module('app', ['ngRoute','monospaced.qrcode','flow', 'angularUtils.directives.dirPagination'])
     .config(config)
     .controller('mainController', mainController)
     .controller('contactController', contactController)

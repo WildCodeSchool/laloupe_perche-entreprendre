@@ -59,33 +59,41 @@
                 </div>
             </div>
         </div>
-        <!--<div class="tilev theAgenda" ng-click="hideAgenda = !hideImgAgenda">
-            <img class="imgAgenda imgA" ng-hide="hideAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
-            <img class="imgAgenda imgB"ng-hide="hideAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
-            <img class="imgAgenda imgC" ng-hide="hideAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
->>>>>>> c0fb186b8dc1ec5f1dda4b351e663944dfa09360
-            <div class="imgEvent">
-              <img class="imgAgenda" ng-hide="!hideAgenda" src="../img/afficheart.png" alt="" />
-            </div>
-            <div class="textEvent" ng-hide="!hideAgenda">
-              <h1>La Loupe</h1>
-              <p>Velit velit reprehenderit culpa reprehenderit nostrud exercitation id quis officia consequat ut exercitation dolore proident nulla reprehenderit dolore.</p>
-              <p>Ex ipsum nostrud aute do eu eiusmod do anim. Elit mollit id ad adipisicing irure nulla officia ullamco amet deserunt eu laborum. Non ullamco proident laborum cillum duis nisi sint. Nulla consectetur magna in sunt consectetur et cupidatat Lorem aute occaecat Lorem dolor duis adipisicing ad. Minim esse consectetur do do velit qui ex occaecat ut. Lorem sunt est fugiat laborum aute amet ut do officia qui cillum. Elit ad quis voluptate irure nisi adipisicing eiusmod est consequat.</p>
-            </div>
-        </div>-->
+
     </div>
     <div class="theColumn columnTwo">
         <div class="tilev theCreation" ng-click="activity = 1">
 
             <div class="closeButton1">X</div>
             <h1>Je crée mon activité</h1>
-            <div class="temoinage" ng-repeat="temoignage in temoignagelist" ng-show="activity == 1">
-                <img src="{{temoignage.temoignageImg}}"/>
-                <p>{{temoignage.temoignageName}} {{temoignage.temoignageFirstname}}, {{temoignage.temoignageAge}}</p>
-                <p>{{temoignage.temoignageFunction}}</p>
-                <p>{{temoignage.temoignageSecteur}}</p>
-                <p>{{temoignage.temoignageDescription}}</p>
+            <p ng-show="activity == 1"> Vous êtes porteur de projet et souhaitez des informations ou obtenir un rendez-vous, contactez-nous via le formulaire ou le numéro de téléphone.</p>
+            <p ng-show="activity == 1"> Quelques témoignages</p>
+
+            <div class="temoignage" ng-repeat="temoignage in temoignagelist" dir-paginate="expression | itemsPerPage: (int|expression) [: paginationId (string literal)]"
+    [current-page=""]
+    [pagination-id=""]
+    [total-items=""] ng-show="activity == 1" >
+
+                <img class="testimonialImg" src="{{temoignage.temoignageImg}}"/>
+                <div class="testimonialText">
+                  <p class="testiName">{{temoignage.temoignageName}} {{temoignage.temoignageFirstname}}, {{temoignage.temoignageAge}} ans</p>
+                  <p class="testiFunction">{{temoignage.temoignageFunction}}</p>
+                  <p class="testiSecteur">{{temoignage.temoignageSecteur}}</p>
+                  <p class="testiDescription"><img class="quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png"/>   {{temoignage.temoignageDescription}}<img class="endQuote quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png"/>             </p>
+              </div>
+
+              <dir-pagination-controls
+    [max-size=""]
+    [direction-links=""]
+    [boundary-links=""]
+    [on-page-change=""]
+    [pagination-id=""]
+    [template-url=""]
+    [auto-hide=""]>
+    </dir-pagination-controls>
+
             </div>
+
 
 
         </div>
