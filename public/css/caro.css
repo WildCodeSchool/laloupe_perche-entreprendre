@@ -175,7 +175,7 @@ body {
 
 /* Tuile Créer son entreprise */
 .theCreation {
-  background-color: rgb(0, 180, 205);
+  background-color: #38B8C8;
   display: flex;
   align-items: center;
 }
@@ -199,7 +199,7 @@ body {
     z-index:5;
 }
 .theAgenda {
-  background-color: rgb(0, 180, 205);
+  background-color: #741F62;
 }
 
 .form-message {
@@ -339,7 +339,7 @@ body {
 }
 /* Tuile S'installer dans le Perche */
 .theLinks {
-  background-color: violet;
+  background-color: #E73664;
   display: flex;
   align-items: center;
 }
