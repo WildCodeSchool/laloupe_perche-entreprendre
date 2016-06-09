@@ -27,6 +27,7 @@ function userController($scope, $http, userService, contactService, agendaServic
 
 
 
+
     function load(){
       userService.get().then(function (res) {
           $scope.userlist = res.data

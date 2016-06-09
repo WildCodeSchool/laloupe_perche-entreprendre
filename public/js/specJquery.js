@@ -196,75 +196,75 @@ $(window).load(function() {
     /////////////////////////////////////////////////
     // Fonction Aggrandissement de la tuile Agenda //
     /////////////////////////////////////////////////
-    // biggerAgendaTile();
-    //
-    // function biggerAgendaTile() {
-    //     $('.theAgenda').click(function() {
-    //         $('.tilev').not('.thePhoneMail').animate({
-    //             width: '0',
-    //             height: '0',
-    //             opacity: '0',
-    //             marginLeft: '50%',
-    //             transition: '0.2s ease-out'
-    //         }, {
-    //             duration: 200,
-    //             complete: function() {
-    //                 $(this).fadeOut(10)
-    //             }
-    //         }).animate({
-    //             backgroundColor: 'green'
-    //         }, {
-    //             duration: 100,
-    //             complete: function() {
-    //                 $('.theAgenda').addClass("bigAgenda").removeClass('theAgenda').fadeIn(30).animate({
-    //                     backgroundColor: 'green'
-    //                 }, {
-    //                     duration: 70,
-    //                     complete: function() {
-    //                         $('.thePhoneMail').fadeIn(10).animate({
-    //                             width: '300px',
-    //                             height: '250px',
-    //                             opacity: '1',
-    //                             marginLeft: '0px'
-    //                         }, 50);
-    //                         $('.theYoutube').fadeIn(10).animate({
-    //                             marginTop: '-520px',
-    //                             width: '350px',
-    //                             height: '250px',
-    //                             opacity: '1',
-    //                             marginLeft: '0px'
-    //                         }, 50);
-    //                         $('.theScoupit').fadeIn(10).animate({
-    //                             marginTop: '-520px',
-    //                             width: '350px',
-    //                             height: '250px',
-    //                             opacity: '1',
-    //                             marginLeft: '0px'
-    //                         }, 50);
-    //                         $(this).animate({
-    //                             marginTop: '-15px',
-    //                             opacity: '1',
-    //                             marginLeft: '0px',
-    //                             width: '1018px',
-    //                             height: '500px',
-    //                             transition: '0.2s ease-out'
-    //                         }, {
-    //                             duration: 200,
-    //                             complete: function() {
-    //                                 $('.closeButton').css('opacity', '1');
-    //                             }
-    //                         });
-    //                     }
-    //                 });
-    //             }
-    //         });
-    //
-    //
-    //     });
+    biggerAgendaTile();
 
-        //  smallerAgendaTile();
+    function biggerAgendaTile() {
+        $('.theAgenda').click(function() {
+            $('.tilev').not('.thePhoneMail').animate({
+                width: '0',
+                height: '0',
+                opacity: '0',
+                marginLeft: '50%',
+                transition: '0.2s ease-out'
+            }, {
+                duration: 200,
+                complete: function() {
+                    $(this).fadeOut(10)
+                }
+            }).animate({
+                backgroundColor: 'green'
+            }, {
+                duration: 100,
+                complete: function() {
+                    $('.theAgenda').addClass("bigAgenda").removeClass('theAgenda').fadeIn(30).animate({
+                        backgroundColor: 'green'
+                    }, {
+                        duration: 70,
+                        complete: function() {
+                            $('.thePhoneMail').fadeIn(10).animate({
+                                width: '300px',
+                                height: '250px',
+                                opacity: '1',
+                                marginLeft: '0px'
+                            }, 50);
+                            $('.theYoutube').fadeIn(10).animate({
+                                marginTop: '-520px',
+                                width: '350px',
+                                height: '250px',
+                                opacity: '1',
+                                marginLeft: '0px'
+                            }, 50);
+                            $('.theScoupit').fadeIn(10).animate({
+                                marginTop: '-520px',
+                                width: '350px',
+                                height: '250px',
+                                opacity: '1',
+                                marginLeft: '0px'
+                            }, 50);
+                            $(this).animate({
+                                marginTop: '-15px',
+                                opacity: '1',
+                                marginLeft: '0px',
+                                width: '1018px',
+                                height: '500px',
+                                transition: '0.2s ease-out'
+                            }, {
+                                duration: 200,
+                                complete: function() {
+                                    $('.closeButton').css('opacity', '1');
+                                }
+                            });
+                        }
+                    });
+                }
+            });
 
-    // }
+
+        });
+
+         //smallerAgendaTile();
+
+    }
 
 
     ////////////////////////////
