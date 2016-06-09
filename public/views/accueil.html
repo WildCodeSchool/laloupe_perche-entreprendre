@@ -69,10 +69,7 @@
             <p ng-show="activity == 1"> Vous êtes porteur de projet et souhaitez des informations ou obtenir un rendez-vous, contactez-nous via le formulaire ou le numéro de téléphone.</p>
             <p ng-show="activity == 1"> Quelques témoignages</p>
 
-            <div class="temoignage" ng-repeat="temoignage in temoignagelist" dir-paginate="expression | itemsPerPage: (int|expression) [: paginationId (string literal)]"
-    [current-page=""]
-    [pagination-id=""]
-    [total-items=""] ng-show="activity == 1" >
+            <!--<div class="temoignage" ng-repeat="temoignage in temoignagelist | limitTo : 1"  ng-show="activity == 1" >
 
                 <img class="testimonialImg" src="{{temoignage.temoignageImg}}"/>
                 <div class="testimonialText">
@@ -82,17 +79,26 @@
                   <p class="testiDescription"><img class="quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png"/>   {{temoignage.temoignageDescription}}<img class="endQuote quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png"/>             </p>
               </div>
 
-              <dir-pagination-controls
-    [max-size=""]
-    [direction-links=""]
-    [boundary-links=""]
-    [on-page-change=""]
-    [pagination-id=""]
-    [template-url=""]
-    [auto-hide=""]>
-    </dir-pagination-controls>
+            </div>-->
 
-            </div>
+            <ul>
+                <li dir-paginate="temoignage in temoignagelist | itemsPerPage: 10" ng-show="activity == 1">
+                  <img class="testimonialImg" src="{{temoignage.temoignageImg}}"/>
+                  <div class="testimonialText">
+                    <p class="testiName">{{temoignage.temoignageName}} {{temoignage.temoignageFirstname}}, {{temoignage.temoignageAge}} ans</p>
+                    <p class="testiFunction">{{temoignage.temoignageFunction}}</p>
+                    <p class="testiSecteur">{{temoignage.temoignageSecteur}}</p>
+                    <p class="testiDescription"><img class="quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png"/>   {{temoignage.temoignageDescription}}<img class="endQuote quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png"/>             </p>
+                </div>
+
+                </li>
+                <dir-pagination-controls ng-show="activity == 1"></dir-pagination-controls>
+            </ul>
+
+
+
+
+
 
 
 
