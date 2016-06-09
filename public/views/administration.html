@@ -1,48 +1,47 @@
 <center style="margin-top: 10%">
 <div class="container admin">
   <div class="range first">
-    <div class="tile createActivity" style="width: 400px; background-color: #741F62" data-toggle="modal" data-target=".bs-example-modal-lg">
+    <div class="tile createActivity" style="width: 480px; background-color: #741F62" data-toggle="modal" data-target=".bs-example-modal-lg">
         <div class="justHover"></div>
         <div class="littletitle">
             <p>Créer une carte de visite</p>
         </div>
     </div>
-    <div class="tile createActivity" style="width: 400px; background-color: #741F62" data-toggle="modal" data-target="#modal-user">
+    <div class="tile createActivity" style="width: 480px; background-color: #741F62" data-toggle="modal" data-target="#modal-user">
         <div class="justHover">
         </div>
         <p class="littletitle">Gérer les utilisateurs</p>
     </div>
-    <div class="tile createActivity" style="width: 400px; background-color: #F6A327" data-toggle="modal" data-target="#modal-contact">
+    <div class="tile createActivity" style="width: 480px; background-color: #F6A327" data-toggle="modal" data-target="#modal-contact">
         <div class="justHover">
         </div>
         <p class="littletitle">Gérer les contacts</p>
     </div>
-    <div class="tile createActivity" style="width: 400px; background-color: #F6A327" data-toggle="modal" data-target="#modal-export">
+    <div class="tile createActivity" id="buttonExport" style="width: 480px; background-color: #F6A327">
         <div class="justHover"></div>
         <p class="littletitle">Exporter les données</p>
     </div>
-    <div class="tile createActivity" style="width: 400px; background-color: #38B8C8" data-toggle="modal" data-target="#modal-agenda
-">
+    <div class="tile createActivity" style="width: 480px; background-color: #38B8C8" data-toggle="modal" data-target="#modal-agenda">
       <div class="justHover"></div>
         <p class="littletitle">Créer un évènement</p>
     </div>
-    <div class="tile createActivity" style="width: 400px; background-color: #38B8C8" data-toggle="modal" data-target="#modal-agenda-gestion">
+    <div class="tile createActivity" style="width: 480px; background-color: #38B8C8" data-toggle="modal" data-target="#modal-agenda-gestion">
       <div class="justHover"></div>
         <p class="littletitle">Administrer l'agenda</p>
     </div>
-    <div class="tile createActivity" style="width: 400px; background-color: #E73664" data-toggle="modal" data-target="#modal-bureau">
+    <div class="tile createActivity" style="width: 480px; background-color: #E73664" data-toggle="modal" data-target="#modal-bureau">
       <div class="justHover"></div>
         <p class="littletitle">Ajouter un commerce ou un bureau à reprendre</p>
     </div>
-    <div class="tile createActivity" style="width: 400px; background-color: #E73664" data-toggle="modal" data-target="#modal-bureau-gestion">
+    <div class="tile createActivity" style="width: 480px; background-color: #E73664" data-toggle="modal" data-target="#modal-bureau-gestion">
       <div class="justHover"></div>
         <p class="littletitle">Gérer les commerces et les bureaux à reprendre</p>
     </div>
-    <div class="tile createActivity" style="width: 400px; background-color: #AAAE18" data-toggle="modal" data-target="#modal-temoignage">
+    <div class="tile createActivity" style="width: 480px; background-color: #AAAE18" data-toggle="modal" data-target="#modal-temoignage">
       <div class="justHover"></div>
         <p class="littletitle">Ajouter un témoignage</p>
     </div>
-    <div class="tile createActivity" style="width: 400px; background-color: #AAAE18" data-toggle="modal" data-target="#modal-temoignage-gestion">
+    <div class="tile createActivity" style="width: 480px; background-color: #AAAE18" data-toggle="modal" data-target="#modal-temoignage-gestion">
       <div class="justHover"></div>
         <p class="littletitle">Gérer les témoignages</p>
     </div>
@@ -60,19 +59,19 @@
 
                     <form class="form-signin" style="text-align:center;">
 
-                      <h3> Vos identifiants </h3>
-                        <input type="email" class="form-control" ng-model="userEmail" placeholder="Votre adresse mail" required>
-                        <input type="password" class="form-control" ng-model="userMdp" placeholder="Votre mot de passe" required>
-                        <input type="password" class="form-control" placeholder="Confirmez votre mot de passe" required>
-                      <h3> Vos informations </h3>
-                        <input type="name" class="form-control" ng-model="userName" placeholder="Votre nom" required>
-                        <input type="firstname" class="form-control" ng-model="userFirstname" placeholder="Votre prénom" required>
-                        <input type="fonction" class="form-control" ng-model="userFunction" placeholder="Votre fonction" required>
-                        <input type="enterprise" class="form-control" ng-model="userEnterprise" placeholder="Votre structure" required>
-                        <input type="ville" class="form-control" ng-model="userVille" placeholder="Votre ville" required>
-                        <input type="phone" class="form-control" ng-model="userPhone" placeholder="Votre numéro de téléphone" required>
-                        <input type="note" class="form-control" ng-model="userNote" placeholder="Note à propos de vous" required>
-                      <h3> Votre photo </h3>
+                      <h3> Ses identifiants </h3>
+                        <input type="email" class="form-control" ng-model="userEmail" placeholder="Adresse mail" required>
+                        <input type="password" class="form-control" ng-model="userMdp" placeholder="Mot de passe" required>
+                        <input type="password" class="form-control" placeholder="Confirmez le mot de passe" required>
+                      <h3> Ses informations </h3>
+                        <input type="name" class="form-control" ng-model="userName" placeholder="Nom" required>
+                        <input type="firstname" class="form-control" ng-model="userFirstname" placeholder="Prénom" required>
+                        <input type="fonction" class="form-control" ng-model="userFunction" placeholder="Fonction" required>
+                        <input type="enterprise" class="form-control" ng-model="userEnterprise" placeholder="Structure" required>
+                        <input type="ville" class="form-control" ng-model="userVille" placeholder="Ville" required>
+                        <input type="phone" class="form-control" ng-model="userPhone" placeholder="Numéro de téléphone" required>
+                        <input type="note" class="form-control" ng-model="userNote" placeholder="Note à propos de l'élu" required>
+                      <h3> Sa photo </h3>
 
                         <div flow-init flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFileUser($files)">
                             <center>
