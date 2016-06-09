@@ -101,7 +101,9 @@ function filterBySearchFriend() {
     }
 }
 
-angular.module('app', ['ngRoute','monospaced.qrcode','flow'])
+
+
+angular.module('app', ['ngRoute','monospaced.qrcode','flow', 'angularUtils.directives.dirPagination'])
     .config(config)
     .controller('mainController', mainController)
     .controller('contactController', contactController)
@@ -128,4 +130,6 @@ angular.module('app', ['ngRoute','monospaced.qrcode','flow'])
   // Can be used with different implementations of Flow.js
   // flowFactoryProvider.factory = fustyFlowFactory;
 }])
+
+
     .run(run);

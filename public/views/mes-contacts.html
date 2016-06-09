@@ -10,7 +10,7 @@
 <div class="container" style="margin-top: 10%">
     <input type="text" id="inputMessage" style="width: 40%; text-align: center" ng-model="searchFriend" placeholder="Recherchez directement par nom, fonction ou lieu !">
     <ul>
-        <li class="col-sm-2 friend" ng-repeat="friend in friendlist | filterBySearchFriend:searchFriend:user">
+        <li class="col-sm-2 friend" dir-paginate="friend in friendlist|itemsPerPage:12 | filterBySearchFriend:searchFriend:user">
             <div class="item-img-wrap ">
                 <div ng-show='!friend.contactImg'>
                     <img class="imgCard" style="height:156px" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
@@ -24,12 +24,16 @@
             </div>
             <p>{{friend.contactName}} {{friend.contactFirstname}}</p>
             <p>{{friend.contactFunction}} à {{friend.contactVille}}</p>
+
         </li>
+        <div>
+          <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
+        </div>
     </ul>
     <div ng-repeat="friend in friendlist | filterBySearchFriend:searchFriend:user" class="modal fade profil-{{friend._id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
         <div class="modal-dialog modal-lg">
-<!--            <div class="modal-content">-->
-                <div class="modal-body">
+           <div class="modal-content">
+                <!-- <div class="modal-body"> -->
                     <div ng-show='!friend.contactImg'>
                         <img class="imgCard" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
                     </div>

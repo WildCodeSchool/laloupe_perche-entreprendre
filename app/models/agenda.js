@@ -35,6 +35,7 @@ var Agenda = {
             res.send(data);
         });
     },
+    
 
     update: function(req, res) {
       console.log(req.body);

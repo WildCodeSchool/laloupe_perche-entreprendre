@@ -14,7 +14,7 @@ function load (){
       $scope.add = function () {
           var data = {};
           data.contactVille = $scope.contactVille;
-          data.contactImg = $scope.contactImg[0];
+          data.contactImg = $scope.contactImg;
           data.contactFunction = $scope.contactFunction;
           data.contactEmail = $scope.contactEmail;
           data.contactNote = $scope.contactNote;
@@ -31,7 +31,7 @@ function load (){
           $scope.contactVille = "";
           $scope.contactName = "";
           $scope.contactFunction = "";
-          $scope.contactImg = [];
+          $scope.contactImg = "";
           $scope.contactNote = "";
           $scope.contactEnterprise = "";
           $scope.contactFirstname = "";
@@ -42,38 +42,18 @@ function load (){
 
     //  ------------   Flow   -----------
 
-  	$scope.contactImg = [];
-
-  	$scope.processFiles = function (files) {
-  		angular.forEach(files, function (flowFile, i) {
-  			var fileReader = new FileReader();
-  			fileReader.onload = function (event) {
-  				var uri = event.target.result;
-  				$scope.contactImg[i] = uri;
-
-
-  			};
-  			fileReader.readAsDataURL(flowFile.file);
-  		});
-  	};
-    $scope.cancel = function(image) {
-      image.cancel();
+    $scope.contactImg = '';
+    $scope.photo = true;
+    $scope.processFileUser = function (files) {
+      $scope.photo = false;
+      angular.forEach(files, function (flowFile, i) {
+        var fileReader = new FileReader();
+        fileReader.onload = function (event) {
+          var uri = event.target.result;
+          $scope.contactImg = uri;
+          $scope.$apply();
+        };
+        fileReader.readAsDataURL(flowFile.file);
+      });
     };
-
-  //   function readURL(input) {
-  //      if (input.files && input.files[0]) {
-  //          var reader = new FileReader();
-   //
-  //          reader.onload = function (e) {
-  //              $('#blah').attr('src', e.target.result);
-  //          }
-   //
-  //          reader.readAsDataURL(input.files[0]);
-  //      }
-  //  }
-   //
-  //  $("#imgInp").change(function(){
-  //      readURL(this);
-  //  });
-
 }
