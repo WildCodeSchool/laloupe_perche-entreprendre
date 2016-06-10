@@ -1,5 +1,5 @@
 body {
-  background-image: url(../img/senonches.486.jpg);
+  background-image: url(../img/BlueWeb4.png);
   background-size: cover;
   overflow-x: hidden;
 }
@@ -350,4 +350,9 @@ body {
 }
 .theLinks > h1 {
   color: white;
+}
+/* Preview !*/
+
+.preview {
+  width: 50%;
 }
