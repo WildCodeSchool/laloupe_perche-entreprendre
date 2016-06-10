@@ -1,5 +1,6 @@
 body {
-  background-image: url(../img/_MG_8494.jpg);
+  background-image: url(../img/senonches.486.jpg);
+  background-size: cover;
   overflow-x: hidden;
 }
 #wrapper.toggled #sidebar-wrapper {
@@ -199,7 +200,7 @@ body {
     z-index:5;
 }
 .theAgenda {
-  background-color: #741F62;
+  background-color: #AAAE18;
 }
 
 .form-message {
@@ -335,7 +336,8 @@ body {
 }
 /* Tuile Reprendre une entreprise/local */
 .thePhoto {
-  background-image: url(http://lorempixel.com/350/250/business);
+  background-image: url(/img/doudou-la-loupe-006.jpg);
+  background-size: cover;
 }
 /* Tuile S'installer dans le Perche */
 .theLinks {
