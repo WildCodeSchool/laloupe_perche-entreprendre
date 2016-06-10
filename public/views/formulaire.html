@@ -1,15 +1,3 @@
-<!--header-->
-<!--
-<div style="width:100%; height:80px; overflow:hidden; margin-top: 140px; background-color:#333">
-
-		<div style="width:750px; height:80px; margin: 0 auto; overflow:hidden; position:relative;">
-
-				<div id="caption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> INSCRIVEZ VOUS ! </div>
-				<div id="pagecaption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> Caption </div>
-		</div>
-
-</div>
--->
 <div class="container">
 
     <div class="row  col-md-6 col-md-offset-3">
@@ -34,18 +22,22 @@
 
 
               <h3> Votre photo </h3>
-                <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
-                    <center>
-                        <button flow-btn flow-attrs="{accept:'image/*'}" type="file" class="btn btn-success">Télécharger une image</button>
-                        <div ng-hide="contactImg[0]"><img class="imgProfile" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="" alt="downloadicon" flow-btn flow-attrs="{accept:'image/*'}" type="file" id="btnImage"/></div>
-                        <div ng-show="contactImg[0]"><img class="imgProfile" src="{{user.img}}" alt="" alt="downloadicon" flow-btn flow-attrs="{accept:'image/*'}" type="file" id="btnImage"/></div>
-                        <p>
-                          <span class="btn fa fa-trash" ng-show="$flow.files.length" ng-click="cancel(image)"></span>
-                        </p>
-                    </center>
-                </div>
+              <div flow-init flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFileUser($files)">
+                  <center>
+                      <button flow-btn flow-attrs="{accept:'image/*'}" type="file" class="btn btn-success">Télécharger une image</button>
+                  </center>
 
-                <!--<div class="alert alert-danger" ng-show="connection==1" role="alert">Veuillez entrer un email ou un mot de passe valide.</div>-->
+                  <center>
+                      <img ng-show="photo" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="" />
+                      <div ng-hide="photo">
+                        <img class="preview" flow-img="{{contactImg}}" />
+                        <img class="preview" ng-src="{{contactImg}}" />
+                      </div>
+                  </center>
+              </div>
+              <p>
+                  <span ng-hide="photo" class="btn fa fa-trash" ng-click="photo = true"></span>
+              </p>
                 <a href="#/"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="add()" type="submit">
                     S'enregistrer et nous contacter !</button></a>
             </form>

@@ -23,6 +23,7 @@ $(window).load(function() {
 
     function biggerCreationTile() {
 
+
           $('.theCreation').one("click", function() {
             $('.tilev').not('.thePhoneMail, .theAgenda').animate({
                 width: '0',
@@ -262,7 +263,7 @@ $(window).load(function() {
 
         });
 
-        //  smallerAgendaTile();
+         //smallerAgendaTile();
 
     }
 

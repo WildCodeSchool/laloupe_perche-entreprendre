@@ -20,7 +20,7 @@
                 <img ng-repeat="agenda in agendalist" class="imgAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
             </div>
 
-            <div class="textEvent" ng-repeat="agenda in agendalist">
+            <div class="textEvent" dir-paginate="agenda in agendalist|itemsPerPage:1">
                 <img class="imgAgenda imgAgendaAfter" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
                 <div class="infoAgenda">
                     <h1>{{agenda.agendaTitle}}</h1>
@@ -29,8 +29,10 @@
                     <p>{{agenda.agendaHour}}</p>
                     <p>{{agenda.agendaCity}}</p>
                     <p>{{agenda.agendaPrice}}</p>
+                    <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
                 </div>
             </div>
+
             <div class="activityContent" ng-show="activity == 1">
                 <div class="account-wall-activity" ng-show="activity == 1">
 
@@ -48,9 +50,9 @@
                         <input type="ville2" class="form-control" ng-model="contactVille" placeholder="Votre ville" required>
                         <input type="mail" class="form-control" ng-model="contactEmail" placeholder="Votre email" required>
                         <input type="phone" class="form-control" ng-model="contactPhone" placeholder="Votre numéro de téléphone" required>
-                        <textarea style="resize:vertical;" class="form-control form-message" placeholder="Message..." rows="6" name="comment" required></textarea>
+                        <textarea style="resize:vertical;" class="form-control form-message" ng-model="contactNote" placeholder="Message..." rows="6" name="comment" required></textarea>
                         <a href="#/">
-                            <button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 10px" ng-click="add()" type="submit">
+                            <button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 10px" ng-click="addContact()" type="submit">
                                 Envoi !</button>
                         </a>
                     </form>
@@ -64,12 +66,16 @@
     <div class="theColumn columnTwo">
         <div class="tilev theCreation" ng-click="activity = 1">
 
+
+            <!-- Eléments récurrents -->
             <div class="closeButton1">X</div>
             <h1>Je crée mon activité</h1>
             <p ng-show="activity == 1"> Vous êtes porteur de projet et souhaitez des informations ou obtenir un rendez-vous, contactez-nous via le formulaire ou le numéro de téléphone.</p>
             <p ng-show="activity == 1"> Quelques témoignages</p>
+            <dir-pagination-controls class="pagination-button" max-size="5" direction-links="true" boundary-links="true" ng-show="activity == 1"></dir-pagination-controls>
+            <!-- Fin Eléments récurrents -->
 
-            <!--<div class="temoignage" ng-repeat="temoignage in temoignagelist | limitTo : 1"  ng-show="activity == 1" >
+            <div class="temoignage" dir-paginate="temoignage in temoignagelist |itemsPerPage:1"  ng-show="activity == 1" >
 
                 <img class="testimonialImg" src="{{temoignage.temoignageImg}}"/>
                 <div class="testimonialText">
@@ -78,34 +84,20 @@
                   <p class="testiSecteur">{{temoignage.temoignageSecteur}}</p>
                   <p class="testiDescription"><img class="quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png"/>   {{temoignage.temoignageDescription}}<img class="endQuote quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png"/>             </p>
               </div>
-
-            </div>-->
-
-            <ul>
-                <li dir-paginate="temoignage in temoignagelist | itemsPerPage: 10" ng-show="activity == 1">
-                  <img class="testimonialImg" src="{{temoignage.temoignageImg}}"/>
-                  <div class="testimonialText">
-                    <p class="testiName">{{temoignage.temoignageName}} {{temoignage.temoignageFirstname}}, {{temoignage.temoignageAge}} ans</p>
-                    <p class="testiFunction">{{temoignage.temoignageFunction}}</p>
-                    <p class="testiSecteur">{{temoignage.temoignageSecteur}}</p>
-                    <p class="testiDescription"><img class="quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png"/>   {{temoignage.temoignageDescription}}<img class="endQuote quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png"/>             </p>
-                </div>
-
-                </li>
-                <dir-pagination-controls ng-show="activity == 1"></dir-pagination-controls>
-            </ul>
-
-
-
-
-
-
-
-
+            </div>
         </div>
+
+
+
+
         <div class="tilev theSociety" ng-click="society = 1">
-            <div class="closeButton2">X</div>
-            <h1>Je reprends une entreprise</h1>
+
+
+          <!-- Eléments récurrents -->
+          <div "closeButton2">X</div>
+          <h1>Je reprends une entreprise</h1>
+          <dir-pagination-controls class="pagination-button" max-size="5" direction-links="true" boundary-links="true" ng-show="lookingForSociety == 1"></dir-pagination-controls>
+          <!-- Fin Eléments récurrents -->
 
 
             <div class="societyContent" ng-show="society == 1">
@@ -119,10 +111,8 @@
                 <div class="searchSociety" ng-show="lookingForSociety == 1">
                     <h2>Une sélection d'entreprises à reprendre</h2>
 
-
-                    <!--  Ajouter le ng-repeat au ul :) -->
                     <ul class="listSociety">
-                        <li class="society" ng-repeat="bureau in bureaulist">
+                        <li class="society" dir-paginate="bureau in bureaulist | itemsPerPage:1">
                             <div class="infoSocietyContainer">
                                 <div class="infoSociety">
                                     <p>{{bureau.bureauType}}</p>

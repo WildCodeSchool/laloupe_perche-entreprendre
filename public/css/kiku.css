@@ -418,9 +418,7 @@ body {
 
 /********************************/
 
-.btn.btn-lg {
-    padding: 10px 40px;
-}
+
 .btn.btn-hero, .btn.btn-hero:hover, .btn.btn-hero:focus {
     color: #f5f5f5;
     background-color: rgba(0, 0, 0, 0.5);

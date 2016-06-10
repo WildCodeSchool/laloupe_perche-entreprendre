@@ -195,7 +195,6 @@ body {
 }
 .bigCreation {
   background-color: lightblue;
-  align-text:center;
   padding:30px;
   }
 .testimonialImg {
@@ -226,7 +225,6 @@ body {
   text-align:justify;
   -moz-text-align-last: center;
   text-align-last: center;
-  margin-bottom: 150px;
 }
 .quote {
   width:20px;
@@ -234,6 +232,13 @@ body {
 }
 .endQuote {
   transform: rotate(180deg);
+}
+
+.pagination-button {
+  position:fixed;
+  margin-top: 515px;
+  margin-left:-110px;
+  border-radius:4px;
 }
 /* Formulaire mail après aggrandissement "créer entreprise" */
 .form-signin-activity {
