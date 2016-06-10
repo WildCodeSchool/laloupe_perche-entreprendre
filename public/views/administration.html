@@ -70,7 +70,8 @@
                         <input type="enterprise" class="form-control" ng-model="userEnterprise" placeholder="Structure" required>
                         <input type="ville" class="form-control" ng-model="userVille" placeholder="Ville" required>
                         <input type="phone" class="form-control" ng-model="userPhone" placeholder="Numéro de téléphone" required>
-                        <input type="note" class="form-control" ng-model="userNote" placeholder="Note à propos de l'élu" required>
+                        <textarea style="resize:vertical;" class="form-control form-message" ng-model="userNote" placeholder="Note à propos de l'élu" required></textarea>
+
                       <h3> Sa photo </h3>
 
                         <div flow-init flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFileUser($files)">
@@ -174,11 +175,11 @@
 
                       <h3> Ajouter un évenement </h3>
                         <input type="text" class="form-control" ng-model="agendaTitle" placeholder="Renseigner le titre de l'évènement" required>
-                        <input type="description" class="form-control" ng-model="agendaDescription" placeholder="Ajouter une description" required>
                         <input type="date" class="form-control input-md" ng-model="agendaDate" placeholder="Renseigner la date" required>
                         <input type="time" class="form-control" ng-model="agendaHour" placeholder="Ajouter l'horaire" required>
-                        <input type="description" class="form-control" ng-model="agendaPrice" placeholder="Renseigner le prix" required>
-                        <input type="ville" class="form-control" ng-model="agendaCity" placeholder="Renseigner le lieu" required>
+                        <input type="text" class="form-control" ng-model="agendaPrice" placeholder="Renseigner le prix" required>
+                        <input type="text" class="form-control" ng-model="agendaCity" placeholder="Renseigner le lieu" required>
+                        <textarea style="resize:vertical;" class="form-control form-message" ng-model="agendaDescription" placeholder="Ajouter une description" required></textarea>
 
 
 
@@ -203,6 +204,9 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
 
                     </form>
+
+                  </div>
+
         </div>
     </div>
 </div>
@@ -211,6 +215,7 @@
 
 <div class="modal fade" id="modal-agenda-gestion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
+
             <div class="modal-body">
               <ul class="list-group">
                   <li class="list-group-item" type="checkbox" ng-repeat="agenda in agendalist" style="padding-bottom: 50px;">
@@ -230,23 +235,25 @@
                 </br>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
               </ul>
-        </div>
+            </div>
+
     </div>
 </div>
 <!-- ----------------------------------------- MODAL CREATE OFFICE --------------------------------------------- -->
 
 <div class="modal fade" id="modal-bureau" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
+
             <div class="modal-body">
 
                     <form class="form-signin" style="text-align:center;">
 
                       <h3> Ajouter un commerce ou un bureau à reprendre </h3>
                         <input type="text" class="form-control" ng-model="bureauType" placeholder="Renseigner le type de bureau ou de commerce" required>
-                        <input type="description" class="form-control" ng-model="bureauDescription" placeholder="Ajouter une description" required>
                         <input type="text" class="form-control input-md" ng-model="bureauSurface" placeholder="Renseigner la surface" required>
                         <input type="text" class="form-control" ng-model="bureauSecteur" placeholder="Renseigner le secteur" required>
                         <input type="description" class="form-control" ng-model="bureauPrice" placeholder="Renseigner le prix" required>
+                        <textarea style="resize:vertical;" class="form-control form-message" ng-model="bureauDescription" placeholder="Ajouter une description" required></textarea>
 
 
 
@@ -272,13 +279,16 @@
 
                     </form>
 
-        </div>
+                  </div>
+            </div>
     </div>
 </div>
 <!-- ----------------------------------------- MODAL OFFICES --------------------------------------------- -->
 
 <div class="modal fade" id="modal-bureau-gestion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
+
+
             <div class="modal-body">
               <ul class="list-group">
                   <li class="list-group-item" type="checkbox" ng-repeat="bureau in bureaulist" style="padding-bottom: 50px;">
@@ -297,7 +307,9 @@
                 </br>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
               </ul>
-        </div>
+            </div>
+<!--        </div>-->
+
     </div>
 </div>
 <!-- ----------------------------------------- MODAL CREATE TESTIMONIAL --------------------------------------------- -->
@@ -314,7 +326,7 @@
                         <input type="text" class="form-control input-md" ng-model="temoignageAge" placeholder="Renseigner l'âge" required>
                         <input type="text" class="form-control" ng-model="temoignageFunction" placeholder="Renseigner la fonction" required>
                         <input type="description" class="form-control" ng-model="temoignageSecteur" placeholder="Renseigner la ville" required>
-                        <input type="description" class="form-control" ng-model="temoignageDescription" placeholder="Ajouter le témoignage" required>
+                        <textarea style="resize:vertical;" class="form-control form-message" ng-model="temoignageDescription" placeholder="Ajouter un témoignage" required></textarea>
 
 
                                 <h3> Une photo ? </h3>
@@ -348,6 +360,7 @@
 
 <div class="modal fade" id="modal-temoignage-gestion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
+
             <div class="modal-body">
               <ul class="list-group">
                   <li class="list-group-item" type="checkbox" ng-repeat="temoignage in temoignagelist" style="padding-bottom: 50px;">
@@ -367,7 +380,8 @@
                 </br>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
               </ul>
-        </div>
+            </div>
+
     </div>
 </div>
 <!-- ----------------------------------------- MODAL EXPORT --------------------------------------------- -->

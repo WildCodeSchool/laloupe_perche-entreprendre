@@ -14,7 +14,7 @@
                 <input type="enterprise" class="form-control" ng-model="user.userEnterprise" placeholder="Votre structure" required>
                 <input type="ville" class="form-control" ng-model="user.userVille" placeholder="Votre ville" required>
                 <input type="phone" class="form-control" ng-model="user.userPhone" placeholder="Votre numéro de téléphone" required>
-                <input type="note" class="form-control" ng-model="user.userNote" placeholder="Note à propos de vous" required>
+                <textarea style="resize:vertical;" class="form-control form-message" ng-model="user.userNote" placeholder="Note à propos de l'élu" required></textarea>
 
                 <h3> Votre photo </h3>
                 <div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
