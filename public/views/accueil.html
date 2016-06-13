@@ -1,9 +1,10 @@
-<div class="title">
+<div class="container accueilOne">
+
+<div class="title" style="color: grey">
     <h1>L'effet réseau</h1>
 </div>
 
 
-<div class="container accueilOne">
 
     <div class="theColumn columnOne">
         <div class="tilev thePhoneMail">
@@ -52,7 +53,7 @@
                         <input type="phone" class="form-control" ng-model="contactPhone" placeholder="Votre numéro de téléphone" required>
                         <textarea style="resize:vertical;" class="form-control form-message" ng-model="contactNote" placeholder="Message..." rows="6" name="comment" required></textarea>
                         <a href="#/">
-                            <button class="btn btn-lg btn-success btn-block" style="padding-bottom: 35px; margin-top: 10px" ng-click="addContact()" type="submit">
+                            <button class="btn btn-lg btn-success " style="padding-bottom: 35px; margin-top: 10px; width: 100%" ng-click="addContact()" type="submit">
                                 Envoi !</button>
                         </a>
                     </form>
@@ -154,20 +155,27 @@
             </div>
 
         </div>
+
         <div ng-class="{ 'noDisplay': isCreationBigger }" class="tilev theYoutube">
             <!--<iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>-->
+
+        <div class="tilev theYoutube">
+            <iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
+
         </div>
     </div>
 
-
+</div>
 
 
     <div class="theColumn columnThree">
+
         <div ng-class="{ 'noDisplay': isCreationBigger }" class="tilev theScoupit">
             <!--<iframe class="theScoopitContent" width="300" height="300" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=255"></iframe>-->
         </div>
         <div ng-class="{ 'noDisplay': isCreationBigger }" class="tilev thePhotoo"></div>
         <div  ng-class="{ 'noDisplay': isCreationBigger }"class="tilev theLinks">
+
             <h1>Je m'installe dans le Perche</h1>
         </div>
     </div>

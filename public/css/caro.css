@@ -2,8 +2,12 @@ body {
     background-image: url(../img/_MG_8494.jpg);
     overflow-x: hidden;
 }
+
 #wrapper.toggled #sidebar-wrapper {
-    background-color: white;
+  background-color: white;
+  background-image: url(/img/marguerite.png);
+  background-size: 150%;
+
 }
 .accueilOne {
     margin-top: 150px;
@@ -160,6 +164,8 @@ body {
     align-items: center;
     justify-content: center;
     padding: 30px;
+  align-items: center;
+
 }
 .theCreation > h1 {
     color: white;
@@ -190,9 +196,11 @@ body {
     display: flex;
 }
 .noDisplay {
+  transform:scale(0);
     display: none !important;
 }
 .notDisplayedContent {
+  transform:scale(0);
     display: none;
 }
 .bigText {
@@ -277,8 +285,12 @@ body {
     margin-left: -20px;
 }
 .theAgenda {
-    background-color: rgb(0, 180, 205);
+  background-color: #AAAE18;
+  margin-top:-10px;
+    background-color: #AAAE18;
+    z-index:5;
 }
+
 .form-message {
     height: 90px !important;
 }
@@ -419,19 +431,36 @@ body {
 /* Tuile Reprendre une entreprise/local */
 
 .thePhoto {
-    background-image: url(http://lorempixel.com/350/250/business);
+
+  background-image: url(/img/doudou-la-loupe-006.jpg);
+  background-size: cover;
 }
 
 /* Tuile S'installer dans le Perche */
 
 .theLinks {
-    background-color: violet;
-    display: flex;
-    align-items: center;
+  background-color: #E73664;
+  display: flex;
+  align-items: center;
 }
 .bigLinks {
     background-color: violet;
 }
 .theLinks > h1 {
     color: white;
+}
+/* Preview !*/
+
+.preview {
+  width: 50%;
+}
+.form-inline {
+  display: block;
+  width: 300px;
+}
+.list-group-item {
+  display: inline-block;
+  border: none;
+  background: none;
+  padding: 30px 50px;
 }
