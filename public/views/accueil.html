@@ -9,8 +9,8 @@
         <div class="tilev thePhoneMail">
             <h1>Contact</h1>
             <div class="phoneAndMailIcon">
-                <div class="phoneIcon firstState" ng-click="iconToNumber = !iconToNumber" ng-hide="iconToNumber; activity == 1"></div>
-                <div class="phoneWithoutIcon" ng-show="iconToNumber; activity == 1">02 37 29 09 29</div>
+                <div class="phoneIcon firstState" ng-click="activity = 1" ng-hide="iconToNumber; isCreationBigger"></div>
+                <div class="phoneWithoutIcon" ng-show="iconToNumber; isCreationBigger">02 37 29 09 29</div>
 
                 <!--<div class="mailIcon"></div>-->
             </div>
@@ -33,8 +33,8 @@
                 </div>
             </div>
 
-            <div class="activityContent" ng-show="activity == 1">
-                <div class="account-wall-activity" ng-show="activity == 1">
+            <div class="activityContent" ng-show="isCreationBigger">
+                <div class="account-wall-activity" ng-show="isCreationBigger">
 
                     <p>Remplissez simplement ce formulaire et nous vous rappellerons très prochainement.</p>
 
@@ -64,18 +64,18 @@
 
     </div>
     <div class="theColumn columnTwo">
-        <div class="tilev theCreation" ng-click="activity = 1">
+        <div class="tilev theCreation" ng-class="{ 'bigCreation': isCreationBigger }" ng-click="isCreationBigger = !isCreationBigger">
 
 
             <!-- Eléments récurrents -->
-            <div class="closeButton1">X</div>
+            <div class="closeButton" ng-class="{ 'bigCreationClose': isCreationBigger }" ng-click="isCreationBigger = isCreationBigger">X</div>
             <h1>Je crée mon activité</h1>
-            <p ng-show="activity == 1"> Vous êtes porteur de projet et souhaitez des informations ou obtenir un rendez-vous, contactez-nous via le formulaire ou le numéro de téléphone.</p>
-            <p ng-show="activity == 1"> Quelques témoignages</p>
-            <dir-pagination-controls class="pagination-button" max-size="5" direction-links="true" boundary-links="true" ng-show="activity == 1"></dir-pagination-controls>
+            <p class="notDisplayedContent" ng-class="{ 'bigText': isCreationBigger }" ng-show="isCreationBigger == isCreationBigger"> Vous êtes porteur de projet et souhaitez des informations ou obtenir un rendez-vous, contactez-nous via le formulaire ou le numéro de téléphone.</p>
+            <p class="notDisplayedContent" ng-class="{ 'bigtext': isCreationBigger }" ng-show="isCreationBigger == isCreationBigger"> Quelques témoignages</p>
+            <dir-pagination-controls class="pagination-button notDisplayedContent" ng-class="{ 'bigText': isCreationBigger }" max-size="5" direction-links="true" boundary-links="true" ng-show="isCreationBigger == isCreationBigger"></dir-pagination-controls>
             <!-- Fin Eléments récurrents -->
 
-            <div class="temoignage" dir-paginate="temoignage in temoignagelist |itemsPerPage:1"  ng-show="activity == 1" >
+            <div class="temoignage" ng-class="{ 'bigTemoignage': isCreationBigger }" dir-paginate="temoignage in temoignagelist |itemsPerPage:1"  ng-show="isCreationBigger == isCreationBigger" >
 
                 <img class="testimonialImg" src="{{temoignage.temoignageImg}}"/>
                 <div class="testimonialText">
@@ -90,7 +90,7 @@
 
 
 
-        <div class="tilev theSociety" ng-click="society = 1">
+        <div class="tilev theSociety" ng-class="{ 'noDisplay': isCreationBigger }" ng-click="society = 1">
 
 
           <!-- Eléments récurrents -->
@@ -154,7 +154,7 @@
             </div>
 
         </div>
-        <div class="tilev theYoutube">
+        <div ng-class="{ 'noDisplay': isCreationBigger }" class="tilev theYoutube">
             <!--<iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>-->
         </div>
     </div>
@@ -163,11 +163,11 @@
 
 
     <div class="theColumn columnThree">
-        <div class="tilev theScoupit">
+        <div ng-class="{ 'noDisplay': isCreationBigger }" class="tilev theScoupit">
             <!--<iframe class="theScoopitContent" width="300" height="300" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=255"></iframe>-->
         </div>
-        <div class="tilev thePhotoo"></div>
-        <div class="tilev theLinks">
+        <div ng-class="{ 'noDisplay': isCreationBigger }" class="tilev thePhotoo"></div>
+        <div  ng-class="{ 'noDisplay': isCreationBigger }"class="tilev theLinks">
             <h1>Je m'installe dans le Perche</h1>
         </div>
     </div>
