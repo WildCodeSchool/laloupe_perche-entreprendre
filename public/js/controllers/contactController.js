@@ -1,10 +1,13 @@
 function contactController($scope, $http, $rootScope, contactService, $routeParams) {
   $scope.user = $rootScope.userId;
+  $scope.userId = $scope.user._id;
+
 load();
 function load (){
   contactService.get().then(function (res) {
       $scope.friendlist = res.data
       console.log($scope.friendlist.contactImg);
+      console.log($scope.user._id);
 
   });
 }
@@ -13,6 +16,7 @@ function load (){
 
       $scope.add = function () {
           var data = {};
+          data.userId = $scope.user;
           data.contactVille = $scope.contactVille;
           data.contactImg = $scope.contactImg;
           data.contactFunction = $scope.contactFunction;
