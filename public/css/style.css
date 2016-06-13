@@ -1008,6 +1008,8 @@ button {
     position: absolute;
 }
 .modal-content {
+    margin-left: 50%;
+    transform: translate(-50%);
     background-image: url(/img/marguerite.png);
     min-height: 400px;
     width: 500px;
@@ -1016,8 +1018,8 @@ button {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: center;
-    padding: 40px 0px 20px 0px;
+    align-items: flex-start;
+    padding: 20px !important;
     border-radius: 20px;
     border: none;
     background-image: url(/img/marguerite.png);
