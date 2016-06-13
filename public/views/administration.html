@@ -109,20 +109,20 @@
                   <li class="list-group-item" ng-repeat="user in userlist" style="padding-bottom: 50px;">
                       <form class="form-inline">
                           <div class="form-group" >
-                            <input type="name" class="form-control" ng-model="user.userName" placeholder="Votre nom" required>
-                            <input type="firstname" class="form-control" ng-model="user.userFirstname" placeholder="Votre prénom" required>
-                            <input type="email" class="form-control" ng-model="user.userEmail" placeholder="Votre email" required>
-                            <input type="password" class="form-control" ng-model="user.userMdp" placeholder="Votre mot de passe" required>
-                            <input type="fonction" class="form-control" ng-model="user.userFunction" placeholder="Votre fonction" required>
-                            <input type="enterprise" class="form-control" ng-model="user.userEnterprise" placeholder="Votre structure" required>
-                            <input type="ville" class="form-control" ng-model="user.userVille" placeholder="Votre ville" required>
-                            <input type="phone" class="form-control" ng-model="user.userPhone" placeholder="Votre numéro de téléphone" required>
-                            <input type="note" class="form-control" ng-model="user.userNote" placeholder="Note à propos de vous" required>
+                            <input type="name" class="form-control admin" ng-model="user.userName" placeholder="Votre nom" required>
+                            <input type="firstname" class="form-control admin" ng-model="user.userFirstname" placeholder="Votre prénom" required>
+                            <input type="email" class="form-control admin" ng-model="user.userEmail" placeholder="Votre email" required>
+                            <input type="password" class="form-control admin" ng-model="user.userMdp" placeholder="Votre mot de passe" required>
+                            <input type="fonction" class="form-control admin" ng-model="user.userFunction" placeholder="Votre fonction" required>
+                            <input type="enterprise" class="form-control admin" ng-model="user.userEnterprise" placeholder="Votre structure" required>
+                            <input type="ville" class="form-control admin" ng-model="user.userVille" placeholder="Votre ville" required>
+                            <input type="phone" class="form-control admin" ng-model="user.userPhone" placeholder="Votre numéro de téléphone" required>
+                            <input type="note" class="form-control admin" ng-model="user.userNote" placeholder="Note à propos de vous" required>
 
                           </div>
                           <div>
-                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" ng-click="update(user)">Mettre à jour</button></a>
-                              <a data-dismiss="modal"><button class="btn btn-danger" ng-click="delete(user,'user')">Supprimer</button></a>
+                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" style="width: 250px" ng-click="update(user)">Mettre à jour</button></a>
+                              <a data-dismiss="modal"><button class="btn btn-danger" style="width: 250px" ng-click="delete(user,'user')">Supprimer</button></a>
                           </div>
 
                       </form>
@@ -144,17 +144,17 @@
                   <li class="list-group-item" type="checkbox" ng-repeat="contact in contactlist" style="padding-bottom: 50px;">
                       <form class="form-inline">
                           <div class="form-group">
-                            <input type="name" class="form-control" ng-model="contact.contactName" placeholder="Votre nom" required>
-                            <input type="firstname" class="form-control" ng-model="contact.contactFirstname" placeholder="Votre prénom" required>
-                            <input type="email" class="form-control" ng-model="contact.contactEmail" placeholder="Votre email" required>
-                            <input type="fonction" class="form-control" ng-model="contact.contactFunction" placeholder="Votre fonction" required>
-                            <input type="enterprise" class="form-control" ng-model="contact.contactEnterprise" placeholder="Votre structure" required>
-                            <input type="ville" class="form-control" ng-model="contact.contactVille" placeholder="Votre ville" required>
-                            <input type="phone" class="form-control" ng-model="contact.contactPhone" placeholder="Votre numéro de téléphone" required>
-                            <input type="note" class="form-control" ng-model="contact.contactNote" placeholder="Note à propos de vous" required>
+                            <input type="name" class="form-control admin" ng-model="contact.contactName" placeholder="Votre nom" required>
+                            <input type="firstname" class="form-control admin" ng-model="contact.contactFirstname" placeholder="Votre prénom" required>
+                            <input type="email" class="form-control admin" ng-model="contact.contactEmail" placeholder="Votre email" required>
+                            <input type="fonction" class="form-control admin" ng-model="contact.contactFunction" placeholder="Votre fonction" required>
+                            <input type="enterprise" class="form-control admin" ng-model="contact.contactEnterprise" placeholder="Votre structure" required>
+                            <input type="ville" class="form-control admin" ng-model="contact.contactVille" placeholder="Votre ville" required>
+                            <input type="phone" class="form-control admin" ng-model="contact.contactPhone" placeholder="Votre numéro de téléphone" required>
+                            <input type="note" class="form-control admin" ng-model="contact.contactNote" placeholder="Note à propos de vous" required>
 
                           </div>
-                              <a data-dismiss="modal"><button class="btn btn-danger" ng-click="delete(contact,'contact')">Supprimer</button></a>
+                              <a data-dismiss="modal"><button class="btn btn-danger" style="width: 250px" ng-click="delete(contact,'contact')">Supprimer</button></a>
                       </form>
                   </li>
                 </br>
@@ -221,15 +221,15 @@
                   <li class="list-group-item" type="checkbox" ng-repeat="agenda in agendalist" style="padding-bottom: 50px;">
                       <form class="form-inline">
                           <div class="form-group">
-                            <input type="text" class="form-control" ng-model="agenda.agendaTitle" placeholder="Titre de l'évènement" required>
-                            <input type="text" class="form-control" ng-model="agenda.agendaDescription" placeholder="Description" required>
-                            <input type="text" class="form-control" ng-model="agenda.agendaDate" placeholder="Date" required>
-                            <input type="text" class="form-control" ng-model="agenda.agendaHour" placeholder="Heure" required>
-                            <input type="text" class="form-control" ng-model="agenda.agendaCity" placeholder="Ville" required>
-                            <input type="text" class="form-control" ng-model="agenda.agendaPrice" placeholder="Prix" required>
+                            <input type="text" class="form-control admin" ng-model="agenda.agendaTitle" placeholder="Titre de l'évènement" required>
+                            <input type="text" class="form-control admin" ng-model="agenda.agendaDescription" placeholder="Description" required>
+                            <input type="text" class="form-control admin" ng-model="agenda.agendaDate" placeholder="Date" required>
+                            <input type="text" class="form-control admin" ng-model="agenda.agendaHour" placeholder="Heure" required>
+                            <input type="text" class="form-control admin" ng-model="agenda.agendaCity" placeholder="Ville" required>
+                            <input type="text" class="form-control admin" ng-model="agenda.agendaPrice" placeholder="Prix" required>
                           </div>
-                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" ng-click="updateAgenda(agenda)">Mettre à jour</button></a>
-                              <a data-dismiss="modal"><button class="btn btn-danger" ng-click="delete(agenda,'agenda')">Supprimer</button></a>
+                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" style="width: 250px" ng-click="updateAgenda(agenda)">Mettre à jour</button></a>
+                              <a data-dismiss="modal"><button class="btn btn-danger" style="width: 250px" ng-click="delete(agenda,'agenda')">Supprimer</button></a>
                       </form>
                   </li>
                 </br>
@@ -294,14 +294,14 @@
                   <li class="list-group-item" type="checkbox" ng-repeat="bureau in bureaulist" style="padding-bottom: 50px;">
                       <form class="form-inline">
                           <div class="form-group">
-                            <input type="text" class="form-control" ng-model="bureau.bureauType" placeholder="Type de commerce" required>
-                            <input type="text" class="form-control" ng-model="bureau.bureauDescription" placeholder="Description" required>
-                            <input type="text" class="form-control" ng-model="bureau.bureauSurface" placeholder="Surface" required>
-                            <input type="text" class="form-control" ng-model="bureau.bureauSecteur" placeholder="Secteur" required>
-                            <input type="text" class="form-control" ng-model="bureau.bureauPrice" placeholder="Prix" required>
+                            <input type="text" class="form-control admin" ng-model="bureau.bureauType" placeholder="Type de commerce" required>
+                            <input type="text" class="form-control admin" ng-model="bureau.bureauDescription" placeholder="Description" required>
+                            <input type="text" class="form-control admin" ng-model="bureau.bureauSurface" placeholder="Surface" required>
+                            <input type="text" class="form-control admin" ng-model="bureau.bureauSecteur" placeholder="Secteur" required>
+                            <input type="text" class="form-control admin" ng-model="bureau.bureauPrice" placeholder="Prix" required>
                           </div>
-                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" ng-click="updateBureau(bureau)">Mettre à jour</button></a>
-                              <a data-dismiss="modal"><button class="btn btn-danger" ng-click="delete(bureau,'bureau')">Supprimer</button></a>
+                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" style="width: 250px" ng-click="updateBureau(bureau)">Mettre à jour</button></a>
+                              <a data-dismiss="modal"><button class="btn btn-danger" style="width: 250px" ng-click="delete(bureau,'bureau')">Supprimer</button></a>
                       </form>
                   </li>
                 </br>
@@ -366,15 +366,15 @@
                   <li class="list-group-item" type="checkbox" ng-repeat="temoignage in temoignagelist" style="padding-bottom: 50px;">
                       <form class="form-inline">
                           <div class="form-group">
-                            <input type="text" class="form-control" ng-model="temoignage.temoignageName" placeholder="Nom" required>
-                            <input type="text" class="form-control" ng-model="temoignage.temoignageFirstname" placeholder="Prénom" required>
-                            <input type="text" class="form-control" ng-model="temoignage.temoignageAge" placeholder="Âge" required>
-                            <input type="text" class="form-control" ng-model="temoignage.temoignageFunction" placeholder="Fonction" required>
-                            <input type="text" class="form-control" ng-model="temoignage.temoignageSecteur" placeholder="Ville" required>
-                            <input type="text" class="form-control" ng-model="temoignage.temoignageDescription" placeholder="Témoignage" required>
+                            <input type="text" class="form-control admin" ng-model="temoignage.temoignageName" placeholder="Nom" required>
+                            <input type="text" class="form-control admin" ng-model="temoignage.temoignageFirstname" placeholder="Prénom" required>
+                            <input type="text" class="form-control admin" ng-model="temoignage.temoignageAge" placeholder="Âge" required>
+                            <input type="text" class="form-control admin" ng-model="temoignage.temoignageFunction" placeholder="Fonction" required>
+                            <input type="text" class="form-control admin" ng-model="temoignage.temoignageSecteur" placeholder="Ville" required>
+                            <input type="text" class="form-control admin" ng-model="temoignage.temoignageDescription" placeholder="Témoignage" required>
                           </div>
-                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" ng-click="updateTemoignage(temoignage)">Mettre à jour</button></a>
-                              <a data-dismiss="modal"><button class="btn btn-danger" ng-click="delete(temoignage,'temoignage')">Supprimer</button></a>
+                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" style="width: 250px" ng-click="updateTemoignage(temoignage)">Mettre à jour</button></a>
+                              <a data-dismiss="modal"><button class="btn btn-danger" style="width: 250px" ng-click="delete(temoignage,'temoignage')">Supprimer</button></a>
                       </form>
                   </li>
                 </br>

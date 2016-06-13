@@ -5,6 +5,8 @@ body {
 }
 #wrapper.toggled #sidebar-wrapper {
   background-color: white;
+  background-image: url(/img/marguerite.png);
+  background-size: 150%;
 }
 
 .accueilOne {
@@ -355,4 +357,14 @@ body {
 
 .preview {
   width: 50%;
+}
+.form-inline {
+  display: block;
+  width: 300px;
+}
+.list-group-item {
+  display: inline-block;
+  border: none;
+  background: none;
+  padding: 30px 50px;
 }
