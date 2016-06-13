@@ -27,6 +27,7 @@ function load (){
           data.contactFirstname = $scope.contactFirstname;
           data.contactEnterprise = $scope.contactEnterprise;
           data.contactPhone = $scope.contactPhone;
+          data.userId = $routeParams.userId; // ID de l'elu (lors du clic sur la carte)
           contactService.create(data).then(function (res) {
 
           });

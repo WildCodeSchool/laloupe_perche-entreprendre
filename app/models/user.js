@@ -32,6 +32,14 @@ var User = {
         });
     },
 
+    
+    findById: function(id, cb){
+        User.model.findById(id, function(err, data) {
+            console.log(data);
+            cb(data);
+        });
+    },
+    
     update: function(req, res) {
         User.model.findByIdAndUpdate(req.params.id, req.body, function(err) {
             if (err){
