@@ -1,0 +1,496 @@
+/*.view {
+    margin-top: 100px;
+}*/
+body {
+  /*  background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;*/
+    /*background-color: rgba(0, 0, 0, 0.8);*/
+    font-family: "Ubuntu", arial;
+}
+
+/*=================================================================
+                            Accueil
+=================================================================*/
+
+.header {
+    background-color: white;
+}
+.title {
+  position:absolute;
+  margin-left:55%;
+  transform:translateX(-50%);
+  margin-top: -150px;
+}
+
+
+.form-pop {
+  overflow: hidden;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:250px;
+  color:black;
+  background-color:white;
+  opacity:0;
+  z-index: 998;
+  position:absolute;
+}
+.form-pop-society {
+  overflow: hidden;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:250px;
+  color:black;
+  background-color:white;
+  opacity:0;
+  z-index: 998;
+  position:absolute;
+}
+.form-pop-agenda {
+  overflow: hidden;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:250px;
+  color:black;
+  background-color:white;
+  opacity:0;
+  z-index: 998;
+  position:absolute;
+}
+.form-pop-lePerche {
+  overflow: hidden;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:250px;
+  color:black;
+  background-color:white;
+  opacity:0;
+  z-index: 998;
+  position:absolute;
+}
+.form-signin {
+  transform: scale(0.9);
+}
+.range {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.tile {
+    height: 250px;
+    width: 500px;
+    background-color: red;
+    box-shadow: 1px 1px 7px black;
+    margin: 5px;
+    color: white;
+}
+.tile:hover {
+    box-shadow: 1px 1px 5px black;
+}
+.movePerche {
+    width: 700px;
+}
+
+/********* TILE ACTIVITY *******/
+
+.createActivity {
+    background-color: #006666;
+    background-size: cover;
+    overflow:hidden;
+    transition: 0.6s ease-out;
+    cursor: pointer;
+
+}
+.createActivity:hover > .justHover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.createActivity:hover > .littletitle {
+    color: rgba(255, 255, 255, 1);
+}
+.littletitle {
+    color: rgba(0, 0, 0, 1);
+    font-size: 2em;
+    transition: 0.6s ease-in;
+    margin-top: -160px;
+}
+
+.littleActivity {
+  margin-top: -80px;
+}
+.justHover {
+    background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    width: 100%;
+    transition: 0.4s ease-in;
+}
+.buySociety {
+    background-color: #00cccc;
+    background-size: cover;
+    min-width: 200px;
+    transition:1s ease-out;
+}
+.buySociety:hover > .justHover {
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+.buySociety:hover > .littletitle {
+    color: rgba(255, 255, 255, 1);
+}
+
+
+.myAgenda {
+    overflow: hidden;
+    min-width: 200px;
+    transition:1s;
+}
+/*#checkTrick {
+  position:absolute;
+  width:550px;
+  height:250px;
+  z-index:8;
+  opacity:0;
+}
+#checkTrick:checked {
+  width:1128px;
+  height:600px;
+}
+#checkTrick:checked ~ .myAgenda {
+  width:1128px;
+  height:600px;
+}
+#checkTrick:checked ~ .buySociety {
+  width:1128px;
+}*/
+.last {
+  transition:1s;
+}
+.videoCard {
+    width: 400px;
+    overflow: hidden;
+}
+.youtubeVideo {
+    transform: scaleY(1.2);
+    margin-top: -4px;
+}
+.movePerche {
+    background-color: #ff9900;
+    background-size: cover;
+}
+.littlepetittitle {
+    color: rgba(0, 0, 0, 1);
+    font-size: 2em;
+    transition: 0.6s ease-in;
+}
+
+/********* TILE SCOOPIT *******/
+
+.createActivity {
+    width: 800px;
+}
+.scoopitou {
+    width: 300px;
+    transition:0.5s ease-out;
+}
+.myScoopit {
+    margin-top: -5px;
+    margin-left: -0px;
+    width: 300px;
+    height: 255px;
+}
+
+/******** TILE FINANCEURS *******/
+.partners {
+  width:1128px !important;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center space-around;
+  align-items: center;
+  background-color: rgba(121, 224, 51, 0.9) !important;
+}
+.partners > .littlepetittitle {
+  color:white;
+  width:100%;
+  text-shadow: 1px 1px 4px black;
+}
+.financeur {
+  width:200px;
+  height: 100px;
+  background-color:lightgreen;
+  box-shadow:1px 1px 5px black;
+
+}
+
+.primoFinanceur {
+  background-image:url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/payPercheOrnais.gif);
+  background-size:contain;
+  background-position: center center;
+  border-right:40px white solid;
+    border-left:40px white solid;
+}
+.secondoFinanceur {
+  background-image: url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/paysDuPerche.gif);
+  background-size: contain;
+  background-position: center center;
+  border-right:50px white solid;
+    border-left:50px white solid;
+    border-top:20px white solid;
+    border-bottom:20px white solid;
+}
+  .tertioFinanceur {
+    background-image: url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/europe.gif);
+  background-size: contain;
+  background-position: center center;
+  border-right:50px darkblue solid;
+    border-left:50px darkblue solid;
+    border-top:20px darkblue solid;
+    border-bottom:20px darkblue solid;
+}
+    .quartoFinanceur {
+      background-image: url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/basseNormandie.gif);
+    background-size: contain;
+    background-position: center center;
+    border-right:40px white solid;
+      border-left:45px white solid;
+      border-top:10px white solid;
+      border-bottom:10px white solid;
+  }
+  .quintoFinanceur {
+    background-image: url(http://www.vivre-dans-le-perche.fr/fileadmin/templates/img/europeEngage.gif);
+  background-size: contain;
+  background-position: center center;
+  border-right:40px white solid;
+    border-left:45px white solid;
+    border-top:10px white solid;
+    border-bottom:10px white solid;
+}
+/********* MODAL CREATION SOCIETY *******/
+.icones {
+  margin-bottom: 30px;
+}
+
+.mail {
+    text-align: center;
+}
+.phone {
+    text-align: center;
+}
+.well {
+    width: 100%;
+    text-align: center;
+}
+
+/*=================================================================
+                            Ma carte
+=================================================================*/
+
+.globale {
+    width: 100%;
+    text-align: center;
+}
+/*
+.card {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    width: 300px;
+    height: 100%;
+    box-shadow: 0px 0px 5px black;
+    background-color: rgb (0, 0, O, 1);
+}
+.imgCard {
+    height: 150px;
+    width: 140px;
+    box-shadow: 1px 1px 5px black;
+    background-color: white;
+}
+*/
+.logos {
+    display: flex;
+    flex-direction: row;
+}
+.logo {
+    height: 80px;
+    width: 80px;
+}
+.fade-carousel {
+    position: relative;
+    height: 100vh;
+}
+.fade-carousel .carousel-inner .item {
+    height: 100vh;
+}
+.fade-carousel .carousel-indicators > li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .7;
+}
+.fade-carousel .carousel-indicators > li.active {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+/********************************/
+
+
+/*          Hero Headers        */
+
+
+/********************************/
+
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .75);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0);
+    -o-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+.hero h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    margin-top: -300px;
+}
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s;
+    -ms-transition: 2s all ease-in-out .1s;
+    -o-transition: 2s all ease-in-out .1s;
+    transition: 2s all ease-in-out .1s;
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s;
+    -ms-transition: 2s all ease-in-out .1s;
+    -o-transition: 2s all ease-in-out .1s;
+    transition: 2s all ease-in-out .1s;
+}
+
+/********************************/
+
+
+/*            Overlay           */
+
+
+/********************************/
+
+
+
+.overlay {
+    /*position: absolute;*/
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: .7;
+}
+
+
+/********************************/
+
+
+/*          Custom Buttons      */
+
+
+/********************************/
+
+
+.btn.btn-hero, .btn.btn-hero:hover, .btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: rgba(0, 0, 0, 0.5);
+    outline: none;
+    margin: 20px auto;
+    padding-bottom: 30px;
+}
+
+/********************************/
+
+
+/*       Slides backgrounds     */
+
+
+/********************************/
+
+.fade-carousel .slides .slide-1, .fade-carousel .slides .slide-2, .fade-carousel .slides .slide-3 {
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-http: //e2ua.com/data/wallpapers/143/WDF_1844214.jpgrepeat;
+}
+.fade-carousel .slides .slide-1 {
+    background-image: url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818);
+}
+.fade-carousel .slides .slide-2 {
+    background-image: url(https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?q=75&fm=jpg&s=c39d9a3bf66d6566b9608a9f1f3765af);
+}
+.fade-carousel .slides .slide-3 {
+    background-image: url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199912?q=75&fm=jpg&s=9bf9f2ef5be5cb5eee5255e7765cb327);
+}
+label {
+    color: black;
+}
+
+
+/********************************/
+
+
+/*          Media Queries       */
+
+
+/********************************/
+
+#sidebar-wrapper {
+    box-shadow: 1px 0px 3px black;
+}
+
+
+/********************************/
+
+
+/*Contenu tuile Reprendre une entreprise*/
+
+
+/********************************/
+.form-pop-society {
+  display:flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center center;
+  width:100%;
+  height:100%;
+  display:none;
+}
+.text-intro {
+  margin-top: 50px;
+}
+
+.consult-announce {
+  display:flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content:space-around;
+}
