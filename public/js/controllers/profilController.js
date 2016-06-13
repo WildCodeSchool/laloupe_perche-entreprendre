@@ -16,13 +16,12 @@ function profilController($scope, $http, $rootScope, userService) {
 
 
     $scope.processFiles = function (files) {
-      $scope.img = [];
       angular.forEach(files, function (flowFile, i) {
         var fileReader = new FileReader();
         fileReader.onload = function (event) {
           var uri = event.target.result;
-          $scope.img[i] = uri;
-          $scope.user.userImg = $scope.img[0];
+          $scope.user.userImg= uri;
+          $scope.$apply();
         };
         fileReader.readAsDataURL(flowFile.file);
       });

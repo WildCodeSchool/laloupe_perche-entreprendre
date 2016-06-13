@@ -1,9 +1,12 @@
 body {
-  background-image: url(../img/_MG_8494.jpg);
+  background-image: url(../img/BlueWeb4.png);
+  background-size: cover;
   overflow-x: hidden;
 }
 #wrapper.toggled #sidebar-wrapper {
   background-color: white;
+  background-image: url(/img/marguerite.png);
+  background-size: 150%;
 }
 
 .accueilOne {
@@ -175,7 +178,7 @@ body {
 
 /* Tuile Créer son entreprise */
 .theCreation {
-  background-color: rgb(0, 180, 205);
+  background-color: #38B8C8;
   display: flex;
   align-items: center;
 }
@@ -195,11 +198,11 @@ body {
 }
 .form-signin-activity {
   margin-top:-10px;
-    background-color: rgb(0, 180, 205);
+    background-color: #AAAE18;
     z-index:5;
 }
 .theAgenda {
-  background-color: rgb(0, 180, 205);
+  background-color: #AAAE18;
 }
 
 .form-message {
@@ -335,11 +338,12 @@ body {
 }
 /* Tuile Reprendre une entreprise/local */
 .thePhoto {
-  background-image: url(http://lorempixel.com/350/250/business);
+  background-image: url(/img/doudou-la-loupe-006.jpg);
+  background-size: cover;
 }
 /* Tuile S'installer dans le Perche */
 .theLinks {
-  background-color: violet;
+  background-color: #E73664;
   display: flex;
   align-items: center;
 }
@@ -348,4 +352,19 @@ body {
 }
 .theLinks > h1 {
   color: white;
+}
+/* Preview !*/
+
+.preview {
+  width: 50%;
+}
+.form-inline {
+  display: block;
+  width: 300px;
+}
+.list-group-item {
+  display: inline-block;
+  border: none;
+  background: none;
+  padding: 30px 50px;
 }
