@@ -112,24 +112,19 @@ function userController($scope, $http, userService, contactService, agendaServic
 
     $scope.returnCreationClass2 = function() {
         //Tile agenda
-        var agendaTile = angular.element(document.querySelector('.bigAgenda'));
-        agendaTile.removeClass('bigAgenda').addClass('theAgenda');
-        var agendaTile = angular.element(document.querySelector('.societyTile'));
-        agendaTile.removeClass('noDisplay').addClass('theSociety');
-        var agendaTile = angular.element(document.querySelector('.youtubeTile'));
-        agendaTile.removeClass('noDisplay').addClass('theYoutube');
-        var agendaTile = angular.element(document.querySelector('.scoupitTile'));
-        agendaTile.removeClass('noDisplay').addClass('theScoupit');
-        var agendaTile = angular.element(document.querySelector('.photoTile'));
-        agendaTile.removeClass('noDisplay').addClass('thePhoto');
-        var agendaTile = angular.element(document.querySelector('.linksTile'));
-        agendaTile.removeClass('noDisplay').addClass('theLinks');
-        var agendaTile = angular.element(document.querySelector('.columnTwoBis'));
-        agendaTile.removeClass('columnTwoBis').addClass('columnTwo');
-        var agendaTile = angular.element(document.querySelector('.columnThreeBis'));
-        agendaTile.removeClass('columnThreeBis').addClass('columnThree');
-        var creationTile = angular.element(document.querySelector('.bigCreationClose2'));
-        creationTile.removeClass('bigCreationClose2').addClass('noDisplay');
+        $scope.sizeAgenda = 'theAgenda';
+        $scope.switchAgenda = 'subAgenda';
+        $scope.switchAgendaContent = 'noDisplay';
+        $scope.hideSocietyForCreation = 'theSociety';
+        $scope.hideYoutubeForCreation = 'theYoutube';
+        $scope.hideScoupit = 'theScoupit';
+        $scope.hidePhoto = 'thePhoto';
+        $scope.hideLinks = 'theLinks';
+        $scope.changeHeight = 'columnTwo';
+        $scope.hidecolumnThreeForCreation = 'columnThree';
+        $scope.buttonClass2 = 'noDisplay';
+
+
 }
 
 //NG-CLASS SOCIETY MANIPULATION
@@ -161,28 +156,20 @@ $scope.changeSocietySize = function() {
 
 $scope.returnCreationClass3 = function() {
     //Tile create activity
-    var creationTile = angular.element(document.querySelector('.controlActivity'));
-    creationTile.removeClass('noDisplay').addClass('theCreation');
+    $scope.bigOrSmall = "theCreation";
     //Close Button
-    var creationTile = angular.element(document.querySelector('.bigCreationClose3'));
-    creationTile.removeClass('bigCreationClose3').addClass('noDisplay');
+    $scope.buttonClass3 = 'noDisplay';
     //Pagination Button
-    var creationTile = angular.element(document.querySelector('.pagination-button'));
-    creationTile.removeClass('pagination-button').addClass('noDisplay');
+    $scope.hidePagination2 = 'noDisplay';
     //Society tile
-    var creationTile = angular.element(document.querySelector('.societyTile'));
-    creationTile.removeClass('bigSociety').addClass('theSociety');
-    var creationTile = angular.element(document.querySelector('.controlSociety'));
-    creationTile.removeClass('societyContent').addClass('noDisplay');
+    $scope.hideSocietyForCreation = 'theSociety';
+    $scope.showContent = 'noDisplay';
     //Youtube tile
-    var creationTile = angular.element(document.querySelector('.youtubeTile'));
-    creationTile.removeClass('noDisplay').addClass('theYoutube');
+    $scope.hideYoutubeForCreation = 'theYoutube';
     //Column 3
-    var creationTile = angular.element(document.querySelector('.controlColumn'));
-    creationTile.removeClass('noDisplay').addClass('columnThree');
+    $scope.hidecolumnThreeForCreation = 'columnThree';
     //Margin Regulation
-    var creationTile = angular.element(document.querySelector('.accueilOne'));
-    creationTile.removeClass('accueilOneTile').addClass('free');
+    $scope.marginRegulation = 'free';
 }
 
 
