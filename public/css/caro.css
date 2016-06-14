@@ -9,6 +9,9 @@ body {
   background-size: 150%;
 
 }
+.free {
+  color:black;
+}
 .accueilOne {
     margin-top: 150px;
     /*  margin-left:100px;*/
@@ -18,6 +21,9 @@ body {
     flex-direction: row;
     justify-content: space-between;
     background-color: rgba(159, 191, 255, 0) !important;
+}
+.accueilOneTile {
+  margin-left:-44px;
 }
 .theColumn {
     margin-left: 0px;
@@ -104,7 +110,25 @@ body {
 }
 
 /* Tuile Agenda */
-
+.bigCreationClose2 {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 240px;
+    margin-left: 990px;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: -1px 1px 3px black, 1px 0px 6px black;
+    text-shadow: 0px 0px 2px black;
+    transition: 2s ease-out;
+    opacity: 1;
+    z-index:800;
+}
 .theAgenda {
     height: 517px;
     border: none;
@@ -113,6 +137,16 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.bigAgenda {
+  width:1018px !important;
+  height: 517px;
+  border: none;
+  box-shadow: 1px 1px 5px black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .subAgenda {
     height: 517px;
@@ -155,6 +189,14 @@ body {
     flex-wrap: nowrap;
     justify-content: space-around;
 }
+.columnTwoBis {
+    width: 350px;
+    height: 265px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
 
 /* Tuile Créer son entreprise */
 
@@ -182,6 +224,7 @@ body {
 }
 .bigCreation {
     background-color: lightblue;
+    margin-left:-110px;
     padding: 30px;
     width: 750px;
     height: 800px !important;
@@ -194,15 +237,18 @@ body {
 }
 .bigTemoignage {
     display: flex;
+    flex-direction: column;
+    transform:scale(1);
+    transition:2s;
 }
 .noDisplay {
   transform:scale(0);
     display: none !important;
 }
-.notDisplayedContent {
-  transform:scale(0);
-    display: none;
+.display {
+  display:block;
 }
+
 .bigText {
     display: flex !important;
 }
@@ -218,14 +264,15 @@ body {
     color: white;
     font-size: 1.5em;
     font-weight: bold;
-    margin-top: -100px;
-    margin-left: 350px;
+    margin-top: -825px;
+    margin-left: 1040px;
     border-radius: 50px;
     padding: 10px;
     box-shadow: -1px 1px 3px black, 1px 0px 6px black;
     text-shadow: 0px 0px 2px black;
     transition: 2s ease-out;
     opacity: 1;
+    z-index:800;
 }
 .testimonialImg {
     margin-top: 30px;
@@ -264,12 +311,19 @@ body {
     transform: rotate(180deg);
 }
 .pagination-button {
+  display:block;
+    width:200px;
+    height:100px;
     position: absolute;
     margin-top: 515px;
     margin-left: -110px;
     border-radius: 4px;
     opacity: 1;
     z-index: 999;
+}
+.kangourou-enter {
+  transition:5s;
+  transform: rotate(360deg);
 }
 
 /* Formulaire mail après aggrandissement "créer entreprise" */
@@ -296,11 +350,39 @@ body {
 }
 
 /* Tuile Reprendre une entreprise/local */
-
+.bigCreationClose3 {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: -34px;
+    margin-left: 610px;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: -1px 1px 3px black, 1px 0px 6px black;
+    text-shadow: 0px 0px 2px black;
+    transition: 2s ease-out;
+    opacity: 1;
+    z-index:800;
+}
 .theSociety {
     background-color: orange;
     display: flex;
     align-items: center;
+}
+.bigSociety {
+    background-color: darkorange;
+    margin-left:-110px;
+    padding: 30px;
+    width: 750px;
+    height: 800px !important;
+    display: flex;
+    flex-direction: column;
+    transition: 1s ease-out;
 }
 .theSociety > h1 {
     color: white;
@@ -411,6 +493,14 @@ body {
 .columnThree {
     width: 350px;
     height: 800px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.columnThreeBis {
+    width: 350px;
+    height: 265px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
