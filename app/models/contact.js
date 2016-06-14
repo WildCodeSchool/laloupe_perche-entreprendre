@@ -1,6 +1,7 @@
 // MODEL CONTACT
 var mongoose = require('mongoose');
 var User = require('./user');
+var jwt = require('jsonwebtoken');
 
 var contactSchema = new mongoose.Schema({
     userId : String,
@@ -23,8 +24,7 @@ var Contact = {
     create: function(req, res) {
 
         User.findById(req.body.userId, function(elu){
-            delete req.body.userId;
-            
+            elu = elu || {userFirstname: '', userName:'', userEmail:''};
             Contact.model.create(req.body, function(err, data) {
               if (!err) {
                 var nodemailer = require('nodemailer');
@@ -59,7 +59,21 @@ var Contact = {
 
 
     findAll: function(req, res) {
-        Contact.model.find(function(err, data) {
+        jwt.verify(req.headers.authorization, 'tokenSecret', function (err, decoded) {
+            if (err)
+                return res.sendStatus(403);
+            else{
+              Contact.model.find(function(err, data) {
+                  res.send(data);
+              });
+            }
+        });
+
+    },
+    findList: function(req, res) {
+      console.log('friend list');
+      console.log(req.params);
+        Contact.model.find({userId: req.params.id},function(err, data) {
             res.send(data);
         });
     },

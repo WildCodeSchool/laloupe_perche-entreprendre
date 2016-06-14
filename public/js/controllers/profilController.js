@@ -2,9 +2,6 @@
 
 function profilController($scope, $http, $rootScope, userService) {
 
-  var id = $rootScope.userId._id;
-  $scope.user = $rootScope.userId;
-  delete $scope.user._id;
 
   $scope.update = function () {
     userService.update(id ,$scope.user).then(function (res) {

@@ -1,8 +1,7 @@
 // MAIN CONTROLLER
 function mainController($scope, $http, $rootScope) {
-    $scope.title = "Todo List";
-    $scope.content = '';
-    $scope.connect = $rootScope.connect;
+
+    // $scope.connect = $rootScope.connect;
     $('html, body').animate({
         scrollTop: 0
     }, 'swing');

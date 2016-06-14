@@ -1,11 +1,12 @@
 function contactController($scope, $http, $rootScope, contactService, $routeParams) {
-  $scope.user = $rootScope.userId;
+  $scope.user = $rootScope.user;
   $scope.userId = $scope.user._id;
 
 load();
 function load (){
-  contactService.get().then(function (res) {
-      $scope.friendlist = res.data
+  contactService.getFriendList($scope.userId).then(function (res) {
+      console.log(res.data);
+      $scope.friendlist = res.data;
       console.log($scope.friendlist.contactImg);
       console.log($scope.user._id);
 
@@ -16,7 +17,7 @@ function load (){
 
       $scope.add = function () {
           var data = {};
-          data.userId = $scope.user;
+          data.userId = $scope.userId;
           data.contactVille = $scope.contactVille;
           data.contactImg = $scope.contactImg;
           data.contactFunction = $scope.contactFunction;
@@ -28,6 +29,7 @@ function load (){
           data.contactEnterprise = $scope.contactEnterprise;
           data.contactPhone = $scope.contactPhone;
           data.userId = $routeParams.userId; // ID de l'elu (lors du clic sur la carte)
+          console.log(data);
           contactService.create(data).then(function (res) {
 
           });

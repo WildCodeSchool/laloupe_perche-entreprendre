@@ -1,11 +1,6 @@
 // USER CONTROLLER
 function userController($scope, $http, userService, contactService, agendaService, bureauService, temoignageService, $rootScope, $location) {
-  $('html, body').animate({ scrollTop: 0 }, 'swing');
-  $scope.user = $rootScope.userId;
 
-  $scope.title = "Todo List";
-  $scope.content = '';
-  $scope.connect = $rootScope.connect;
   $('html, body').animate({
       scrollTop: 0
   }, 'swing');
@@ -33,7 +28,8 @@ function userController($scope, $http, userService, contactService, agendaServic
           $scope.userlist = res.data
       });
       contactService.get().then(function (res) {
-          $scope.contactlist = res.data
+          $scope.contactlist = res.data;
+          console.log($scope.contactlist);
       });
       agendaService.get().then(function (res) {
           $scope.agendalist = res.data
