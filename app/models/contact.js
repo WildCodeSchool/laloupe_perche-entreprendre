@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var User = require('./user');
 
 var contactSchema = new mongoose.Schema({
+    userId : String,
     contactEmail: String,
     contactMdp: String,
     contactVille: String,

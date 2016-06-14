@@ -1,27 +1,28 @@
-<div class="container accueilOne">
+<div class="container accueilOne" ng-class="marginRegulation">
 
-<div class="title" style="color: grey">
-    <h1>L'effet réseau</h1>
-</div>
+    <div class="title" style="color: grey">
+        <h1>L'effet réseau</h1>
+    </div>
 
 
+<div ng-class="buttonClass2" ng-click="returnCreationClass2()">X</div>
 
     <div class="theColumn columnOne">
         <div class="tilev thePhoneMail">
             <h1>Contact</h1>
             <div class="phoneAndMailIcon">
-                <div class="phoneIcon firstState" ng-click="iconToNumber = !iconToNumber" ng-hide="iconToNumber; activity == 1"></div>
-                <div class="phoneWithoutIcon" ng-show="iconToNumber; activity == 1">02 37 29 09 29</div>
+                <div class="phoneIcon firstState" ng-click="activity = 1" ng-hide="isCreationBigger"></div>
+                <div class="phoneWithoutIcon" ng-show="isCreationBigger">02 37 29 09 29</div>
 
                 <!--<div class="mailIcon"></div>-->
             </div>
         </div>
-        <div class="tilev theAgenda">
-            <div class="subAgenda" ng-click="changeAgendaView()">
+        <div class="tilev" ng-class="sizeAgenda" ng-click="changeAgendaSize()">
+            <div class="agendaImgContainer" ng-class="switchAgenda">
                 <img ng-repeat="agenda in agendalist" class="imgAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
             </div>
 
-            <div class="textEvent" dir-paginate="agenda in agendalist|itemsPerPage:1">
+            <div class="agendaContent" ng-class="switchAgendaContent" dir-paginate="agenda in agendalist|itemsPerPage:1">
                 <img class="imgAgenda imgAgendaAfter" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
                 <div class="infoAgenda">
                     <h1>{{agenda.agendaTitle}}</h1>
@@ -34,8 +35,8 @@
                 </div>
             </div>
 
-            <div class="activityContent" ng-show="activity == 1">
-                <div class="account-wall-activity" ng-show="activity == 1">
+            <div class="activityContent" ng-show="isCreationBigger">
+                <div class="account-wall-activity" ng-show="isCreationBigger">
 
                     <p>Remplissez simplement ce formulaire et nous vous rappellerons très prochainement.</p>
 
@@ -62,55 +63,54 @@
                 </div>
             </div>
         </div>
-        <!--<div class="tilev theAgenda" ng-click="hideAgenda = !hideImgAgenda">
-            <img class="imgAgenda imgA" ng-hide="hideAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
-            <img class="imgAgenda imgB"ng-hide="hideAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
-            <img class="imgAgenda imgC" ng-hide="hideAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
-            <div class="imgEvent">
-              <img class="imgAgenda" ng-hide="!hideAgenda" src="../img/afficheart.png" alt="" />
-            </div>
-            <div class="textEvent" ng-hide="!hideAgenda">
-              <h1>La Loupe</h1>
-              <p>Velit velit reprehenderit culpa reprehenderit nostrud exercitation id quis officia consequat ut exercitation dolore proident nulla reprehenderit dolore.</p>
-              <p>Ex ipsum nostrud aute do eu eiusmod do anim. Elit mollit id ad adipisicing irure nulla officia ullamco amet deserunt eu laborum. Non ullamco proident laborum cillum duis nisi sint. Nulla consectetur magna in sunt consectetur et cupidatat Lorem aute occaecat Lorem dolor duis adipisicing ad. Minim esse consectetur do do velit qui ex occaecat ut. Lorem sunt est fugiat laborum aute amet ut do officia qui cillum. Elit ad quis voluptate irure nisi adipisicing eiusmod est consequat.</p>
-            </div>
-        </div>-->
+
+<div ng-class="buttonClass" ng-click="returnCreationClass()">X</div>
+
     </div>
-    <div class="theColumn columnTwo">
-        <div class="tilev theCreation" ng-click="activity = 1">
 
-            <div class="closeButton1">X</div>
+
+    <div class="theColumn" ng-class="changeHeight">
+        <div class="tilev controlActivity" ng-class="bigOrSmall" ng-click="changeClass()">
+
+
+            <!-- Eléments récurrents -->
+
             <h1>Je crée mon activité</h1>
-            <div class="temoinage" ng-repeat="temoignage in temoignagelist" ng-show="activity == 1">
-                <img src="{{temoignage.temoignageImg}}"/>
-                <p>{{temoignage.temoignageName}} {{temoignage.temoignageFirstname}}, {{temoignage.temoignageAge}}</p>
-                <p>{{temoignage.temoignageFunction}}</p>
-                <p>{{temoignage.temoignageSecteur}}</p>
-                <p>{{temoignage.temoignageDescription}}</p>
-            </div>
+            <p ng-class="hideContent"> Vous êtes porteur de projet et souhaitez des informations ou obtenir un rendez-vous, contactez-nous via le formulaire ou le numéro de téléphone.</p>
+            <p ng-class="hideContent"> Quelques témoignages</p>
+            <dir-pagination-controls ng-class="hidePagination"  max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+            <!-- Fin Eléments récurrents -->
 
+            <div class="temoignage"  dir-paginate="temoignage in temoignagelist |itemsPerPage:1" ng-class="hideContent">
 
-        </div>
-        <div class="tilev theSociety" ng-click="society = 1">
-            <div class="closeButton2">X</div>
-            <h1>Je reprends une entreprise</h1>
-
-
-            <div class="societyContent" ng-show="society == 1">
-                <p class="introSociety" ng-hide="hideContent ==1">Esse aliqua minim excepteur tempor culpa non irure exercitation ea ad fugiat labore adipisicing dolor ea pariatur. Veniam commodo aute duis ullamco eu laborum deserunt sit esse. Anim sunt Lorem in nisi labore do aute nostrud minim labore
-                    laborum quis. Exercitation in sit Lorem consectetur non aliqua enim. Elit fugiat cillum laboris aute aute nulla amet.</p>
-                <div class="societySearchButton" ng-hide="hideContent == 1">
-                    <button ng-click="lookingForSociety = 1; hideContent = 1">Je recherche une entreprise</button>
-                    <button ng-click="lookingForLocal = 1; hideContent = 1">Je recherche un local</button>
+                <img class="testimonialImg" src="{{temoignage.temoignageImg}}" />
+                <div class="testimonialText">
+                    <p class="testiName">{{temoignage.temoignageName}} {{temoignage.temoignageFirstname}}, {{temoignage.temoignageAge}} ans</p>
+                    <p class="testiFunction">{{temoignage.temoignageFunction}}</p>
+                    <p class="testiSecteur">{{temoignage.temoignageSecteur}}</p>
+                    <p class="testiDescription"><img class="quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> {{temoignage.temoignageDescription}}<img class="endQuote quote"
+                            src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> </p>
                 </div>
+            </div>
+        </div>
 
-                <div class="searchSociety" ng-show="lookingForSociety == 1">
-                    <h2>Une sélection d'entreprises à reprendre</h2>
+
+        <div ng-class="buttonClass3" ng-click="returnCreationClass3()">X</div>
+
+        <div class="tilev societyTile" ng-class="hideSocietyForCreation"  ng-click="changeSocietySize()">
 
 
-                    <!--  Ajouter le ng-repeat au ul :) -->
+            <!-- Eléments récurrents -->
+            <h1>Je reprends une entreprise</h1>
+            <dir-pagination-controls ng-class="hidePagination2" class="pagination-button" max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
+            <!-- Fin Eléments récurrents -->
+
+
+            <div class="societyContent controlSociety"ng-class="showContent">
+                <p class="introSociety">Retrouvez ici une sélection d'entreprises ou de locaux à acheter. Pour plus d'informations, n'hésitez pas à nous contacter.</p>
+                <div class="searchSociety">
                     <ul class="listSociety">
-                        <li class="society" ng-repeat="bureau in bureaulist">
+                        <li class="society" dir-paginate="bureau in bureaulist | itemsPerPage:1">
                             <div class="infoSocietyContainer">
                                 <div class="infoSociety">
                                     <p>{{bureau.bureauType}}</p>
@@ -152,20 +152,27 @@
             </div>
 
         </div>
-        <div class="tilev theYoutube">
-            <iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
+
+        <div class="tilev youtubeTile" ng-class="hideYoutubeForCreation">
+            <!--<iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>-->
+
+            <div class="tilev theYoutube">
+                <iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
+
+            </div>
         </div>
+
     </div>
 
 
+    <div class="theColumn controlColumn" ng-class="hidecolumnThreeForCreation">
 
-
-    <div class="theColumn columnThree">
-        <div class="tilev theScoupit">
-            <iframe class="theScoopitContent" width="300" height="300" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=255"></iframe>
+        <div  class="tilev scoupitTile" ng-class="hideScoupit">
+            <!--<iframe class="theScoopitContent" width="300" height="300" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=255"></iframe>-->
         </div>
-        <div class="tilev thePhoto"></div>
-        <div class="tilev theLinks">
+        <div  class="tilev photoTile" ng-class="hidePhoto"></div>
+        <div  class="tilev linksTile" ng-class="hideLinks">
+
             <h1>Je m'installe dans le Perche</h1>
         </div>
     </div>

@@ -23,7 +23,8 @@ $(window).load(function() {
 
     function biggerCreationTile() {
 
-          $('.theCreation').click(function() {
+
+          $('.theCreation').one("click", function() {
             $('.tilev').not('.thePhoneMail, .theAgenda').animate({
                 width: '0',
                 height: '0',
@@ -199,8 +200,9 @@ $(window).load(function() {
     biggerAgendaTile();
 
     function biggerAgendaTile() {
-        $('.theAgenda').click(function() {
-            $('.tilev').not('.thePhoneMail').animate({
+        $('.theAgenda').one("click", function() {
+          $('.tilev:hover').css('transform', 'translateY(10px)');
+            $('.tilev').not('.thePhoneMail').not(this).animate({
                 width: '0',
                 height: '0',
                 opacity: '0',
@@ -213,7 +215,7 @@ $(window).load(function() {
                 }
             }).animate({
                 backgroundColor: 'green'
-            }, {
+          }, {
                 duration: 100,
                 complete: function() {
                     $('.theAgenda').addClass("bigAgenda").removeClass('theAgenda').fadeIn(30).animate({
@@ -221,33 +223,32 @@ $(window).load(function() {
                     }, {
                         duration: 70,
                         complete: function() {
-                            $('.thePhoneMail').fadeIn(10).animate({
+                            $('.thePhoneMail').fadeIn(500).animate({
                                 width: '300px',
                                 height: '250px',
                                 opacity: '1',
                                 marginLeft: '0px'
                             }, 50);
-                            $('.theYoutube').fadeIn(10).animate({
-                                marginTop: '-520px',
+                            $('.theYoutube').fadeIn(500).animate({
+                                marginTop: '-532px',
                                 width: '350px',
                                 height: '250px',
                                 opacity: '1',
                                 marginLeft: '0px'
                             }, 50);
-                            $('.theScoupit').fadeIn(10).animate({
-                                marginTop: '-520px',
+                            $('.theScoupit').fadeIn(500).animate({
+                                marginTop: '-532px',
                                 width: '350px',
                                 height: '250px',
                                 opacity: '1',
                                 marginLeft: '0px'
                             }, 50);
                             $(this).animate({
-                                marginTop: '-15px',
                                 opacity: '1',
                                 marginLeft: '0px',
                                 width: '1018px',
-                                height: '500px',
-                                transition: '0.2s ease-out'
+                                height: '517px',
+                                transition: '0.4s ease-out'
                             }, {
                                 duration: 200,
                                 complete: function() {
