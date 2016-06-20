@@ -41,7 +41,6 @@ function userController($scope, $http, userService, contactService, agendaServic
     $scope.marginRegulation = "free";
 
     $scope.changeClass = function() {
-
       if ($scope.sizeAgenda === "bigAgenda")
           $scope.sizeAgenda = "theAgenda";
         if ($scope.bigOrSmall === "theCreation")
@@ -98,7 +97,8 @@ function userController($scope, $http, userService, contactService, agendaServic
 
     $scope.changeAgendaSize = function() {
       $scope.IsClickEnable = false;
-        if ($scope.sizeAgenda === "theAgenda")
+
+              if ($scope.sizeAgenda === "theAgenda")
             $scope.sizeAgenda = "bigAgenda";
         if($scope.switchAgenda === "subAgenda")
           $scope.switchAgenda = "noDisplay";
@@ -122,6 +122,8 @@ function userController($scope, $http, userService, contactService, agendaServic
     }
 
     $scope.returnCreationClass2 = function() {
+      $scope.IsClickEnable = true;
+
         //Tile agenda
         $scope.sizeAgenda = 'theAgenda';
         $scope.switchAgenda = 'subAgenda';
