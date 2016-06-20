@@ -45,7 +45,14 @@
       <div class="justHover"></div>
         <p class="littletitle">Gérer les témoignages</p>
     </div>
-
+    <div class="tile createActivity" style="width: 480px" data-toggle="modal" data-target="#modal-link">
+      <div class="justHover"></div>
+        <p class="littletitle">Ajouter un lien</p>
+    </div>
+    <div class="tile createActivity" style="width: 480px" data-toggle="modal" data-target="#modal-link-gestion">
+      <div class="justHover"></div>
+        <p class="littletitle">Gérer les liens</p>
+    </div>
 </div>
 </div>
 
@@ -377,6 +384,54 @@
                           </div>
                               <a data-dismiss="modal"><button type="submit" class="btn btn-default" style="width: 250px" ng-click="updateTemoignage(temoignage)">Mettre à jour</button></a>
                               <a data-dismiss="modal"><button class="btn btn-danger" style="width: 250px" ng-click="delete(temoignage,'temoignage')">Supprimer</button></a>
+                      </form>
+                  </li>
+                </br>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+              </ul>
+            </div>
+
+    </div>
+</div>
+<!-- ----------------------------------------- MODAL CREATE LINKS --------------------------------------------- -->
+
+<div class="modal fade" id="modal-link" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+            <div class="modal-body">
+
+                    <form class="form-signin" style="text-align:center;">
+
+                      <h3> Ajouter un lien </h3>
+                        <input type="text" class="form-control" ng-model="linkName" placeholder="Renseigner le nom du site" required>
+                        <input type="description" class="form-control" ng-model="linkValue" placeholder="Indiquez l'adresse url" required>
+
+                          <a data-dismiss="modal"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="addLink()" type="submit">
+                            Ajouter !</button></a>
+                          </br>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+
+                    </form>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- ----------------------------------------- MODAL LINKS --------------------------------------------- -->
+
+<div class="modal fade" id="modal-link-gestion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="createBox modal-dialog modal-lg">
+
+            <div class="modal-body">
+              <ul class="list-group">
+                  <li class="list-group-item" type="checkbox" ng-repeat="link in linklist" style="padding-bottom: 50px;">
+                      <form class="form-inline">
+                          <div class="form-group">
+                            <input type="text" class="form-control admin" ng-model="link.linkName" placeholder="Nom" required>
+                            <input type="text" class="form-control admin" ng-model="link.linkValue" placeholder="URL" required>
+                          </div>
+                              <a data-dismiss="modal"><button type="submit" class="btn btn-default" style="width: 250px" ng-click="updateLink(link)">Mettre à jour</button></a>
+                              <a data-dismiss="modal"><button class="btn btn-danger" style="width: 250px" ng-click="delete(link,'link')">Supprimer</button></a>
                       </form>
                   </li>
                 </br>
