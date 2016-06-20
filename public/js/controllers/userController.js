@@ -1,30 +1,46 @@
 // USER CONTROLLER
 function userController($scope, $http, userService, contactService, agendaService, bureauService, temoignageService, $rootScope, $location) {
-    $('html, body').animate({
-        scrollTop: 0
-    }, 'swing');
-    $scope.user = $rootScope.userId;
 
-    $scope.title = "Todo List";
-    $scope.content = '';
-    $scope.connect = $rootScope.connect;
-    $('html, body').animate({
-        scrollTop: 0
-    }, 'swing');
+  $('html, body').animate({
+      scrollTop: 0
+  }, 'swing');
 
-    $(".hamburger").focusin(function () {
-        $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
+  $(".hamburger").focusin(function() {
+      $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
 
-    });
-    $(".hamburger").focusout(function () {
-        $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
-    });
+  });
+  $(".hamburger").focusout(function() {
+      $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
+  });
 
 
-    // ng-click function to change Agenda views
-    $scope.changeAgendaView = function () {
-        $('.subAgenda').fadeOut(300);
-        $('.textEvent').fadeIn(700);
+  // ng-click function to change Agenda views
+  $scope.changeAgendaView = function() {
+    $('.subAgenda').fadeOut(300);
+    $('.textEvent').fadeIn(700);
+  }
+
+
+
+
+    function load(){
+      userService.get().then(function (res) {
+          $scope.userlist = res.data
+      });
+      contactService.get().then(function (res) {
+          $scope.contactlist = res.data;
+          console.log($scope.contactlist);
+      });
+      agendaService.get().then(function (res) {
+          $scope.agendalist = res.data
+      });
+      bureauService.get().then(function (res) {
+          $scope.bureaulist = res.data
+      });
+      temoignageService.get().then(function (res) {
+          $scope.temoignagelist = res.data
+      });
+
     }
 
     // NG-CLASS MANIPULATION OF CREATION TILE
@@ -39,7 +55,7 @@ function userController($scope, $http, userService, contactService, agendaServic
     $scope.changeHeight = "columnTwo";
     $scope.marginRegulation = "free";
 
-    $scope.changeClass = function () {
+    $scope.changeClass = function() {
         console.log($scope.bigOrSmall);
         if ($scope.bigOrSmall === "theCreation")
             $scope.bigOrSmall = "bigCreation";
@@ -59,9 +75,9 @@ function userController($scope, $http, userService, contactService, agendaServic
             $scope.marginRegulation = "accueilOneTile";
     };
 
-    $scope.returnCreationClass = function () {
+    $scope.returnCreationClass = function() {
         //Tile create activity
-        $scope.bigOrSmall = 'theCreation';
+        $scope.bigOrSmall='theCreation';
         //Close Button
         $scope.buttonClass = 'noDisplay';
         //Pagination Button
@@ -73,7 +89,7 @@ function userController($scope, $http, userService, contactService, agendaServic
         //Column 3
         $scope.hidecolumnThreeForCreation = 'columnThree';
         //Margin Regulation
-        $scope.marginRegulation = 'free';
+        $scope.marginRegulation ='free';
 
 
 
@@ -87,13 +103,13 @@ function userController($scope, $http, userService, contactService, agendaServic
     $scope.hidePhoto = "thePhoto";
     $scope.hideLinks = "theLinks";
 
-    $scope.changeAgendaSize = function () {
+    $scope.changeAgendaSize = function() {
         if ($scope.sizeAgenda === "theAgenda")
             $scope.sizeAgenda = "bigAgenda";
-        if ($scope.switchAgenda === "subAgenda")
-            $scope.switchAgenda = "noDisplay";
-        if ($scope.switchAgendaContent === "noDisplay")
-            $scope.switchAgendaContent = "textEvent";
+        if($scope.switchAgenda === "subAgenda")
+          $scope.switchAgenda = "noDisplay";
+          if ($scope.switchAgendaContent === "noDisplay")
+          $scope.switchAgendaContent = "textEvent";
         if ($scope.hideSocietyForCreation === "theSociety")
             $scope.hideSocietyForCreation = "noDisplay";
         if ($scope.hideYoutubeForCreation === "theYoutube")
@@ -101,145 +117,81 @@ function userController($scope, $http, userService, contactService, agendaServic
         if ($scope.hideScoupit === "theScoupit")
             $scope.hideScoupit = "noDisplay";
         if ($scope.hideLinks === "theLinks")
-            $scope.hideLinks = "noDisplay";
+            $scope.hideLinks= "noDisplay";
         if ($scope.changeHeight === "columnTwo")
-            $scope.changeHeight = "columnTwoBis";
+            $scope.changeHeight= "columnTwoBis";
         if ($scope.hidecolumnThreeForCreation === "columnThree")
             $scope.hidecolumnThreeForCreation = "columnThreeBis";
         if ($scope.buttonClass2 === "noDisplay")
             $scope.buttonClass2 = "bigCreationClose2";
     }
 
-    $scope.returnCreationClass2 = function () {
+    $scope.returnCreationClass2 = function() {
         //Tile agenda
-        var agendaTile = angular.element(document.querySelector('.bigAgenda'));
-        agendaTile.removeClass('bigAgenda').addClass('theAgenda');
-        var agendaTile = angular.element(document.querySelector('.societyTile'));
-        agendaTile.removeClass('noDisplay').addClass('theSociety');
-        var agendaTile = angular.element(document.querySelector('.youtubeTile'));
-        agendaTile.removeClass('noDisplay').addClass('theYoutube');
-        var agendaTile = angular.element(document.querySelector('.scoupitTile'));
-        agendaTile.removeClass('noDisplay').addClass('theScoupit');
-        var agendaTile = angular.element(document.querySelector('.photoTile'));
-        agendaTile.removeClass('noDisplay').addClass('thePhoto');
-        var agendaTile = angular.element(document.querySelector('.linksTile'));
-        agendaTile.removeClass('noDisplay').addClass('theLinks');
-        var agendaTile = angular.element(document.querySelector('.columnTwoBis'));
-        agendaTile.removeClass('columnTwoBis').addClass('columnTwo');
-        var agendaTile = angular.element(document.querySelector('.columnThreeBis'));
-        agendaTile.removeClass('columnThreeBis').addClass('columnThree');
-        var creationTile = angular.element(document.querySelector('.bigCreationClose2'));
-        creationTile.removeClass('bigCreationClose2').addClass('noDisplay');
-    }
-
-    //NG-CLASS SOCIETY MANIPULATION
-    $scope.hidePagination2 = "noDisplay";
-    $scope.buttonClass3 = "noDisplay";
-    $scope.showContent = "noDisplay";
-
-
-    $scope.changeSocietySize = function () {
-        if ($scope.hideSocietyForCreation === "theSociety")
-            $scope.hideSocietyForCreation = "bigSociety";
-        if ($scope.buttonClass3 === "noDisplay")
-            $scope.buttonClass3 = "bigCreationClose3";
-        if ($scope.hidePagination2 === "noDisplay")
-            $scope.hidePagination2 = "pagination-button";
-        if ($scope.bigOrSmall === "theCreation")
-            $scope.bigOrSmall = "noDisplay";
-        if ($scope.hideYoutubeForCreation === "theYoutube")
-            $scope.hideYoutubeForCreation = "noDisplay";
-        if ($scope.hidecolumnThreeForCreation === "columnThree")
-            $scope.hidecolumnThreeForCreation = "noDisplay";
-        if ($scope.marginRegulation === "free")
-            $scope.marginRegulation = "accueilOneTile";
-
-        //content's tile
-        if ($scope.showContent === "noDisplay")
-            $scope.showContent = "societyContent";
-    }
-
-    $scope.returnCreationClass3 = function () {
-        //Tile create activity
-        var creationTile = angular.element(document.querySelector('.controlActivity'));
-        creationTile.removeClass('noDisplay').addClass('theCreation');
-        //Close Button
-        var creationTile = angular.element(document.querySelector('.bigCreationClose3'));
-        creationTile.removeClass('bigCreationClose3').addClass('noDisplay');
-        //Pagination Button
-        var creationTile = angular.element(document.querySelector('.pagination-button'));
-        creationTile.removeClass('pagination-button').addClass('noDisplay');
-        //Society tile
-        var creationTile = angular.element(document.querySelector('.societyTile'));
-        creationTile.removeClass('bigSociety').addClass('theSociety');
-        var creationTile = angular.element(document.querySelector('.controlSociety'));
-        creationTile.removeClass('societyContent').addClass('noDisplay');
-        //Youtube tile
-        var creationTile = angular.element(document.querySelector('.youtubeTile'));
-        creationTile.removeClass('noDisplay').addClass('theYoutube');
-        //Column 3
-        var creationTile = angular.element(document.querySelector('.controlColumn'));
-        creationTile.removeClass('noDisplay').addClass('columnThree');
-        //Margin Regulation
-        var creationTile = angular.element(document.querySelector('.accueilOne'));
-        creationTile.removeClass('accueilOneTile').addClass('free');
-    }
-
-    //NG-CLASS LINKS MANIPULATION
-    $scope.changeLinkSize = function () {
-        if ($scope.hideLinks === "theLinks")
-            $scope.hideLinks = "bigLinks";
-        if ($scope.bigOrSmall === "theCreation")
-            $scope.bigOrSmall = "noDisplay";
-        if ($scope.hideScoupit === "theScoupit")
-            $scope.hideScoupit = "noDisplay";
-        if ($scope.hideSocietyForCreation === "theSociety")
-            $scope.hideSocietyForCreation = "noDisplay";
-        if ($scope.hidePhoto === "thePhoto")
-            $scope.hidePhoto = "noDisplay";
-        if ($scope.hideYoutubeForCreation === "theYoutube")
-            $scope.hideYoutubeForCreation = "noDisplay";
-    }
-    $scope.returnCreationClass4 = function () {
-        //Close Button
-        $scope.buttonClass4 = 'noDisplay';
-        //Tile create activity
-        $scope.bigOrSmall = 'theCreation';
-        //Society tile
+        $scope.sizeAgenda = 'theAgenda';
+        $scope.switchAgenda = 'subAgenda';
+        $scope.switchAgendaContent = 'noDisplay';
         $scope.hideSocietyForCreation = 'theSociety';
-        //Youtube tile
         $scope.hideYoutubeForCreation = 'theYoutube';
-        //Column 3
+        $scope.hideScoupit = 'theScoupit';
+        $scope.hidePhoto = 'thePhoto';
+        $scope.hideLinks = 'theLinks';
+        $scope.changeHeight = 'columnTwo';
         $scope.hidecolumnThreeForCreation = 'columnThree';
-        //Margin Regulation
-        $scope.marginRegulation = 'free';
-        
-    $scope.returnLinkSize = function () {
-        //Tile links
-        var hideLinks = angular.element(document.querySelector('.bigLinks'));
-        hideLinks.removeClass('bigLinks').addClass('theLinks');
-    }
+        $scope.buttonClass2 = 'noDisplay';
 
 
-    function load() {
-        userService.get().then(function (res) {
-            $scope.userlist = res.data
-        });
-        contactService.get().then(function (res) {
-            $scope.contactlist = res.data
-        });
-        agendaService.get().then(function (res) {
-            $scope.agendalist = res.data
-        });
-        bureauService.get().then(function (res) {
-            $scope.bureaulist = res.data
-        });
-        temoignageService.get().then(function (res) {
-            $scope.temoignagelist = res.data
-        });
-    }
+}
 
-    $scope.add = function () {
+//NG-CLASS SOCIETY MANIPULATION
+$scope.hidePagination2 = "noDisplay";
+$scope.buttonClass3 = "noDisplay";
+$scope.showContent = "noDisplay";
+
+
+$scope.changeSocietySize = function() {
+  if ($scope.hideSocietyForCreation === "theSociety")
+      $scope.hideSocietyForCreation = "bigSociety";
+  if ($scope.buttonClass3 === "noDisplay")
+      $scope.buttonClass3 = "bigCreationClose3";
+  if ($scope.hidePagination2 === "noDisplay")
+      $scope.hidePagination2 = "pagination-button";
+  if ($scope.bigOrSmall === "theCreation")
+      $scope.bigOrSmall = "noDisplay";
+  if ($scope.hideYoutubeForCreation === "theYoutube")
+      $scope.hideYoutubeForCreation = "noDisplay";
+  if ($scope.hidecolumnThreeForCreation === "columnThree")
+      $scope.hidecolumnThreeForCreation = "noDisplay";
+  if ($scope.marginRegulation === "free")
+      $scope.marginRegulation = "accueilOneTile";
+
+      //content's tile
+  if ($scope.showContent === "noDisplay")
+      $scope.showContent = "societyContent";
+}
+
+$scope.returnCreationClass3 = function() {
+    //Tile create activity
+    $scope.bigOrSmall = "theCreation";
+    //Close Button
+    $scope.buttonClass3 = 'noDisplay';
+    //Pagination Button
+    $scope.hidePagination2 = 'noDisplay';
+    //Society tile
+    $scope.hideSocietyForCreation = 'theSociety';
+    $scope.showContent = 'noDisplay';
+    //Youtube tile
+    $scope.hideYoutubeForCreation = 'theYoutube';
+    //Column 3
+    $scope.hidecolumnThreeForCreation = 'columnThree';
+    //Margin Regulation
+    $scope.marginRegulation = 'free';
+}
+
+
+
+
+    $scope.add = function() {
         var data = {};
         data.userVille = $scope.userVille;
         data.userFunction = $scope.userFunction;
@@ -252,7 +204,7 @@ function userController($scope, $http, userService, contactService, agendaServic
         data.userEnterprise = $scope.userEnterprise;
         data.userPhone = $scope.userPhone;
 
-        userService.create(data).then(function (res) {
+        userService.create(data).then(function(res) {
             load();
         });
         $scope.userEmail = "";
@@ -266,7 +218,7 @@ function userController($scope, $http, userService, contactService, agendaServic
         $scope.userFirstname = "";
         $scope.userPhone = "";
     }
-    $scope.addContact = function () {
+    $scope.addContact = function() {
         var data = {};
         data.contactVille = $scope.contactVille;
         data.contactFunction = $scope.contactFunction;
@@ -277,7 +229,7 @@ function userController($scope, $http, userService, contactService, agendaServic
         data.contactFirstname = $scope.contactFirstname;
         data.contactEnterprise = $scope.contactEnterprise;
         data.contactPhone = $scope.contactPhone;
-        contactService.create(data).then(function (res) {
+        contactService.create(data).then(function(res) {
 
         });
         $scope.contactEmail = "";
@@ -291,7 +243,7 @@ function userController($scope, $http, userService, contactService, agendaServic
         $scope.contactFirstname = "";
         $scope.contactPhone = "";
     }
-    $scope.addAgenda = function () {
+    $scope.addAgenda = function() {
         var data = {};
         data.agendaImg = $scope.agendaImg;
         data.agendaTitle = $scope.agendaTitle;
@@ -301,7 +253,7 @@ function userController($scope, $http, userService, contactService, agendaServic
         data.agendaCity = $scope.agendaCity;
         data.agendaPrice = $scope.agendaPrice;
 
-        agendaService.create(data).then(function (res) {
+        agendaService.create(data).then(function(res) {
             load();
         });
         $scope.agendaImg = "";
@@ -312,7 +264,7 @@ function userController($scope, $http, userService, contactService, agendaServic
         $scope.agendaCity = "";
         $scope.agendaPrice = "";
     }
-    $scope.addBureau = function () {
+    $scope.addBureau = function() {
         var data = {};
         data.bureauImg = $scope.bureauImg;
         data.bureauType = $scope.bureauType;
@@ -321,7 +273,7 @@ function userController($scope, $http, userService, contactService, agendaServic
         data.bureauSurface = $scope.bureauSurface;
         data.bureauPrice = $scope.bureauPrice;
 
-        bureauService.create(data).then(function (res) {
+        bureauService.create(data).then(function(res) {
             load();
         });
         $scope.bureauImg = "";
@@ -331,7 +283,7 @@ function userController($scope, $http, userService, contactService, agendaServic
         $scope.bureauSurface = "";
         $scope.bureauPrice = "";
     }
-    $scope.addTemoignage = function () {
+    $scope.addTemoignage = function() {
         var data = {};
         data.temoignageImg = $scope.temoignageImg;
         data.temoignageAge = $scope.temoignageAge;
@@ -341,7 +293,7 @@ function userController($scope, $http, userService, contactService, agendaServic
         data.temoignageSecteur = $scope.temoignageSecteur;
         data.temoignageFunction = $scope.temoignageFunction;
 
-        temoignageService.create(data).then(function (res) {
+        temoignageService.create(data).then(function(res) {
             load();
         });
         $scope.temoignageImg = "";
@@ -353,55 +305,55 @@ function userController($scope, $http, userService, contactService, agendaServic
         $scope.temoignageFunction = "";
     }
 
-    $scope.update = function (user) {
+    $scope.update = function(user) {
         var id = user._id;
         $rootScope.userId = user;
         delete user._id;
-        userService.update(id, user).then(function (res) {
+        userService.update(id, user).then(function(res) {
             load();
         });
     }
-    $scope.updateAgenda = function (agenda) {
+    $scope.updateAgenda = function(agenda) {
         var id = agenda._id;
         delete agenda._id;
-        agendaService.update(id, agenda).then(function (res) {
+        agendaService.update(id, agenda).then(function(res) {
             load();
         });
     }
-    $scope.updateBureau = function (bureau) {
+    $scope.updateBureau = function(bureau) {
         var id = bureau._id;
         delete bureau._id;
-        bureauService.update(id, bureau).then(function (res) {
+        bureauService.update(id, bureau).then(function(res) {
             load();
         });
     }
-    $scope.updateTemoignage = function (temoignage) {
+    $scope.updateTemoignage = function(temoignage) {
         var id = temoignage._id;
         delete temoignage._id;
-        temoignageService.update(id, temoignage).then(function (res) {
+        temoignageService.update(id, temoignage).then(function(res) {
             load();
         });
     }
 
-    $scope.delete = function (user, serv) {
+    $scope.delete = function(user, serv) {
         if (serv == 'user') {
-            userService.delete(user._id).then(function (res) {
+            userService.delete(user._id).then(function(res) {
                 load();
             });
         } else if (serv == 'contact') {
-            contactService.delete(user._id).then(function (res) {
+            contactService.delete(user._id).then(function(res) {
                 load();
             });
         } else if (serv == 'agenda') {
-            agendaService.delete(user._id).then(function (res) {
+            agendaService.delete(user._id).then(function(res) {
                 load();
             });
         } else if (serv == 'bureau') {
-            bureauService.delete(user._id).then(function (res) {
+            bureauService.delete(user._id).then(function(res) {
                 load();
             });
         } else if (serv == 'temoignage') {
-            temoignageService.delete(user._id).then(function (res) {
+            temoignageService.delete(user._id).then(function(res) {
                 load();
             });
         }
@@ -412,11 +364,11 @@ function userController($scope, $http, userService, contactService, agendaServic
 
     $scope.userImg = '';
     $scope.photo = true;
-    $scope.processFileUser = function (files) {
+    $scope.processFileUser = function(files) {
         $scope.photo = false;
-        angular.forEach(files, function (flowFile, i) {
+        angular.forEach(files, function(flowFile, i) {
             var fileReader = new FileReader();
-            fileReader.onload = function (event) {
+            fileReader.onload = function(event) {
                 var uri = event.target.result;
                 $scope.userImg = uri;
                 $scope.$apply();
@@ -433,10 +385,10 @@ function userController($scope, $http, userService, contactService, agendaServic
 
     $scope.agendaImg = '';
 
-    $scope.processFilesAgenda = function (files) {
-        angular.forEach(files, function (flowFile, i) {
+    $scope.processFilesAgenda = function(files) {
+        angular.forEach(files, function(flowFile, i) {
             var fileReader = new FileReader();
-            fileReader.onload = function (event) {
+            fileReader.onload = function(event) {
                 var uri = event.target.result;
                 $scope.agendaImg = uri;
                 $scope.$apply();
@@ -450,10 +402,10 @@ function userController($scope, $http, userService, contactService, agendaServic
 
     $scope.bureauImg = '';
 
-    $scope.processFilesOffice = function (files) {
-        angular.forEach(files, function (flowFile, i) {
+    $scope.processFilesOffice = function(files) {
+        angular.forEach(files, function(flowFile, i) {
             var fileReader = new FileReader();
-            fileReader.onload = function (event) {
+            fileReader.onload = function(event) {
                 var uri = event.target.result;
                 $scope.bureauImg = uri;
                 $scope.$apply();
@@ -466,10 +418,10 @@ function userController($scope, $http, userService, contactService, agendaServic
 
     $scope.temoignageImg = '';
 
-    $scope.processFilesTestimonial = function (files) {
-        angular.forEach(files, function (flowFile, i) {
+    $scope.processFilesTestimonial = function(files) {
+        angular.forEach(files, function(flowFile, i) {
             var fileReader = new FileReader();
-            fileReader.onload = function (event) {
+            fileReader.onload = function(event) {
                 var uri = event.target.result;
                 $scope.temoignageImg = uri;
                 $scope.$apply();
@@ -479,10 +431,10 @@ function userController($scope, $http, userService, contactService, agendaServic
         });
     };
 
-    $(document).ready(function () {
-        $('#buttonExport').click(function () {
+    $(document).ready(function() {
+        $('#buttonExport').click(function() {
             load();
-            var data = $scope.contactlist.map(function (contact) {
+            var data = $scope.contactlist.map(function(contact) {
                 delete contact.contactMdp;
                 delete contact.contactImg;
                 return contact;

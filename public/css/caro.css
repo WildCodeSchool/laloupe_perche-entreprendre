@@ -1,5 +1,5 @@
 body {
-    background-image: url(../img/_MG_8494.jpg);
+    background-image: url(../img/BlueWeb4.png);
     overflow-x: hidden;
 }
 
@@ -276,8 +276,8 @@ body {
 }
 .testimonialImg {
     margin-top: 30px;
-    width: 300px;
-    height: 200px;
+    /*width: 300px;
+    height: 200px;*/
     box-shadow: 1px 1px 5px black;
 }
 .testimonialText {
@@ -330,11 +330,11 @@ body {
 
 .form-signin-activity {
     margin-top: -10px;
-    background-color: rgb(0, 180, 205);
+    background-color: #AAAE18;
     z-index: 5;
 }
 .form-signin-activity > h3 {
-    background-color: rgb(255, 140, 0);
+    background-color: #AAAE18;
     width: 320px;
     margin-left: -20px;
 }
@@ -534,13 +534,7 @@ body {
   align-items: center;
 }
 .bigLinks {
-    margin-left:-350px;
-    padding: 30px;
-    width: 750px;
-    height: 800px !important;
-    background-color: #E73664;
-    display: flex;
-    align-items: center;
+    background-color: violet;
 }
 .theLinks > h1 {
     color: white;

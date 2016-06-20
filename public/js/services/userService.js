@@ -1,6 +1,9 @@
   // USER SERVICE
   function userService($http) {
       return {
+          connect : function(data) {
+              return $http.post('/login', data);
+          },
           get : function() {
               return $http.get('/users');
           },

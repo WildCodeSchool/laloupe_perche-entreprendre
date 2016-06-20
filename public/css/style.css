@@ -979,3 +979,34 @@ body { margin-top:20px; }
     font-style: normal;
     font-weight: ...;
 }
+
+/*=================================================================
+                              FOOTER
+=================================================================*/
+
+.footer {
+    min-width: 100%;
+    max-width: 174%;
+    background-color: white;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    position: absolute;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.lineUp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.lineDown {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.logoPartenaire {
+    height: 60px;
+    max-width: 300px;
+
+}

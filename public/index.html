@@ -70,22 +70,22 @@
                     <a href="#/" class="links">Home</a>
                 </li>
                 <li>
-                    <a href="#ma-carte" ng-show='connect == 1' class="links">Ma carte de visite</a>
+                    <a href="#ma-carte" ng-if='token' class="links">Ma carte de visite</a>
                 </li>
                 <li>
-                    <a href="#mes-contacts" ng-show='connect == 1' class="links">Mes contacts</a>
+                    <a href="#mes-contacts" ng-if='token' class="links">Mes contacts</a>
                 </li>
                 <li>
-                    <a href="#connexion" ng-hide='connect == 1' class="links">Je me connecte !</a>
+                    <a href="#connexion" ng-if="!token || token == ''" class="links">Je me connecte !</a>
                 </li>
                 <li>
-                    <a href="#connexion" ng-show='connect == 1' class="links">Je me déconnecte !</a>
+                    <a href="#/" ng-if='token' class="links" ng-click="logout()">Je me déconnecte !</a>
                 </li>
-                <li class="dropdown" ng-show='connect == 1'>
+                <li class="dropdown" ng-if='token'>
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">Mon compte <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#mon-profil" class="links">Editer mon profil</a></li>
-                        <li><a href="#administration" class="links">Mon panneau d'administration</a></li>
+                        <li><a href="#administration" ng-if='user.isAdmin' class="links">Mon panneau d'administration</a></li>
                     </ul>
                 </li>
 
@@ -108,8 +108,8 @@
         <!-- Script pour le dropdown -->
       </div>
 
-
-        <div class="footer">
+        
+        <div class=" footer">
 
             <div class="lineUp">
                 <div class="site">
@@ -125,14 +125,24 @@
 
             <div class="lineDown">
 
-                <img class="logoPartenaire" src="img/logo%20-%20R%C3%A9gion%20Centre-Val%20de%20Loire-%202015.jpg" alt="Logo parteraire" />
-                <img class="logoPartenaire" src="img/logo%20CCPP.jpg" alt="Logo parteraire" />
-                <img class="logoPartenaire" src="img/Logo%20CDC%20du%20Perche.png" alt="Logo parteraire" />
-                <img class="logoPartenaire" src="img/Logo%20P.%20Senonchois.jpg" alt="Logo parteraire" />
-                <img class="logoPartenaire" src="img/Logo%20P.%20Thironnais%20%5B50%25%5D.jpg" alt="Logo parteraire" />
-                <img class="logoPartenaire" src="img/logo%20UE%20normal.JPG" alt="Logo parteraire" />
-                <img class="logoPartenaire" src="img/logo-general-europe-cvdl.jpg" alt="Logo parteraire" />
-                <img class="logoPartenaire" src="img/leaderlogo.jpg" alt="Logo parteraire" />
+                <a target="_blank" href="http://www.regioncentre-valdeloire.fr/accueil.html"><img class="logoPartenaire"  src="img/logo%20-%20R%C3%A9gion%20Centre-Val%20de%20Loire-%202015.jpg" alt="Logo parteraire" /></a>
+                
+                <a target="_blank" href="http://www.cdc-desportesduperche.com/"><img class="logoPartenaire" src="img/logo%20CCPP.jpg" alt="Logo parteraire" /></a>
+                    
+                <a target="_blank" href="http://www.cc-perche.fr"/> <img class="logoPartenaire" src="img/Logo%20CDC%20du%20Perche.png" alt="Logo parteraire"/></a>
+                
+                <a target="_blank" href="http://senonches.fr/"><img class="logoPartenaire" src="img/Logo%20P.%20Senonchois.jpg" alt="Logo parteraire"/></a>
+                
+                <a target="_blank" href="http://www.perchethironnais.com/"><img class="logoPartenaire" src="img/Logo%20P.%20Thironnais%20%5B50%25%5D.jpg" alt="Logo parteraire"/></a>
+                
+                <a target="_blank" href="http://europa.eu/index_fr.htm"><img class="logoPartenaire" src="img/logo%20UE%20normal.JPG" alt="Logo parteraire" /></a>
+                
+                <a target="_blank" href="http://www.europe-centre.eu/"><img class="logoPartenaire" src="img/logo-general-europe-cvdl.jpg" alt="Logo parteraire" /></a>
+                
+                <a target="_blank" href="http://www.europe-centre.eu/fr/42/Le_programme_LEADER.html"><img class="logoPartenaire" src="img/leaderlogo.jpg" alt="Logo parteraire"/></a>
+                
+                <a target="_blank" href="http://www.oreeduperche.com/"><img class="logoPartenaire" src="img/logo-oréeperche.jpg" alt="Logo parteraire" /></a>
+                
             </div>
         </div>
 </body>
