@@ -70,15 +70,14 @@
 
 
     <div class="theColumn" ng-class="changeHeight">
-        <div class="tilev controlActivity" ng-class="bigOrSmall" ng-click="changeClass(); isCreationBigger = 1">
+        <div class="tilev controlActivity" ng-class="bigOrSmall" ng-click="!IsClickEnable || changeClass(); !IsClickEnable ||isCreationBigger = 1">
 
 
             <!-- Eléments récurrents -->
 
             <h1>Je crée mon activité</h1>
             <p ng-class="hideContent"> Vous êtes porteur de projet et souhaitez des informations ou obtenir un rendez-vous, contactez-nous via le formulaire ou le numéro de téléphone.</p>
-            <p ng-class="hideContent"> Quelques témoignages</p>
-            <dir-pagination-controls ng-class="hidePagination"  max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+
             <!-- Fin Eléments récurrents -->
 
             <div class="temoignage"  dir-paginate="temoignage in temoignagelist |itemsPerPage:1" ng-class="hideContent">
@@ -92,6 +91,8 @@
                             src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> </p>
                 </div>
             </div>
+            <p ng-class="hideContent"> Quelques témoignages</p>
+            <dir-pagination-controls ng-class="hideContent"  max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
         </div>
 
 
