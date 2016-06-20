@@ -10,6 +10,7 @@ var agendaSchema = new mongoose.Schema({
     agendaCity: String,
     agendaHour: String,
     agendaPrice: String,
+    agendaLink: String,
 });
 
 var Agenda = {
@@ -35,7 +36,7 @@ var Agenda = {
             res.send(data);
         });
     },
-    
+
 
     update: function(req, res) {
       console.log(req.body);

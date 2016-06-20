@@ -18,12 +18,12 @@
                 <!--<div class="mailIcon"></div>-->
             </div>
         </div>
-        <div class="tilev" ng-class="sizeAgenda" ng-click="changeAgendaSize()">
-            <div class="agendaImgContainer" ng-class="switchAgenda" ng-hide="isCreationBigger == 1">
+        <div class="tilev" ng-class="sizeAgenda" ng-click="changeAgendaSize(); isCreationBigger = 2">
+            <div class="agendaImgContainer" ng-class="switchAgenda" ng-hide="isCreationBigger == 2">
                 <img ng-repeat="agenda in agendalist" class="imgAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
             </div>
 
-            <div class="agendaContent" ng-class="switchAgendaContent" dir-paginate="agenda in agendalist|itemsPerPage:1" ng-show="isCreationBigger == 1">
+            <div class="agendaContent" ng-class="switchAgendaContent" dir-paginate="agenda in agendalist|itemsPerPage:1" ng-show="isCreationBigger == 2">
                 <img class="imgAgenda imgAgendaAfter" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
                 <div class="infoAgenda">
                     <h1>{{agenda.agendaTitle}}</h1>

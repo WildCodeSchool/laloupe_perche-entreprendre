@@ -252,6 +252,8 @@ $scope.returnCreationClass3 = function() {
         data.agendaHour = $scope.agendaHour;
         data.agendaCity = $scope.agendaCity;
         data.agendaPrice = $scope.agendaPrice;
+        data.agendaLink = $scope.agendaLink;
+
 
         agendaService.create(data).then(function(res) {
             load();
@@ -263,6 +265,7 @@ $scope.returnCreationClass3 = function() {
         $scope.agendaHour = "";
         $scope.agendaCity = "";
         $scope.agendaPrice = "";
+        $scope.agendaLink = "";
     }
     $scope.addBureau = function() {
         var data = {};
