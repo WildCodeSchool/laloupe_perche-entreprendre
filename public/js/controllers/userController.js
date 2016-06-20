@@ -28,6 +28,7 @@ function userController($scope, $http, userService, contactService, agendaServic
     }
 
     // NG-CLASS MANIPULATION OF CREATION TILE
+    $scope.IsClickEnable = true;
     $scope.bigOrSmall = "theCreation";
     $scope.buttonClass = "noDisplay";
     $scope.buttonClass2 = "noDisplay";
@@ -40,7 +41,9 @@ function userController($scope, $http, userService, contactService, agendaServic
     $scope.marginRegulation = "free";
 
     $scope.changeClass = function() {
-        console.log($scope.bigOrSmall);
+
+      if ($scope.sizeAgenda === "bigAgenda")
+          $scope.sizeAgenda = "theAgenda";
         if ($scope.bigOrSmall === "theCreation")
             $scope.bigOrSmall = "bigCreation";
         if ($scope.buttonClass === "noDisplay")
@@ -57,13 +60,16 @@ function userController($scope, $http, userService, contactService, agendaServic
             $scope.hidecolumnThreeForCreation = "noDisplay";
         if ($scope.marginRegulation === "free")
             $scope.marginRegulation = "accueilOneTile";
-    };
+        if ($scope.hidePhoto === "thePhoto")
+            $scope.hidePhoto = "noDisplay";
+            $scope.buttonClass2 = 'noDisplay';
+          };
 
     $scope.returnCreationClass = function() {
         //Tile create activity
         $scope.bigOrSmall='theCreation';
         //Close Button
-        $scope.buttonClass = 'noDisplay';
+        $scope.buttonClass ='noDisplay';
         //Pagination Button
         $scope.hideContent = 'noDisplay';
         //Society tile
@@ -72,6 +78,9 @@ function userController($scope, $http, userService, contactService, agendaServic
         $scope.hideYoutubeForCreation = 'theYoutube';
         //Column 3
         $scope.hidecolumnThreeForCreation = 'columnThree';
+        $scope.hidePhoto = 'thePhoto';
+        $scope.hideScoupit = 'theScoupit';
+        $scope.hideLinks = 'theLinks';
         //Margin Regulation
         $scope.marginRegulation ='free';
 
@@ -88,6 +97,7 @@ function userController($scope, $http, userService, contactService, agendaServic
     $scope.hideLinks = "theLinks";
 
     $scope.changeAgendaSize = function() {
+      $scope.IsClickEnable = false;
         if ($scope.sizeAgenda === "theAgenda")
             $scope.sizeAgenda = "bigAgenda";
         if($scope.switchAgenda === "subAgenda")
@@ -108,6 +118,7 @@ function userController($scope, $http, userService, contactService, agendaServic
             $scope.hidecolumnThreeForCreation = "columnThreeBis";
         if ($scope.buttonClass2 === "noDisplay")
             $scope.buttonClass2 = "bigCreationClose2";
+
     }
 
     $scope.returnCreationClass2 = function() {
@@ -118,7 +129,6 @@ function userController($scope, $http, userService, contactService, agendaServic
         $scope.hideSocietyForCreation = 'theSociety';
         $scope.hideYoutubeForCreation = 'theYoutube';
         $scope.hideScoupit = 'theScoupit';
-        $scope.hidePhoto = 'thePhoto';
         $scope.hideLinks = 'theLinks';
         $scope.changeHeight = 'columnTwo';
         $scope.hidecolumnThreeForCreation = 'columnThree';

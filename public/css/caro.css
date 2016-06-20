@@ -161,7 +161,6 @@ body {
     height: 500px;
 }
 .textEvent {
-    display: none;
     width: 700px;
     height: 500px;
     color: black;
@@ -247,6 +246,7 @@ body {
 }
 .display {
   display:block;
+  z-index:999;
 }
 
 .bigText {

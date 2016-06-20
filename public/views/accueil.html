@@ -17,12 +17,12 @@
                 <!--<div class="mailIcon"></div>-->
             </div>
         </div>
-        <div class="tilev" ng-class="sizeAgenda" ng-click="changeAgendaSize()">
-            <div class="agendaImgContainer" ng-class="switchAgenda" ng-hide="isCreationBigger == 1">
+        <div class="tilev" ng-class="sizeAgenda" ng-click="changeAgendaSize(); isCreationBigger = 2">
+            <div class="agendaImgContainer" ng-class="switchAgenda" ng-hide="isCreationBigger == 2">
                 <img ng-repeat="agenda in agendalist" class="imgAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
             </div>
 
-            <div class="agendaContent" ng-class="switchAgendaContent" dir-paginate="agenda in agendalist|itemsPerPage:1" ng-show="isCreationBigger == 1">
+            <div class="agendaContent" ng-class="switchAgendaContent" dir-paginate="agenda in agendalist|itemsPerPage:1" ng-show="isCreationBigger == 2">
                 <img class="imgAgenda imgAgendaAfter" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
                 <div class="infoAgenda">
                     <h1>{{agenda.agendaTitle}}</h1>
@@ -69,15 +69,14 @@
 
 
     <div class="theColumn" ng-class="changeHeight">
-        <div class="tilev controlActivity" ng-class="bigOrSmall" ng-click="changeClass(); isCreationBigger = 1">
+        <div class="tilev controlActivity" ng-class="bigOrSmall" ng-click="!IsClickEnable || changeClass(); !IsClickEnable ||isCreationBigger = 1">
 
 
             <!-- Eléments récurrents -->
 
             <h1>Je crée mon activité</h1>
             <p ng-class="hideContent"> Vous êtes porteur de projet et souhaitez des informations ou obtenir un rendez-vous, contactez-nous via le formulaire ou le numéro de téléphone.</p>
-            <p ng-class="hideContent"> Quelques témoignages</p>
-            <dir-pagination-controls ng-class="hidePagination"  max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+
             <!-- Fin Eléments récurrents -->
 
             <div class="temoignage"  dir-paginate="temoignage in temoignagelist |itemsPerPage:1" ng-class="hideContent">
@@ -91,6 +90,8 @@
                             src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> </p>
                 </div>
             </div>
+            <p ng-class="hideContent"> Quelques témoignages</p>
+            <dir-pagination-controls ng-class="hideContent"  max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
         </div>
 
 
