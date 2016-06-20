@@ -534,7 +534,13 @@ body {
   align-items: center;
 }
 .bigLinks {
-    background-color: violet;
+    margin-left:-350px;
+    padding: 30px;
+    width: 750px;
+    height: 800px !important;
+    background-color: #E73664;
+    display: flex;
+    align-items: center;
 }
 .theLinks > h1 {
     color: white;
