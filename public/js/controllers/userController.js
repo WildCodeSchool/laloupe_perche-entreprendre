@@ -29,10 +29,10 @@ function userController($scope, $http, userService, contactService, linkService,
         });
         contactService.get().then(function(res) {
             $scope.contactlist = res.data;
-            console.log($scope.contactlist);
         });
         agendaService.get().then(function(res) {
             $scope.agendalist = res.data
+            console.log($scope.agendalist);
         });
         bureauService.get().then(function(res) {
             $scope.bureaulist = res.data
