@@ -31,7 +31,7 @@ body {
     background-color: rgba(159, 191, 255, 0) !important;
 }
 .accueilOneTile {
-  margin-left:-44px;
+  margin-left:-12px;
 }
 .theColumn {
     margin-left: 0px;
@@ -344,7 +344,7 @@ body {
     margin-left:-110px;
     padding: 30px;
     width: 750px;
-    height: 800px !important;
+    height: 780px !important;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -396,8 +396,8 @@ body {
     color: white;
     font-size: 1.5em;
     font-weight: bold;
-    margin-top: -822px;
-    margin-left: 1012px;
+    margin-top: -64%;
+    margin-left: 82%;
     border-radius: 50px;
     padding: 10px;
     box-shadow: -1px 1px 3px black, 1px 0px 6px black;
@@ -517,7 +517,7 @@ body {
     margin-left:-110px;
     padding: 30px;
     width: 750px;
-    height: 800px !important;
+    height: 780px !important;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -733,7 +733,7 @@ body {
     margin-left:-110px;
     padding: 30px;
     width: 750px;
-    height: 800px !important;
+    height: 780px !important;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
