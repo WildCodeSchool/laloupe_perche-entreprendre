@@ -181,6 +181,7 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.hidecolumnThreeForCreation = "noDisplay";
         if ($scope.marginRegulation === "free")
             $scope.marginRegulation = "accueilOneTile";
+          }
 
 
 //NG-CLASS LINKS MANIPULATION
@@ -190,7 +191,7 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.hideScoupit = 'noDisplay';
     $scope.hidePhoto = 'noDisplay';
     $scope.marginRegulation = "accueilOneTile";
-        $scope.buttonClass4 = "bigCreationClose4";
+    $scope.buttonClass4 = "bigCreationClose4";
   }
   $scope.returnCreationClass4 = function() {
     $scope.hideLinks = 'theLinks';
@@ -200,10 +201,10 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.marginRegulation = "free";
     $scope.buttonClass4 = 'noDisplay';
   }
-        //content's tile
+      /*  //content's tile
         if ($scope.showContent === "noDisplay")
             $scope.showContent = "societyContent";
-    }
+    }*/
 
 
     $scope.returnCreationClass3 = function() {
