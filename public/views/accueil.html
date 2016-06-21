@@ -18,7 +18,7 @@
                 <!--<div class="mailIcon"></div>-->
             </div>
         </div>
-        <div class="tilev" ng-class="sizeAgenda" ng-click="changeAgendaSize(); isCreationBigger = 2">
+        <div class="tilev" ng-class="sizeAgenda" ng-click="IsClickEnable && changeAgendaSize();">
             <div class="agendaImgContainer" ng-class="switchAgenda" ng-hide="isCreationBigger == 2">
                 <img ng-repeat="agenda in agendalist" class="imgAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
             </div>
@@ -100,7 +100,7 @@
 
         <div ng-class="buttonClass3" ng-click="returnCreationClass3(); isCreationBigger = 0">X</div>
 
-        <div class="tilev societyTile" ng-class="hideSocietyForCreation"  ng-click="changeSocietySize(); isCreationBigger = 1">
+        <div class="tilev societyTile" ng-class="hideSocietyForCreation"  ng-click="IsClickEnable &&  changeSocietySize()">
 
 
             <!-- Eléments récurrents -->
@@ -130,28 +130,6 @@
                     </ul>
                 </div>
 
-                <div class="searchLocal" ng-show="lookingForLocal == 1">
-                    <h2>Une sélection de locaux à reprendre</h2>
-
-                    <!--  Ajouter le ng-repeat au ul :) -->
-                    <ul class="listLocal">
-                        <li class="local">
-                            <div class="infoLocalContainer">
-                                <div class="infoLocal">
-                                    <p>{{bureauType}} Type de local</p>
-                                    <p>{{bureauDescription}} Installée à 5 minutes de la Loupe l'entreprise blablabla</p>
-                                    <p>{{bureauSecteur}} La Loupe</p>
-                                    <p>{{bureauSurface}} 70m2</p>
-                                    <p>{{bureauPrice}} 120 000€</p>
-                                </div>
-                                <div class="imgLocalContainer">
-                                    <img class="imgLocal" src="{{bureauImg || 'https://cdn3.iconfinder.com/data/icons/mobiset-2/512/home_house_simple_glyph_pixel_perfect-512.png'}}" alt="Photo du local" />
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
             </div>
 
         </div>
@@ -174,7 +152,7 @@
             <iframe class="theScoopitContent" width="300" height="300" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=255"></iframe>
         </div>
         <div  class="tilev photoTile" ng-class="hidePhoto"></div>
-        <div  class="tilev linksTile" ng-class="hideLinks" ng-click="changeLinksSize(); blabla = 1">
+        <div  class="tilev linksTile" ng-class="hideLinks" ng-click="IsClickEnable && changeLinksSize(); blabla = 1">
 
             <h1 ng-show="blabla == 1">Je m'installe dans le Perche</h1>
         </div>
