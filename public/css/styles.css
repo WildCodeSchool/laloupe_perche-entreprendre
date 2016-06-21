@@ -1,0 +1,40 @@
+<<<<<<< HEAD
+=======
+/*=================================================================
+                              FOOTER
+=================================================================*/
+
+.footer {
+    height: auto;
+/*
+   background-image:-webkit-linear-gradient( black, white);
+   background-image:-o-linear-gradient(black, white);
+   background-image:linear-gradient(black,white);
+*/
+    background-color: white;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    /*display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;*/
+}
+
+.lineUp {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-direction: row;
+}
+.lineDown {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logoPartenaire {
+    height: 60px;
+    max-width: 300px;
+
+}
+>>>>>>> 3955562270b98c6d22943268aaa8c8dfbefd5a86

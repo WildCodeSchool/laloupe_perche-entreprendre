@@ -179,6 +179,7 @@ angular.module('app', ['ngRoute','monospaced.qrcode','flow', 'angularUtils.direc
     .service('contactService', contactService)
     .service('temoignageService', temoignageService)
     .service('agendaService', agendaService)
+    .service('linkService', linkService)
     .filter('filterBySearchFriend', filterBySearchFriend)
     /*.factory('', )*/
     .config(['flowFactoryProvider', function (flowFactoryProvider) {

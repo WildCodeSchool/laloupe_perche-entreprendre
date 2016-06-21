@@ -1,25 +1,19 @@
-// AGENDA MODEL
+// LINK MODEL
 var mongoose = require('mongoose');
 
 
-var agendaSchema = new mongoose.Schema({
-    agendaImg: String,
-    agendaTitle: String,
-    agendaDescription: String,
-    agendaDate: String,
-    agendaCity: String,
-    agendaHour: String,
-    agendaPrice: String,
-    agendaLink: String,
+var linkSchema = new mongoose.Schema({
+    linkName: String,
+    linkValue: String,
 });
 
-var Agenda = {
+var Links = {
 
-    model: mongoose.model('Agenda', agendaSchema),
+    model: mongoose.model('Links', linkSchema),
 
     create: function(req, res) {
       console.log(req.body);
-        Agenda.model.create(req.body,
+        Links.model.create(req.body,
             function(err, data) {
               if (!err) {
                 console.log(data);
@@ -32,7 +26,7 @@ var Agenda = {
 
 
     findAll: function(req, res) {
-        Agenda.model.find(function(err, data) {
+        Links.model.find(function(err, data) {
             res.send(data);
         });
     },
@@ -41,17 +35,17 @@ var Agenda = {
     update: function(req, res) {
       console.log(req.body);
       console.log(req.params);
-        Agenda.model.findByIdAndUpdate(req.params.id, req.body, function() {
+        Links.model.findByIdAndUpdate(req.params.id, req.body, function() {
             res.sendStatus(200);
         })
     },
 
     delete: function(req, res) {
-        Agenda.model.findByIdAndRemove(req.params.id, function() {
+        Links.model.findByIdAndRemove(req.params.id, function() {
             res.sendStatus(200);
         })
     }
 }
 
 
-module.exports = Agenda;
+module.exports = Links;
