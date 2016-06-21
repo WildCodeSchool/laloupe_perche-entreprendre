@@ -1,16 +1,9 @@
 // USER CONTROLLER
-<<<<<<< HEAD
 function userController($scope, $http, userService, contactService, linkService, agendaService, bureauService, temoignageService, $rootScope, $location) {
 
     $('html, body').animate({
         scrollTop: 0
     }, 'swing');
-=======
-function userController($scope, $http, userService, contactService, agendaService, bureauService, temoignageService, $rootScope, $location) {
-
-  $('html, body').animate({
-      scrollTop: 0
-  }, 'swing');
 
   $(".hamburger").focusin(function() {
       $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
@@ -26,10 +19,6 @@ function userController($scope, $http, userService, contactService, agendaServic
     $('.subAgenda').fadeOut(300);
     $('.textEvent').fadeIn(700);
   }
-
->>>>>>> jk2
-
-
 
     function load(){
       userService.get().then(function (res) {
@@ -238,8 +227,6 @@ function userController($scope, $http, userService, contactService, agendaServic
         $scope.marginRegulation = 'free';
     }
 
-
-<<<<<<< HEAD
     //NG-CLASS LINKS MANIPULATION
     $scope.changeLinksSize = function() {
       $scope.IsClickEnable = false;
@@ -262,12 +249,6 @@ function userController($scope, $http, userService, contactService, agendaServic
             $scope.buttonClass4 = 'noDisplay';
         }
 
-
-
-
-
-=======
->>>>>>> jk2
 
     $scope.add = function() {
         var data = {};
