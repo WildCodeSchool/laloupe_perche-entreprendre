@@ -26,13 +26,12 @@
     flex-direction: row;
 }
 .lineDown {
-    /*display: flex;
+    display: flex;
     justify-content: space-around;
-    flex-direction: row;*/
     align-items: center;
 }
 .logoPartenaire {
-    /*height: 50px;
-    max-width: 150px;*/
+    height: 60px;
+    max-width: 300px;
 
 }

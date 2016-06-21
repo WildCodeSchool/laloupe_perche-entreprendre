@@ -4,6 +4,9 @@ function contactService($http) {
         get : function() {
             return $http.get('/contacts');
         },
+        getFriendList : function(id) {
+            return $http.get('/contactsfriendlist/'+id);
+        },
         update : function(id, data){
             return $http.put('/contacts/' + id, data);
         },

@@ -1,4 +1,4 @@
-function config($routeProvider) {
+function config($routeProvider ,$httpProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/accueil.html',
@@ -14,7 +14,10 @@ function config($routeProvider) {
         })
         .when('/formulaire/:userId', {
             templateUrl: 'views/formulaire.html',
-            controller: 'contactController'
+            controller: 'contactController',
+            resolve: {
+                connected: checkIsConnected
+            }
         })
         .when('/forgetPassword', {
             templateUrl: 'views/forgetPassword.html',
@@ -22,30 +25,84 @@ function config($routeProvider) {
         })
         .when('/ma-carte', {
             templateUrl: 'views/ma-carte.html',
-            controller: 'carteController'
+            controller: 'carteController',
+            resolve: {
+                connected: checkIsConnected
+            }
         })
         .when('/mes-contacts', {
             templateUrl: 'views/mes-contacts.html',
-            controller: 'contactController'
+            controller: 'contactController',
+            resolve: {
+                connected: checkIsConnected
+            }
         })
 
     .when('/mon-profil', {
             templateUrl: 'views/mon-profil.html',
-            controller: 'profilController'
-        })
-     .when('/annonces', {
-            templateUrl: 'views/annonces.html',
-            controller: 'mainController'
+            controller: 'profilController',
+            resolve: {
+                connected: checkIsConnected
+            }
         })
         .when('/administration', {
             templateUrl: 'views/administration.html',
-            controller: 'userController'
+            controller: 'userController',
+            resolve: {
+                connected: checkIsAdmin
+            }
         })
         .otherwise({
             redirectTo: '/'
         });
 
+
+        $httpProvider.interceptors.push(function ($q, $location, $rootScope) {
+         return {
+             'request': function (config) {
+                 config.headers = config.headers || {};
+                 if ($rootScope.token) {
+                     config.headers.authorization = $rootScope.token;
+                 }
+                 return config;
+             },
+             'responseError': function (response) {
+                 if (response.status === 401 || response.status === 403) {
+                     $location.path('/');
+                 }
+                 return $q.reject(response);
+             }
+         };
+      });
 }
+
+function checkIsConnected($q, $http, $rootScope, $location) {
+    var deferred = $q.defer();
+
+    $http.get('/loggedin').success(function () {
+        // Authenticated
+        deferred.resolve();
+    }).error(function () {
+        // Not Authenticated
+        deferred.reject();
+        $location.url('/connexion');
+    });
+
+    return deferred.promise;
+};
+
+function checkIsAdmin($q, $http, $rootScope, $location) {
+    var deferred = $q.defer();
+
+    if ($rootScope.user && $rootScope.user.isAdmin)
+      deferred.resolve();
+    else {
+        deferred.reject();
+        $location.url('/');
+    }
+
+    return deferred.promise;
+};
 
 function run($rootScope, $location) {
     var path = function() {
@@ -54,6 +111,10 @@ function run($rootScope, $location) {
     $rootScope.$watch(path, function(newVal, oldVal) {
         $rootScope.activetab = newVal;
     });
+    $rootScope.logout = function(){
+      $rootScope.token = null;
+      $rootScope.user = null;
+    }
 }
 
 function filterBySearchFriend() {
@@ -118,6 +179,7 @@ angular.module('app', ['ngRoute','monospaced.qrcode','flow', 'angularUtils.direc
     .service('contactService', contactService)
     .service('temoignageService', temoignageService)
     .service('agendaService', agendaService)
+    .service('linkService', linkService)
     .filter('filterBySearchFriend', filterBySearchFriend)
     /*.factory('', )*/
     .config(['flowFactoryProvider', function (flowFactoryProvider) {

@@ -1,3 +1,4 @@
+
 <div class="container accueilOne" ng-class="marginRegulation">
 
     <div class="title" style="color: grey">
@@ -31,6 +32,7 @@
                     <p>{{agenda.agendaHour}}</p>
                     <p>{{agenda.agendaCity}}</p>
                     <p>{{agenda.agendaPrice}}</p>
+                    <a ng-href="http://{{agenda.agendaLink}}" target="_blank">Reservez vos billets !</a>
                     <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
                 </div>
             </div>
@@ -70,6 +72,7 @@
 
     <div class="theColumn" ng-class="changeHeight">
         <div class="tilev controlActivity" ng-class="bigOrSmall" ng-click="IsClickEnable && changeClass()">
+
 
 
             <!-- Eléments récurrents -->
@@ -168,7 +171,7 @@
     <div class="theColumn controlColumn" ng-class="hidecolumnThreeForCreation">
 
         <div  class="tilev scoupitTile" ng-class="hideScoupit">
-            <!--<iframe class="theScoopitContent" width="300" height="300" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=255"></iframe>-->
+            <iframe class="theScoopitContent" width="300" height="300" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=255"></iframe>
         </div>
         <div  class="tilev photoTile" ng-class="hidePhoto"></div>
         <div  class="tilev linksTile" ng-class="hideLinks" ng-click="changeLinksSize()">
