@@ -18,7 +18,12 @@
                 <!--<div class="mailIcon"></div>-->
             </div>
         </div>
+<<<<<<< HEAD
         <div class="tilev" ng-class="sizeAgenda" ng-click="IsClickEnable && changeAgendaSize();">
+=======
+
+        <div class="tilev" ng-class="sizeAgenda" ng-click="changeAgendaSize(); isCreationBigger = 2">
+>>>>>>> jk2
             <div class="agendaImgContainer" ng-class="switchAgenda" ng-hide="isCreationBigger == 2">
                 <img ng-repeat="agenda in agendalist" class="imgAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
             </div>
@@ -71,7 +76,13 @@
 
 
     <div class="theColumn" ng-class="changeHeight">
+<<<<<<< HEAD
         <div class="tilev controlActivity" ng-class="bigOrSmall" ng-click="IsClickEnable && changeClass()">
+
+=======
+
+        <div class="tilev controlActivity" ng-class="bigOrSmall" ng-click="!IsClickEnable || changeClass(); isCreationBigger = 1">
+>>>>>>> jk2
 
 
 

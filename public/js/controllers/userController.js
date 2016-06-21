@@ -1,23 +1,54 @@
 // USER CONTROLLER
+<<<<<<< HEAD
 function userController($scope, $http, userService, contactService, linkService, agendaService, bureauService, temoignageService, $rootScope, $location) {
 
     $('html, body').animate({
         scrollTop: 0
     }, 'swing');
+=======
+function userController($scope, $http, userService, contactService, agendaService, bureauService, temoignageService, $rootScope, $location) {
 
-    $(".hamburger").focusin(function() {
-        $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
+  $('html, body').animate({
+      scrollTop: 0
+  }, 'swing');
 
-    });
-    $(".hamburger").focusout(function() {
-        $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
-    });
+  $(".hamburger").focusin(function() {
+      $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
+
+  });
+  $(".hamburger").focusout(function() {
+      $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
+  });
 
 
-    // ng-click function to change Agenda views
-    $scope.changeAgendaView = function() {
-        $('.subAgenda').fadeOut(300);
-        $('.textEvent').fadeIn(700);
+  // ng-click function to change Agenda views
+  $scope.changeAgendaView = function() {
+    $('.subAgenda').fadeOut(300);
+    $('.textEvent').fadeIn(700);
+  }
+
+>>>>>>> jk2
+
+
+
+    function load(){
+      userService.get().then(function (res) {
+          $scope.userlist = res.data
+      });
+      contactService.get().then(function (res) {
+          $scope.contactlist = res.data;
+          console.log($scope.contactlist);
+      });
+      agendaService.get().then(function (res) {
+          $scope.agendalist = res.data
+      });
+      bureauService.get().then(function (res) {
+          $scope.bureaulist = res.data
+      });
+      temoignageService.get().then(function (res) {
+          $scope.temoignagelist = res.data
+      });
+
     }
 
 
@@ -153,6 +184,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.hideSocietyForCreation = 'theSociety';
         $scope.hideYoutubeForCreation = 'theYoutube';
         $scope.hideScoupit = 'theScoupit';
+        $scope.hidePhoto = 'thePhoto';
         $scope.hideLinks = 'theLinks';
         $scope.changeHeight = 'columnTwo';
         $scope.hidecolumnThreeForCreation = 'columnThree';
@@ -207,6 +239,7 @@ function userController($scope, $http, userService, contactService, linkService,
     }
 
 
+<<<<<<< HEAD
     //NG-CLASS LINKS MANIPULATION
     $scope.changeLinksSize = function() {
       $scope.IsClickEnable = false;
@@ -233,6 +266,8 @@ function userController($scope, $http, userService, contactService, linkService,
 
 
 
+=======
+>>>>>>> jk2
 
     $scope.add = function() {
         var data = {};
