@@ -16,10 +16,18 @@ body {
     margin-top: 150px;
     /*  margin-left:100px;*/
     width: 1050px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     background-color: rgba(159, 191, 255, 0) !important;
 }
 .accueilOneTile {
@@ -37,14 +45,17 @@ body {
     height: 250px;
     background-color: white;
     box-shadow: 1px 1px 5px black;
+    -webkit-transition: 0.5s;
     transition: 0.5s;
 }
 .tilev:hover {
-    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
     box-shadow: 0px 0px 10px black;
 }
 .closeButton1:hover, .closeButton2:hover {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
 }
 
 /* Colonne 1 */
@@ -52,10 +63,17 @@ body {
 .columnOne {
     width: 300px;
     height: 800px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 .columnOne > .tilev {
     width: 300px;
@@ -65,9 +83,16 @@ body {
 
 .thePhoneMail {
     background-color: #006666;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 .thePhoneMail > h1 {
     color: white;
@@ -78,11 +103,20 @@ body {
 .phoneAndMailIcon {
     width: 290px;
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .phoneIcon {
     width: 100px;
@@ -91,10 +125,12 @@ body {
     background-size: contain;
     border: 2px solid white;
     border-radius: 50px;
+    -webkit-transition: 0.5s;
     transition: 0.5s;
 }
 .phoneIcon:hover {
-    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
 }
 .mailIcon {
     width: 100px;
@@ -103,10 +139,12 @@ body {
     background-size: contain;
     border: 2px solid white;
     border-radius: 50px;
+    -webkit-transition: 0.5s;
     transition: 0.5s;
 }
 .mailIcon:hover {
-    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
 }
 
 /* Tuile Agenda */
@@ -125,6 +163,7 @@ body {
     padding: 10px;
     box-shadow: -1px 1px 3px black, 1px 0px 6px black;
     text-shadow: 0px 0px 2px black;
+    -webkit-transition: 2s ease-out;
     transition: 2s ease-out;
     opacity: 1;
     z-index:800;
@@ -134,9 +173,16 @@ body {
     border: none;
     box-shadow: 1px 1px 5px black;
     overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 .bigAgenda {
   width:1018px !important;
@@ -144,9 +190,16 @@ body {
   border: none;
   box-shadow: 1px 1px 5px black;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .subAgenda {
     height: 517px;
@@ -168,8 +221,13 @@ body {
 .agendaContent: {
   width:1000px;
   height:517px;
+  display:-webkit-box;
+  display:-ms-flexbox;
   display:flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 .imgAgendaAfter {
     width: 400px;
@@ -180,9 +238,15 @@ body {
     height:400px;
     padding:10px;
     float:right;
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    flex-direction: column;
-    transform:translateX(-50px);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transform:translateX(-50px);
+            transform:translateX(-50px);
     margin-top:30px;
 }
 .infoAgenda p {
@@ -201,36 +265,63 @@ body {
 .columnTwo {
     width: 350px;
     height: 800px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 
 .columnTwoBis {
     width: 350px;
     height: 265px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 .columnTwoTer {
     width: 750px;
     height: 800px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 
 /* Tuile Créer son entreprise */
 
 .theCreation {
     background-color: rgb(0, 180, 205);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 30px;
   align-items: center;
 
@@ -254,21 +345,35 @@ body {
     padding: 30px;
     width: 750px;
     height: 800px !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transition: 1s ease-out;
     transition: 1s ease-out;
 }
 .temoignage {
     display: none;
 }
 .bigTemoignage {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    transform:scale(1);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transform:scale(1);
+            transform:scale(1);
+    -webkit-transition: 2s;
     transition:2s;
 }
 .noDisplay {
-  transform:scale(0);
+  -webkit-transform:scale(0);
+          transform:scale(0);
     display: none !important;
 }
 .display {
@@ -277,6 +382,8 @@ body {
 }
 
 .bigText {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
     display: flex !important;
 }
 .closeButton {
@@ -297,6 +404,7 @@ body {
     padding: 10px;
     box-shadow: -1px 1px 3px black, 1px 0px 6px black;
     text-shadow: 0px 0px 2px black;
+    -webkit-transition: 2s ease-out;
     transition: 2s ease-out;
     opacity: 1;
     z-index:800;
@@ -324,7 +432,8 @@ body {
     margin-top: 20px;
     width: 80%;
     margin-left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
     font-style: italic;
     text-align: justify;
     -moz-text-align-last: center;
@@ -335,7 +444,8 @@ body {
     height: 20px;
 }
 .endQuote {
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
 }
 .pagination-button {
   display:block;
@@ -349,8 +459,10 @@ body {
     z-index: 999;
 }
 .kangourou-enter {
+  -webkit-transition: 5s;
   transition:5s;
-  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
 /* Formulaire mail après aggrandissement "créer entreprise" */
@@ -392,14 +504,19 @@ body {
     padding: 10px;
     box-shadow: -1px 1px 3px black, 1px 0px 6px black;
     text-shadow: 0px 0px 2px black;
+    -webkit-transition: 2s ease-out;
     transition: 2s ease-out;
     opacity: 1;
     z-index:800;
 }
 .theSociety {
     background-color: orange;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .bigSociety {
     background-color: darkorange;
@@ -407,8 +524,14 @@ body {
     padding: 30px;
     width: 750px;
     height: 800px !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transition: 1s ease-out;
     transition: 1s ease-out;
 }
 .theSociety > h1 {
@@ -417,15 +540,30 @@ body {
 .societyContent {
     height: 100%;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .societySearchButton {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 .societySearchButton > button {
     width: 150px;
@@ -468,29 +606,44 @@ body {
 .listLocal {
     color: black;
     list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+        flex-flow: column nowrap;
     width: 100%;
 }
 .infoLocalContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
     width: 700px;
     height: 500px;
-    align-items: center;
-    justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 .infoLocal {
     width: 350px;
     height: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+        flex-flow: column wrap;
 }
 .imgLocalContainer {
     width: 350px;
     height: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+        flex-flow: column nowrap;
 }
 .imgLocal {
     height: 200px;
@@ -509,10 +662,12 @@ body {
     overflow: hidden;
 }
 .theYoutubeVideo {
-    transform: scaleY(1.27);
+    -webkit-transform: scaleY(1.27);
+            transform: scaleY(1.27);
 }
 .theYoutube:hover {
-    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
 }
 
 /* Colonne 3 */
@@ -520,18 +675,32 @@ body {
 .columnThree {
     width: 350px;
     height: 800px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 .columnThreeBis {
     width: 350px;
     height: 265px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 
 /* Tuile  Scoopit !*/
@@ -542,7 +711,8 @@ body {
 }
 .theScoopitContent {
     margin-top: -2px;
-    transform: scaleX(1.2) scaleY(1.005);
+    -webkit-transform: scaleX(1.2) scaleY(1.005);
+            transform: scaleX(1.2) scaleY(1.005);
 }
 
 /* Tuile Reprendre une entreprise/local */
@@ -557,8 +727,12 @@ body {
 
 .theLinks {
   background-color: #E73664;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .bigLinks {
@@ -567,8 +741,14 @@ body {
     padding: 30px;
     width: 750px;
     height: 800px !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transition: 1s ease-out;
     transition: 1s ease-out;
 }
 
@@ -591,6 +771,7 @@ body {
     padding: 10px;
     box-shadow: -1px 1px 3px black, 1px 0px 6px black;
     text-shadow: 0px 0px 2px black;
+    -webkit-transition: 2s ease-out;
     transition: 2s ease-out;
     opacity: 1;
     z-index:800;
