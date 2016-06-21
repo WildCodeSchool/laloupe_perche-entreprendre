@@ -105,7 +105,7 @@
 
             <!-- Eléments récurrents -->
             <h1>Je reprends une entreprise</h1>
-            <dir-pagination-controls ng-class="hidePagination2" class="pagination-button" max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
+            <dir-pagination-controls ng-class="hidePagination2" class="pagination-button" max-size="5" direction-links="true" boundary-links="true" pagination-id="bureauPaginate"></dir-pagination-controls>
             <!-- Fin Eléments récurrents -->
 
 
@@ -113,7 +113,7 @@
                 <p class="introSociety">Retrouvez ici une sélection d'entreprises ou de locaux à acheter. Pour plus d'informations, n'hésitez pas à nous contacter.</p>
                 <div class="searchSociety">
                     <ul class="listSociety">
-                        <li class="society" dir-paginate="bureau in bureaulist | itemsPerPage:1">
+                        <li class="society" pagination-id="bureauPaginate" dir-paginate="bureau in bureaulist | itemsPerPage:1">
                             <div class="infoSocietyContainer">
                                 <div class="infoSociety">
                                     <p>{{bureau.bureauType}}</p>
