@@ -18,7 +18,7 @@
                 <!--<div class="mailIcon"></div>-->
             </div>
         </div>
-        <div class="tilev" ng-class="sizeAgenda" ng-click="changeAgendaSize(); isCreationBigger = 2">
+        <div class="tilev" ng-class="sizeAgenda" ng-click="IsClickEnable && changeAgendaSize();">
             <div class="agendaImgContainer" ng-class="switchAgenda" ng-hide="isCreationBigger == 2">
                 <img ng-repeat="agenda in agendalist" class="imgAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
             </div>
@@ -100,12 +100,12 @@
 
         <div ng-class="buttonClass3" ng-click="returnCreationClass3(); isCreationBigger = 0">X</div>
 
-        <div class="tilev societyTile" ng-class="hideSocietyForCreation"  ng-click="changeSocietySize(); isCreationBigger = 1">
+        <div class="tilev societyTile" ng-class="hideSocietyForCreation"  ng-click="IsClickEnable &&  changeSocietySize()">
 
 
             <!-- Eléments récurrents -->
             <h1>Je reprends une entreprise</h1>
-            <dir-pagination-controls ng-class="hidePagination2" class="pagination-button" max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
+            <dir-pagination-controls ng-class="hidePagination2" class="pagination-button" max-size="5" direction-links="true" boundary-links="true" pagination-id="bureauPaginate"></dir-pagination-controls>
             <!-- Fin Eléments récurrents -->
 
 
@@ -113,7 +113,7 @@
                 <p class="introSociety">Retrouvez ici une sélection d'entreprises ou de locaux à acheter. Pour plus d'informations, n'hésitez pas à nous contacter.</p>
                 <div class="searchSociety">
                     <ul class="listSociety">
-                        <li class="society" dir-paginate="bureau in bureaulist | itemsPerPage:1">
+                        <li class="society" pagination-id="bureauPaginate" dir-paginate="bureau in bureaulist | itemsPerPage:1">
                             <div class="infoSocietyContainer">
                                 <div class="infoSociety">
                                     <p>{{bureau.bureauType}}</p>
@@ -125,28 +125,6 @@
                             </div>
                             <div class="imgSocietyContainer">
                                 <img class="imgSociety" style="width:300px; height: 200px;" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="searchLocal" ng-show="lookingForLocal == 1">
-                    <h2>Une sélection de locaux à reprendre</h2>
-
-                    <!--  Ajouter le ng-repeat au ul :) -->
-                    <ul class="listLocal">
-                        <li class="local">
-                            <div class="infoLocalContainer">
-                                <div class="infoLocal">
-                                    <p>{{bureauType}} Type de local</p>
-                                    <p>{{bureauDescription}} Installée à 5 minutes de la Loupe l'entreprise blablabla</p>
-                                    <p>{{bureauSecteur}} La Loupe</p>
-                                    <p>{{bureauSurface}} 70m2</p>
-                                    <p>{{bureauPrice}} 120 000€</p>
-                                </div>
-                                <div class="imgLocalContainer">
-                                    <img class="imgLocal" src="{{bureauImg || 'https://cdn3.iconfinder.com/data/icons/mobiset-2/512/home_house_simple_glyph_pixel_perfect-512.png'}}" alt="Photo du local" />
-                                </div>
                             </div>
                         </li>
                     </ul>
@@ -175,13 +153,14 @@
         </div>
         <div  class="tilev photoTile" ng-class="hidePhoto"></div>
 
-        <div  class="tilev linksTile" ng-class="hideLinks" ng-click="changeLinksSize(); blabla = 1">
+<div  class="tilev linksTile" ng-class="hideLinks" ng-click="IsClickEnable && changeLinksSize(); blabla = 1">
           <h1>Je m'installe dans le Perche</h1>
             <div class="link" style="margin-top: 5%">
               <div class="linkContent" ng-show="blabla == 1" ng-repeat="link in linklist" style="margin-top: 2%">
                     <a ng-href="{{link.linkValue}}" target="_blank">{{link.linkName}}</a>
               </div>
               <img ng-show="blabla == 1" src="/img/senonches.486.jpg" alt="senonches" style="width: 80%; margin-top: 10%" />
+
 
             </div>
         </div>

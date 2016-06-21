@@ -352,8 +352,6 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-transition: 1s ease-out;
-    transition: 1s ease-out;
 }
 .temoignage {
     display: none;
@@ -404,8 +402,6 @@ body {
     padding: 10px;
     box-shadow: -1px 1px 3px black, 1px 0px 6px black;
     text-shadow: 0px 0px 2px black;
-    -webkit-transition: 2s ease-out;
-    transition: 2s ease-out;
     opacity: 1;
     z-index:800;
 }
@@ -504,8 +500,6 @@ body {
     padding: 10px;
     box-shadow: -1px 1px 3px black, 1px 0px 6px black;
     text-shadow: 0px 0px 2px black;
-    -webkit-transition: 2s ease-out;
-    transition: 2s ease-out;
     opacity: 1;
     z-index:800;
 }
@@ -531,8 +525,6 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-transition: 1s ease-out;
-    transition: 1s ease-out;
 }
 .theSociety > h1 {
     color: white;
@@ -585,7 +577,8 @@ body {
 .society {
     color: black;
     list-style-type: none;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
     width: 100%;
 }
 .infoSocietyContainer {
@@ -748,8 +741,6 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-transition: 1s ease-out;
-    transition: 1s ease-out;
 }
 
 .theLinks > h1 {
@@ -771,8 +762,6 @@ body {
     padding: 10px;
     box-shadow: -1px 1px 3px black, 1px 0px 6px black;
     text-shadow: 0px 0px 2px black;
-    -webkit-transition: 2s ease-out;
-    transition: 2s ease-out;
     opacity: 1;
     z-index:800;
 }
