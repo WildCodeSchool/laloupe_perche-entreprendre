@@ -29,10 +29,10 @@ function userController($scope, $http, userService, contactService, linkService,
         });
         contactService.get().then(function(res) {
             $scope.contactlist = res.data;
-            console.log($scope.contactlist);
         });
         agendaService.get().then(function(res) {
             $scope.agendalist = res.data
+            console.log($scope.agendalist);
         });
         bureauService.get().then(function(res) {
             $scope.bureaulist = res.data
@@ -61,8 +61,9 @@ function userController($scope, $http, userService, contactService, linkService,
 
     $scope.changeClass = function() {
 
-        if ($scope.sizeAgenda === "bigAgenda")
-            $scope.sizeAgenda = "theAgenda";
+      $scope.isCreationBigger = 1;
+      if ($scope.sizeAgenda === "bigAgenda")
+          $scope.sizeAgenda = "theAgenda";
         if ($scope.bigOrSmall === "theCreation")
             $scope.bigOrSmall = "bigCreation";
         if ($scope.buttonClass === "noDisplay")
@@ -77,6 +78,8 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.hideYoutubeForCreation = "noDisplay";
         if ($scope.hidecolumnThreeForCreation === "columnThree")
             $scope.hidecolumnThreeForCreation = "noDisplay";
+        if ($scope.hidecolumnThreeForCreation === "columnTwo")
+            $scope.hidecolumnThreeForCreation = "columnTwoTer";
         if ($scope.marginRegulation === "free")
             $scope.marginRegulation = "accueilOneTile";
         if ($scope.hidePhoto === "thePhoto")
@@ -103,8 +106,6 @@ function userController($scope, $http, userService, contactService, linkService,
         //Margin Regulation
         $scope.marginRegulation = 'free';
 
-
-
     }
 
     //NG-CLASS AGENDA MANIPULATION
@@ -116,7 +117,8 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.hideLinks = "theLinks";
 
     $scope.changeAgendaSize = function() {
-        $scope.IsClickEnable = false;
+
+      $scope.IsClickEnable = false;
         if ($scope.sizeAgenda === "theAgenda")
             $scope.sizeAgenda = "bigAgenda";
         if ($scope.switchAgenda === "subAgenda")
@@ -141,6 +143,8 @@ function userController($scope, $http, userService, contactService, linkService,
     }
 
     $scope.returnCreationClass2 = function() {
+      $scope.IsClickEnable = true;
+
         //Tile agenda
         $scope.sizeAgenda = 'theAgenda';
         $scope.switchAgenda = 'subAgenda';
@@ -178,10 +182,29 @@ function userController($scope, $http, userService, contactService, linkService,
         if ($scope.marginRegulation === "free")
             $scope.marginRegulation = "accueilOneTile";
 
+
+//NG-CLASS LINKS MANIPULATION
+  $scope.changeLinksSize = function() {
+    $scope.hideLinks = 'bigLinks';
+    $scope.changeHeight = 'noDisplay';
+    $scope.hideScoupit = 'noDisplay';
+    $scope.hidePhoto = 'noDisplay';
+    $scope.marginRegulation = "accueilOneTile";
+        $scope.buttonClass4 = "bigCreationClose4";
+  }
+  $scope.returnCreationClass4 = function() {
+    $scope.hideLinks = 'theLinks';
+    $scope.changeHeight = 'columnTwo';
+    $scope.hideScoupit = 'theScoupit';
+    $scope.hidePhoto = 'thePhoto';
+    $scope.marginRegulation = "free";
+    $scope.buttonClass4 = 'noDisplay';
+  }
         //content's tile
         if ($scope.showContent === "noDisplay")
             $scope.showContent = "societyContent";
     }
+
 
     $scope.returnCreationClass3 = function() {
         //Tile create activity

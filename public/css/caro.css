@@ -161,17 +161,35 @@ body {
     height: 500px;
 }
 .textEvent {
-    width: 700px;
-    height: 500px;
+    width: 100%;
+    height:100%;
     color: black;
+}
+.agendaContent: {
+  width:1000px;
+  height:517px;
+  display:flex;
+  flex-direction: row;
 }
 .imgAgendaAfter {
     width: 400px;
+    margin-left:-68px;
 }
 .infoAgenda {
-    width: 300px;
-    float: right;
-    margin-top: 170px;
+    width: 550px;
+    height:400px;
+    padding:10px;
+    float:right;
+    display:flex;
+    flex-direction: column;
+    transform:translateX(-50px);
+    margin-top:30px;
+}
+.infoAgenda p {
+  margin-top:20px;
+}
+.infoAgenda a {
+  margin-top:10px;
 }
 .phoneWithoutIcon {
     color: white;
@@ -188,9 +206,18 @@ body {
     flex-wrap: nowrap;
     justify-content: space-around;
 }
+
 .columnTwoBis {
     width: 350px;
     height: 265px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.columnTwoTer {
+    width: 750px;
+    height: 800px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -276,8 +303,8 @@ body {
 }
 .testimonialImg {
     margin-top: 30px;
-    /*width: 300px;
-    height: 200px;*/
+    width: 300px;
+    height: 200px;
     box-shadow: 1px 1px 5px black;
 }
 .testimonialText {
@@ -533,11 +560,40 @@ body {
   display: flex;
   align-items: center;
 }
+
 .bigLinks {
     background-color: violet;
+    margin-left:-110px;
+    padding: 30px;
+    width: 750px;
+    height: 800px !important;
+    display: flex;
+    flex-direction: column;
+    transition: 1s ease-out;
 }
+
 .theLinks > h1 {
     color: white;
+}
+
+.bigCreationClose4 {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: -825px;
+    margin-left: 1120px;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: -1px 1px 3px black, 1px 0px 6px black;
+    text-shadow: 0px 0px 2px black;
+    transition: 2s ease-out;
+    opacity: 1;
+    z-index:800;
 }
 /* Preview !*/
 

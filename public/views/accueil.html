@@ -6,7 +6,7 @@
     </div>
 
 
-<div ng-class="buttonClass2" ng-click="returnCreationClass2()">X</div>
+<div ng-class="buttonClass2" ng-click="returnCreationClass2(); isCreationBigger = 0">X</div>
 
     <div class="theColumn columnOne">
         <div class="tilev thePhoneMail">
@@ -71,7 +71,8 @@
 
 
     <div class="theColumn" ng-class="changeHeight">
-        <div class="tilev controlActivity" ng-class="bigOrSmall" ng-click="IsClickEnable && changeClass(); isCreationBigger = 1">
+        <div class="tilev controlActivity" ng-class="bigOrSmall" ng-click="IsClickEnable && changeClass()">
+
 
 
             <!-- Eléments récurrents -->
@@ -174,11 +175,14 @@
         </div>
         <div  class="tilev photoTile" ng-class="hidePhoto"></div>
 
-        <div  class="tilev linksTile" ng-class="hideLinks">
+        <div  class="tilev linksTile" ng-class="hideLinks" ng-click="changeLinksSize()">
+
 
             <h1>Je m'installe dans le Perche</h1>
         </div>
     </div>
 
 
+
 </div>
+<div ng-class="buttonClass4" ng-click="returnCreationClass4()">X</div>
