@@ -984,15 +984,17 @@ body { margin-top:20px; }
                               FOOTER
 =================================================================*/
 
-.footer {
+footer {
     min-width: 100%;
-    max-width: 174%;
+    height: auto;
     background-color: white;
     margin-top: 50px;
     margin-bottom: 0px;
     position: absolute;
     padding-bottom: 10px;
     padding-top: 10px;
+    clear: both;
+    float:left;
 }
 
 .lineUp {
