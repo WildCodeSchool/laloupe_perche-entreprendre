@@ -33,9 +33,11 @@
                     <p>{{agenda.agendaCity}}</p>
                     <p>{{agenda.agendaPrice}}</p>
                     <a ng-href="{{agenda.agendaLink}}" target="_blank">Reservez vos billets !</a>
-                    <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate"></dir-pagination-controls>
+
                 </div>
+                <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate" class="pagination-button3"></dir-pagination-controls>
             </div>
+
 
             <div class="activityContent" ng-show="isCreationBigger == 1">
                 <div class="account-wall-activity" ng-show="isCreationBigger == 1">
@@ -96,10 +98,10 @@
                 </div>
             </div>
 
-            <dir-pagination-controls pagination-id="testiPaginate" ng-class="hideContent"  max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
+
         </div>
 
-
+        <dir-pagination-controls class="pagination" pagination-id="testiPaginate" ng-class="hideContent"  max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
         <div ng-class="buttonClass3" ng-click="returnCreationClass3(); isCreationBigger = 0">X</div>
 
         <div class="tilev societyTile" ng-class="hideSocietyForCreation"  ng-click="IsClickEnable &&  changeSocietySize()">
@@ -129,11 +131,9 @@
                                 <img class="imgSociety" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
                             </div>
                         </div>
-                        <dir-pagination-controls ng-class="hidePagination2" class="pagination-button2" max-size="5" direction-links="true" boundary-links="true" pagination-id="bureauPaginate"></dir-pagination-controls>
-
-
 
             </div>
+            <dir-pagination-controls ng-class="hidePagination2" class="pagination-button2" max-size="5" direction-links="true" boundary-links="true" pagination-id="bureauPaginate"></dir-pagination-controls>
 
         </div>
 

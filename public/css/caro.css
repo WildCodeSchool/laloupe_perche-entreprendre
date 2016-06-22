@@ -52,6 +52,7 @@ body {
     -webkit-transform: translateY(-10px);
             transform: translateY(-10px);
     box-shadow: 0px 0px 10px black;
+    cursor:pointer;
 }
 .closeButton1:hover, .closeButton2:hover {
     -webkit-transform: scale(1.1);
@@ -370,7 +371,7 @@ body {
             flex-direction: column;
 }
 .temoignage {
-    display: none;
+    opacity:1;
 }
 .bigTemoignage {
     display: -webkit-box;
@@ -384,15 +385,21 @@ body {
             transform:scale(1);
     -webkit-transition: 2s;
     transition:2s;
+    opacity:1;
 }
 .noDisplay {
   -webkit-transform:scale(0);
           transform:scale(0);
     display: none !important;
+    opacity:0;
+    transition:1s;
 }
 .display {
+  transform:scale(1);
   display:block;
+  opacity:1;
   z-index:999;
+  transition:2s;
 }
 
 .bigText {
@@ -461,11 +468,22 @@ body {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
 }
+.pagination {
+  display:block;
+    width:230px;
+    height:100px;
+    position:absolute;
+    margin-top: -43px;
+    margin-left:130px;
+    border-radius: 4px;
+    opacity: 1;
+    z-index: 999;
+}
 .pagination-button {
   display:block;
     width:200px;
     height:100px;
-    position: absolute;
+    position:fixed;
     margin-top: 515px;
     margin-left: -110px;
     border-radius: 4px;
@@ -474,12 +492,22 @@ body {
 }
 .pagination-button2 {
   display:block;
-    width:200px;
+    width:230px;
     height:100px;
-    margin-top:30px;
-    margin-left:50%;
-    transform:translateX(-50%);
-    position: absolute;
+    position:absolute;
+    margin-top: -43px;
+    margin-left:130px;
+    border-radius: 4px;
+    opacity: 1;
+    z-index: 999;
+}
+.pagination-button3 {
+  display:block;
+    width:230px;
+    height:100px;
+    margin-left:450px;
+    position:absolute;
+    margin-top: -33px;
     border-radius: 4px;
     opacity: 1;
     z-index: 999;
@@ -507,7 +535,7 @@ body {
   background-color: #AAAE18;
   margin-top:-10px;
     background-color: #AAAE18;
-    z-index:5;
+    z-index:1;
 }
 
 .form-message {
@@ -545,9 +573,10 @@ body {
             align-items: center;
 }
 .bigSociety {
-    background-color: darkorange;
+    background-color: white;
     width: 750px;
     height: 780px !important;
+    padding:30px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -606,9 +635,9 @@ body {
     display: flex;
     flex-direction: row;
     margin-top:10%;
-    width: 730px;
-    height:300px;
-    border:1px black solid;
+    width: 750px;
+    height:299px;
+    background-color:lightgray;
 }
 .infoSocietyContainer {
     width: 300px;
@@ -632,15 +661,6 @@ body {
 }
 
 
-
-
-
-
-/*Tuile Créer son entreprise APRES aggrandissement*/
-
-.bigSociety {
-    background-color: white;
-}
 
 /* Tuile Youtube */
 
