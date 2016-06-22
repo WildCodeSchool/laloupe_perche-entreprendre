@@ -5,19 +5,39 @@ function userController($scope, $http, userService, contactService, linkService,
         scrollTop: 0
     }, 'swing');
 
-    $(".hamburger").focusin(function() {
-        $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
+  $(".hamburger").focusin(function() {
+      $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
 
-    });
-    $(".hamburger").focusout(function() {
-        $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
-    });
+  });
+  $(".hamburger").focusout(function() {
+      $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
+  });
 
 
-    // ng-click function to change Agenda views
-    $scope.changeAgendaView = function() {
-        $('.subAgenda').fadeOut(300);
-        $('.textEvent').fadeIn(700);
+  // ng-click function to change Agenda views
+  $scope.changeAgendaView = function() {
+    $('.subAgenda').fadeOut(300);
+    $('.textEvent').fadeIn(700);
+  }
+
+    function load(){
+      userService.get().then(function (res) {
+          $scope.userlist = res.data
+      });
+      contactService.get().then(function (res) {
+          $scope.contactlist = res.data;
+          console.log($scope.contactlist);
+      });
+      agendaService.get().then(function (res) {
+          $scope.agendalist = res.data
+      });
+      bureauService.get().then(function (res) {
+          $scope.bureaulist = res.data
+      });
+      temoignageService.get().then(function (res) {
+          $scope.temoignagelist = res.data
+      });
+
     }
 
 
@@ -154,6 +174,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.hideSocietyForCreation = 'theSociety';
         $scope.hideYoutubeForCreation = 'theYoutube';
         $scope.hideScoupit = 'theScoupit';
+        $scope.hidePhoto = 'thePhoto';
         $scope.hideLinks = 'theLinks';
         $scope.changeHeight = 'columnTwo';
         $scope.hidecolumnThreeForCreation = 'columnThree';
@@ -209,7 +230,6 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.marginRegulation = 'free';
     }
 
-
     //NG-CLASS LINKS MANIPULATION
       $scope.buttonClass4 = "noDisplay";
     $scope.changeLinksSize = function() {
@@ -235,10 +255,6 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.marginRegulation = "free";
             $scope.buttonClass4 = 'noDisplay';
         }
-
-
-
-
 
 
     $scope.add = function() {

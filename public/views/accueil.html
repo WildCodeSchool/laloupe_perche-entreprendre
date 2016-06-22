@@ -32,7 +32,7 @@
                     <p>{{agenda.agendaHour}}</p>
                     <p>{{agenda.agendaCity}}</p>
                     <p>{{agenda.agendaPrice}}</p>
-                    <a ng-href="http://{{agenda.agendaLink}}" target="_blank">Reservez vos billets !</a>
+                    <a ng-href="{{agenda.agendaLink}}" target="_blank">Reservez vos billets !</a>
                     <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate"></dir-pagination-controls>
                 </div>
             </div>
@@ -122,7 +122,7 @@
                                     <p class="bureauSecteur">{{bureau.bureauSecteur}}</p>
                                     <p class="bureauSurface">{{bureau.bureauSurface}}</p>
                                     <p class="bureauPrice">{{bureau.bureauPrice}}</p>
-                          
+
                             </div>
                             <div class="imgSocietyContainer">
                                 <img class="imgSociety" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
@@ -156,10 +156,18 @@
         <div  class="tilev photoTile" ng-class="hidePhoto"></div>
 
 
-        <div ng-class="buttonClass4" ng-click="returnCreationClass4();isCreationBigger = 0; blabla = 0">X</div>
-        <div  class="tilev linksTile" ng-class="hideLinks" ng-click="IsClickEnable && changeLinksSize(); blabla = 1">
 
-            <h1 ng-show="blabla == 1">Je m'installe dans le Perche</h1>
+        <div ng-class="buttonClass4" ng-click="returnCreationClass4();isCreationBigger = 0; blabla = 0">X</div>
+
+<div  class="tilev linksTile" ng-class="hideLinks" ng-click="IsClickEnable && changeLinksSize(); blabla = 1">
+          <h1>Je m'installe dans le Perche</h1>
+            <div class="link" style="margin-top: 5%">
+              <div class="linkContent" ng-show="blabla == 1" ng-repeat="link in linklist" style="margin-top: 2%">
+                    <a ng-href="{{link.linkValue}}" target="_blank">{{link.linkName}}</a>
+              </div>
+              <img ng-show="blabla == 1" src="/img/senonches.486.jpg" alt="senonches" style="width: 80%; margin-top: 10%" />
+
+            </div>
 
         </div>
     </div>

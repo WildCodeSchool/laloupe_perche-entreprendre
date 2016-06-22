@@ -822,7 +822,7 @@ button {
     background-color: rgba(4, 4, 4, 0.8);
 }
 .modal-dialog {
-    /*top: 6%;*/
+    top: -2%;
     width: 100%;
     position: absolute;
 }
@@ -978,4 +978,37 @@ body { margin-top:20px; }
     font-family: "FontAwesome";
     font-style: normal;
     font-weight: ...;
+}
+
+/*=================================================================
+                              FOOTER
+=================================================================*/
+
+footer {
+    min-width: 100%;
+    height: auto;
+    background-color: white;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    position: absolute;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    clear: both;
+    float:left;
+}
+
+.lineUp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.lineDown {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.logoPartenaire {
+    height: 60px;
+    max-width: 300px;
+
 }
