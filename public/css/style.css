@@ -544,12 +544,12 @@ header {
 =================================================================*/
 
 @media (max-width: 800px) {
-    /*body {
+  body {
         margin: auto;
         text-align: center;
         padding-top: 70px;
         margin-top: 20px;
-    }*/
+    }
     .accroche {
         margin-top: 20%;
     }

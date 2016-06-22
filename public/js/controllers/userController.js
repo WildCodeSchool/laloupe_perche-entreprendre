@@ -78,8 +78,8 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.hideYoutubeForCreation = "noDisplay";
         if ($scope.hidecolumnThreeForCreation === "columnThree")
             $scope.hidecolumnThreeForCreation = "noDisplay";
-        if ($scope.hidecolumnThreeForCreation === "columnTwo")
-            $scope.hidecolumnThreeForCreation = "columnTwoTer";
+        if ($scope.changeHeight === "columnTwo")
+            $scope.changeHeight = "columnTwoTer";
         if ($scope.marginRegulation === "free")
             $scope.marginRegulation = "accueilOneTile";
         if ($scope.hidePhoto === "thePhoto")
@@ -99,6 +99,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.hideSocietyForCreation = 'theSociety';
         //Youtube tile
         $scope.hideYoutubeForCreation = 'theYoutube';
+        $scope.changeHeight = "columnTwo";
         //Column 3
         $scope.hidecolumnThreeForCreation = 'columnThree';
         $scope.hidePhoto = 'thePhoto';
@@ -175,13 +176,14 @@ function userController($scope, $http, userService, contactService, linkService,
         if ($scope.buttonClass3 === "noDisplay")
             $scope.buttonClass3 = "bigCreationClose3";
         if ($scope.hidePagination2 === "noDisplay")
-            $scope.hidePagination2 = "pagination-button";
+            $scope.hidePagination2 = "pagination-button2";
         if ($scope.bigOrSmall === "theCreation")
             $scope.bigOrSmall = "noDisplay";
         if ($scope.hideYoutubeForCreation === "theYoutube")
             $scope.hideYoutubeForCreation = "noDisplay";
         if ($scope.hidecolumnThreeForCreation === "columnThree")
             $scope.hidecolumnThreeForCreation = "noDisplay";
+            $scope.changeHeight = "columnTwoTer";
         if ($scope.marginRegulation === "free")
             $scope.marginRegulation = "accueilOneTile";
             if ($scope.showContent === "noDisplay")
@@ -200,6 +202,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.showContent = 'noDisplay';
         //Youtube tile
         $scope.hideYoutubeForCreation = 'theYoutube';
+        $scope.changeHeight = "columnTwo";
         //Column 3
         $scope.hidecolumnThreeForCreation = 'columnThree';
         //Margin Regulation
@@ -217,12 +220,15 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.hidePhoto = 'noDisplay';
         $scope.marginRegulation = "accueilOneTile";
         $scope.buttonClass4 = "bigCreationClose4";
+        $scope.hidecolumnThreeForCreation = "columnThreeTer";
+
     }
     $scope.returnCreationClass4 = function() {
       $scope.IsClickEnable = true;
 
             $scope.hideLinks = 'theLinks';
             $scope.changeHeight = 'columnTwo';
+            $scope.hidecolumnThreeForCreation = "columnThree";
             $scope.hideScoupit = 'theScoupit';
             $scope.hidePhoto = 'thePhoto';
             $scope.marginRegulation = "free";
