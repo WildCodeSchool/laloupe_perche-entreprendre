@@ -544,12 +544,12 @@ header {
 =================================================================*/
 
 @media (max-width: 800px) {
-    /*body {
+  body {
         margin: auto;
         text-align: center;
         padding-top: 70px;
         margin-top: 20px;
-    }*/
+    }
     .accroche {
         margin-top: 20%;
     }
@@ -822,7 +822,7 @@ button {
     background-color: rgba(4, 4, 4, 0.8);
 }
 .modal-dialog {
-    /*top: 6%;*/
+    top: -2%;
     width: 100%;
     position: absolute;
 }
