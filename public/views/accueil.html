@@ -1,5 +1,5 @@
 
-<div class="container accueilOne" ng-class="marginRegulation">
+<div class="container accueilOne">
 
     <div class="title" style="color: grey">
         <h1>L'effet réseau</h1>
@@ -79,6 +79,7 @@
 
             <h1>Je crée mon activité</h1>
             <p ng-class="hideContent"> Vous êtes porteur de projet et souhaitez des informations ou obtenir un rendez-vous, contactez-nous via le formulaire ou le numéro de téléphone.</p>
+            <p ng-class="hideContent"> Quelques témoignages</p>
 
             <!-- Fin Eléments récurrents -->
 
@@ -93,7 +94,7 @@
                             src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> </p>
                 </div>
             </div>
-            <p ng-class="hideContent"> Quelques témoignages</p>
+
             <dir-pagination-controls pagination-id="testiPaginate" ng-class="hideContent"  max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
         </div>
 
@@ -105,30 +106,31 @@
 
             <!-- Eléments récurrents -->
             <h1>Je reprends une entreprise</h1>
-            <dir-pagination-controls ng-class="hidePagination2" class="pagination-button" max-size="5" direction-links="true" boundary-links="true" pagination-id="bureauPaginate"></dir-pagination-controls>
+
             <!-- Fin Eléments récurrents -->
 
 
             <div class="societyContent controlSociety"ng-class="showContent">
                 <p class="introSociety">Retrouvez ici une sélection d'entreprises ou de locaux à acheter. Pour plus d'informations, n'hésitez pas à nous contacter.</p>
-                <div class="searchSociety">
-                    <ul class="listSociety">
-                        <li class="society" pagination-id="bureauPaginate" dir-paginate="bureau in bureaulist | itemsPerPage:1">
+
+
+                        <div class="society" pagination-id="bureauPaginate" dir-paginate="bureau in bureaulist | itemsPerPage:1">
                             <div class="infoSocietyContainer">
-                                <div class="infoSociety">
-                                    <p>{{bureau.bureauType}}</p>
-                                    <p>{{bureau.bureauDescription}}</p>
-                                    <p>{{bureau.bureauSecteur}}</p>
-                                    <p>{{bureau.bureauSurface}}</p>
-                                    <p>{{bureau.bureauPrice}}</p>
-                                </div>
+
+                                    <p class="bureauType">{{bureau.bureauType}}</p>
+                                    <p class="bureauDescription">{{bureau.bureauDescription}}</p>
+                                    <p class="bureauSecteur">{{bureau.bureauSecteur}}</p>
+                                    <p class="bureauSurface">{{bureau.bureauSurface}}</p>
+                                    <p class="bureauPrice">{{bureau.bureauPrice}}</p>
+
                             </div>
                             <div class="imgSocietyContainer">
-                                <img class="imgSociety" style="width:300px; height: 200px;" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
+                                <img class="imgSociety" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
                             </div>
-                        </li>
-                    </ul>
-                </div>
+                        </div>
+                        <dir-pagination-controls ng-class="hidePagination2" class="pagination-button2" max-size="5" direction-links="true" boundary-links="true" pagination-id="bureauPaginate"></dir-pagination-controls>
+
+
 
             </div>
 
@@ -153,6 +155,10 @@
         </div>
         <div  class="tilev photoTile" ng-class="hidePhoto"></div>
 
+
+
+        <div ng-class="buttonClass4" ng-click="returnCreationClass4();isCreationBigger = 0; blabla = 0">X</div>
+
 <div  class="tilev linksTile" ng-class="hideLinks" ng-click="IsClickEnable && changeLinksSize(); blabla = 1">
           <h1>Je m'installe dans le Perche</h1>
             <div class="link" style="margin-top: 5%">
@@ -161,12 +167,11 @@
               </div>
               <img ng-show="blabla == 1" src="/img/senonches.486.jpg" alt="senonches" style="width: 80%; margin-top: 10%" />
 
-
             </div>
+
         </div>
     </div>
 
 
 
 </div>
-<div ng-class="buttonClass4" ng-click="returnCreationClass4(); blabla = 0">X</div>
