@@ -12,8 +12,8 @@
         <div class="tilev thePhoneMail">
             <h1>Contact</h1>
             <div class="phoneAndMailIcon">
-                <div class="phoneIcon firstState" ng-click="activity = 1" ng-hide="isCreationBigger"></div>
-                <div class="phoneWithoutIcon" ng-show="isCreationBigger">02 37 29 09 29</div>
+                <div class="phoneIcon firstState" ng-click="isCreationBigger = 1" ng-hide="isCreationBigger == 1"></div>
+                <div class="phoneWithoutIcon" ng-show="isCreationBigger == 1" ng-click="isCreationBigger = 0">02 37 29 09 29</div>
 
                 <!--<div class="mailIcon"></div>-->
             </div>
@@ -66,11 +66,12 @@
             </div>
         </div>
 
-<div ng-class="buttonClass" ng-click="returnCreationClass(); isCreationBigger = 0">X</div>
-    </div>
 
+        <div ng-class="buttonClass" ng-click="returnCreationClass(); isCreationBigger = 0">X</div>
+            </div>
 
     <div class="theColumn" ng-class="changeHeight">
+
         <div class="tilev controlActivity" ng-class="bigOrSmall" ng-click="IsClickEnable && changeClass()">
 
 
