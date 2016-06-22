@@ -211,6 +211,7 @@ function userController($scope, $http, userService, contactService, linkService,
 
 
     //NG-CLASS LINKS MANIPULATION
+      $scope.buttonClass4 = "noDisplay";
     $scope.changeLinksSize = function() {
       $scope.IsClickEnable = false;
 
