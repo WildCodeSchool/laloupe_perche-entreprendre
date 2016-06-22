@@ -40,7 +40,7 @@ function config($routeProvider ,$httpProvider) {
 
     .when('/mon-profil', {
             templateUrl: 'views/mon-profil.html',
-            controller: 'profilController',
+            controller: 'userController',
             resolve: {
                 connected: checkIsConnected
             }

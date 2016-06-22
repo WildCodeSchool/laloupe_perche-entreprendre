@@ -28,7 +28,8 @@ var User = {
     connect: function(req, res) {
             console.log(req.body)
             User.model.findOne(req.body, {
-                password: 0
+                password: 0,
+                image: 0
             }, function(err, user) {
               console.log(user);
                 if (err || !user)
