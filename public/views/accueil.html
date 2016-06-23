@@ -28,8 +28,8 @@
                 <div class="infoAgenda">
                     <h1>{{agenda.agendaTitle}}</h1>
                     <p>{{agenda.agendaDescription}}</p>
-                    <p>{{agenda.agendaDate}}</p>
-                    <p>{{agenda.agendaHour}}</p>
+                    <p>{{agenda.agendaDate | date: 'dd-MM-yyyy'}}</p>
+                    <p>{{agenda.agendaHour | date: 'HH:mm'}}</p>
                     <p>{{agenda.agendaCity}}</p>
                     <p>{{agenda.agendaPrice}}</p>
                     <a ng-href="{{agenda.agendaLink}}" target="_blank">Reservez vos billets !</a>

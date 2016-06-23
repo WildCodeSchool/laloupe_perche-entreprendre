@@ -6,9 +6,9 @@ var agendaSchema = new mongoose.Schema({
     agendaImg: String,
     agendaTitle: String,
     agendaDescription: String,
-    agendaDate: String,
+    agendaDate: Date,
     agendaCity: String,
-    agendaHour: String,
+    agendaHour: Date,
     agendaPrice: String,
     agendaLink: String,
 });
