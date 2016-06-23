@@ -35,3 +35,91 @@
     max-width: 300px;
 
 }
+
+
+
+/*=================================================================
+                              HOMEPAGE RESPONSIVE
+==========================================================
+
+=======*/
+
+
+@media (max-width: 1143px) {
+  .accueilOne {
+    justify-content: center;
+  }
+  .columnOne {
+    flex-grow: 1;
+  }
+  .columnTwo {
+    flex-grow: 9;
+  }
+  .theCreation {
+    width:100%;
+  }
+  .theSociety {
+    width:100%;
+  }
+  .theYoutube {
+    width:100%;
+  }
+  .columnThree {
+    width:100%;
+    flex-direction: row;
+    height:300px;
+  }
+  .theScoupit {
+    width:33%;
+  }
+  .thePhoto {
+    width:33%;
+
+  }
+  .theLinks {
+    width:33%;
+
+  }
+}
+
+@media (max-width: 743px) {
+  .accueilOne {
+    justify-content: center;
+  }
+  .columnOne {
+    width:100%;
+  }
+  .thePhoneMail {
+    width:100%;
+  }
+  .theAgenda {
+    width:100%;
+  }
+  .columnTwo {
+    width:100%;
+  }
+  .theCreation {
+    width:100%;
+  }
+  .theSociety {
+    width:100%;
+  }
+  .theYoutube {
+    width:100%;
+  }
+  .columnThree {
+    width:100%;
+    flex-direction: column;
+    justify-content: space-around;
+    height:800px;
+  }
+  .theScoupit {
+    width:100%;
+  }
+  .thePhoto {
+    width:100%;
+  }
+  .theLinks {
+    width:100%;
+  }
+}

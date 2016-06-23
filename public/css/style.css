@@ -996,19 +996,3 @@ footer {
     clear: both;
     float:left;
 }
-
-.lineUp {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.lineDown {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-.logoPartenaire {
-    height: 60px;
-    max-width: 300px;
-
-}

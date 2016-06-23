@@ -127,7 +127,6 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.hideLinks = 'theLinks';
         //Margin Regulation
         $scope.marginRegulation = 'free';
-
     }
 
     //NG-CLASS AGENDA MANIPULATION
