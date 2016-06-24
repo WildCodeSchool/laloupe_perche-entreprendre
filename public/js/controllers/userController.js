@@ -127,7 +127,6 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.hideLinks = 'theLinks';
         //Margin Regulation
         $scope.marginRegulation = 'free';
-
     }
 
     //NG-CLASS AGENDA MANIPULATION
@@ -234,6 +233,7 @@ function userController($scope, $http, userService, contactService, linkService,
       $scope.buttonClass4 = "noDisplay";
     $scope.changeLinksSize = function() {
       $scope.IsClickEnable = false;
+      $scope.isCreationBigger = 1;
 
         $scope.hideLinks = 'bigLinks';
         $scope.changeHeight = 'noDisplay';
@@ -246,6 +246,7 @@ function userController($scope, $http, userService, contactService, linkService,
     }
     $scope.returnCreationClass4 = function() {
       $scope.IsClickEnable = true;
+      $scope.isCreationBigger = 0;
 
             $scope.hideLinks = 'theLinks';
             $scope.changeHeight = 'columnTwo';

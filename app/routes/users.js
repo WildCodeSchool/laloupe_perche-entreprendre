@@ -9,7 +9,7 @@ module.exports = function (app) {
     app.get('/loggedin', Auth.user.hasAuthorization, function(req, res, next) {
         res.sendStatus(200);
 	  });
-    app.put('/users/:id', Auth.user.isAdministrator, User.update);
+    app.put('/users/:id', Auth.user.hasAuthorization, User.update);
     app.delete('/users/:id', Auth.user.isAdministrator, User.delete);
 
 }
