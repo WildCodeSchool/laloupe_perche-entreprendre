@@ -4,20 +4,23 @@
 
 .footer {
     height: auto;
-    /*
    background-image:-webkit-linear-gradient( black, white);
    background-image:-o-linear-gradient(black, white);
    background-image:linear-gradient(black,white);
-*/
+
     background-color: white;
     margin-top: 50px;
     padding-bottom: 10px;
     padding-top: 10px;
-    /*display: flex;
+
+    width: 100%;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-content: space-around;*/
+    align-content: space-around;
 }
+
+
 .lineUp {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -30,6 +33,9 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
 }
 .lineDown {
     display: -webkit-box;
@@ -48,9 +54,7 @@
 
 /*=================================================================
                               HOMEPAGE RESPONSIVE
-==========================================================
-
-=======*/
+=================================================================*/
 
 @media (max-width: 1143px) {
     .columnOne {
@@ -385,3 +389,4 @@ z-index: 800;
     -ms-flex-pack: distribute;
     justify-content: space-around;
 }
+

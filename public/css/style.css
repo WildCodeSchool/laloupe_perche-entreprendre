@@ -558,6 +558,7 @@ header {
     html {
         width: 100%;
     }
+
     .accroche {
         margin-top: 20%;
     }
@@ -722,12 +723,14 @@ header {
     }
 }
 
+
 @media (max-width: 900px) {
     .footer {
         width: 280%;
     }
 
 }
+
 
 
 /*=================================================================
