@@ -117,7 +117,7 @@
                 <p class="introSociety">Retrouvez ici une sélection d'entreprises ou de locaux à acheter. Pour plus d'informations, n'hésitez pas à nous contacter.</p>
 
 
-                        <div class="society" pagination-id="bureauPaginate" dir-paginate="bureau in bureaulist | itemsPerPage:1">
+                        <div  ng-class="smSociety" pagination-id="bureauPaginate" dir-paginate="bureau in bureaulist | itemsPerPage:1">
                             <div class="infoSocietyContainer">
 
                                     <p class="bureauType">{{bureau.bureauType}}</p>
@@ -128,7 +128,7 @@
 
                             </div>
                             <div class="imgSocietyContainer">
-                                <img class="imgSociety" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
+                                <img class="imgSociety img-responsive" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
                             </div>
                         </div>
 
@@ -140,10 +140,11 @@
         <div class="tilev youtubeTile" ng-class="hideYoutubeForCreation">
             <!--<iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>-->
 
-            <div class="tilev theYoutube">
+            <div class="tilev theYoutube" style="background-color:gree;">
                 <iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
-
             </div>
+
+
         </div>
 
     </div>

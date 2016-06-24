@@ -46,9 +46,6 @@
 
 
 @media (max-width: 1143px) {
-  .accueilOne {
-    justify-content: center;
-  }
   .columnOne {
     flex-grow: 1;
   }
@@ -61,12 +58,19 @@
   .theSociety {
     width:100%;
   }
-  .theYoutube {
+  .youtubeTile {
     width:100%;
+    justify-content: center;
   }
+.theYoutubeVideo {
+    width:100%;
+    margin-left:50%;
+    transform:translateX(-50%);
+  }
+
   .columnThree {
     width:100%;
-    flex-direction: row;
+    flex-direction: row-reverse;
     height:300px;
   }
   .theScoupit {
@@ -78,8 +82,154 @@
   }
   .theLinks {
     width:33%;
-
   }
+
+/* Change creation tile size */
+  .mediumCreation {
+  background-color: #38B8C8;
+  padding: 30px;
+  width: 100%;
+  height:780px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.mediumCreationClose {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: -807px;
+    margin-left: 85%;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: -1px 1px 3px black, 1px 0px 6px black;
+    text-shadow: 0px 0px 2px black;
+    opacity: 1;
+    z-index: 800;
+}
+
+/* Chance Agenda tile size */
+.mediumAgenda {
+    width: 293% !important;
+    height: 517px;
+    border: none;
+    box-shadow: 1px 1px 5px black;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.columnTwoBisBis {
+    width:66%;
+    height: 265px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+}
+.mediumCreationAgenda {
+  transform:translateY(8px);
+  width:100%;
+  color:white;
+  background-color: rgb(0, 180, 205);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 30px;
+  align-items: center;
+}
+.mediumCreationClose2 {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 245px;
+    margin-left: 85%;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: -1px 1px 3px black, 1px 0px 6px black;
+    text-shadow: 0px 0px 2px black;
+    -webkit-transition: 2s ease-out;
+    transition: 2s ease-out;
+    opacity: 1;
+    z-index: 800;
+}
+
+/* Chance Society tile size */
+.mediumSociety {
+    background-color: white;
+    width: 100%;
+    height: 780px !important;
+    padding: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.mediumContentSociety {
+  color: black;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+  width: 108%;
+  height: 42%;
+  background-color: lightgray;
+}
+.mediumCreationClose3 {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: -34px;
+    margin-left: 56%;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: -1px 1px 3px black, 1px 0px 6px black;
+    text-shadow: 0px 0px 2px black;
+    opacity: 1;
+    z-index: 800;
+}
+
 }
 
 @media (max-width: 743px) {
@@ -109,7 +259,7 @@
   }
   .columnThree {
     width:100%;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: space-around;
     height:800px;
   }

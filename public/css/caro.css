@@ -578,6 +578,7 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+      text-align:center;
 }
 .bigSociety {
     background-color: white;
@@ -593,6 +594,7 @@ body {
     flex-direction: column;
 }
 .theSociety > h1 {
+    width:100%;
     color: white;
 }
 .introSociety {
@@ -675,10 +677,7 @@ body {
     -webkit-transform: scaleY(1.27);
     transform: scaleY(1.27);
 }
-.theYoutube:hover {
-    -webkit-transform: translateY(-10px);
-    transform: translateY(-10px);
-}
+
 
 /* Colonne 3 */
 
