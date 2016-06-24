@@ -4,26 +4,29 @@
 
 .footer {
     height: auto;
-/*
+
    background-image:-webkit-linear-gradient( black, white);
    background-image:-o-linear-gradient(black, white);
    background-image:linear-gradient(black,white);
-*/
+
     background-color: white;
     margin-top: 50px;
     padding-bottom: 10px;
     padding-top: 10px;
-    /*display: flex;
+
+    width: 100%;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-content: space-around;*/
+    align-content: space-around;
 }
+
 
 .lineUp {
     display: flex;
     justify-content: space-around;
-    align-content: space-around;
-    flex-direction: row;
+    align-items: center;
+
 }
 .lineDown {
     display: flex;
@@ -35,3 +38,4 @@
     max-width: 300px;
 
 }
+
