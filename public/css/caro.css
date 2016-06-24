@@ -238,7 +238,7 @@ body {
 }
 .imgAgenda {
     width: 100%;
-    height: 100%;
+    height: 520px;
 }
 .imgEvent {
     width: 500px;
@@ -721,10 +721,10 @@ body {
 
 /* Tuile Reprendre une entreprise/local */
 
-.thePhoto {
+/*.thePhoto {
     background-image: url(/img/doudou-la-loupe-006.jpg);
     background-size: cover;
-}
+}*/
 
 /* Tuile S'installer dans le Perche */
 
@@ -788,3 +788,10 @@ body {
     background: none;
     padding: 30px 50px;
 }
+/*.carousel-page
+	{
+	width:100%;
+	height:250px;
+	background-color:#5f666d;
+	color:white;
+	}*/
