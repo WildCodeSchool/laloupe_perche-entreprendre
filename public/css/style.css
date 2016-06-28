@@ -544,12 +544,15 @@ header {
 =================================================================*/
 
 @media (max-width: 800px) {
-
+    body {
+        margin: auto;
+        text-align: center;
+        padding-top: 70px;
+        margin-top: 20px;
+    }
     html {
         width: 100%;
     }
-    }
-
     .accroche {
         margin-top: 20%;
     }
@@ -607,9 +610,6 @@ header {
     }
     .range {
       margin-left: 4%;
-    }
-    html {
-      width: 100%;
     }
 }
 
