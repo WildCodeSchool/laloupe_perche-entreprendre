@@ -66,6 +66,23 @@ function userController($scope, $http, userService, contactService, linkService,
 
     }
 
+    //Change Phone display
+    $scope.buttonClassPhone = 'noDisplay';
+    $scope.changePhone = function() {
+      $scope.IsClickEnable = false;
+      $('.activityContent').css({
+        cursor: 'auto'
+      });
+      $scope.buttonClassPhone = "bigPhoneClose";
+    }
+    $scope.phoneRevert = function() {
+      $scope.IsClickEnable = true;
+      $('.activityContent').css({
+        cursor: 'pointer'
+      });
+      $scope.buttonClassPhone = 'noDisplay';
+    }
+
     // NG-CLASS MANIPULATION OF CREATION TILE
     $scope.IsClickEnable = true;
     $scope.bigOrSmall = "theCreation";
