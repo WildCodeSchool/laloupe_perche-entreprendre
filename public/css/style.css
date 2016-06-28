@@ -611,6 +611,19 @@ header {
     .range {
       margin-left: 4%;
     }
+    .filter {
+      margin-top: 30%;
+      margin-left: 5%;
+      width: 95% !important;
+    }
+    .title {
+      margin-left: 30% !important;
+      margin-top: -15% !important;
+      font-size: 27px !important;
+    }
+    .pagination {
+      margin-left: -51% !important;
+    }
 }
 
 @media (max-width: 900px) {
