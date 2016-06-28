@@ -1,4 +1,3 @@
-
 <div class="container accueilOne">
 
     <div class="title" style="color: grey">
@@ -6,17 +5,17 @@
     </div>
 
 
-<div ng-class="buttonClass2" ng-click="returnCreationClass2(); isCreationBigger = 0">X</div>
+    <div ng-class="buttonClass2" ng-click="returnCreationClass2(); isCreationBigger = 0">X</div>
 
     <div class="theColumn columnOne">
         <div class="tilev thePhoneMail">
             <h1>Contact</h1>
             <div class="phoneAndMailIcon">
-                <div class="phoneIcon firstState" ng-click="isCreationBigger = 1" ng-hide="isCreationBigger == 1"></div>
-                <div class="phoneWithoutIcon" ng-show="isCreationBigger == 1" ng-click="isCreationBigger = 0">02 37 29 09 29</div>
 
-                <!--<div class="mailIcon"></div>-->
+                <div class="phoneIcon firstState" ng-click="changePhone(); isCreationBigger = 1" ng-hide="isCreationBigger == 1"></div>
+                <div class="phoneWithoutIcon" ng-show="isCreationBigger == 1" ng-click="phoneRevert(); isCreationBigger = 0">02 37 29 09 29</div>
             </div>
+            <div ng-class="buttonClassPhone" ng-click="phoneRevert(); isCreationBigger = 0">X</div>
         </div>
         <div class="tilev" ng-class="sizeAgenda" ng-click="IsClickEnable && changeAgendaSize();">
             <div class="agendaImgContainer" ng-class="switchAgenda" ng-hide="isCreationBigger == 2">
@@ -97,7 +96,7 @@
 
 
         <div ng-class="buttonClass" ng-click="returnCreationClass(); isCreationBigger = 0">X</div>
-            </div>
+    </div>
 
     <div class="theColumn" ng-class="changeHeight">
 
@@ -113,7 +112,7 @@
 
             <!-- Fin Eléments récurrents -->
 
-            <div class="temoignage" pagination-id="testiPaginate"  dir-paginate="temoignage in temoignagelist |itemsPerPage:1" ng-class="hideContent">
+            <div class="temoignage" pagination-id="testiPaginate" dir-paginate="temoignage in temoignagelist |itemsPerPage:1" ng-class="hideContent">
 
                 <img class="testimonialImg" src="{{temoignage.temoignageImg}}" />
                 <div class="testimonialText">
@@ -123,15 +122,15 @@
                     <p class="testiDescription"><img class="quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> {{temoignage.temoignageDescription}}<img class="endQuote quote"
                             src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> </p>
                 </div>
+                <dir-pagination-controls class="pagination" pagination-id="testiPaginate" ng-class="hideContent" max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
             </div>
 
 
         </div>
 
-        <dir-pagination-controls class="pagination" pagination-id="testiPaginate" ng-class="hideContent"  max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
         <div ng-class="buttonClass3" ng-click="returnCreationClass3(); isCreationBigger = 0">X</div>
 
-        <div class="tilev societyTile" ng-class="hideSocietyForCreation"  ng-click="IsClickEnable &&  changeSocietySize()">
+        <div class="tilev societyTile" ng-class="hideSocietyForCreation" ng-click="IsClickEnable &&  changeSocietySize()">
 
 
             <!-- Eléments récurrents -->
@@ -140,24 +139,24 @@
             <!-- Fin Eléments récurrents -->
 
 
-            <div class="societyContent controlSociety"ng-class="showContent">
+            <div class="societyContent controlSociety" ng-class="showContent">
                 <p class="introSociety">Retrouvez ici une sélection d'entreprises ou de locaux à acheter. Pour plus d'informations, n'hésitez pas à nous contacter.</p>
 
 
-                        <div  ng-class="smSociety" pagination-id="bureauPaginate" dir-paginate="bureau in bureaulist | itemsPerPage:1">
-                            <div class="infoSocietyContainer">
+                <div ng-class="smSociety" pagination-id="bureauPaginate" dir-paginate="bureau in bureaulist | itemsPerPage:1">
+                    <div class="infoSocietyContainer">
 
-                                    <p class="bureauType">{{bureau.bureauType}}</p>
-                                    <p class="bureauDescription">{{bureau.bureauDescription}}</p>
-                                    <p class="bureauSecteur">{{bureau.bureauSecteur}}</p>
-                                    <p class="bureauSurface">{{bureau.bureauSurface}}</p>
-                                    <p class="bureauPrice">{{bureau.bureauPrice}}</p>
+                        <p class="bureauType">{{bureau.bureauType}}</p>
+                        <p class="bureauDescription">{{bureau.bureauDescription}}</p>
+                        <p class="bureauSecteur">{{bureau.bureauSecteur}}</p>
+                        <p class="bureauSurface">{{bureau.bureauSurface}}</p>
+                        <p class="bureauPrice">{{bureau.bureauPrice}}</p>
 
-                            </div>
-                            <div class="imgSocietyContainer">
-                                <img class="imgSociety img-responsive" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
-                            </div>
-                        </div>
+                    </div>
+                    <div class="imgSocietyContainer">
+                        <img class="imgSociety img-responsive" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
+                    </div>
+                </div>
 
             </div>
             <dir-pagination-controls ng-class="hidePagination2" class="pagination-button2" max-size="5" direction-links="true" boundary-links="true" pagination-id="bureauPaginate"></dir-pagination-controls>
@@ -179,7 +178,7 @@
 
     <div class="theColumn controlColumn" ng-class="hidecolumnThreeForCreation">
 
-        <div  class="tilev scoupitTile" ng-class="hideScoupit">
+        <div class="tilev scoupitTile" ng-class="hideScoupit">
             <iframe class="theScoopitContent" width="300" height="300" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=255"></iframe>
         </div>
 
@@ -237,10 +236,11 @@
 
 
 
+
         <div ng-class="buttonClass4" ng-click="returnCreationClass4();isCreationBigger = 0; blabla = 0">X</div>
 
-<div  class="tilev linksTile" ng-class="hideLinks" ng-click="IsClickEnable && changeLinksSize(); blabla = 1">
-          <h1>Je m'installe dans le Perche</h1>
+        <div class="tilev linksTile" ng-class="hideLinks" ng-click="IsClickEnable && changeLinksSize(); blabla = 1">
+            <h1>Je m'installe dans le Perche</h1>
             <div class="link" style="margin-top: 5%">
               <div class="linkContent" ng-show="blabla == 1" ng-repeat="link in linklist" style="margin-top: 2%">
                     <a class="links" ng-href="{{link.linkValue}}" target="_blank">{{link.linkName}}</a>
@@ -304,6 +304,7 @@
                   <span class="sr-only">Next</span>
                 </a>
               </div>
+
 
             </div>
 
