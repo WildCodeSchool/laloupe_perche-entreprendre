@@ -20,28 +20,6 @@ function userController($scope, $http, userService, contactService, linkService,
     $('.textEvent').fadeIn(700);
   }
 
-    function load(){
-      userService.get().then(function (res) {
-          $scope.userlist = res.data
-      });
-      contactService.get().then(function (res) {
-          $scope.contactlist = res.data;
-          console.log($scope.contactlist);
-      });
-      agendaService.get().then(function (res) {
-          $scope.agendalist = res.data
-      });
-      bureauService.get().then(function (res) {
-          $scope.bureaulist = res.data
-      });
-      temoignageService.get().then(function (res) {
-          $scope.temoignagelist = res.data
-      });
-
-    }
-
-
-
 
     function load() {
         userService.get().then(function(res) {

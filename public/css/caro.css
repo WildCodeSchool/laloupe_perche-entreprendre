@@ -549,6 +549,15 @@ body {
 .form-message {
     height: 90px !important;
 }
+.carousel-caption {
+  top: 20px;
+  font-size: 20px;
+  text-shadow: 3px 3px 1px black;
+}
+.carousel-caption:hover {
+  color: black
+  text-shadow: 3px 3px 1px white;
+}
 
 /* Tuile Reprendre une entreprise/local */
 
@@ -772,7 +781,12 @@ body {
     opacity: 1;
     z-index: 800;
 }
-
+.links {
+  color: ivory;
+}
+.links:hover {
+  color: ivory;
+}
 /* Preview !*/
 
 .preview {
