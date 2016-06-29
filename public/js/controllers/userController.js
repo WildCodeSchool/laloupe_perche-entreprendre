@@ -7,11 +7,17 @@ function userController($scope, $http, userService, contactService, linkService,
 
   $(".hamburger").focusin(function() {
       $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
+      $('.accueilOne').css({
+        flexWrap: 'nowrap'
+      });
+    });
 
-  });
   $(".hamburger").focusout(function() {
       $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
-  });
+      $('.accueilOne').css({
+        flexWrap: 'wrap'
+      });
+    });
 
 
   // ng-click function to change Agenda views
@@ -50,6 +56,7 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.changePhone = function() {
       $scope.IsClickEnable = false;
       $scope.isCreationBigger = 1;
+      $scope.showOnlyNumber = 1;
       $('.activityContent').css({
         cursor: 'auto'
       });
@@ -57,6 +64,7 @@ function userController($scope, $http, userService, contactService, linkService,
     }
     $scope.phoneRevert = function() {
       $scope.IsClickEnable = true;
+      $scope.showOnlyNumber = 0;
       $scope.isCreationBigger = 0;
       $('.activityContent').css({
         cursor: 'pointer'
@@ -76,6 +84,7 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.hidecolumnThreeForCreation = "columnThree";
     $scope.changeHeight = "columnTwo";
     $scope.marginRegulation = "free";
+    $scope.showOnlyNumber = 0;
 
     $scope.changeClass = function() {
 
@@ -105,6 +114,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.marginRegulation = "accueilOneTile";
         $scope.hidePhoto = "noDisplay";
         $scope.buttonClass2 = 'noDisplay';
+        $scope.showOnlyNumber = 1;
       }
     };
 
@@ -128,6 +138,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.hideLinks = 'theLinks';
         //Margin Regulation
         $scope.marginRegulation = 'free';
+        $scope.showOnlyNumber = 0;
     }
 
     //NG-CLASS AGENDA MANIPULATION
@@ -206,7 +217,7 @@ function userController($scope, $http, userService, contactService, linkService,
           $scope.smSociety = "mediumContentSociety";
           $scope.hidePagination2 = "pagination-button2";
           $scope.buttonClass3 = "mediumCreationClose3";
-        }
+                  }
         else {
       $scope.isCreationBigger = 1;
       $scope.IsClickEnable = false;
@@ -219,6 +230,7 @@ function userController($scope, $http, userService, contactService, linkService,
       $scope.changeHeight = "columnTwoTer";
       $scope.marginRegulation = "accueilOneTile";
       $scope.showContent = "societyContent";
+      $scope.showOnlyNumber = 1;
     }
     }
     $scope.returnCreationClass3 = function() {
@@ -239,6 +251,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.hidecolumnThreeForCreation = 'columnThree';
         //Margin Regulation
         $scope.marginRegulation = 'free';
+        $scope.showOnlyNumber = 0;
     }
 
     //NG-CLASS LINKS MANIPULATION
@@ -270,6 +283,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.marginRegulation = "accueilOneTile";
         $scope.buttonClass4 = "bigCreationClose4";
         $scope.hidecolumnThreeForCreation = "columnThreeTer";
+        $scope.showOnlyNumber = 1;
     }
     $scope.returnCreationClass4 = function() {
       $scope.IsClickEnable = true;
@@ -282,6 +296,7 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.hidePhoto = 'thePhoto';
             $scope.marginRegulation = "free";
             $scope.buttonClass4 = 'noDisplay';
+            $scope.showOnlyNumber = 0;
         }
 
 

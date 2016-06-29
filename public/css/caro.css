@@ -136,7 +136,7 @@ body {
   font-size: 1.5em;
   font-weight: bold;
   border-radius: 100%;
-  transform:translateY(-25px);
+  transform:translateY(-12px);
   padding: 10px;
   box-shadow: -1px 1px 3px black, 1px 0px 6px black;
   text-shadow: 0px 0px 2px black;
@@ -825,4 +825,7 @@ body {
 .filter {
   width: 40%;
   text-align: center;
+}
+.carousel-indicators {
+  z-index:1;
 }
