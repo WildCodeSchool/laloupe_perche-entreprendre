@@ -26,6 +26,11 @@ function userController($scope, $http, userService, contactService, linkService,
     $('.textEvent').fadeIn(700);
   }
 
+  // Window Resize
+/*  $(window).resize(function() {
+
+  });*/
+
 
 
     function load() {
