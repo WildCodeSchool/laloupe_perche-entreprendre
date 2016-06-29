@@ -272,4 +272,10 @@
   .theLinks {
     width:100%;
   }
+  .lineUp {
+    display: block;
+  }
+  .lineDown {
+    display: block;
+  }
 }

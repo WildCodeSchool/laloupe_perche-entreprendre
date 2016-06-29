@@ -26,15 +26,13 @@ var User = {
 
 
     connect: function(req, res) {
-            console.log(req.body)
             User.model.findOne(req.body, {
-                password: 0
+                userMdp: 0
             }, function(err, user) {
-              console.log(user);
                 if (err || !user)
                     res.sendStatus(403);
                 else {
-                    var token = jwt.sign(user, 'tokenSecret', {
+                    var token = jwt.sign({_id: user._id, isAdmin: user.isAdmin}, 'tokenSecret', {
                         expiresIn: 1440 // expires in 24 hours
                     });
 
