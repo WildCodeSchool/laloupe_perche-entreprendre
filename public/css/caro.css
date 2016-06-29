@@ -497,11 +497,22 @@ body {
 }
 .pagination {
     display: block;
-    width: 230px;
+    width: 270px;
     height: 100px;
     position: absolute;
     margin-top: 0px;
     margin-left: 120px;
+    border-radius: 4px;
+    opacity: 1;
+    z-index: 999;
+}
+.pagination2 {
+    display: block;
+    width: 230px;
+    height: 100px;
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 20%;
     border-radius: 4px;
     opacity: 1;
     z-index: 999;
