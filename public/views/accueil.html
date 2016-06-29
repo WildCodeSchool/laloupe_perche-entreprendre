@@ -10,8 +10,8 @@
             <h1>Contact</h1>
             <div class="phoneAndMailIcon">
 
-                <div class="phoneIcon firstState" ng-click="changePhone(); isCreationBigger = 1" ng-hide="isCreationBigger == 1"></div>
-                <div class="phoneWithoutIcon" ng-show="isCreationBigger == 1" ng-click="phoneRevert(); isCreationBigger = 0">02 37 29 09 29</div>
+                <div class="phoneIcon firstState" ng-click="IsClickEnable && changePhone()" ng-hide="isCreationBigger == 1; showOnlyNumber == 1"></div>
+                <div class="phoneWithoutIcon" ng-show="isCreationBigger == 1; showOnlyNumber == 1" ng-click="IsClickEnable && phoneRevert()">02 37 29 09 29</div>
             </div>
             <div ng-class="buttonClassPhone" ng-click="phoneRevert(); isCreationBigger = 0">X</div>
         </div>
@@ -92,8 +92,10 @@
             </div>
         </div>
 
-
+        <!-- Bouton fermeture tuile création -->
         <div ng-class="buttonClass" ng-click="returnCreationClass(); isCreationBigger = 0">X</div>
+        <!-- button fermeture tuile société -->
+        <div ng-class="buttonClass3" ng-click="returnCreationClass3(); isCreationBigger = 0">X</div>
     </div>
 
     <div class="theColumn" ng-class="changeHeight">
@@ -126,7 +128,7 @@
 
         </div>
 
-        <div ng-class="buttonClass3" ng-click="returnCreationClass3(); isCreationBigger = 0">X</div>
+
 
         <div class="tilev societyTile" ng-class="hideSocietyForCreation" ng-click="IsClickEnable &&  changeSocietySize()">
 
@@ -237,7 +239,7 @@
 
         <div ng-class="buttonClass4" ng-click="returnCreationClass4();isCreationBigger = 0; blabla = 0">X</div>
 
-        <div class="tilev linksTile" ng-class="hideLinks" ng-click="IsClickEnable && changeLinksSize(); blabla = 1">
+        <div class="tilev linksTile" ng-class="hideLinks" ng-click="IsClickEnable && changeLinksSize()">
             <h1>Je m'installe dans le Perche</h1>
             <div class="link" style="margin-top: 5%">
               <div class="linkContent" ng-show="blabla == 1" ng-repeat="link in linklist" style="margin-top: 2%">

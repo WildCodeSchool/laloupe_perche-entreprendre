@@ -623,7 +623,7 @@ header {
     }
     .pagination {
       display: inline !important;
-      width: 280px !important;
+      width: 300px !important;
       position: absolute !important;
       margin-top: -45px !important;
       margin-left: 417px !important;
@@ -644,7 +644,7 @@ header {
       margin-top: -15px !important;
     }
     .pagination-button2 {
-      margin-left: -152% !important;
+      margin-left: -169% !important;
       margin-top: 0px !important;
     }
     .mediumContentSociety {

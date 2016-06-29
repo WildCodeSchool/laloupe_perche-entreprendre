@@ -51,7 +51,7 @@ body {
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px);
     box-shadow: 0px 0px 10px black;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 .closeButton1:hover, .closeButton2:hover {
     -webkit-transform: scale(1.1);
@@ -121,7 +121,7 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    z-index:800;
+    z-index:1;
 }
 .thePhoneMail > h1 {
     color: white;
@@ -136,7 +136,7 @@ body {
   font-size: 1.5em;
   font-weight: bold;
   border-radius: 100%;
-  transform:translateY(-25px);
+  transform:translateY(-12px);
   padding: 10px;
   box-shadow: -1px 1px 3px black, 1px 0px 6px black;
   text-shadow: 0px 0px 2px black;
@@ -372,6 +372,7 @@ body {
     justify-content: center;
     padding: 30px;
     align-items: center;
+    cursor: pointer;
 }
 .theCreation > h1 {
     color: white;
@@ -384,7 +385,7 @@ body {
 /*Tuile Créer son entreprise APRES aggrandissement*/
 
 .account-wall-activity {
-    padding: 10px;
+    padding: 12px;
 }
 .bigCreation {
     background-color: #38B8C8;
@@ -456,12 +457,16 @@ body {
     text-shadow: 0px 0px 2px black;
     opacity: 1;
     z-index: 800;
+    transition: 0.3s ease-out;
+}
+.bigCreationClose:hover{
+    transform:translateY(10px);
 }
 .testimonialImg {
     margin-top: 30px;
     width: 200px;
     height: 200px;
-    box-shadow: 1px 1px 5px black;
+    box-shadow: 0px 0px 1px black;
 }
 .testimonialText {
     margin-top: 30px;
@@ -497,7 +502,7 @@ body {
 }
 .pagination {
     display: block;
-    width: 270px;
+    width: 300px;
     height: 100px;
     position: absolute;
     margin-top: 0px;
@@ -534,7 +539,7 @@ body {
     height: 100px;
     position: absolute;
     margin-top: -43px;
-    margin-left: 130px;
+    margin-left: 110px;
     border-radius: 4px;
     opacity: 1;
     z-index: 999;
@@ -548,6 +553,7 @@ body {
     border-radius: 4px;
     opacity: 1;
     z-index: 999;
+    margin-top: -30px;
 }
 .kangourou-enter {
     -webkit-transition: 5s;
@@ -582,6 +588,9 @@ body {
   font-size: 20px;
   text-shadow: 3px 3px 1px black;
 }
+#my_carousel3 {
+  cursor: pointer;
+}
 .carousel-caption:hover {
   color: black
   text-shadow: 3px 3px 1px white;
@@ -590,22 +599,22 @@ body {
 /* Tuile Reprendre une entreprise/local */
 
 .bigCreationClose3 {
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    background-color: red;
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-top: -34px;
-    margin-left: 720px;
-    border-radius: 50px;
-    padding: 10px;
-    box-shadow: -1px 1px 3px black, 1px 0px 6px black;
-    text-shadow: 0px 0px 2px black;
-    opacity: 1;
-    z-index: 800;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: -807px;
+  margin-left: 1040px;
+  border-radius: 50px;
+  padding: 10px;
+  box-shadow: -1px 1px 3px black, 1px 0px 6px black;
+  text-shadow: 0px 0px 2px black;
+  opacity: 1;
+  z-index: 800;
 }
 .theSociety {
     background-color: #F6A327;
@@ -615,7 +624,8 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-      text-align:center;
+    text-align:center;
+    cursor: pointer;
 }
 .bigSociety {
     background-color: white;
@@ -772,6 +782,7 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    cursor: pointer;
 }
 .bigLinks {
     background-color: #E73664;
@@ -832,4 +843,7 @@ body {
 .filter {
   width: 40%;
   text-align: center;
+}
+.carousel-indicators {
+  z-index:1;
 }
