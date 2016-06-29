@@ -49,6 +49,7 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.buttonClassPhone = 'noDisplay';
     $scope.changePhone = function() {
       $scope.IsClickEnable = false;
+      $scope.isCreationBigger = 1;
       $('.activityContent').css({
         cursor: 'auto'
       });
@@ -56,6 +57,7 @@ function userController($scope, $http, userService, contactService, linkService,
     }
     $scope.phoneRevert = function() {
       $scope.IsClickEnable = true;
+      $scope.isCreationBigger = 0;
       $('.activityContent').css({
         cursor: 'pointer'
       });
@@ -138,7 +140,7 @@ function userController($scope, $http, userService, contactService, linkService,
 
     $scope.changeAgendaSize = function() {
       if (window.innerWidth <= 1143) {
-        $scope.isCreationBigger = 2
+        $scope.isCreationBigger = 2;
         $scope.IsClickEnable = false;
         $scope.sizeAgenda = "mediumAgenda";
         $scope.switchAgenda = "noDisplay";
@@ -151,7 +153,8 @@ function userController($scope, $http, userService, contactService, linkService,
 
       }
         else {
-        $scope.isCreationBigger = 2
+        $scope.isCreationBigger = 2;
+        $scope.showOnlyNumber = 1;
         $scope.IsClickEnable = false;
         $scope.sizeAgenda = "bigAgenda";
         $scope.switchAgenda = "noDisplay";
@@ -171,6 +174,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.IsClickEnable = true;
 
         //Tile agenda
+        $scope.showOnlyNumber = 0;
         $scope.sizeAgenda = 'theAgenda';
         $scope.switchAgenda = 'subAgenda';
         $scope.switchAgendaContent = 'noDisplay';
@@ -248,6 +252,7 @@ function userController($scope, $http, userService, contactService, linkService,
 
       if (window.innerWidth <= 1143) {
         $scope.IsClickEnable = false;
+        $scope.blabla = 1;
         $scope.isCreationBigger = 1;
         $scope.hideScoupit = 'noDisplay';
         $scope.hidePhoto = 'noDisplay';
@@ -256,6 +261,7 @@ function userController($scope, $http, userService, contactService, linkService,
 
       }
         $scope.IsClickEnable = false;
+        $scope.blabla = 1;
         $scope.isCreationBigger = 1;
         $scope.hideLinks = 'bigLinks';
         $scope.changeHeight = 'noDisplay';
