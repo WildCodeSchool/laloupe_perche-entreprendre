@@ -512,12 +512,20 @@ header {
 =================================================================*/
 
 @media (max-width: 800px) {
-    
+    body {
+        margin: auto;
+        text-align: center;
+        padding-top: 70px;
+        margin-top: 20px;
+    }
     html {
         width: 100%;
     }
+<<<<<<< HEAD
     
 
+=======
+>>>>>>> dd43324f9db89b71be6f4908e2c60ea653a14910
     .accroche {
         margin-top: 20%;
     }
@@ -576,11 +584,30 @@ header {
     .range {
       margin-left: 4%;
     }
-    html {
-      width: 100%;
+    .filter {
+      margin-top: 30%;
+      margin-left: 5%;
+      width: 95% !important;
+    }
+    .title {
+      margin-left: 30% !important;
+      margin-top: -15% !important;
+      font-size: 27px !important;
+    }
+    .pagination {
+      margin-left: -51% !important;
     }
 }
 
+<<<<<<< HEAD
+=======
+@media (max-width: 900px) {
+    .footer {
+        width: 280%;
+    }
+
+}
+>>>>>>> dd43324f9db89b71be6f4908e2c60ea653a14910
 
 
 /*=================================================================
@@ -959,7 +986,7 @@ footer {
     clear: both;
     float:left;
 /*
-    
+
 	height: auto;
 	padding-bottom: 30px;
 	position: relative;
