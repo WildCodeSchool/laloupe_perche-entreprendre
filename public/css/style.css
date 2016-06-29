@@ -617,12 +617,70 @@ header {
       width: 95% !important;
     }
     .title {
-      margin-left: 30% !important;
+      margin-left: 31% !important;
       margin-top: -15% !important;
       font-size: 27px !important;
     }
     .pagination {
-      margin-left: -51% !important;
+      display: inline !important;
+      width: 280px !important;
+      position: absolute !important;
+      margin-top: -45px !important;
+      margin-left: 417px !important;
+    }
+    .pagination2 {
+      display: inline !important;
+      width: 280px !important;
+      position: absolute !important;
+      margin-top: 65px !important;
+      margin-left: -647px !important;
+    }
+    .testimonialImg {
+      width: 150px !important;
+      height: 150px !important;
+    }
+    .mediumCreationClose {
+      margin-left: 77% !important;
+      margin-top: -15px !important;
+    }
+    .pagination-button2 {
+      margin-left: -152% !important;
+      margin-top: 0px !important;
+    }
+    .mediumContentSociety {
+      display: block !important;
+      height: 55% !important;
+    }
+    .infoSocietyContainer {
+      height: 225px !important;
+      width: 280px !important;
+    }
+    .imgSocietyContainer {
+      width: auto !important;
+    }
+    .imgSociety {
+      width: auto !important;
+      height: auto !important;
+    }
+    .bureauType {
+      margin-top: 0px !important;
+    }
+    .bigLinks {
+      width: 323px !important;
+      height: 730px !important;
+      padding-top: 60px !important;
+    }
+    .bigCreationClose4 {
+      margin-left: 297px !important;
+      margin-top: -30px !important;
+    }
+    #my_carousel2 {
+      width: 130% !important;
+      margin-left: -30px !important;
+      margin-top: 50% !important;
+    }
+    .link {
+      margin-top: 25% !important;
     }
 }
 
