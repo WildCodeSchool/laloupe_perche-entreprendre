@@ -338,10 +338,14 @@ body {
 =================================================================*/
 
 .mentionsLegales {
-    padding-left: 0px;
-    padding-right: 0px;
+    background-color: white;
+    margin-top: -60px;
+    margin-bottom: -60px;
+    padding: 160px;
+
 }
 
+/*
 .mentionTitle {
     margin-top: 60px;
     padding-top: 150px;
@@ -377,6 +381,7 @@ body {
 .creditPhotos {
     text-align-last: center;
 }
+*/
 
 
 /*================================================================
