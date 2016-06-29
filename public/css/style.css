@@ -544,12 +544,15 @@ header {
 =================================================================*/
 
 @media (max-width: 800px) {
-    /*body {
+    body {
         margin: auto;
         text-align: center;
         padding-top: 70px;
         margin-top: 20px;
-    }*/
+    }
+    html {
+        width: 100%;
+    }
     .accroche {
         margin-top: 20%;
     }
@@ -608,15 +611,26 @@ header {
     .range {
       margin-left: 4%;
     }
-    html {
-      width: 100%;
+    .filter {
+      margin-top: 30%;
+      margin-left: 5%;
+      width: 95% !important;
+    }
+    .title {
+      margin-left: 30% !important;
+      margin-top: -15% !important;
+      font-size: 27px !important;
+    }
+    .pagination {
+      margin-left: -51% !important;
     }
 }
 
-@media (min-width: 900px) {
+@media (max-width: 900px) {
     .footer {
-        /*margin-top: 130px;*/
+        width: 280%;
     }
+
 }
 
 
@@ -822,7 +836,7 @@ button {
     background-color: rgba(4, 4, 4, 0.8);
 }
 .modal-dialog {
-    /*top: 6%;*/
+    top: -2%;
     width: 100%;
     position: absolute;
 }
@@ -985,28 +999,43 @@ body { margin-top:20px; }
 =================================================================*/
 
 footer {
-    min-width: 100%;
+    width: 100%;
     height: auto;
     background-color: white;
     margin-top: 50px;
     margin-bottom: 0px;
-    position: absolute;
+    position: relative;
     padding-bottom: 10px;
     padding-top: 10px;
     clear: both;
     float:left;
+/*
+
+	height: auto;
+	padding-bottom: 30px;
+	position: relative;
+	width: 100%;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #DDDDDD;
+*/
 }
 
+
+/*
 .lineUp {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    width: 100%;
 }
 .lineDown {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
 }
+*/
 .logoPartenaire {
     height: 60px;
     max-width: 300px;

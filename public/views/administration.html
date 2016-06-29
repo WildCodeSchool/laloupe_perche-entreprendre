@@ -62,7 +62,7 @@
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
             <div class="modal-body">
-
+                <h2 style="margin-left: 42%; transform: translate(-30%)">Créer une carte de visite</h2>
 
                     <form class="form-signin" style="text-align:center;">
 
@@ -112,6 +112,7 @@
 <div class="modal fade" id="modal-user" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
             <div class="modal-body">
+              <h2 style="margin-left: 43%; transform: translate(-30%)">Gérer les utilisateurs</h2>
               <ul class="list-group">
                   <li class="list-group-item" ng-repeat="user in userlist" style="padding-bottom: 50px;">
                       <form class="form-inline">
@@ -147,6 +148,7 @@
 <div class="modal fade" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
             <div class="modal-body">
+              <h2 style="margin-left: 43%; transform: translate(-30%)">Gérer les contacts</h2>
               <ul class="list-group">
                   <li class="list-group-item" type="checkbox" ng-repeat="contact in contactlist" style="padding-bottom: 50px;">
                       <form class="form-inline">
@@ -177,10 +179,9 @@
 <div class="modal fade" id="modal-agenda" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
             <div class="modal-body">
-
                     <form class="form-signin" style="text-align:center;">
 
-                      <h3> Ajouter un évenement </h3>
+                      <h2> Ajouter un évènement </h2>
                         <input type="text" class="form-control" ng-model="agendaTitle" placeholder="Renseigner le titre de l'évènement" required>
                         <input type="date" class="form-control input-md" ng-model="agendaDate" placeholder="Renseigner la date" required>
                         <input type="time" class="form-control" ng-model="agendaHour" placeholder="Ajouter l'horaire" required>
@@ -225,17 +226,18 @@
     <div class="createBox modal-dialog modal-lg">
 
             <div class="modal-body">
+              <h2 style="margin-left: 42%; transform: translate(-30%)">Gérer les évènements</h2>
               <ul class="list-group">
                   <li class="list-group-item" type="checkbox" ng-repeat="agenda in agendalist" style="padding-bottom: 50px;">
                       <form class="form-inline">
                           <div class="form-group">
-                            <input type="text" class="form-control admin" ng-model="agenda.agendaTitle" placeholder="Titre de l'évènement" required>
-                            <input type="text" class="form-control admin" ng-model="agenda.agendaDescription" placeholder="Description" required>
-                            <input type="text" class="form-control admin" ng-model="agenda.agendaDate" placeholder="Date" required>
-                            <input type="text" class="form-control admin" ng-model="agenda.agendaHour" placeholder="Heure" required>
-                            <input type="text" class="form-control admin" ng-model="agenda.agendaCity" placeholder="Ville" required>
-                            <input type="text" class="form-control admin" ng-model="agenda.agendaPrice" placeholder="Prix" required>
-                            <input type="text" class="form-control admin" ng-model="agenda.agendaLink" placeholder="Lien" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaTitle" placeholder="Titre de l'évènement" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaDescription" placeholder="Description" required>
+                            <input type="date" class="form-control" style="width: 229px; margin-right: -1%" ng-model="agenda.agendaDate" placeholder="Date" required>
+                          </br><input type="time" class="form-control" style="width: 229px" ng-model="agenda.agendaHour" placeholder="Heure" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaCity" placeholder="Ville" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaPrice" placeholder="Prix" required>
+                            <input type="text" class="form-control" ng-model="agenda.agendaLink" placeholder="Lien" required>
                           </div>
                               <a data-dismiss="modal"><button type="submit" class="btn btn-default" style="width: 250px" ng-click="updateAgenda(agenda)">Mettre à jour</button></a>
                               <a data-dismiss="modal"><button class="btn btn-danger" style="width: 250px" ng-click="delete(agenda,'agenda')">Supprimer</button></a>
@@ -254,10 +256,9 @@
     <div class="createBox modal-dialog modal-lg">
 
             <div class="modal-body">
-
                     <form class="form-signin" style="text-align:center;">
 
-                      <h3> Ajouter un commerce ou un bureau à reprendre </h3>
+                      <h2> Ajouter un commerce ou un bureau à reprendre </h2>
                         <input type="text" class="form-control" ng-model="bureauType" placeholder="Renseigner le type de bureau ou de commerce" required>
                         <input type="text" class="form-control input-md" ng-model="bureauSurface" placeholder="Renseigner la surface" required>
                         <input type="text" class="form-control" ng-model="bureauSecteur" placeholder="Renseigner le secteur" required>
@@ -299,6 +300,7 @@
 
 
             <div class="modal-body">
+              <h2 style="margin-left: 40%; transform: translate(-30%)">Gérer les bureaux et commerces</h2>
               <ul class="list-group">
                   <li class="list-group-item" type="checkbox" ng-repeat="bureau in bureaulist" style="padding-bottom: 50px;">
                       <form class="form-inline">
@@ -326,15 +328,14 @@
 <div class="modal fade" id="modal-temoignage" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="createBox modal-dialog modal-lg">
             <div class="modal-body">
-
                     <form class="form-signin" style="text-align:center;">
 
-                      <h3> Ajouter un témoignage </h3>
+                      <h2> Ajouter un témoignage </h2>
                         <input type="text" class="form-control" ng-model="temoignageName" placeholder="Renseigner le nom" required>
-                        <input type="description" class="form-control" ng-model="temoignageFirstname" placeholder="Renseigner le prénom" required>
+                        <input type="text" class="form-control" ng-model="temoignageFirstname" placeholder="Renseigner le prénom" required>
                         <input type="text" class="form-control input-md" ng-model="temoignageAge" placeholder="Renseigner l'âge" required>
                         <input type="text" class="form-control" ng-model="temoignageFunction" placeholder="Renseigner la fonction" required>
-                        <input type="description" class="form-control" ng-model="temoignageSecteur" placeholder="Renseigner la ville" required>
+                        <input type="text" class="form-control" ng-model="temoignageSecteur" placeholder="Renseigner la ville" required>
                         <textarea style="resize:vertical;" class="form-control form-message" ng-model="temoignageDescription" placeholder="Ajouter un témoignage" required></textarea>
 
 
@@ -371,6 +372,7 @@
     <div class="createBox modal-dialog modal-lg">
 
             <div class="modal-body">
+              <h2 style="margin-left: 42%; transform: translate(-30%)">Gérer les témoignages</h2>
               <ul class="list-group">
                   <li class="list-group-item" type="checkbox" ng-repeat="temoignage in temoignagelist" style="padding-bottom: 50px;">
                       <form class="form-inline">
@@ -401,9 +403,9 @@
 
                     <form class="form-signin" style="text-align:center;">
 
-                      <h3> Ajouter un lien </h3>
+                      <h2> Ajouter un lien </h2>
                         <input type="text" class="form-control" ng-model="linkName" placeholder="Renseigner le nom du site" required>
-                        <input type="description" class="form-control" ng-model="linkValue" placeholder="Indiquez l'adresse url" required>
+                        <input type="text" class="form-control" ng-model="linkValue" placeholder="Indiquez l'adresse url" required>
 
                           <a data-dismiss="modal"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="addLink()" type="submit">
                             Ajouter !</button></a>
@@ -423,6 +425,7 @@
     <div class="createBox modal-dialog modal-lg">
 
             <div class="modal-body">
+              <h2 style="margin-left: 45%; transform: translate(-30%)">Gérer les liens</h2>
               <ul class="list-group">
                   <li class="list-group-item" type="checkbox" ng-repeat="link in linklist" style="padding-bottom: 50px;">
                       <form class="form-inline">
