@@ -617,12 +617,12 @@ header {
       width: 95% !important;
     }
     .title {
-      margin-left: 30% !important;
+      margin-left: 31% !important;
       margin-top: -15% !important;
       font-size: 27px !important;
     }
-    .pagination {
-      margin-left: -51% !important;
+    .pagination-button3 {
+      margin-left: -25% !important;
     }
 }
 
