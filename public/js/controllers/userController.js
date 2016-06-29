@@ -1,18 +1,9 @@
 // USER CONTROLLER
-<<<<<<< HEAD
-<<<<<<< HEAD
-function userController($scope, $http, userService, contactService, agendaService, bureauService, temoignageService, $rootScope, $location) {
-
-  $('html, body').animate({
-      scrollTop: 0
-  }, 'swing');
-=======
 function userController($scope, $http, userService, contactService, linkService, agendaService, bureauService, temoignageService, $rootScope, $location, $window) {
 
     $('html, body').animate({
         scrollTop: 0
     }, 'swing');
->>>>>>> dd43324f9db89b71be6f4908e2c60ea653a14910
 
   $(".hamburger").focusin(function() {
       $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
@@ -29,40 +20,6 @@ function userController($scope, $http, userService, contactService, linkService,
     $('.textEvent').fadeIn(700);
   }
 
-<<<<<<< HEAD
-=======
-function userController($scope, $http, userService, contactService, linkService, agendaService, bureauService, temoignageService, $rootScope, $location) {
-
-    $('html, body').animate({
-        scrollTop: 0
-    }, 'swing');
->>>>>>> 3955562270b98c6d22943268aaa8c8dfbefd5a86
-
-
-
-    function load(){
-      userService.get().then(function (res) {
-          $scope.userlist = res.data
-      });
-      contactService.get().then(function (res) {
-          $scope.contactlist = res.data;
-          console.log($scope.contactlist);
-      });
-      agendaService.get().then(function (res) {
-          $scope.agendalist = res.data
-      });
-      bureauService.get().then(function (res) {
-          $scope.bureaulist = res.data
-      });
-      temoignageService.get().then(function (res) {
-          $scope.temoignagelist = res.data
-      });
-
-    }
-
-
-=======
->>>>>>> dd43324f9db89b71be6f4908e2c60ea653a14910
 
 
     function load() {
@@ -235,46 +192,6 @@ function userController($scope, $http, userService, contactService, linkService,
 
 
     $scope.changeSocietySize = function() {
-<<<<<<< HEAD
-        if ($scope.hideSocietyForCreation === "theSociety")
-            $scope.hideSocietyForCreation = "bigSociety";
-        if ($scope.buttonClass3 === "noDisplay")
-            $scope.buttonClass3 = "bigCreationClose3";
-        if ($scope.hidePagination2 === "noDisplay")
-            $scope.hidePagination2 = "pagination-button";
-        if ($scope.bigOrSmall === "theCreation")
-            $scope.bigOrSmall = "noDisplay";
-        if ($scope.hideYoutubeForCreation === "theYoutube")
-            $scope.hideYoutubeForCreation = "noDisplay";
-        if ($scope.hidecolumnThreeForCreation === "columnThree")
-            $scope.hidecolumnThreeForCreation = "noDisplay";
-        if ($scope.marginRegulation === "free")
-            $scope.marginRegulation = "accueilOneTile";
-
-
-<<<<<<< HEAD
-=======
-//NG-CLASS LINKS MANIPULATION
-  $scope.changeLinksSize = function() {
-    $scope.hideLinks = 'bigLinks';
-    $scope.changeHeight = 'noDisplay';
-    $scope.hideScoupit = 'noDisplay';
-    $scope.hidePhoto = 'noDisplay';
-    $scope.marginRegulation = "accueilOneTile";
-        $scope.buttonClass4 = "bigCreationClose4";
-  }
-  $scope.returnCreationClass4 = function() {
-    $scope.hideLinks = 'theLinks';
-    $scope.changeHeight = 'columnTwo';
-    $scope.hideScoupit = 'theScoupit';
-    $scope.hidePhoto = 'thePhoto';
-    $scope.marginRegulation = "free";
-    $scope.buttonClass4 = 'noDisplay';
-  }
-        //content's tile
-        if ($scope.showContent === "noDisplay")
-            $scope.showContent = "societyContent";
-=======
         if (window.innerWidth <= 1143) {
           $scope.isCreationBigger = 1;
           $scope.IsClickEnable = false;
@@ -299,7 +216,6 @@ function userController($scope, $http, userService, contactService, linkService,
       $scope.marginRegulation = "accueilOneTile";
       $scope.showContent = "societyContent";
     }
->>>>>>> dd43324f9db89b71be6f4908e2c60ea653a14910
     }
     $scope.returnCreationClass3 = function() {
       $scope.IsClickEnable = true;
@@ -320,11 +236,6 @@ function userController($scope, $http, userService, contactService, linkService,
         //Margin Regulation
         $scope.marginRegulation = 'free';
     }
-<<<<<<< HEAD
->>>>>>> 3955562270b98c6d22943268aaa8c8dfbefd5a86
-
-=======
->>>>>>> dd43324f9db89b71be6f4908e2c60ea653a14910
 
     //NG-CLASS LINKS MANIPULATION
       $scope.buttonClass4 = "noDisplay";
