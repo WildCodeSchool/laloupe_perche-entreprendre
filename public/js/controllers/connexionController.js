@@ -12,11 +12,8 @@ function connexionController($scope, $http, userService, $rootScope, $location) 
 
     $scope.lostpassword = function (){
         userService.lostpassword($scope.emailToBack).then(function(res){
-            //Afficher le message que le mail à été envoyé
-        }, function(){
-            //erreur
+            alert("un mail vous a été envoyé !");
         })
     }
-
 
 }
