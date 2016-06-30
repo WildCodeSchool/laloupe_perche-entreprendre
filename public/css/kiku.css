@@ -19,11 +19,13 @@ body {
 }
 .title {
   position:absolute;
-  margin-left:55%;
+  margin-left:60%;
   transform:translateX(-50%);
-  margin-top: -150px;
+  margin-top: -10%;
 }
-
+.linkTitle {
+  margin-left: 250px;
+}
 
 .form-pop {
   overflow: hidden;
