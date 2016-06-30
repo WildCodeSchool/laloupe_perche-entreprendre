@@ -652,6 +652,11 @@ header {
       margin-left: -169% !important;
       margin-top: 0px !important;
     }
+    .pagination-button3 {
+      margin-left: -150% !important;
+      margin-top: 517px !important;
+      transform: none !important;
+    }
     .mediumContentSociety {
       display: block !important;
       height: 55% !important;
@@ -689,6 +694,31 @@ header {
     }
     .mentionsLegales {
       margin-top: 45% !important;
+    }
+    .imgAgendaAfter {
+      display:none;
+    }
+    .infoAgenda {
+      width:100% !important;
+      height:100% !important;
+      transform:none !important;
+    }
+    .littleAgenda{
+      width:100% !important;
+      height:517px !important;
+      border: none;
+      box-shadow: 1px 1px 5px black;
+      overflow: hidden;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
     }
 }
 
