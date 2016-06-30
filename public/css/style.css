@@ -400,7 +400,7 @@ header {
 .logoperche {
     height: 150px;
     margin-top: 40px;
-    margin-left: 250px;
+    transform: translateX(-32px);
 }
 
 
@@ -577,7 +577,7 @@ header {
         margin-top: 70px;
     }
     .logoperche {
-      margin-left: auto;
+      margin-left: -200px;
       margin-bottom: 20px;
     }
     .container {
@@ -622,12 +622,103 @@ header {
       width: 95% !important;
     }
     .title {
-      margin-left: 30% !important;
+      margin-left: 35% !important;
       margin-top: -15% !important;
       font-size: 27px !important;
     }
     .pagination {
-      margin-left: -51% !important;
+      display: inline !important;
+      width: 300px !important;
+      position: absolute !important;
+      margin-top: -45px !important;
+      margin-left: 417px !important;
+    }
+    .pagination2 {
+      display: inline !important;
+      width: 280px !important;
+      position: absolute !important;
+      margin-top: 65px !important;
+      margin-left: -647px !important;
+    }
+    .testimonialImg {
+      width: 150px !important;
+      height: 150px !important;
+    }
+    .mediumCreationClose {
+      margin-left: 77% !important;
+      margin-top: -15px !important;
+    }
+    .pagination-button2 {
+      margin-left: -169% !important;
+      margin-top: 0px !important;
+    }
+    .pagination-button3 {
+      margin-left: -150% !important;
+      margin-top: 517px !important;
+      transform: none !important;
+    }
+    .mediumContentSociety {
+      display: block !important;
+      height: 55% !important;
+    }
+    .infoSocietyContainer {
+      height: 225px !important;
+      width: 280px !important;
+    }
+    .imgSocietyContainer {
+      width: auto !important;
+    }
+    .imgSociety {
+      width: auto !important;
+      height: auto !important;
+    }
+    .bureauType {
+      margin-top: 0px !important;
+    }
+    .bigLinks {
+      width: 323px !important;
+      height: 730px !important;
+      padding-top: 60px !important;
+    }
+    .bigCreationClose4 {
+      margin-left: 297px !important;
+      margin-top: -30px !important;
+    }
+    #my_carousel2 {
+      width: 130% !important;
+      margin-left: -30px !important;
+      margin-top: 50% !important;
+    }
+    .link {
+      margin-top: 25% !important;
+    }
+    .mentionsLegales {
+      margin-top: 45% !important;
+    }
+    .imgAgendaAfter {
+      display:none;
+    }
+    .infoAgenda {
+      width:100% !important;
+      height:100% !important;
+      transform:none !important;
+    }
+    .littleAgenda{
+      width:100% !important;
+      height:517px !important;
+      border: none;
+      box-shadow: 1px 1px 5px black;
+      overflow: hidden;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
     }
 }
 
