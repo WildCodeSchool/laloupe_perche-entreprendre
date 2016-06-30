@@ -341,7 +341,7 @@ body {
     background-color: white;
     margin-top: -60px;
     margin-bottom: -60px;
-    padding: 160px;
+    padding: 15%;
 
 }
 
@@ -686,6 +686,9 @@ header {
     }
     .link {
       margin-top: 25% !important;
+    }
+    .mentionsLegales {
+      margin-top: 10% !important;
     }
 }
 
