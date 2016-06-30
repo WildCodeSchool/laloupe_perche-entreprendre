@@ -15,6 +15,9 @@
           },
           delete : function(id) {
               return $http.delete('/users/' + id);
-          }
+          },
+          lostpassword : function (email) {
+            return $http.get('/lostpassword/' +email);
+        }
       }
   };
