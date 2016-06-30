@@ -155,7 +155,16 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.hideLinks = "theLinks";
 
     $scope.changeAgendaSize = function() {
-      if (window.innerWidth <= 1143) {
+      if (window.innerWidth <= 800) {
+        console.log('800px');
+        $scope.isCreationBigger = 2;
+        $scope.IsClickEnable = false;
+        $scope.sizeAgenda = "littleAgenda";
+        $scope.buttonClass2 = "mediumCreationClose2";
+        $scope.switchAgenda = "noDisplay";
+        $scope.switchAgendaContent = "textEvent";
+      }
+      else if ((window.innerWidth >= 800) && (window.innerWidth <= 1143)) {
         $scope.isCreationBigger = 2;
         $scope.IsClickEnable = false;
         $scope.sizeAgenda = "mediumAgenda";
@@ -166,9 +175,9 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.changeHeight = "columnTwoBisBis";
         $scope.bigOrSmall = "mediumCreationAgenda";
         $scope.buttonClass2 = "mediumCreationClose2";
-
       }
-        else {
+        else if (window.innerWidth > 1143) {
+          console.log('MaxPix');
         $scope.isCreationBigger = 2;
         $scope.showOnlyNumber = 1;
         $scope.IsClickEnable = false;
