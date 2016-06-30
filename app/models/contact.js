@@ -31,8 +31,8 @@ var Contact = {
                 var transporter = nodemailer.createTransport({
                     service: 'gmail',
                     auth: {
-                        user: 'poleperche28@gmail.com',
-                        pass: 'siap2828'
+                        user: process.env.SMTP_USER,
+                        pass: process.env.SMTP_PASS
                     }
                 });
                 var mailOptions = {

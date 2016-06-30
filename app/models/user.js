@@ -82,8 +82,46 @@ var User = {
         User.model.findByIdAndRemove(req.params.id, function() {
             res.sendStatus(200);
         })
+    },
+    
+    lostpassword: function(req,res) {
+        User.model.find({userEmail:req.params.email}, function(err, user){
+            
+            var ListeCar = new Array ("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9");
+            
+	       var Password ='';
+            
+	       for(i = 0; i < nbcar; i++) {
+               
+                Password = Password + ListeCar[Math.floor(Math.random()*ListeCar.length)];
+            }
+            {
+                var nodemailer = require('nodemailer');
+                var transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: {
+                        user: process.env.SMTP_USER,
+                        pass: process.env.SMTP_PASS
+                    }
+                });
+                var mailOptions = {
+                    from: 'poleperche28@gmail.com',
+                    to: data.contactEmail,
+                    subject: 'Mot de passe oublié !',
+                    html: 'Bonjour ' + data.contactFirstname + ', <p>Vous avez tenté de vous connecter au site web du Pôle Perche en vain. Voici donc votre nouvel email '+ Password + ' Si vous rencontrez d`autres problèmes, vous pouvez contacter nos conseiller par téléphone au 02 37 29 09 29 ou par mail à paysperche.sia@wanadoo.fr</p> <p> À bientôt !</p> <p>L\'équipe du Pôle Perche</p>'
+                };
+                transporter.sendMail(mailOptions, function (error, info) {
+                    if (error) {
+                        return console.log(error);
+                    }
+                    console.log('Message sent: ' + info.response);
+                });
+
+                transporter.close();
+                res.sendStatus(200);
+              } 
+        })
     }
 }
-
 
 module.exports = User;
