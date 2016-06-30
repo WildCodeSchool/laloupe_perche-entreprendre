@@ -1,4 +1,4 @@
-// MODEL CONTACT
+ // MODEL CONTACT
 var mongoose = require('mongoose');
 var User = require('./user');
 var jwt = require('jsonwebtoken');
