@@ -4,8 +4,15 @@ var mongoose = require('mongoose');
 
 
 var userSchema = new mongoose.Schema({
-    userEmail: String,
-    userMdp: String,
+    userEmail: {
+      type: String,
+      required: true,
+      unique: true
+    },
+    userMdp: {
+      type: String,
+      required: true
+    },
     userVille: String,
     userFunction: String,
     userNote: String,
@@ -109,8 +116,8 @@ var User = {
                     pass: process.env.SMTP_PASS
                 }
             });
-            
-            
+
+
             var mailOptions = {
                 from: 'poleperche28@gmail.com',
                 to: users[0].userEmail,
@@ -125,10 +132,10 @@ var User = {
             });
 
             transporter.close();
-            
+
             users[0].userMdp = Password;
             users[0].save();
-            
+
             res.sendStatus(200);
 
         })
