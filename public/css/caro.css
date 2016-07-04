@@ -40,7 +40,7 @@ body {
 /* Selecteur général : tuiles */
 
 .tilev {
-    width: 350px;
+    /*width: 350px;*/
     height: 250px;
     background-color: white;
     box-shadow: 1px 1px 5px black;
@@ -591,10 +591,6 @@ body {
 #my_carousel3 {
   cursor: pointer;
 }
-.carousel-caption:hover {
-  color: black
-  text-shadow: 3px 3px 1px white;
-}
 
 /* Tuile Reprendre une entreprise/local */
 
@@ -757,7 +753,7 @@ body {
 
 .theScoupit {
     overflow: hidden;
-    background-color: gray;
+    background-color: white;
 }
 .theScoopitContent {
     margin-top: -2px;
@@ -788,7 +784,7 @@ body {
     background-color: #E73664;
     /*margin-left:-110px;*/
     padding: 30px;
-    width: 750px;
+    width: 100%;
     height: 780px !important;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -800,6 +796,7 @@ body {
 }
 .theLinks > h1 {
     color: white;
+    width: 100%;
 }
 .bigCreationClose4 {
     cursor: pointer;
@@ -810,8 +807,8 @@ body {
     color: white;
     font-size: 1.5em;
     font-weight: bold;
-    margin-top: -34px;
-    margin-left: 720px;
+    margin-top: -28px;
+    margin-left: 675px;
     border-radius: 50px;
     padding: 10px;
     box-shadow: -1px 1px 3px black, 1px 0px 6px black;

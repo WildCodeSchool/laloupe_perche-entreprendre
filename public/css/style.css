@@ -622,11 +622,11 @@ header {
       margin-left: 5%;
       width: 95% !important;
     }
-    .title {
+    /*.title {
       margin-left: 35% !important;
       margin-top: -15% !important;
       font-size: 27px !important;
-    }
+    }*/
     .pagination {
       display: inline !important;
       width: 300px !important;
@@ -646,7 +646,7 @@ header {
       height: 150px !important;
     }
     .mediumCreationClose {
-      margin-left: 77% !important;
+      margin-left: 79% !important;
       margin-top: -15px !important;
     }
     .pagination-button2 {
@@ -676,22 +676,22 @@ header {
     .bureauType {
       margin-top: 0px !important;
     }
-    .bigLinks {
+    /*.bigLinks {
       width: 323px !important;
       height: 730px !important;
       padding-top: 60px !important;
-    }
+    }*/
     .bigCreationClose4 {
-      margin-left: 297px !important;
-      margin-top: -30px !important;
+      margin-left: 79% !important;
+      margin-top: -35px !important;
     }
     #my_carousel2 {
-      width: 130% !important;
-      margin-left: -30px !important;
-      margin-top: 50% !important;
+      width: 115% !important;
+      margin-left: -7% !important;
+      margin-top: 20% !important;
     }
     .link {
-      margin-top: 25% !important;
+      margin-top: 10% !important;
     }
     .mentionsLegales {
       margin-top: 45% !important;
@@ -728,7 +728,23 @@ header {
     .footer {
         width: 280%;
     }
-
+    .title {
+      margin-left: 41% !important;
+      margin-top: -7% !important;
+      font-size: 27px !important;
+    }
+}
+@media (max-width: 550px) {
+    .title {
+      margin-left: 35% !important;
+      margin-top: -15% !important;
+      font-size: 27px !important;
+    }
+}
+@media (max-width: 1150px) {
+  /*.tilev {
+    width: 100% !important;
+  }*/
 }
 
 

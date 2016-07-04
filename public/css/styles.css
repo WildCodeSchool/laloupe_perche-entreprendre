@@ -49,7 +49,7 @@
             align-items: center;
 }
 .logoPartenaire {
-    height: 60px;
+    height: 45px;
     max-width: 300px;
 }
 
@@ -194,8 +194,8 @@
         color: white;
         font-size: 1.5em;
         font-weight: bold;
-        margin-top: 245px;
-        margin-left: 78%;
+        margin-top: 240px;
+        margin-left: 79%;
         border-radius: 50px;
         padding: 10px;
         box-shadow: -1px 1px 3px black, 1px 0px 6px black;
@@ -243,8 +243,8 @@
         color: white;
         font-size: 1.5em;
         font-weight: bold;
-        margin-top: -817px;
-        margin-left: 86%;
+        margin-top: -20px;
+        margin-left: 79%;
         border-radius: 50px;
         padding: 10px;
         box-shadow: -1px 1px 3px black, 1px 0px 6px black;
