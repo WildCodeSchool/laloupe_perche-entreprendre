@@ -13,6 +13,7 @@ function connexionController($scope, $http, userService, $rootScope, $location) 
       }).catch(function(){
   			$rootScope.loginMessage.title = "Attention !";
   			$rootScope.loginMessage.message = "Identifiant ou mot de passe incorrect";
+        $location.path('/connexion');
   		});
     }
 
