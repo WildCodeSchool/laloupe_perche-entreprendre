@@ -675,22 +675,22 @@ header {
     .bureauType {
       margin-top: 0px !important;
     }
-    .bigLinks {
+    /*.bigLinks {
       width: 323px !important;
       height: 730px !important;
       padding-top: 60px !important;
-    }
+    }*/
     .bigCreationClose4 {
-      margin-left: 297px !important;
+      margin-left: 79% !important;
       margin-top: -35px !important;
     }
     #my_carousel2 {
-      width: 130% !important;
-      margin-left: -30px !important;
-      margin-top: 50% !important;
+      width: 115% !important;
+      margin-left: -7% !important;
+      margin-top: 20% !important;
     }
     .link {
-      margin-top: 25% !important;
+      margin-top: 10% !important;
     }
     .mentionsLegales {
       margin-top: 45% !important;
