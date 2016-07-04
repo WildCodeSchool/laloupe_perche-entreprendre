@@ -299,7 +299,7 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.buttonClass4 = "bigCreationClose4bis";
             $scope.hidecolumnThreeForCreation = "columnThreeTerbis";
 
-        } else if (window.innerWidth > 1143) {
+        } else {
             console.log('bigLinks');
             $scope.IsClickEnable = false;
             $scope.blabla = 1;
