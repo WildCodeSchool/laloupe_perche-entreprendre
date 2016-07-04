@@ -621,11 +621,11 @@ header {
       margin-left: 5%;
       width: 95% !important;
     }
-    .title {
+    /*.title {
       margin-left: 35% !important;
       margin-top: -15% !important;
       font-size: 27px !important;
-    }
+    }*/
     .pagination {
       display: inline !important;
       width: 300px !important;
@@ -726,7 +726,23 @@ header {
     .footer {
         width: 280%;
     }
-
+    .title {
+      margin-left: 41% !important;
+      margin-top: -7% !important;
+      font-size: 27px !important;
+    }
+}
+@media (max-width: 550px) {
+    .title {
+      margin-left: 35% !important;
+      margin-top: -15% !important;
+      font-size: 27px !important;
+    }
+}
+@media (max-width: 1150px) {
+  /*.tilev {
+    width: 100% !important;
+  }*/
 }
 
 
