@@ -121,7 +121,7 @@ var User = {
                 if (error) {
                     return console.log(error);
                 }
-                console.log('Message sent: ' + info.response);
+                console.log(process.env.SMTP_USER + process.env.SMTP_PASS);
             });
 
             transporter.close();
