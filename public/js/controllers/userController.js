@@ -287,8 +287,22 @@ function userController($scope, $http, userService, contactService, linkService,
     }
 
     $scope.changeLinksSize = function() {
+        if (window.innerWidth <= 800) {
+          console.log('bigLinks');
+          $scope.IsClickEnable = false;
+          $scope.blabla = 1;
+          $scope.isCreationBigger = 1;
+          $scope.hideLinks = 'smallLinks';
+          $scope.changeHeight = 'noDisplay';
+          $scope.hideScoupit = 'noDisplay';
+          $scope.hidePhoto = 'noDisplay';
+          $scope.marginRegulation = "accueilOneTile";
+          $scope.buttonClass4 = "bigCreationClose4";
+          $scope.hidecolumnThreeForCreation = "columnThreeTer";
+          $scope.showOnlyNumber = 1;
+      }
 
-        if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
+        else if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
             console.log('mediumLinks');
             $scope.IsClickEnable = false;
             $scope.blabla = 1;

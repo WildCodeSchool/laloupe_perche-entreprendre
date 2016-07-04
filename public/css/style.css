@@ -681,7 +681,7 @@ header {
       padding-top: 60px !important;
     }
     .bigCreationClose4 {
-      margin-left: 297px !important;
+      margin-left: 81% !important;
       margin-top: -35px !important;
     }
     #my_carousel2 {
@@ -720,6 +720,7 @@ header {
       -ms-flex-pack: justify;
       justify-content: space-between;
     }
+
 }
 
 @media (max-width: 900px) {
