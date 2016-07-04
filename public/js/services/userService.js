@@ -2,6 +2,7 @@
   function userService($http) {
       return {
           connect : function(data) {
+            console.log(data);
               return $http.post('/login', data);
           },
           get : function() {
