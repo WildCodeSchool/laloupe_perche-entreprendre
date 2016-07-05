@@ -4,7 +4,7 @@ Projet Client Final, Wild Code School, La Loupe, avril - juin 2016
 
 ###Project description:
 
-Perche Entreprendre est un portail à à destination des élus du Perche. Le but est de créer des cartes de visite des élus afin qu'ils puissent la communiquer lors d'événements afin de promouvoir la région.
+Perche Entreprendre est un portail à destination des élus du Perche. Le but est de créer des cartes de visite des élus afin qu'ils puissent la communiquer lors d'événements afin de promouvoir la région.
 
 
 
