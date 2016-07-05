@@ -71,8 +71,6 @@ var Contact = {
 
     },
     findList: function(req, res) {
-      console.log('friend list');
-      console.log(req.params);
         Contact.model.find({userId: req.params.id},function(err, data) {
             res.send(data);
         });

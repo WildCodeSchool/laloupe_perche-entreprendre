@@ -17,11 +17,9 @@ var Temoignage = {
     model: mongoose.model('Temoignage', temoignageSchema),
 
     create: function(req, res) {
-      console.log(req.body);
         Temoignage.model.create(req.body,
             function(err, data) {
               if (!err) {
-                console.log(data);
                 res.sendStatus(200);
               } else {
                 console.log(err);
@@ -37,8 +35,6 @@ var Temoignage = {
     },
 
     update: function(req, res) {
-      console.log(req.body);
-      console.log(req.params);
         Temoignage.model.findByIdAndUpdate(req.params.id, req.body, function() {
             res.sendStatus(200);
         })

@@ -3,9 +3,9 @@ function connexionController($scope, $http, userService, $rootScope, $location) 
   $('html, body').animate({ scrollTop: 0 }, 'swing');
 
     $scope.connexion = function (mail, mdp) {
-      if (mail == undefined || mdp == undefined) {
-        return ;
-      }
+      // if (mail == undefined || mdp == undefined) {
+      //   return ;
+      // }
       userService.connect({userEmail: mail, userMdp: mdp}).then(function(res){
         $rootScope.token = res.data.token;
         $rootScope.user = res.data.user;

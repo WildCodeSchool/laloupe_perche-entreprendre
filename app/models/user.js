@@ -72,7 +72,6 @@ var User = {
 
     findById: function (id, cb) {
         User.model.findById(id, function (err, data) {
-            console.log(data);
             cb(data);
         });
     },
