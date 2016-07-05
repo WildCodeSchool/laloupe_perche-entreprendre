@@ -5,13 +5,13 @@ var mongoose = require('mongoose');
 
 var userSchema = new mongoose.Schema({
     userEmail: {
-      type: String,
-      required: true,
-      unique: true
+        type: String,
+        required: true,
+        unique: true
     },
     userMdp: {
-      type: String,
-      required: true
+        type: String,
+        required: true
     },
     userVille: String,
     userFunction: String,
@@ -32,52 +32,56 @@ var User = {
     model: mongoose.model('User', userSchema),
 
 
-    connect: function (req, res) {
-        User.model.findOne(req.body, {
-            userMdp: 0
-        }, function (err, user) {
-            if (err || !user)
-                res.sendStatus(403);
-            else {
-                var token = jwt.sign({
-                    _id: user._id,
-                    isAdmin: user.isAdmin
-                }, 'tokenSecret', {
-                    expiresIn: 1440 // expires in 24 hours
-                });
+    connect: function(req, res) {
+        if (!req.body.userEmail || !req.body.userMdp) {
+            res.status(404).send("User not found");
+        } else {
+            User.model.findOne(req.body, {
+                userMdp: 0
+            }, function(err, user) {
+                if (err || !user)
+                    res.sendStatus(403);
+                else {
+                    var token = jwt.sign({
+                        _id: user._id,
+                        isAdmin: user.isAdmin
+                    }, 'tokenSecret', {
+                        expiresIn: 1440 // expires in 24 hours
+                    });
 
-                // return the information including token as JSON
-                res.json({
-                    success: true,
-                    user: user,
-                    token: token
-                });
-            }
-        });
+                    // return the information including token as JSON
+                    res.json({
+                        success: true,
+                        user: user,
+                        token: token
+                    });
+                }
+            });
+        }
     },
 
-    create: function (req, res) {
+    create: function(req, res) {
         User.model.create(req.body,
-            function () {
+            function() {
                 res.sendStatus(200);
             });
     },
 
-    findAll: function (req, res) {
-        User.model.find(function (err, data) {
+    findAll: function(req, res) {
+        User.model.find(function(err, data) {
             res.send(data);
         });
     },
 
 
-    findById: function (id, cb) {
-        User.model.findById(id, function (err, data) {
+    findById: function(id, cb) {
+        User.model.findById(id, function(err, data) {
             cb(data);
         });
     },
 
-    update: function (req, res) {
-        User.model.findByIdAndUpdate(req.params.id, req.body, function (err) {
+    update: function(req, res) {
+        User.model.findByIdAndUpdate(req.params.id, req.body, function(err) {
             if (err) {
                 console.log(err);
                 res.sendStatus(500)
@@ -87,16 +91,16 @@ var User = {
         })
     },
 
-    delete: function (req, res) {
-        User.model.findByIdAndRemove(req.params.id, function () {
+    delete: function(req, res) {
+        User.model.findByIdAndRemove(req.params.id, function() {
             res.sendStatus(200);
         })
     },
 
-    lostpassword: function (req, res) {
+    lostpassword: function(req, res) {
         User.model.find({
             userEmail: req.params.email
-        }, function (err, users) {
+        }, function(err, users) {
 
             var ListeCar = new Array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
 
@@ -123,7 +127,7 @@ var User = {
                 subject: 'Mot de passe oublié !',
                 html: 'Bonjour ' + users[0].userFirstname + ', <p>Vous avez tenté de vous connecter au site web du Pôle Perche en vain. Voici donc votre nouveau mot de passe : <strong>' + Password + '</strong>.</p> <p> Si vous rencontrez d`autres problèmes, vous pouvez contacter nos conseillers par téléphone au 02 37 29 09 29 ou par mail à l`adresse suivante : paysperche.sia@wanadoo.fr </p> <p> À bientôt !</p> <p>L\'équipe du <a href="perche-entreprendre.fr">Pôle Perche</a></p>'
             };
-            transporter.sendMail(mailOptions, function (error, info) {
+            transporter.sendMail(mailOptions, function(error, info) {
                 if (error) {
                     return console.log(error);
                 }
