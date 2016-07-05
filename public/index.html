@@ -11,14 +11,16 @@
     <!-- CSS | Bootstrap | jQuery -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/kiku.css">
     <link rel="stylesheet" href="css/julien.css">
     <link rel="stylesheet" href="css/caro.css">
-    <link rel="stylesheet" href="font/css/font-awesome.min.css">
-    <!-- AngularJS -->
+    <link rel="stylesheet" href="css/styles.css">
 
+    <link rel="stylesheet" href="font/css/font-awesome.min.css">
+
+
+    <!-- AngularJS -->
     <script src="js/libs/angular.min.js"></script>
     <script src="js/libs/angular-route.min.js"></script>
     <script src="js/libs/ng-flow-standalone.min.js"></script>
@@ -58,7 +60,8 @@
 
 <body>
     <header>
-        <img src="img/logo_pole.png" class="logoperche" alt="logo Perche" />
+        <a href="#/" class="linkTitle"><img src="img/logo_pole.png" class="logoperche" alt="logo Perche" /></a>
+        <h1 class="title" style="color: #F6A327">L'effet réseau</h1>
     </header>
 
     <div id="wrapper">
@@ -86,6 +89,7 @@
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">Mon compte <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#mon-profil" class="links">Editer mon profil</a></li>
+                        <li><a href="#administration" class="links">Mon guide d'utilisation</a></li>
                         <li><a href="#administration" ng-if='user.isAdmin' class="links">Mon panneau d'administration</a></li>
                     </ul>
                 </li>

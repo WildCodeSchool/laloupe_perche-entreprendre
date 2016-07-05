@@ -1,45 +1,35 @@
 // USER CONTROLLER
-function userController($scope, $http, userService, contactService, linkService, agendaService, bureauService, temoignageService, $rootScope, $location) {
+function userController($scope, $http, userService, contactService, linkService, agendaService, bureauService, temoignageService, $rootScope, $location, $window) {
 
     $('html, body').animate({
         scrollTop: 0
     }, 'swing');
 
-  $(".hamburger").focusin(function() {
-      $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
+    $(".hamburger").focusin(function() {
+        $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
+        $('.accueilOne').css({
+            flexWrap: 'nowrap'
+        });
+    });
 
-  });
-  $(".hamburger").focusout(function() {
-      $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
-  });
+    $(".hamburger").focusout(function() {
+        $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
+        $('.accueilOne').css({
+            flexWrap: 'wrap'
+        });
+    });
 
 
-  // ng-click function to change Agenda views
-  $scope.changeAgendaView = function() {
-    $('.subAgenda').fadeOut(300);
-    $('.textEvent').fadeIn(700);
-  }
-
-    function load(){
-      userService.get().then(function (res) {
-          $scope.userlist = res.data
-      });
-      contactService.get().then(function (res) {
-          $scope.contactlist = res.data;
-          console.log($scope.contactlist);
-      });
-      agendaService.get().then(function (res) {
-          $scope.agendalist = res.data
-      });
-      bureauService.get().then(function (res) {
-          $scope.bureaulist = res.data
-      });
-      temoignageService.get().then(function (res) {
-          $scope.temoignagelist = res.data
-      });
-
+    // ng-click function to change Agenda views
+    $scope.changeAgendaView = function() {
+        $('.subAgenda').fadeOut(300);
+        $('.textEvent').fadeIn(700);
     }
 
+    // Window Resize
+    /*  $(window).resize(function() {
+
+      });*/
 
 
 
@@ -66,6 +56,27 @@ function userController($scope, $http, userService, contactService, linkService,
 
     }
 
+    //Change Phone display
+    $scope.buttonClassPhone = 'noDisplay';
+    $scope.changePhone = function()  {
+        $scope.IsClickEnable = false;
+        $scope.isCreationBigger = 1;
+        $scope.showOnlyNumber = 1;
+        $('.activityContent').css({
+            cursor: 'auto'
+        });
+        $scope.buttonClassPhone = "bigPhoneClose";
+    }
+    $scope.phoneRevert = function() {
+        $scope.IsClickEnable = true;
+        $scope.showOnlyNumber = 0;
+        $scope.isCreationBigger = 0;
+        $('.activityContent').css({
+            cursor: 'pointer'
+        });
+        $scope.buttonClassPhone = 'noDisplay';
+    }
+
     // NG-CLASS MANIPULATION OF CREATION TILE
     $scope.IsClickEnable = true;
     $scope.bigOrSmall = "theCreation";
@@ -78,37 +89,41 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.hidecolumnThreeForCreation = "columnThree";
     $scope.changeHeight = "columnTwo";
     $scope.marginRegulation = "free";
+    $scope.showOnlyNumber = 0;
 
     $scope.changeClass = function() {
-        $scope.IsClickEnable = false;
-        $scope.isCreationBigger = 1;
-        if ($scope.sizeAgenda === "bigAgenda")
-            $scope.sizeAgenda = "theAgenda";
-        if ($scope.bigOrSmall === "theCreation")
-            $scope.bigOrSmall = "bigCreation";
-        if ($scope.buttonClass === "noDisplay")
-            $scope.buttonClass = "bigCreationClose";
-        if ($scope.hidePagination === "noDisplay")
-            $scope.hidePagination = "pagination-button";
-        if ($scope.hideContent === "noDisplay")
-            $scope.hideContent = "display";
-        if ($scope.hideSocietyForCreation === "theSociety")
+
+        if (window.innerWidth <= 1143) {
+            $scope.IsClickEnable = false;
+            $scope.bigOrSmall = "mediumCreation";
             $scope.hideSocietyForCreation = "noDisplay";
-        if ($scope.hideYoutubeForCreation === "theYoutube")
             $scope.hideYoutubeForCreation = "noDisplay";
-        if ($scope.hidecolumnThreeForCreation === "columnThree")
+            $scope.buttonClass = "mediumCreationClose";
+            $scope.isCreationBigger = 1;
+            $scope.sizeAgenda = "theAgenda";
+            $scope.hidePagination = "pagination-button";
+            $scope.hideContent = "display";
+        } else {
+            $scope.IsClickEnable = false;
+            $scope.isCreationBigger = 1;
+            $scope.sizeAgenda = "theAgenda";
+            $scope.bigOrSmall = "bigCreation";
+            $scope.buttonClass = "bigCreationClose";
+            $scope.hidePagination = "pagination-button";
+            $scope.hideContent = "display";
+            $scope.hideSocietyForCreation = "noDisplay";
+            $scope.hideYoutubeForCreation = "noDisplay";
             $scope.hidecolumnThreeForCreation = "noDisplay";
-        if ($scope.changeHeight === "columnTwo")
             $scope.changeHeight = "columnTwoTer";
-        if ($scope.marginRegulation === "free")
             $scope.marginRegulation = "accueilOneTile";
-        if ($scope.hidePhoto === "thePhoto")
             $scope.hidePhoto = "noDisplay";
-        $scope.buttonClass2 = 'noDisplay';
+            $scope.buttonClass2 = 'noDisplay';
+            $scope.showOnlyNumber = 1;
+        }
     };
 
     $scope.returnCreationClass = function() {
-      $scope.IsClickEnable = true;
+        $scope.IsClickEnable = true;
         //Tile create activity
         $scope.bigOrSmall = 'theCreation';
         //Close Button
@@ -127,7 +142,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.hideLinks = 'theLinks';
         //Margin Regulation
         $scope.marginRegulation = 'free';
-
+        $scope.showOnlyNumber = 0;
     }
 
     //NG-CLASS AGENDA MANIPULATION
@@ -139,28 +154,42 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.hideLinks = "theLinks";
 
     $scope.changeAgendaSize = function() {
-        $scope.isCreationBigger = 2
-        $scope.IsClickEnable = false;
-        if ($scope.sizeAgenda === "theAgenda")
-            $scope.sizeAgenda = "bigAgenda";
-        if ($scope.switchAgenda === "subAgenda")
+        if (window.innerWidth <= 800) {
+            console.log('800px');
+            $scope.isCreationBigger = 2;
+            $scope.IsClickEnable = false;
+            $scope.sizeAgenda = "littleAgenda";
+            $scope.buttonClass2 = "mediumCreationClose2";
             $scope.switchAgenda = "noDisplay";
-        if ($scope.switchAgendaContent === "noDisplay")
             $scope.switchAgendaContent = "textEvent";
-        if ($scope.hideSocietyForCreation === "theSociety")
+        } else if ((window.innerWidth >= 800) && (window.innerWidth <= 1143)) {
+            console.log('mediumPix');
+            $scope.isCreationBigger = 2;
+            $scope.IsClickEnable = false;
+            $scope.sizeAgenda = "mediumAgenda";
+            $scope.switchAgenda = "noDisplay";
+            $scope.switchAgendaContent = "textEvent";
             $scope.hideSocietyForCreation = "noDisplay";
-        if ($scope.hideYoutubeForCreation === "theYoutube")
             $scope.hideYoutubeForCreation = "noDisplay";
-        if ($scope.hideScoupit === "theScoupit")
+            $scope.changeHeight = "columnTwoBisBis";
+            $scope.bigOrSmall = "mediumCreationAgenda";
+            $scope.buttonClass2 = "mediumCreationClose2";
+        } else if (window.innerWidth > 1143) {
+            console.log('MaxPix');
+            $scope.isCreationBigger = 2;
+            $scope.showOnlyNumber = 1;
+            $scope.IsClickEnable = false;
+            $scope.sizeAgenda = "bigAgenda";
+            $scope.switchAgenda = "noDisplay";
+            $scope.switchAgendaContent = "textEvent";
+            $scope.hideSocietyForCreation = "noDisplay";
+            $scope.hideYoutubeForCreation = "noDisplay";
             $scope.hideScoupit = "noDisplay";
-        if ($scope.hideLinks === "theLinks")
             $scope.hideLinks = "noDisplay";
-        if ($scope.changeHeight === "columnTwo")
             $scope.changeHeight = "columnTwoBis";
-        if ($scope.hidecolumnThreeForCreation === "columnThree")
             $scope.hidecolumnThreeForCreation = "columnThreeBis";
-        if ($scope.buttonClass2 === "noDisplay")
             $scope.buttonClass2 = "bigCreationClose2";
+        }
 
     }
 
@@ -168,6 +197,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.IsClickEnable = true;
 
         //Tile agenda
+        $scope.showOnlyNumber = 0;
         $scope.sizeAgenda = 'theAgenda';
         $scope.switchAgenda = 'subAgenda';
         $scope.switchAgendaContent = 'noDisplay';
@@ -179,39 +209,57 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.changeHeight = 'columnTwo';
         $scope.hidecolumnThreeForCreation = 'columnThree';
         $scope.buttonClass2 = 'noDisplay';
-
-
     }
 
     //NG-CLASS SOCIETY MANIPULATION
     $scope.hidePagination2 = "noDisplay";
     $scope.buttonClass3 = "noDisplay";
     $scope.showContent = "noDisplay";
+    $scope.smSociety = "society";
 
 
     $scope.changeSocietySize = function() {
-      $scope.isCreationBigger = 1;
-      $scope.IsClickEnable = false;
-        if ($scope.hideSocietyForCreation === "theSociety")
-            $scope.hideSocietyForCreation = "bigSociety";
-        if ($scope.buttonClass3 === "noDisplay")
-            $scope.buttonClass3 = "bigCreationClose3";
-        if ($scope.hidePagination2 === "noDisplay")
-            $scope.hidePagination2 = "pagination-button2";
-        if ($scope.bigOrSmall === "theCreation")
+        if (window.innerWidth <= 800) {
+          console.log('littleSociety');
+          console.log('mediumSociety');
+          $scope.isCreationBigger = 1;
+          $scope.IsClickEnable = false;
+          $scope.hideSocietyForCreation = "mediumSociety";
+          $scope.bigOrSmall = "noDisplay";
+          $scope.hideYoutubeForCreation = "noDisplay";
+          $scope.showContent = "societyContent";
+          $scope.smSociety = "mediumContentSociety";
+          $scope.hidePagination2 = "pagination-button2";
+          $scope.buttonClass3 = "mediumCreationClose3";
+      }
+        else if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
+            console.log('mediumSociety');
+            $scope.isCreationBigger = 1;
+            $scope.IsClickEnable = false;
+            $scope.hideSocietyForCreation = "mediumSociety";
             $scope.bigOrSmall = "noDisplay";
-        if ($scope.hideYoutubeForCreation === "theYoutube")
             $scope.hideYoutubeForCreation = "noDisplay";
-        if ($scope.hidecolumnThreeForCreation === "columnThree")
+            $scope.showContent = "societyContent";
+            $scope.smSociety = "mediumContentSociety";
+            $scope.hidePagination2 = "pagination-button2";
+            $scope.buttonClass3 = "mediumCreationClose3";
+        } else if (window.innerWidth > 1143) {
+            $scope.isCreationBigger = 1;
+            $scope.IsClickEnable = false;
+            $scope.hideSocietyForCreation = "bigSociety";
+            $scope.buttonClass3 = "bigCreationClose3";
+            $scope.hidePagination2 = "pagination-button2";
+            $scope.bigOrSmall = "noDisplay";
+            $scope.hideYoutubeForCreation = "noDisplay";
             $scope.hidecolumnThreeForCreation = "noDisplay";
             $scope.changeHeight = "columnTwoTer";
-        if ($scope.marginRegulation === "free")
             $scope.marginRegulation = "accueilOneTile";
-            if ($scope.showContent === "noDisplay")
-                $scope.showContent = "societyContent";
+            $scope.showContent = "societyContent";
+            $scope.showOnlyNumber = 1;
+        }
     }
     $scope.returnCreationClass3 = function() {
-      $scope.IsClickEnable = true;
+        $scope.IsClickEnable = true;
         //Tile create activity
         $scope.bigOrSmall = "theCreation";
         //Close Button
@@ -228,33 +276,57 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.hidecolumnThreeForCreation = 'columnThree';
         //Margin Regulation
         $scope.marginRegulation = 'free';
+        $scope.showOnlyNumber = 0;
     }
 
     //NG-CLASS LINKS MANIPULATION
-      $scope.buttonClass4 = "noDisplay";
+    $scope.buttonClass4 = "noDisplay";
+    $scope.fillerbloc = "noDisplay";
+    if (window.innerWidth <= 1143) {
+        $scope.fillerbloc = "newBloc";
+    }
+
     $scope.changeLinksSize = function() {
-      $scope.IsClickEnable = false;
 
-        $scope.hideLinks = 'bigLinks';
-        $scope.changeHeight = 'noDisplay';
-        $scope.hideScoupit = 'noDisplay';
-        $scope.hidePhoto = 'noDisplay';
-        $scope.marginRegulation = "accueilOneTile";
-        $scope.buttonClass4 = "bigCreationClose4";
-        $scope.hidecolumnThreeForCreation = "columnThreeTer";
+        if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
+            console.log('mediumLinks');
+            $scope.IsClickEnable = false;
+            $scope.blabla = 1;
+            $scope.isCreationBigger = 1;
+            $scope.hideScoupit = 'noDisplay';
+            $scope.hidePhoto = 'noDisplay';
+            $scope.hideLinks = 'mediumLinks';
+            $scope.buttonClass4 = "bigCreationClose4bis";
+            $scope.hidecolumnThreeForCreation = "columnThreeTerbis";
 
+        } else {
+            console.log('bigLinks');
+            $scope.IsClickEnable = false;
+            $scope.blabla = 1;
+            $scope.isCreationBigger = 1;
+            $scope.hideLinks = 'bigLinks';
+            $scope.changeHeight = 'noDisplay';
+            $scope.hideScoupit = 'noDisplay';
+            $scope.hidePhoto = 'noDisplay';
+            $scope.marginRegulation = "accueilOneTile";
+            $scope.buttonClass4 = "bigCreationClose4";
+            $scope.hidecolumnThreeForCreation = "columnThreeTer";
+            $scope.showOnlyNumber = 1;
+        }
     }
     $scope.returnCreationClass4 = function() {
-      $scope.IsClickEnable = true;
+        $scope.IsClickEnable = true;
+        $scope.isCreationBigger = 0;
 
-            $scope.hideLinks = 'theLinks';
-            $scope.changeHeight = 'columnTwo';
-            $scope.hidecolumnThreeForCreation = "columnThree";
-            $scope.hideScoupit = 'theScoupit';
-            $scope.hidePhoto = 'thePhoto';
-            $scope.marginRegulation = "free";
-            $scope.buttonClass4 = 'noDisplay';
-        }
+        $scope.hideLinks = 'theLinks';
+        $scope.changeHeight = 'columnTwo';
+        $scope.hidecolumnThreeForCreation = "columnThree";
+        $scope.hideScoupit = 'theScoupit';
+        $scope.hidePhoto = 'thePhoto';
+        $scope.marginRegulation = "free";
+        $scope.buttonClass4 = 'noDisplay';
+        $scope.showOnlyNumber = 0;
+    }
 
 
     $scope.add = function() {

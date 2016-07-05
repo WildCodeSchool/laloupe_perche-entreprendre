@@ -105,6 +105,11 @@ function checkIsAdmin($q, $http, $rootScope, $location) {
 };
 
 function run($rootScope, $location) {
+  $rootScope.loginMessage = {};
+	$rootScope.loginMessage.title = '';
+	$rootScope.loginMessage.message = '';
+
+	// Watch path
     var path = function() {
         return $location.path();
     };
@@ -114,6 +119,8 @@ function run($rootScope, $location) {
     $rootScope.logout = function(){
       $rootScope.token = null;
       $rootScope.user = null;
+      $rootScope.loginMessage.title = '';
+      $rootScope.loginMessage.message = '';
     }
 }
 

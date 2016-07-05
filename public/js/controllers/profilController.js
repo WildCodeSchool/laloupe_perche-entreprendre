@@ -3,16 +3,20 @@
 function profilController($scope, $http, $rootScope, userService) {
 
 
-  $scope.update = function () {
-    userService.update(id ,$scope.user).then(function (res) {
-    });
+  $scope.update = function(user) {
+      var id = user._id;
+      $rootScope.userId = user;
+      delete user._id;
+      userService.update(id, user).then(function(res) {
+          load();
+      });
   }
 
     //  ------------   Flow   -----------
 
 
 
-    $scope.processFiles = function (files) {
+    $scope.processFileUser = function (files) {
       angular.forEach(files, function (flowFile, i) {
         var fileReader = new FileReader();
         fileReader.onload = function (event) {

@@ -1,26 +1,46 @@
-
 <div class="container accueilOne">
-
-    <div class="title" style="color: grey">
-        <h1>L'effet réseau</h1>
-    </div>
-
-
-<div ng-class="buttonClass2" ng-click="returnCreationClass2(); isCreationBigger = 0">X</div>
+    <div ng-class="buttonClass2" ng-click="returnCreationClass2(); isCreationBigger = 0">X</div>
 
     <div class="theColumn columnOne">
-        <div class="tilev thePhoneMail">
+        <div class="tilev thePhoneMail" ng-class="newPhone">
             <h1>Contact</h1>
             <div class="phoneAndMailIcon">
-                <div class="phoneIcon firstState" ng-click="isCreationBigger = 1" ng-hide="isCreationBigger == 1"></div>
-                <div class="phoneWithoutIcon" ng-show="isCreationBigger == 1" ng-click="isCreationBigger = 0">02 37 29 09 29</div>
 
-                <!--<div class="mailIcon"></div>-->
+                <div class="phoneIcon firstState" ng-click="IsClickEnable && changePhone()" ng-hide="isCreationBigger == 1; showOnlyNumber == 1"></div>
+                <div class="phoneWithoutIcon" ng-show="isCreationBigger == 1; showOnlyNumber == 1" ng-click="IsClickEnable && phoneRevert()">02 37 29 09 29</div>
             </div>
+            <div ng-class="buttonClassPhone" ng-click="phoneRevert(); isCreationBigger = 0">X</div>
         </div>
         <div class="tilev" ng-class="sizeAgenda" ng-click="IsClickEnable && changeAgendaSize();">
             <div class="agendaImgContainer" ng-class="switchAgenda" ng-hide="isCreationBigger == 2">
-                <img ng-repeat="agenda in agendalist" class="imgAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
+                <!-- <img ng-repeat="agenda in agendalist" class="imgAgenda" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" /> -->
+
+                <div id="my_carousel3" class="carousel slide" data-ride="carousel">
+                  <!-- Bulles -->
+                  <!-- <ol class="carousel-indicators" ng-repeat="agenda in agendalist track by $index">
+                    <li data-target="#my_carousel3" data-slide-to="{{$index}}" class="{{$index == 0 ? 'active' : ''}}"></li>
+                  </ol> -->
+                  <!-- Slides -->
+                  <div class="carousel-inner">
+                    <!-- Page 1 -->
+                    <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="agenda in agendalist">
+                      <div class="carousel-page">
+                        <img src="{{agenda.agendaImg}}" class="imgAgenda"/>
+                      </div>
+                      <div class="carousel-caption">Cliquez pour plus d'informations !</div>
+                    </div>
+                  </div>
+                  <!-- Contrôles -->
+                  <!-- <a class="left carousel-control" data-target="#my_carousel3" role="button" data-slide="prev">
+                    <span class="icon-prev" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" data-target="#my_carousel3" role="button" data-slide="next">
+                    <span class="icon-next" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a> -->
+                </div>
+
             </div>
 
             <div class="agendaContent" ng-class="switchAgendaContent" dir-paginate="agenda in agendalist|itemsPerPage:1" ng-show="isCreationBigger == 2" pagination-id="agendaPaginate">
@@ -28,14 +48,16 @@
                 <div class="infoAgenda">
                     <h1>{{agenda.agendaTitle}}</h1>
                     <p>{{agenda.agendaDescription}}</p>
-                    <p>{{agenda.agendaDate}}</p>
-                    <p>{{agenda.agendaHour}}</p>
+                    <p>{{agenda.agendaDate | date: 'dd-MM-yyyy'}}</p>
+                    <p>{{agenda.agendaHour | date: 'HH:mm'}}</p>
                     <p>{{agenda.agendaCity}}</p>
                     <p>{{agenda.agendaPrice}}</p>
                     <a ng-href="{{agenda.agendaLink}}" target="_blank">Reservez vos billets !</a>
-                    <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate"></dir-pagination-controls>
+
                 </div>
+                <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate" class="pagination-button3"></dir-pagination-controls>
             </div>
+
 
             <div class="activityContent" ng-show="isCreationBigger == 1">
                 <div class="account-wall-activity" ng-show="isCreationBigger == 1">
@@ -66,9 +88,11 @@
             </div>
         </div>
 
-
+        <!-- Bouton fermeture tuile création -->
         <div ng-class="buttonClass" ng-click="returnCreationClass(); isCreationBigger = 0">X</div>
-            </div>
+        <!-- button fermeture tuile société -->
+        <div ng-class="buttonClass3" ng-click="returnCreationClass3(); isCreationBigger = 0">X</div>
+    </div>
 
     <div class="theColumn" ng-class="changeHeight">
 
@@ -84,7 +108,7 @@
 
             <!-- Fin Eléments récurrents -->
 
-            <div class="temoignage" pagination-id="testiPaginate"  dir-paginate="temoignage in temoignagelist |itemsPerPage:1" ng-class="hideContent">
+            <div class="temoignage" pagination-id="testiPaginate" dir-paginate="temoignage in temoignagelist |itemsPerPage:1" ng-class="hideContent">
 
                 <img class="testimonialImg" src="{{temoignage.temoignageImg}}" />
                 <div class="testimonialText">
@@ -94,15 +118,15 @@
                     <p class="testiDescription"><img class="quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> {{temoignage.temoignageDescription}}<img class="endQuote quote"
                             src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> </p>
                 </div>
+                <dir-pagination-controls class="pagination2" pagination-id="testiPaginate" ng-class="hideContent" max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
             </div>
 
-            <dir-pagination-controls pagination-id="testiPaginate" ng-class="hideContent"  max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
+
         </div>
 
 
-        <div ng-class="buttonClass3" ng-click="returnCreationClass3(); isCreationBigger = 0">X</div>
 
-        <div class="tilev societyTile" ng-class="hideSocietyForCreation"  ng-click="IsClickEnable &&  changeSocietySize()">
+        <div class="tilev societyTile" ng-class="hideSocietyForCreation" ng-click="IsClickEnable &&  changeSocietySize()">
 
 
             <!-- Eléments récurrents -->
@@ -111,39 +135,38 @@
             <!-- Fin Eléments récurrents -->
 
 
-            <div class="societyContent controlSociety"ng-class="showContent">
+            <div class="societyContent controlSociety" ng-class="showContent">
                 <p class="introSociety">Retrouvez ici une sélection d'entreprises ou de locaux à acheter. Pour plus d'informations, n'hésitez pas à nous contacter.</p>
 
 
-                        <div class="society" pagination-id="bureauPaginate" dir-paginate="bureau in bureaulist | itemsPerPage:1">
-                            <div class="infoSocietyContainer">
+                <div ng-class="smSociety" pagination-id="bureauPaginate" dir-paginate="bureau in bureaulist | itemsPerPage:1">
+                    <div class="infoSocietyContainer">
 
-                                    <p class="bureauType">{{bureau.bureauType}}</p>
-                                    <p class="bureauDescription">{{bureau.bureauDescription}}</p>
-                                    <p class="bureauSecteur">{{bureau.bureauSecteur}}</p>
-                                    <p class="bureauSurface">{{bureau.bureauSurface}}</p>
-                                    <p class="bureauPrice">{{bureau.bureauPrice}}</p>
+                        <p class="bureauType">{{bureau.bureauType}}</p>
+                        <p class="bureauDescription">{{bureau.bureauDescription}}</p>
+                        <p class="bureauSecteur">{{bureau.bureauSecteur}}</p>
+                        <p class="bureauSurface">{{bureau.bureauSurface}}</p>
+                        <p class="bureauPrice">{{bureau.bureauPrice}}</p>
 
-                            </div>
-                            <div class="imgSocietyContainer">
-                                <img class="imgSociety" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
-                            </div>
-                        </div>
-                        <dir-pagination-controls ng-class="hidePagination2" class="pagination-button2" max-size="5" direction-links="true" boundary-links="true" pagination-id="bureauPaginate"></dir-pagination-controls>
-
-
+                    </div>
+                    <div class="imgSocietyContainer">
+                        <img class="imgSociety img-responsive" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
+                    </div>
+                </div>
 
             </div>
+            <dir-pagination-controls ng-class="hidePagination2" class="pagination-button2" max-size="5" direction-links="true" boundary-links="true" pagination-id="bureauPaginate"></dir-pagination-controls>
 
         </div>
 
         <div class="tilev youtubeTile" ng-class="hideYoutubeForCreation">
             <!--<iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>-->
 
-            <div class="tilev theYoutube">
+            <div class="tilev theYoutube" style="background-color:gree;">
                 <iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
-
             </div>
+
+
         </div>
 
     </div>
@@ -151,22 +174,133 @@
 
     <div class="theColumn controlColumn" ng-class="hidecolumnThreeForCreation">
 
-        <div  class="tilev scoupitTile" ng-class="hideScoupit">
+        <div class="tilev scoupitTile" ng-class="hideScoupit">
             <iframe class="theScoopitContent" width="300" height="300" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=255"></iframe>
         </div>
-        <div  class="tilev photoTile" ng-class="hidePhoto"></div>
+
+        <div  class="tilev photoTile" ng-class="hidePhoto">
+            <div id="my_carousel" class="carousel slide" data-ride="carousel">
+              <!-- Bulles -->
+              <ol class="carousel-indicators">
+                <li data-target="#my_carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#my_carousel" data-slide-to="1"></li>
+                <li data-target="#my_carousel" data-slide-to="2"></li>
+                <li data-target="#my_carousel" data-slide-to="3"></li>
+              </ol>
+              <!-- Slides -->
+              <div class="carousel-inner">
+                <!-- Page 1 -->
+                <div class="item active">
+                  <div class="carousel-page">
+                    <img src="/img/doudou-la-loupe-006.jpg" class="img-responsive" style="height: 250px; width: 100%"/>
+                  </div>
+                  <div class="carousel-caption"></div>
+                </div>
+                <!-- Page 2 -->
+                <div class="item">
+                  <div class="carousel-page">
+                    <img src="/img/_MG_8211.jpg" class="img-responsive" style="height: 250px; width: 100%"/>
+                  </div>
+                  <div class="carousel-caption"></div>
+                </div>
+                <!-- Page 3 -->
+                <div class="item">
+                  <div class="carousel-page">
+                    <img src="/img/emploi2.jpg" class="img-responsive" style="height: 250px; width: 100%"/>
+                  </div>
+                  <div class="carousel-caption"></div>
+                </div>
+                <!-- Page 4 -->
+                <div class="item">
+                  <div class="carousel-page">
+                    <img src="/img/boulanger.brou_retaillee.jpg" class="img-responsive" style="height: 250px; width: 100%"/>
+                  </div>
+                  <div class="carousel-caption"></div>
+                </div>
+              </div>
+              <!-- Contrôles -->
+              <a class="left carousel-control" data-target="#my_carousel" role="button" data-slide="prev">
+                <span class="icon-prev" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" data-target="#my_carousel" role="button" data-slide="next">
+                <span class="icon-next" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+        </div>
+
 
 
 
         <div ng-class="buttonClass4" ng-click="returnCreationClass4();isCreationBigger = 0; blabla = 0">X</div>
 
-<div  class="tilev linksTile" ng-class="hideLinks" ng-click="IsClickEnable && changeLinksSize(); blabla = 1">
-          <h1>Je m'installe dans le Perche</h1>
+        <div class="tilev linksTile" ng-class="hideLinks" ng-click="IsClickEnable && changeLinksSize()">
+            <h1>Je m'installe dans le Perche</h1>
             <div class="link" style="margin-top: 5%">
               <div class="linkContent" ng-show="blabla == 1" ng-repeat="link in linklist" style="margin-top: 2%">
-                    <a ng-href="{{link.linkValue}}" target="_blank">{{link.linkName}}</a>
+                    <a class="links" ng-href="{{link.linkValue}}" target="_blank">{{link.linkName}}</a>
               </div>
-              <img ng-show="blabla == 1" src="/img/senonches.486.jpg" alt="senonches" style="width: 80%; margin-top: 10%" />
+              <div ng-show="blabla == 1" style="width: 80%; margin-top: 10%; margin-left: 10%">
+
+              <div id="my_carousel2" class="carousel slide" data-ride="carousel">
+                <!-- Bulles -->
+                <ol class="carousel-indicators">
+                  <li data-target="#my_carousel2" data-slide-to="0" class="active"></li>
+                  <li data-target="#my_carousel2" data-slide-to="1"></li>
+                  <li data-target="#my_carousel2" data-slide-to="2"></li>
+                  <li data-target="#my_carousel2" data-slide-to="3"></li>
+                  <li data-target="#my_carousel2" data-slide-to="4"></li>
+                </ol>
+                <!-- Slides -->
+                <div class="carousel-inner">
+                  <!-- Page 1 -->
+                  <div class="item active">
+                    <div class="carousel-page">
+                      <img src="/img/senonches.486.jpg" class="img-responsive"/>
+                    </div>
+                    <div class="carousel-caption"></div>
+                  </div>
+                  <!-- Page 2 -->
+                  <div class="item">
+                    <div class="carousel-page">
+                      <img src="/img/belleme_trafiquée.jpg" class="img-responsive"/>
+                    </div>
+                    <div class="carousel-caption"></div>
+                  </div>
+                  <!-- Page 3 -->
+                  <div class="item">
+                    <div class="carousel-page">
+                      <img src="/img/paysage.28_perche.50.jpg" class="img-responsive"/>
+                    </div>
+                    <div class="carousel-caption"></div>
+                  </div>
+                  <!-- Page 4 -->
+                  <div class="item">
+                    <div class="carousel-page">
+                      <img src="/img/thiron.jardin.18.jpg" class="img-responsive"/>
+                    </div>
+                    <div class="carousel-caption"></div>
+                  </div>
+                  <!-- Page 5 -->
+                  <div class="item">
+                    <div class="carousel-page">
+                      <img src="/img/paysage.28_perche.16.JPG" class="img-responsive"/>
+                    </div>
+                    <div class="carousel-caption"></div>
+                  </div>
+                </div>
+                <!-- Contrôles -->
+                <a class="left carousel-control" data-target="#my_carousel2" role="button" data-slide="prev">
+                  <span class="icon-prev" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" data-target="#my_carousel2" role="button" data-slide="next">
+                  <span class="icon-next" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
 
             </div>
 

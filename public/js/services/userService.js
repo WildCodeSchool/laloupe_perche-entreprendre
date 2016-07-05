@@ -2,6 +2,7 @@
   function userService($http) {
       return {
           connect : function(data) {
+            console.log(data);
               return $http.post('/login', data);
           },
           get : function() {
@@ -15,6 +16,9 @@
           },
           delete : function(id) {
               return $http.delete('/users/' + id);
-          }
+          },
+          lostpassword : function (email) {
+            return $http.get('/lostpassword/' +email);
+        }
       }
   };
