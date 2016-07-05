@@ -5,11 +5,7 @@ function contactController($scope, $http, $rootScope, contactService, $routePara
 load();
 function load (){
   contactService.getFriendList($scope.userId).then(function (res) {
-      console.log(res.data);
       $scope.friendlist = res.data;
-      console.log($scope.friendlist.contactImg);
-      console.log($scope.user._id);
-
   });
 }
 
@@ -29,7 +25,6 @@ function load (){
           data.contactEnterprise = $scope.contactEnterprise;
           data.contactPhone = $scope.contactPhone;
           data.userId = $routeParams.userId; // ID de l'elu (lors du clic sur la carte)
-          console.log(data);
           contactService.create(data).then(function (res) {
 
           });

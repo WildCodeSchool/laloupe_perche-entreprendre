@@ -12,7 +12,6 @@ var Links = {
     model: mongoose.model('Links', linkSchema),
 
     create: function(req, res) {
-      console.log(req.body);
         Links.model.create(req.body,
             function(err, data) {
               if (!err) {
@@ -33,8 +32,6 @@ var Links = {
 
 
     update: function(req, res) {
-      console.log(req.body);
-      console.log(req.params);
         Links.model.findByIdAndUpdate(req.params.id, req.body, function() {
             res.sendStatus(200);
         })

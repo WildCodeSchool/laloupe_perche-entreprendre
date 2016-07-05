@@ -136,7 +136,8 @@ body {
   font-size: 1.5em;
   font-weight: bold;
   border-radius: 100%;
-  transform:translateY(-12px);
+  -webkit-transform:translateY(-12px);
+          transform:translateY(-12px);
   padding: 10px;
   box-shadow: -1px 1px 3px black, 1px 0px 6px black;
   text-shadow: 0px 0px 2px black;
@@ -392,7 +393,7 @@ body {
     /*margin-left:-110px;*/
     padding: 30px;
     width: 750px;
-    height: 780px !important;
+    height: 785px !important;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -423,13 +424,16 @@ body {
     transform: scale(0);
     display: none !important;
     opacity: 0;
+    -webkit-transition: 1s;
     transition: 1s;
 }
 .display {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
     display: block;
     opacity: 1;
     z-index: 999;
+    -webkit-transition: 2s;
     transition: 2s;
 }
 .bigText {
@@ -450,17 +454,19 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     margin-top: -807px;
-    margin-left: 1040px;
+    margin-left: 1035px;
     border-radius: 50px;
     padding: 10px;
     box-shadow: -1px 1px 3px black, 1px 0px 6px black;
     text-shadow: 0px 0px 2px black;
     opacity: 1;
     z-index: 800;
+    -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
 }
 .bigCreationClose:hover{
-    transform:translateY(10px);
+    -webkit-transform:translateY(10px);
+            transform:translateY(10px);
 }
 .testimonialImg {
     margin-top: 30px;
@@ -548,7 +554,8 @@ body {
     display: block;
     width: 230px;
     height: 100px;
-    transform:translateX(455px) translateY(-43px);
+    -webkit-transform:translateX(455px) translateY(-43px);
+            transform:translateX(455px) translateY(-43px);
     position: absolute;
     border-radius: 4px;
     opacity: 1;
@@ -584,13 +591,14 @@ body {
     height: 90px !important;
 }
 .carousel-caption {
-  top: 20px;
-  font-size: 20px;
-  text-shadow: 3px 3px 1px black;
+  top: 20px !important;
+  font-size: 20px !important;
+  text-shadow: 3px 3px 1px black !important;
 }
 #my_carousel3 {
   cursor: pointer;
 }
+
 
 /* Tuile Reprendre une entreprise/local */
 
@@ -604,7 +612,7 @@ body {
   font-size: 1.5em;
   font-weight: bold;
   margin-top: -807px;
-  margin-left: 1040px;
+  margin-left: 1035px;
   border-radius: 50px;
   padding: 10px;
   box-shadow: -1px 1px 3px black, 1px 0px 6px black;
@@ -626,7 +634,7 @@ body {
 .bigSociety {
     background-color: white;
     width: 750px;
-    height: 780px !important;
+    height: 785px !important;
     padding: 30px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -683,8 +691,13 @@ body {
 .society {
     color: black;
     list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin-top: 10%;
     width: 750px;
     height: 299px;
@@ -693,11 +706,19 @@ body {
 .infoSocietyContainer {
     width: 300px;
     height: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: justify;
-    text-align-last: center;
+    -moz-text-align-last: center;
+         text-align-last: center;
     padding: 5px;
 }
 .imgSocietyContainer {
@@ -785,7 +806,7 @@ body {
     /*margin-left:-110px;*/
     padding: 30px;
     width: 100%;
-    height: 780px !important;
+    height: 785px !important;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

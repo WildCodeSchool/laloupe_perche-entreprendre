@@ -42,7 +42,6 @@ function userController($scope, $http, userService, contactService, linkService,
         });
         agendaService.get().then(function(res) {
             $scope.agendalist = res.data
-            console.log($scope.agendalist);
         });
         bureauService.get().then(function(res) {
             $scope.bureaulist = res.data
@@ -155,7 +154,6 @@ function userController($scope, $http, userService, contactService, linkService,
 
     $scope.changeAgendaSize = function() {
         if (window.innerWidth <= 800) {
-            console.log('800px');
             $scope.isCreationBigger = 2;
             $scope.IsClickEnable = false;
             $scope.sizeAgenda = "littleAgenda";
@@ -163,7 +161,6 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.switchAgenda = "noDisplay";
             $scope.switchAgendaContent = "textEvent";
         } else if ((window.innerWidth >= 800) && (window.innerWidth <= 1143)) {
-            console.log('mediumPix');
             $scope.isCreationBigger = 2;
             $scope.IsClickEnable = false;
             $scope.sizeAgenda = "mediumAgenda";
@@ -175,7 +172,6 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.bigOrSmall = "mediumCreationAgenda";
             $scope.buttonClass2 = "mediumCreationClose2";
         } else if (window.innerWidth > 1143) {
-            console.log('MaxPix');
             $scope.isCreationBigger = 2;
             $scope.showOnlyNumber = 1;
             $scope.IsClickEnable = false;
@@ -220,8 +216,6 @@ function userController($scope, $http, userService, contactService, linkService,
 
     $scope.changeSocietySize = function() {
         if (window.innerWidth <= 800) {
-          console.log('littleSociety');
-          console.log('mediumSociety');
           $scope.isCreationBigger = 1;
           $scope.IsClickEnable = false;
           $scope.hideSocietyForCreation = "mediumSociety";
@@ -233,7 +227,6 @@ function userController($scope, $http, userService, contactService, linkService,
           $scope.buttonClass3 = "mediumCreationClose3";
       }
         else if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
-            console.log('mediumSociety');
             $scope.isCreationBigger = 1;
             $scope.IsClickEnable = false;
             $scope.hideSocietyForCreation = "mediumSociety";
@@ -289,7 +282,6 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.changeLinksSize = function() {
 
         if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
-            console.log('mediumLinks');
             $scope.IsClickEnable = false;
             $scope.blabla = 1;
             $scope.isCreationBigger = 1;
@@ -300,7 +292,6 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.hidecolumnThreeForCreation = "columnThreeTerbis";
 
         } else {
-            console.log('bigLinks');
             $scope.IsClickEnable = false;
             $scope.blabla = 1;
             $scope.isCreationBigger = 1;
@@ -555,7 +546,6 @@ function userController($scope, $http, userService, contactService, linkService,
                 var uri = event.target.result;
                 $scope.agendaImg = uri;
                 $scope.$apply();
-                console.log($scope.agendaImg);
             };
             fileReader.readAsDataURL(flowFile.file);
         });
@@ -572,7 +562,6 @@ function userController($scope, $http, userService, contactService, linkService,
                 var uri = event.target.result;
                 $scope.bureauImg = uri;
                 $scope.$apply();
-                console.log($scope.bureauImg);
             };
             fileReader.readAsDataURL(flowFile.file);
         });
@@ -588,7 +577,6 @@ function userController($scope, $http, userService, contactService, linkService,
                 var uri = event.target.result;
                 $scope.temoignageImg = uri;
                 $scope.$apply();
-                console.log($scope.temoignageImg);
             };
             fileReader.readAsDataURL(flowFile.file);
         });
