@@ -1,19 +1,6 @@
-.view {
-    margin-top: 100px;
-}
-body {
-    /*background-image: url(../img/paysage.28_perche.16.JPG);*/
-   	background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    /*background-color: rgba(0, 0, 0, 0.8);*/
-    font-family: "Ubuntu", arial;
-}
-
 /*=================================================================
                             Accueil
 =================================================================*/
-
 
 .accueil{
     margin-top: 150px;

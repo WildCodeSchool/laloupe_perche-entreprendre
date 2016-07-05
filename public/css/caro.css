@@ -1,6 +1,9 @@
 body {
     background-image: url(../img/BlueWeb4.png);
     overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 #wrapper.toggled #sidebar-wrapper {
     background-color: white;
@@ -12,7 +15,6 @@ body {
 }
 .accueilOne {
     margin-top: 150px;
-    /*  margin-left:100px;*/
     width: 90%;
     max-width:1050px;
     display: -webkit-box;
@@ -733,13 +735,7 @@ body {
 }
 
 
-
 /*Tuile Créer son entreprise APRES aggrandissement*/
-
-/*.bigSociety {
-    background-color: white;
-}*/
-
 
 /* Tuile Youtube */
 
@@ -783,11 +779,6 @@ body {
 }
 
 /* Tuile Reprendre une entreprise/local */
-
-/*.thePhoto {
-    background-image: url(/img/doudou-la-loupe-006.jpg);
-    background-size: cover;
-}*/
 
 /* Tuile S'installer dans le Perche */
 
