@@ -5,11 +5,9 @@
 body {
     padding-top: 70px;
     margin-top: 50px;
-    overflow: hidden;
     background-color: rgba(0, 0, 0, 0,5);
 
 }
-
 .password {
     text-align: center;
     color: #F6A327;
@@ -465,13 +463,6 @@ header {
                           HOME VIEW
 =================================================================*/
 
-/*.accroche {
-    color: grey;
-    margin-top: 7%;
-    text-align: center;
-    margin-bottom: 40px;
-}*/
-
 .container {
     margin-top: 50px;
     text-align: center;
@@ -557,11 +548,6 @@ header {
       margin-left: 5%;
       width: 95% !important;
     }
-    /*.title {
-      margin-left: 35% !important;
-      margin-top: -15% !important;
-      font-size: 27px !important;
-    }*/
     .pagination {
       display: inline !important;
       width: 300px !important;
@@ -615,11 +601,6 @@ header {
     .bureauType {
       margin-top: 0px !important;
     }
-    /*.bigLinks {
-      width: 323px !important;
-      height: 730px !important;
-      padding-top: 60px !important;
-    }*/
     .bigCreationClose4 {
       margin-left: 79% !important;
       margin-top: -35px !important;
@@ -679,162 +660,6 @@ header {
       margin-top: -15% !important;
       font-size: 27px !important;
     }
-}
-@media (max-width: 1150px) {
-  /*.tilev {
-    width: 100% !important;
-  }*/
-}
-
-
-/*=================================================================
-                         MERDIER D'ACCUEIL
-=================================================================*/
-
-body {
-    margin: 0;
-    overflow: auto;
-}
-
-
-/*#btn1{
-	background:#06F;
-	height:200px;
-	width:500px;
-	position:relative;
-	margin-left:10px;
-  margin-top:30px;
-	left:1200px;
-	cursor:pointer;
-
-	color:#FFF;
-	font-size:25px;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	padding-left:10px;
-	text-align:left;
-
-
-}
-#btn2{
-	background:#C30;
-	height:200px;
-	width:500px;
-	position:relative;
-	margin-left:10px;
-  margin-top:30px;
-	left:1200px;
-	cursor:pointer;
-
-	color:#FFF;
-	font-size:25px;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	line-height:300px;
-	padding-left:10px;
-	text-align:left;
-}
-
-#btn3{
-	background:#F60;
-	border-color:#F60;
-	height:200px;
-	width:500px;
-	position:relative;
-	margin-left:10px;
-  margin-top:30px;
-	left:1200px;
-	cursor:pointer;
-
-	color:#FFF;
-	font-size:25px;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	padding-left:10px;
-	text-align:left;
-}
-
-#btn4{
-	background:#C3C;
-	border-color:#F60;
-	height:200px;
-	width:500px;
-	position:relative;
-	margin-left:10px;
-	margin-top:30px;
-	left:1200px;
-	cursor:pointer;
-
-	color:#FFF;
-	font-size:25px;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	padding-left:10px;
-	text-align:left;
-}
-#btn5{
-	background:#F36;
-	border-color:#F60;
-	height:400px;
-	width:400px;
-	position:relative;
-	margin-left:10px;
-	margin-top:30px;
-	left:1200px;
-
-	color:#FFF;
-	font-size:25px;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	padding-left:10px;
-	text-align:left;
-}
-
-#btn6{
-	background:#6C0;
-	height:200px;
-	width:200px;
-	position:relative;
-	margin-left:10px;
-	margin-top:30px;
-	left:1200px;
-	cursor:pointer;
-
-	color:#FFF;
-	font-size:25px;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	line-height:300px;
-	padding-left:10px;
-	text-align:left;
-}
-*/
-
-#content {
-    background: #FFF;
-    -o-box-shadow: 0px 0px 5px 0px #656565;
-    box-shadow: 0px 0px 5px 0px #656565;
-    position: relative;
-    top: 1000px;
-    z-index: 0;
-    margin-left:-745px;
-    margin-top:300px;
-}
-
-#backbutton {
-    position: relative;
-    left: 760px;
-    cursor: pointer;
-}
-
-#caption {
-    position: relative;
-    top: -60px;
-    color: #FFF;
-    font-size: 25px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-
-#pagecaption {
-    position: relative;
-    top: -60px;
-    color: #FFF;
-    font-size: 25px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 
