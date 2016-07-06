@@ -5,19 +5,59 @@ function userController($scope, $http, userService, contactService, linkService,
         scrollTop: 0
     }, 'swing');
 
-    $(".hamburger").focusin(function() {
-        $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
-        $('.accueilOne').css({
-            flexWrap: 'nowrap'
+    // Overlay margin & wrap tiles
+    if (window.innerWidth >= 1143) {
+        $(".hamburger").focusin(function() {
+            $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
+            $('.accueilOne').css({
+                flexWrap: 'nowrap'
+            });
         });
-    });
+        $(".hamburger").focusout(function() {
+            $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
+            $('.accueilOne').css({
+                flexWrap: 'nowrap'
+            });
+        });
+    }
 
-    $(".hamburger").focusout(function() {
-        $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
-        $('.accueilOne').css({
-            flexWrap: 'wrap'
+    if (window.innerWidth < 1143) {
+        $(".hamburger").focusin(function() {
+            $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
+            $('.columnThree').hide();
+            $('.accueilOne').css({
+                flexWrap: 'nowrap'
+            });
         });
-    });
+        $(".hamburger").focusout(function() {
+            $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
+            $('.columnThree').show();
+            $('.accueilOne').css({
+                flexWrap: 'wrap'
+            });
+        });
+    }
+
+    if (window.innerWidth < 800) {
+        $(".hamburger").focusin(function() {
+            $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
+            $('.columnThree').hide();
+            $('.columnTwo').hide();
+            $('.accueilOne').css({
+                flexWrap: 'nowrap'
+            });
+        });
+        $(".hamburger").focusout(function() {
+            $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
+            $('.columnThree').show();
+            $('.columnTwo').show();
+            $('.accueilOne').css({
+                flexWrap: 'wrap'
+            });
+        });
+    }
+    // Fin Overlay margin & wrap tiles
+
 
 
     // ng-click function to change Agenda views
@@ -216,17 +256,16 @@ function userController($scope, $http, userService, contactService, linkService,
 
     $scope.changeSocietySize = function() {
         if (window.innerWidth <= 800) {
-          $scope.isCreationBigger = 1;
-          $scope.IsClickEnable = false;
-          $scope.hideSocietyForCreation = "mediumSociety";
-          $scope.bigOrSmall = "noDisplay";
-          $scope.hideYoutubeForCreation = "noDisplay";
-          $scope.showContent = "societyContent";
-          $scope.smSociety = "mediumContentSociety";
-          $scope.hidePagination2 = "pagination-button2";
-          $scope.buttonClass3 = "mediumCreationClose3";
-      }
-        else if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
+            $scope.isCreationBigger = 1;
+            $scope.IsClickEnable = false;
+            $scope.hideSocietyForCreation = "mediumSociety";
+            $scope.bigOrSmall = "noDisplay";
+            $scope.hideYoutubeForCreation = "noDisplay";
+            $scope.showContent = "societyContent";
+            $scope.smSociety = "mediumContentSociety";
+            $scope.hidePagination2 = "pagination-button2";
+            $scope.buttonClass3 = "mediumCreationClose3";
+        } else if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
             $scope.isCreationBigger = 1;
             $scope.IsClickEnable = false;
             $scope.hideSocietyForCreation = "mediumSociety";
@@ -282,6 +321,7 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.changeLinksSize = function() {
 
         if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
+
             $scope.IsClickEnable = false;
             $scope.blabla = 1;
             $scope.isCreationBigger = 1;
