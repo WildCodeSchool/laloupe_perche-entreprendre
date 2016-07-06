@@ -1,9 +1,15 @@
+/*=================================================================
+                            HOME VIEW
+=================================================================*/
+
 body {
     background-image: url(../img/BlueWeb4.png);
     overflow-x: hidden;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    padding-top: 70px;
+    font-family: "Ubuntu", arial;
 }
 #wrapper.toggled #sidebar-wrapper {
     background-color: white;
@@ -360,7 +366,7 @@ body {
     justify-content: space-around;
 }
 
-/* Tuile Créer son entreprise */
+/* Tuile Créer son activité */
 
 .theCreation {
     background-color: #38B8C8;
@@ -385,7 +391,7 @@ body {
     margin-top: 5px;
 }
 
-/*Tuile Créer son entreprise APRES aggrandissement*/
+/*Tuile Créer son activité APRES aggrandissement*/
 
 .account-wall-activity {
     padding: 12px;
@@ -508,6 +514,9 @@ body {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
 }
+
+/*-----------------------PAGINATION----------------------*/
+
 .pagination {
     display: block;
     width: 300px;
@@ -564,14 +573,8 @@ body {
     z-index: 999;
     margin-top: -30px;
 }
-.kangourou-enter {
-    -webkit-transition: 5s;
-    transition: 5s;
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-}
 
-/* Formulaire mail après aggrandissement "créer entreprise" */
+/* Formulaire mail après aggrandissement "créer activité" */
 
 .form-signin-activity {
     margin-top: -10px;
@@ -585,7 +588,6 @@ body {
 }
 .theAgenda {
     background-color: #AAAE18;
-    /*margin-top: -10px;*/
     background-color: #AAAE18;
     z-index: 1;
 }
@@ -735,8 +737,6 @@ body {
 }
 
 
-/*Tuile Créer son entreprise APRES aggrandissement*/
-
 /* Tuile Youtube */
 
 .theYoutube {
@@ -777,8 +777,6 @@ body {
     -webkit-transform: scaleX(1.2) scaleY(1.005);
     transform: scaleX(1.2) scaleY(1.005);
 }
-
-/* Tuile Reprendre une entreprise/local */
 
 /* Tuile S'installer dans le Perche */
 
@@ -849,10 +847,14 @@ body {
     background: none;
     padding: 30px 50px;
 }
+
+/*--------------filter-----------------*/
 .filter {
   width: 40%;
   text-align: center;
 }
+/*--------------Carousel-----------------*/
+
 .carousel-indicators {
   z-index:1;
 }
