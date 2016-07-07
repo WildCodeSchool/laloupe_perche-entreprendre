@@ -15,9 +15,7 @@ function config($routeProvider ,$httpProvider) {
         .when('/formulaire/:userId', {
             templateUrl: 'views/formulaire.html',
             controller: 'contactController',
-            resolve: {
-                connected: checkIsConnected
-            }
+           
         })
         .when('/forgetPassword', {
             templateUrl: 'views/forgetPassword.html',
