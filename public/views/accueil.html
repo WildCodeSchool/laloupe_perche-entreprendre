@@ -25,7 +25,7 @@
                     <!-- Page 1 -->
                     <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="agenda in agendalist">
                       <div class="carousel-page">
-                        <img src="{{agenda.agendaImg}}" class="imgAgenda"/>
+                        <img src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" class="imgAgenda"/>
                       </div>
                       <div class="carousel-caption">Cliquez pour plus d'informations !</div>
                     </div>
@@ -109,7 +109,7 @@
 
             <div class="temoignage" pagination-id="testiPaginate" dir-paginate="temoignage in temoignagelist |itemsPerPage:1" ng-class="hideContent">
 
-                <img class="testimonialImg" src="{{temoignage.temoignageImg}}" />
+                <img class="testimonialImg" src="{{temoignage.temoignageImg || 'http://www.azgconsultants.com/wp-content/uploads/2014/12/balloons.jpg'}}" />
                 <div class="testimonialText">
                     <p class="testiName">{{temoignage.temoignageName}} {{temoignage.temoignageFirstname}}, {{temoignage.temoignageAge}} ans</p>
                     <p class="testiFunction">{{temoignage.temoignageFunction}}</p>

@@ -578,8 +578,9 @@ function userController($scope, $http, userService, contactService, linkService,
     //  ------------   Flow Image Agenda  -----------
 
     $scope.agendaImg = '';
-
+    $scope.photoEvent = true;
     $scope.processFilesAgenda = function(files) {
+      $scope.photoEvent = false;
         angular.forEach(files, function(flowFile, i) {
             var fileReader = new FileReader();
             fileReader.onload = function(event) {
@@ -594,8 +595,9 @@ function userController($scope, $http, userService, contactService, linkService,
     //  ------------   Flow Image Bureaux  -----------
 
     $scope.bureauImg = '';
-
+    $scope.photoOffice = true;
     $scope.processFilesOffice = function(files) {
+      $scope.photoOffice = false;
         angular.forEach(files, function(flowFile, i) {
             var fileReader = new FileReader();
             fileReader.onload = function(event) {
@@ -609,8 +611,9 @@ function userController($scope, $http, userService, contactService, linkService,
     //  ------------   Flow Image Temoignage  -----------
 
     $scope.temoignageImg = '';
-
+    $scope.photoTesti = true;
     $scope.processFilesTestimonial = function(files) {
+      $scope.photoTesti = false;
         angular.forEach(files, function(flowFile, i) {
             var fileReader = new FileReader();
             fileReader.onload = function(event) {

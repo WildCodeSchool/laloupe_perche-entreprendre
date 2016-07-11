@@ -200,12 +200,17 @@
 
 
                                               <center>
+                                              <div ng-hide="photoEvent">
                                                 <img class="preview" flow-img="{{agendaImg}}" />
                                                 <img class="preview" ng-src="{{agendaImg}}" />
-                  </center>
+                                              </div>
+                                              </center>
 
 
                                     				</div>
+                                            <p>
+                                                <span ng-hide="photoEvent" class="btn fa fa-trash" ng-click="photoEvent = true"></span>
+                                            </p>
                         </br><input type="text" class="form-control" ng-model="agendaLink" placeholder="Indiquez le lien vers la billeterie" required>
                           <a data-dismiss="modal"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="addAgenda()" type="submit">
                             Créer !</button></a>
@@ -275,13 +280,16 @@
                                     					</center>
 
 
-                                              <center>
+                                              <center ng-hide="photoOffice">
                                                 <img class="preview" flow-img="{{bureauImg}}" />
                                                 <img class="preview" ng-src="{{bureauImg}}" />
-                  </center>
+                                              </center>
 
 
                                     				</div>
+                                            <p>
+                                                <span ng-hide="photoOffice" class="btn fa fa-trash" ng-click="photoOffice = true"></span>
+                                            </p>
                           <a data-dismiss="modal"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="addBureau()" type="submit">
                             Ajouter !</button></a>
                           </br>
@@ -347,13 +355,16 @@
                                     					</center>
 
 
-                                              <center>
+                                              <center ng-hide="photoTesti">
                                                 <img class="preview" flow-img="{{temoignageImg}}" />
                                                 <img class="preview" ng-src="{{temoignageImg}}" />
-                  </center>
+                                              </center>
 
 
                                     				</div>
+                                            <p>
+                                                <span ng-hide="photoTesti" class="btn fa fa-trash" ng-click="photoTesti = true"></span>
+                                            </p>
                           <a data-dismiss="modal"><button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="addTemoignage()" type="submit">
                             Ajouter !</button></a>
                           </br>
