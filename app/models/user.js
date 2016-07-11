@@ -84,17 +84,17 @@ var User = {
         User.model.findByIdAndUpdate(req.params.id, req.body, function(err) {
             if (err) {
                 console.log(err);
-                res.sendStatus(500)
+                res.sendStatus(500);
             } else {
                 res.sendStatus(200);
             }
-        })
+        });
     },
 
     delete: function(req, res) {
         User.model.findByIdAndRemove(req.params.id, function() {
             res.sendStatus(200);
-        })
+        });
     },
 
     lostpassword: function(req, res) {
@@ -141,8 +141,8 @@ var User = {
 
             res.sendStatus(200);
 
-        })
+        });
     }
-}
+};
 
 module.exports = User;

@@ -34,15 +34,15 @@ var Links = {
     update: function(req, res) {
         Links.model.findByIdAndUpdate(req.params.id, req.body, function() {
             res.sendStatus(200);
-        })
+        });
     },
 
     delete: function(req, res) {
         Links.model.findByIdAndRemove(req.params.id, function() {
             res.sendStatus(200);
-        })
+        });
     }
-}
+};
 
 
 module.exports = Links;

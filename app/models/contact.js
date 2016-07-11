@@ -95,11 +95,11 @@ var Contact = {
 //            });
 //        });
 //    },
-//    
+//
 //}
-    
-    
-    
+
+
+
     findAll: function(req, res) {
         jwt.verify(req.headers.authorization, 'tokenSecret', function (err, decoded) {
             if (err)
@@ -121,15 +121,15 @@ var Contact = {
     update: function(req, res) {
         Contact.model.findByIdAndUpdate(req.params.id, req.body, function() {
             res.sendStatus(200);
-        })
+        });
     },
 
     delete: function(req, res) {
         Contact.model.findByIdAndRemove(req.params.id, function() {
             res.sendStatus(200);
-        })
+        });
     }
-}
+};
 
 
 module.exports = Contact;

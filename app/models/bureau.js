@@ -36,15 +36,15 @@ var Bureau = {
     update: function(req, res) {
         Bureau.model.findByIdAndUpdate(req.params.id, req.body, function() {
             res.sendStatus(200);
-        })
+        });
     },
 
     delete: function(req, res) {
         Bureau.model.findByIdAndRemove(req.params.id, function() {
             res.sendStatus(200);
-        })
+        });
     }
-}
+};
 
 
 module.exports = Bureau;

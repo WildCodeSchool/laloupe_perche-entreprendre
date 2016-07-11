@@ -38,7 +38,7 @@ function load (){
           $scope.contactEnterprise = "";
           $scope.contactFirstname = "";
           $scope.contactPhone = "";
-      }
+      };
 
 
 
