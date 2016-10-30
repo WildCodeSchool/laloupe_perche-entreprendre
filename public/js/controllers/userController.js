@@ -132,32 +132,24 @@ function userController($scope, $http, userService, contactService, linkService,
 
     $scope.changeClass = function() {
         $scope.createActivity = 1;
+        $scope.IsClickEnable = false;
+        $scope.hideSocietyForCreation = "noDisplay";
+        $scope.hideYoutubeForCreation = "noDisplay";
+        $scope.hideContent = "display";
+        $scope.hidePagination = "pagination-button";
 
         if (window.innerWidth <= 1143) {
-            $scope.IsClickEnable = false;
             $scope.bigOrSmall = "mediumCreation";
-            $scope.hideSocietyForCreation = "noDisplay";
-            $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.buttonClass = "mediumCreationClose";
             $scope.isCreationBigger = 1;
             $scope.sizeAgenda = "theAgenda";
-            $scope.hidePagination = "pagination-button";
-            $scope.hideContent = "display";
         } else {
-            $scope.IsClickEnable = false;
             $scope.isCreationBigger = 1;
             $scope.sizeAgenda = "theAgenda";
             $scope.bigOrSmall = "bigCreation";
-            $scope.buttonClass = "bigCreationClose";
-            $scope.hidePagination = "pagination-button";
-            $scope.hideContent = "display";
-            $scope.hideSocietyForCreation = "noDisplay";
-            $scope.hideYoutubeForCreation = "noDisplay";
             $scope.hidecolumnThreeForCreation = "noDisplay";
             $scope.changeHeight = "columnTwoTer";
             $scope.marginRegulation = "accueilOneTile";
             $scope.hidePhoto = "noDisplay";
-            $scope.buttonClass2 = 'noDisplay';
             $scope.showOnlyNumber = 1;
         }
     };
@@ -165,23 +157,15 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.createActivity = 0;
         $scope.isCreationBigger = 0;
         $scope.IsClickEnable = true;
-        //Tile create activity
         $scope.bigOrSmall = 'theCreation';
-        //Close Button
-        $scope.buttonClass = 'noDisplay';
-        //Pagination Button
         $scope.hideContent = 'noDisplay';
-        //Society tile
         $scope.hideSocietyForCreation = 'theSociety';
-        //Youtube tile
         $scope.hideYoutubeForCreation = 'theYoutube';
         $scope.changeHeight = "columnTwo";
-        //Column 3
         $scope.hidecolumnThreeForCreation = 'columnThree';
         $scope.hidePhoto = 'thePhoto';
         $scope.hideScoupit = 'theScoupit';
         $scope.hideLinks = 'theLinks';
-        //Margin Regulation
         $scope.marginRegulation = 'free';
         $scope.showOnlyNumber = 0;
     }
@@ -197,16 +181,14 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.changeAgendaSize = function() {
         $scope.IsClickEnable = false;
         $scope.agendaTile = 1;
+        $scope.isCreationBigger = 2;
+        $scope.IsClickEnable = false;
+
         if (window.innerWidth <= 800) {
-            $scope.isCreationBigger = 2;
-            $scope.IsClickEnable = false;
             $scope.sizeAgenda = "littleAgenda";
-            $scope.buttonClass2 = "mediumCreationClose2";
             $scope.switchAgenda = "noDisplay";
             $scope.switchAgendaContent = "textEvent";
         } else if ((window.innerWidth >= 800) && (window.innerWidth <= 1143)) {
-            $scope.isCreationBigger = 2;
-            $scope.IsClickEnable = false;
             $scope.sizeAgenda = "mediumAgenda";
             $scope.switchAgenda = "noDisplay";
             $scope.switchAgendaContent = "textEvent";
@@ -214,11 +196,8 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.hideYoutubeForCreation = "noDisplay";
             $scope.changeHeight = "columnTwoBisBis";
             $scope.bigOrSmall = "mediumCreationAgenda";
-            $scope.buttonClass2 = "mediumCreationClose2";
         } else if (window.innerWidth > 1143) {
-            $scope.isCreationBigger = 2;
             $scope.showOnlyNumber = 1;
-            $scope.IsClickEnable = false;
             $scope.sizeAgenda = "bigAgenda";
             $scope.switchAgenda = "noDisplay";
             $scope.switchAgendaContent = "textEvent";
@@ -228,16 +207,12 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.hideLinks = "noDisplay";
             $scope.changeHeight = "columnTwoBis";
             $scope.hidecolumnThreeForCreation = "columnThreeBis";
-            $scope.buttonClass2 = "bigCreationClose2";
         }
-
     }
 
     $scope.returnCreationClass2 = function() {
         $scope.agendaTile = 0;
         $scope.IsClickEnable = true;
-
-        //Tile agenda
         $scope.showOnlyNumber = 0;
         $scope.sizeAgenda = 'theAgenda';
         $scope.switchAgenda = 'subAgenda';
@@ -249,7 +224,6 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.hideLinks = 'theLinks';
         $scope.changeHeight = 'columnTwo';
         $scope.hidecolumnThreeForCreation = 'columnThree';
-        $scope.buttonClass2 = 'noDisplay';
     }
 
     //NG-CLASS SOCIETY MANIPULATION
@@ -258,74 +232,49 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.showContent = "noDisplay";
     $scope.smSociety = "society";
 
-
     $scope.changeSocietySize = function() {
+      $scope.takeActivity = 1;
+      $scope.isCreationBigger = 1;
+      $scope.IsClickEnable = false;
+      $scope.bigOrSmall = "noDisplay";
+      $scope.showContent = "societyContent";
+
         if (window.innerWidth <= 800) {
-            $scope.takeActivity = 1;
-            $scope.isCreationBigger = 1;
-            $scope.IsClickEnable = false;
             $scope.hideSocietyForCreation = "mediumSociety";
-            $scope.bigOrSmall = "noDisplay";
             $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.showContent = "societyContent";
             $scope.smSociety = "mediumContentSociety";
             $scope.hidePagination2 = "pagination-button2";
-            $scope.buttonClass3 = "mediumCreationClose3";
         } else if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
-            $scope.takeActivity = 1;
-            $scope.isCreationBigger = 1;
-            $scope.IsClickEnable = false;
             $scope.hideSocietyForCreation = "mediumSociety";
-            $scope.bigOrSmall = "noDisplay";
             $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.showContent = "societyContent";
             $scope.smSociety = "mediumContentSociety";
             $scope.hidePagination2 = "pagination-button2";
-            $scope.buttonClass3 = "mediumCreationClose3";
         } else if (window.innerWidth > 1143) {
-            $scope.takeActivity = 1;
-            $scope.isCreationBigger = 1;
-            $scope.IsClickEnable = false;
             $scope.hideSocietyForCreation = "bigSociety";
-            $scope.buttonClass3 = "bigCreationClose3";
             $scope.hidePagination2 = "pagination-button2";
-            $scope.bigOrSmall = "noDisplay";
             $scope.hideYoutubeForCreation = "noDisplay";
             $scope.hidecolumnThreeForCreation = "noDisplay";
             $scope.changeHeight = "columnTwoTer";
             $scope.marginRegulation = "accueilOneTile";
-            $scope.showContent = "societyContent";
             $scope.showOnlyNumber = 1;
         }
     }
     $scope.returnCreationClass3 = function() {
         $scope.takeActivity = 0;
         $scope.IsClickEnable = true;
-        //Tile create activity
         $scope.bigOrSmall = "theCreation";
-        //Close Button
-        $scope.buttonClass3 = 'noDisplay';
-        //Pagination Button
         $scope.hidePagination2 = 'noDisplay';
-        //Society tile
         $scope.hideSocietyForCreation = 'theSociety';
         $scope.showContent = 'noDisplay';
-        //Youtube tile
         $scope.hideYoutubeForCreation = 'theYoutube';
         $scope.changeHeight = "columnTwo";
-        //Column 3
         $scope.hidecolumnThreeForCreation = 'columnThree';
-        //Margin Regulation
         $scope.marginRegulation = 'free';
         $scope.showOnlyNumber = 0;
     }
 
     //NG-CLASS LINKS MANIPULATION
     $scope.buttonClass4 = "noDisplay";
-    $scope.fillerbloc = "noDisplay";
-    if (window.innerWidth <= 1143) {
-        $scope.fillerbloc = "newBloc";
-    }
 
     $scope.changeLinksSize = function() {
         $scope.linksContent = 1;
