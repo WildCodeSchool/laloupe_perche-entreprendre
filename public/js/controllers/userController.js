@@ -131,6 +131,7 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.showOnlyNumber = 0;
 
     $scope.changeClass = function() {
+        $scope.createActivity = 1;
 
         if (window.innerWidth <= 1143) {
             $scope.IsClickEnable = false;
@@ -160,8 +161,9 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.showOnlyNumber = 1;
         }
     };
-
     $scope.returnCreationClass = function() {
+        $scope.createActivity = 0;
+        $scope.isCreationBigger = 0;
         $scope.IsClickEnable = true;
         //Tile create activity
         $scope.bigOrSmall = 'theCreation';
@@ -193,6 +195,8 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.hideLinks = "theLinks";
 
     $scope.changeAgendaSize = function() {
+        $scope.IsClickEnable = false;
+        $scope.agendaTile = 1;
         if (window.innerWidth <= 800) {
             $scope.isCreationBigger = 2;
             $scope.IsClickEnable = false;
@@ -230,6 +234,7 @@ function userController($scope, $http, userService, contactService, linkService,
     }
 
     $scope.returnCreationClass2 = function() {
+        $scope.agendaTile = 0;
         $scope.IsClickEnable = true;
 
         //Tile agenda
@@ -256,6 +261,7 @@ function userController($scope, $http, userService, contactService, linkService,
 
     $scope.changeSocietySize = function() {
         if (window.innerWidth <= 800) {
+            $scope.takeActivity = 1;
             $scope.isCreationBigger = 1;
             $scope.IsClickEnable = false;
             $scope.hideSocietyForCreation = "mediumSociety";
@@ -266,6 +272,7 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.hidePagination2 = "pagination-button2";
             $scope.buttonClass3 = "mediumCreationClose3";
         } else if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
+            $scope.takeActivity = 1;
             $scope.isCreationBigger = 1;
             $scope.IsClickEnable = false;
             $scope.hideSocietyForCreation = "mediumSociety";
@@ -276,6 +283,7 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.hidePagination2 = "pagination-button2";
             $scope.buttonClass3 = "mediumCreationClose3";
         } else if (window.innerWidth > 1143) {
+            $scope.takeActivity = 1;
             $scope.isCreationBigger = 1;
             $scope.IsClickEnable = false;
             $scope.hideSocietyForCreation = "bigSociety";
@@ -291,6 +299,7 @@ function userController($scope, $http, userService, contactService, linkService,
         }
     }
     $scope.returnCreationClass3 = function() {
+        $scope.takeActivity = 0;
         $scope.IsClickEnable = true;
         //Tile create activity
         $scope.bigOrSmall = "theCreation";
@@ -319,9 +328,10 @@ function userController($scope, $http, userService, contactService, linkService,
     }
 
     $scope.changeLinksSize = function() {
+        $scope.linksContent = 1;
 
         if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
-
+            $scope.linksTile = 1;
             $scope.IsClickEnable = false;
             $scope.blabla = 1;
             $scope.isCreationBigger = 1;
@@ -332,6 +342,7 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.hidecolumnThreeForCreation = "columnThreeTerbis";
 
         } else {
+            $scope.linksTile = 1;
             $scope.IsClickEnable = false;
             $scope.blabla = 1;
             $scope.isCreationBigger = 1;
@@ -346,9 +357,10 @@ function userController($scope, $http, userService, contactService, linkService,
         }
     }
     $scope.returnCreationClass4 = function() {
+        $scope.linksContent = 0;
+        $scope.linksTile = 0;
         $scope.IsClickEnable = true;
         $scope.isCreationBigger = 0;
-
         $scope.hideLinks = 'theLinks';
         $scope.changeHeight = 'columnTwo';
         $scope.hidecolumnThreeForCreation = "columnThree";
