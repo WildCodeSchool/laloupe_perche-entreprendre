@@ -200,15 +200,18 @@
         font-size: 27px !important;
     }
 }
+
 @media (min-width: 998px) {
-  .mediumAgenda {
-    width: 295% !important;
-  }
+    .mediumAgenda {
+        width: 295% !important;
+    }
 }
 
-
-
 @media (max-width: 1143px) {
+    .pagination2 {
+        bottom: -63px;
+        margin-left: 17%;
+    }
     .columnOne {
         -webkit-box-flex: 1;
         -ms-flex-positive: 1;
@@ -434,12 +437,17 @@
     }
     .columnTwo {
         width: 100%;
+        margin-top: 20px;
     }
     .theCreation {
         width: 100%;
     }
     .theSociety {
         width: 100%;
+        margin-top: 20px;
+    }
+    .youtubeTile {
+      margin-top: 20px;
     }
     .theYoutube {
         width: 100%;

@@ -217,7 +217,6 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.switchAgenda = 'subAgenda';
         $scope.switchAgendaContent = 'noDisplay';
         $scope.hideSocietyForCreation = 'theSociety';
-        $scope.hideYoutubeForCreation = 'theYoutube';
         $scope.hideScoupit = 'theScoupit';
         $scope.hidePhoto = 'thePhoto';
         $scope.hideLinks = 'theLinks';
