@@ -10,7 +10,7 @@
         </div>
         <div class="tilev" ng-class="sizeAgenda">
             <div class="content-create-tile" ng-click="IsClickEnable && changeAgendaSize()">
-                <div class="agendaImgContainer" ng-class="switchAgenda" ng-hide="isCreationBigger == 2">
+                <div class="agendaImgContainer" ng-class="switchAgenda" ng-hide="isCreationBigger == 2 || isCreationBigger == 1">
                     <div id="my_carousel3" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <!-- Page 1 -->
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="activityContent" ng-show="isCreationBigger == 1">
-                    <div class="account-wall-activity" ng-show="isCreationBigger == 1">
+                    <div class="account-wall-activity">
                         <p>Remplissez simplement ce formulaire et nous vous rappellerons très prochainement.</p>
                         <form class="form-signin-activity" style="text-align:center;">
                             <h3> Vos informations </h3>
@@ -77,14 +77,15 @@
                         <p class="testiDescription"><img class="quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> {{temoignage.temoignageDescription}}<img class="endQuote quote"
                                 src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> </p>
                     </div>
-                    <dir-pagination-controls class="pagination2" pagination-id="testiPaginate" ng-class="hideContent" max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
                 </div>
+                <dir-pagination-controls class="pagination2" pagination-id="testiPaginate" ng-class="hideContent" max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
+
             </div>
             <div ng-if="createActivity == 1" class="good-close" ng-click="returnCreationClass()">X</div>
         </div>
 
         <div class="tilev societyTile" ng-class="hideSocietyForCreation">
-            <div class="content-create-tile" ng-click="IsClickEnable; changeSocietySize()">
+            <div class="content-create-tile" ng-click="IsClickEnable && changeSocietySize()">
                 <h1>Je reprends une entreprise</h1>
                 <div class="societyContent controlSociety" ng-class="showContent">
                     <p class="introSociety">Retrouvez ici une sélection d'entreprises ou de locaux à acheter. Pour plus d'informations, n'hésitez pas à nous contacter.</p>
@@ -164,7 +165,7 @@
         </div>
 
         <div class="tilev linksTile" ng-class="hideLinks">
-            <div class="content-create-tile" ng-click="IsClickEnable; changeLinksSize()">
+            <div class="content-create-tile" ng-click="IsClickEnable && changeLinksSize()">
                 <h1>Je m'installe dans le Perche</h1>
                 <div class="link" style="margin-top: 5%">
                     <div class="linkContent" ng-show="linksContent == 1" ng-repeat="link in linklist" style="margin-top: 2%">

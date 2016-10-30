@@ -209,6 +209,7 @@ function userController($scope, $http, userService, contactService, linkService,
     }
 
     $scope.returnCreationClass2 = function() {
+        $scope.isCreationBigger = 0;
         $scope.agendaTile = 0;
         $scope.IsClickEnable = true;
         $scope.showOnlyNumber = 0;
