@@ -1037,3 +1037,116 @@ body {
 .carousel-indicators {
     z-index: 1;
 }
+
+
+/* New Homepage */
+.new-homepage {
+  margin-top: 140px;
+}
+
+.tiles {
+    box-shadow: 1px 1px 5px black;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.contact-tile {
+  background-color: #006666;
+    height: 200px;
+}
+
+.contact-title {
+    text-align: center;
+    font-size: 27px;
+    margin-top: 20px;
+    color: white;
+}
+
+.contact-icon {
+  margin-top: 20px;
+}
+
+.phoneIcon {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.phoneWithoutIcon {
+    margin-top: 15px;
+}
+
+.agenda-tile {
+    margin-top: 20px;
+    background-color: #AAAE18;
+    height: 420px;
+}
+
+.imgAgenda {
+    width: 100%;
+    height: 420px;
+}
+
+.create-activity-tile {
+  background-color: #38B8C8;
+    height: 200px;
+}
+
+.create-activity-title {
+  text-align: center;
+  font-size: 27px;
+  margin-top: 55px;
+  color: white;
+}
+
+.take-activity-tile {
+    margin-top: 20px;
+    background-color: #F6A327;
+    height: 200px;
+}
+
+.take-activity-title {
+  text-align: center;
+  font-size: 27px;
+  margin-top: 55px;
+  color: white;
+}
+
+.youtube-tile {
+    margin-top: 20px;
+    background-color: lime;
+    height: 200px;
+}
+
+.scoopit-tile {
+    background-color: orange;
+    height: 200px;
+}
+
+.scoopit-control {
+  border: 0px black solid !important;
+}
+
+.photos-tile {
+    margin-top: 20px;
+    background-color: lightgray;
+    height: 200px;
+}
+
+.links-tile {
+    margin-top: 20px;
+    background-color: #E73664;
+    height: 200px;
+}
+
+.youtube-title {
+  text-align: center;
+  font-size: 27px;
+  margin-top: 55px;
+  color: white;
+}
+
+@media (min-width: 992px) {
+  .new-homepage {
+    width: 945px;
+  }
+}

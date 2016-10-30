@@ -1,7 +1,7 @@
 function config($routeProvider ,$httpProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'views/accueil.html',
+            templateUrl: 'views/homepage.html',
             controller: 'userController'
         })
         .when('/mentions', {
