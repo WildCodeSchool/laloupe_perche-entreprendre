@@ -3,7 +3,6 @@
         <div class="tilev thePhoneMail" ng-class="newPhone">
             <h1>Contact</h1>
             <div class="phoneAndMailIcon">
-
                 <div class="phoneIcon firstState" ng-click="IsClickEnable && changePhone()" ng-hide="isCreationBigger == 1; showOnlyNumber == 1"></div>
                 <div class="phoneWithoutIcon" ng-show="isCreationBigger == 1; showOnlyNumber == 1" ng-click="IsClickEnable && phoneRevert()">02 37 29 09 29</div>
             </div>
@@ -38,16 +37,10 @@
                     <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate" class="pagination-button3"></dir-pagination-controls>
                 </div>
 
-
                 <div class="activityContent" ng-show="isCreationBigger == 1">
                     <div class="account-wall-activity" ng-show="isCreationBigger == 1">
-
                         <p>Remplissez simplement ce formulaire et nous vous rappellerons très prochainement.</p>
-
-
                         <form class="form-signin-activity" style="text-align:center;">
-
-
                             <h3> Vos informations </h3>
                             <input type="name" class="form-control" ng-model="contactName" placeholder="Votre nom" required>
                             <input type="firstname" class="form-control" ng-model="contactFirstname" placeholder="Votre prénom" required>
@@ -62,7 +55,6 @@
                                 Envoi !</button>
                             </a>
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -71,7 +63,6 @@
     </div>
 
     <div class="theColumn" ng-class="changeHeight">
-
         <div class="tilev controlActivity" ng-class="bigOrSmall">
             <div class="content-create-tile" ng-click="IsClickEnable && changeClass()">
                 <h1>Je crée mon activité</h1>
@@ -91,8 +82,6 @@
             </div>
             <div ng-if="createActivity == 1" class="good-close" ng-click="returnCreationClass()">X</div>
         </div>
-
-
 
         <div class="tilev societyTile" ng-class="hideSocietyForCreation">
             <div class="content-create-tile" ng-click="IsClickEnable; changeSocietySize()">
@@ -118,57 +107,44 @@
         </div>
 
         <div class="tilev youtubeTile" ng-class="hideYoutubeForCreation">
-            <!--<iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>-->
-
             <div class="tilev theYoutube" style="background-color:gree;">
                 <iframe class="theYoutubeVideo" width="350" height="250" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
             </div>
-
-
         </div>
-
     </div>
 
-
     <div class="theColumn controlColumn" ng-class="hidecolumnThreeForCreation">
-
         <div class="tilev scoupitTile" ng-class="hideScoupit">
             <iframe class="theScoopitContent" width="300" height="300" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=255"></iframe>
         </div>
 
         <div class="tilev photoTile" ng-class="hidePhoto">
             <div id="my_carousel" class="carousel slide" data-ride="carousel">
-                <!-- Bulles -->
                 <ol class="carousel-indicators">
                     <li data-target="#my_carousel" data-slide-to="0" class="active"></li>
                     <li data-target="#my_carousel" data-slide-to="1"></li>
                     <li data-target="#my_carousel" data-slide-to="2"></li>
                     <li data-target="#my_carousel" data-slide-to="3"></li>
                 </ol>
-                <!-- Slides -->
                 <div class="carousel-inner">
-                    <!-- Page 1 -->
                     <div class="item active">
                         <div class="carousel-page">
                             <img src="/img/doudou-la-loupe-006.jpg" class="img-responsive" style="height: 250px; width: 100%" />
                         </div>
                         <div class="carousel-caption"></div>
                     </div>
-                    <!-- Page 2 -->
                     <div class="item">
                         <div class="carousel-page">
                             <img src="/img/_MG_8211.jpg" class="img-responsive" style="height: 250px; width: 100%" />
                         </div>
                         <div class="carousel-caption"></div>
                     </div>
-                    <!-- Page 3 -->
                     <div class="item">
                         <div class="carousel-page">
                             <img src="/img/emploi2.jpg" class="img-responsive" style="height: 250px; width: 100%" />
                         </div>
                         <div class="carousel-caption"></div>
                     </div>
-                    <!-- Page 4 -->
                     <div class="item">
                         <div class="carousel-page">
                             <img src="/img/boulanger.brou_retaillee.jpg" class="img-responsive" style="height: 250px; width: 100%" />
@@ -176,7 +152,6 @@
                         <div class="carousel-caption"></div>
                     </div>
                 </div>
-                <!-- Contrôles -->
                 <a class="left carousel-control" data-target="#my_carousel" role="button" data-slide="prev">
                     <span class="icon-prev" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
@@ -196,9 +171,7 @@
                         <a class="links" ng-href="{{link.linkValue}}" target="_blank">{{link.linkName}}</a>
                     </div>
                     <div ng-show="linksContent == 1" style="width: 80%; margin-top: 10%; margin-left: 10%">
-
                         <div id="my_carousel2" class="carousel slide" data-ride="carousel">
-                            <!-- Bulles -->
                             <ol class="carousel-indicators">
                                 <li data-target="#my_carousel2" data-slide-to="0" class="active"></li>
                                 <li data-target="#my_carousel2" data-slide-to="1"></li>
@@ -206,37 +179,31 @@
                                 <li data-target="#my_carousel2" data-slide-to="3"></li>
                                 <li data-target="#my_carousel2" data-slide-to="4"></li>
                             </ol>
-                            <!-- Slides -->
                             <div class="carousel-inner">
-                                <!-- Page 1 -->
                                 <div class="item active">
                                     <div class="carousel-page">
                                         <img src="/img/senonches.486.jpg" class="img-responsive" />
                                     </div>
                                     <div class="carousel-caption"></div>
                                 </div>
-                                <!-- Page 2 -->
                                 <div class="item">
                                     <div class="carousel-page">
                                         <img src="/img/belleme_trafiquée.jpg" class="img-responsive" />
                                     </div>
                                     <div class="carousel-caption"></div>
                                 </div>
-                                <!-- Page 3 -->
                                 <div class="item">
                                     <div class="carousel-page">
                                         <img src="/img/paysage.28_perche.50.jpg" class="img-responsive" />
                                     </div>
                                     <div class="carousel-caption"></div>
                                 </div>
-                                <!-- Page 4 -->
                                 <div class="item">
                                     <div class="carousel-page">
                                         <img src="/img/thiron.jardin.18.jpg" class="img-responsive" />
                                     </div>
                                     <div class="carousel-caption"></div>
                                 </div>
-                                <!-- Page 5 -->
                                 <div class="item">
                                     <div class="carousel-page">
                                         <img src="/img/paysage.28_perche.16.JPG" class="img-responsive" />
@@ -244,7 +211,6 @@
                                     <div class="carousel-caption"></div>
                                 </div>
                             </div>
-                            <!-- Contrôles -->
                             <a class="left carousel-control" data-target="#my_carousel2" role="button" data-slide="prev">
                                 <span class="icon-prev" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
@@ -258,9 +224,6 @@
                 </div>
             </div>
             <div ng-if="linksTile == 1" class="good-close-links" ng-click="returnCreationClass4(); isCreationBigger = 0">X</div>
-
         </div>
-
-
-
     </div>
+</div>

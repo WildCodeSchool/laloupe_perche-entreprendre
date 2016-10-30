@@ -36,10 +36,10 @@ var Contact = {
                     }
                 });
                 var mailOptions = {
-                    from: 'poleperche28@gmail.com',
+                    from: 'entreprendre@perche28.fr',
                     to: data.contactEmail,
                     subject: 'Bienvenue dans le Perche !',
-                    html: 'Bonjour ' + data.contactFirstname + ', <p>Vous avez récemment rencontré ' + elu.userFirstname + ' ' + elu.userName + ' ' + '('+ elu.userEmail +') du Pôle Perche. Si vous êtes porteur de projet ou si vous souhaitez simplement vous installer dans la région, nous vous invitons à contacter nos conseillers en les appelant au 02 37 29 09 29 ou par mail à paysperche.sia@wanadoo.fr</p> <p> À bientôt !</p> <p>L\'équipe du <a href="perche-entreprendre.fr">Pôle Perche</a></p>'
+                    html: 'Bonjour ' + data.contactFirstname + ', <p>Vous avez récemment rencontré ' + elu.userFirstname + ' ' + elu.userName + ' ' + '('+ elu.userEmail +') du Pôle Perche. Si vous êtes porteur de projet ou si vous souhaitez simplement vous installer dans la région, nous vous invitons à contacter nos conseillers en les appelant au 02 37 29 09 29 ou par mail à entreprendre@perche28.fr</p> <p> À bientôt !</p> <p>L\'équipe du <a href="perche-entreprendre.fr">Pôle Perche</a></p>'
                 };
                 transporter.sendMail(mailOptions, function (error, info) {
                     if (error) {
@@ -95,11 +95,11 @@ var Contact = {
 //            });
 //        });
 //    },
-//    
+//
 //}
-    
-    
-    
+
+
+
     findAll: function(req, res) {
         jwt.verify(req.headers.authorization, 'tokenSecret', function (err, decoded) {
             if (err)

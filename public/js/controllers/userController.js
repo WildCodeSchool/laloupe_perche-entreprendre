@@ -119,8 +119,6 @@ function userController($scope, $http, userService, contactService, linkService,
     // NG-CLASS MANIPULATION OF CREATION TILE
     $scope.IsClickEnable = true;
     $scope.bigOrSmall = "theCreation";
-    $scope.buttonClass = "noDisplay";
-    $scope.buttonClass2 = "noDisplay";
     $scope.hidePagination = "noDisplay";
     $scope.hideContent = "noDisplay";
     $scope.hideSocietyForCreation = "theSociety";
@@ -228,7 +226,6 @@ function userController($scope, $http, userService, contactService, linkService,
 
     //NG-CLASS SOCIETY MANIPULATION
     $scope.hidePagination2 = "noDisplay";
-    $scope.buttonClass3 = "noDisplay";
     $scope.showContent = "noDisplay";
     $scope.smSociety = "society";
 
@@ -274,33 +271,21 @@ function userController($scope, $http, userService, contactService, linkService,
     }
 
     //NG-CLASS LINKS MANIPULATION
-    $scope.buttonClass4 = "noDisplay";
-
     $scope.changeLinksSize = function() {
         $scope.linksContent = 1;
-
+        $scope.linksTile = 1;
+        $scope.hideScoupit = 'noDisplay';
+        $scope.hidePhoto = 'noDisplay';
+        $scope.IsClickEnable = false;
+        $scope.isCreationBigger = 1;
         if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
-            $scope.linksTile = 1;
-            $scope.IsClickEnable = false;
-            $scope.blabla = 1;
-            $scope.isCreationBigger = 1;
-            $scope.hideScoupit = 'noDisplay';
-            $scope.hidePhoto = 'noDisplay';
             $scope.hideLinks = 'mediumLinks';
-            $scope.buttonClass4 = "bigCreationClose4bis";
             $scope.hidecolumnThreeForCreation = "columnThreeTerbis";
 
         } else {
-            $scope.linksTile = 1;
-            $scope.IsClickEnable = false;
-            $scope.blabla = 1;
-            $scope.isCreationBigger = 1;
             $scope.hideLinks = 'bigLinks';
             $scope.changeHeight = 'noDisplay';
-            $scope.hideScoupit = 'noDisplay';
-            $scope.hidePhoto = 'noDisplay';
             $scope.marginRegulation = "accueilOneTile";
-            $scope.buttonClass4 = "bigCreationClose4";
             $scope.hidecolumnThreeForCreation = "columnThreeTer";
             $scope.showOnlyNumber = 1;
         }
@@ -316,7 +301,6 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.hideScoupit = 'theScoupit';
         $scope.hidePhoto = 'thePhoto';
         $scope.marginRegulation = "free";
-        $scope.buttonClass4 = 'noDisplay';
         $scope.showOnlyNumber = 0;
     }
 
