@@ -196,13 +196,13 @@ body {
     background-size: contain;
     border: 2px solid white;
     border-radius: 50px;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
 }
 
 .phoneIcon:hover {
     -webkit-transform: translateY(-10px);
-    transform: translateY(-10px);
+    transform: translateY(-10px) translateX(-50%);
 }
 
 .mailIcon {
@@ -1040,18 +1040,24 @@ body {
 
 
 /* New Homepage */
+
 .new-homepage {
-  margin-top: 140px;
+    margin-top: 140px;
 }
 
 .tiles {
     box-shadow: 1px 1px 5px black;
     min-width: 300px;
     max-width: 300px;
+    transition: 0.3s;
+}
+
+.tiles:hover {
+    transform: translateY(-10px);
 }
 
 .contact-tile {
-  background-color: #006666;
+    background-color: #006666;
     height: 200px;
 }
 
@@ -1063,7 +1069,7 @@ body {
 }
 
 .contact-icon {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .phoneIcon {
@@ -1072,7 +1078,31 @@ body {
 }
 
 .phoneWithoutIcon {
-    margin-top: 15px;
+    margin-top: 5px;
+}
+
+.good-close-contact {
+    margin-top: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: -1px 1px 3px black, 1px 0px 6px black;
+    text-shadow: 0px 0px 2px black;
+    opacity: 1;
+    z-index: 800;
+    transition: 0.3s;
+}
+
+.good-close-contact:hover {
+    transform: translateX(-50%) translateY(-5px);
 }
 
 .agenda-tile {
@@ -1086,67 +1116,134 @@ body {
     height: 420px;
 }
 
+.form-message {
+    height: 45px !important;
+}
+
+.add-contact-button {
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+}
+
 .create-activity-tile {
-  background-color: #38B8C8;
+    background-color: #38B8C8;
     height: 200px;
+    margin-left: -15px;
+}
+
+.opened-create-activity {
+    background-color: #38B8C8;
+    height: 640px;
+    width: 610px;
+    max-width: 610px;
+    margin-left: -15px;
 }
 
 .create-activity-title {
-  text-align: center;
-  font-size: 27px;
-  margin-top: 55px;
-  color: white;
+    text-align: center;
+    font-size: 27px;
+    margin-top: 80px;
+    color: white;
+}
+
+.good-close-create-activity {
+    position: absolute;
+    top: 0;
+    margin-left: 570px;
+    margin-top: -20px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: -1px 1px 3px black, 1px 0px 6px black;
+    text-shadow: 0px 0px 2px black;
+    opacity: 1;
+    z-index: 800;
+    transition: 0.3s;
+}
+
+.good-close-create-activity:hover {
+    transform: translateY(-5px);
 }
 
 .take-activity-tile {
+    margin-left: -15px;
     margin-top: 20px;
     background-color: #F6A327;
     height: 200px;
 }
 
 .take-activity-title {
-  text-align: center;
-  font-size: 27px;
-  margin-top: 55px;
-  color: white;
+    text-align: center;
+    font-size: 27px;
+    margin-top: 65px;
+    color: white;
+}
+
+.opened-take-activity {
+    background-color: #F6A327;
+    height: 640px;
+    width: 610px;
+    max-width: 610px;
+    margin-left: -15px;
+    margin-top: 0px;
 }
 
 .youtube-tile {
+    margin-left: -15px;
     margin-top: 20px;
     background-color: lime;
     height: 200px;
 }
 
 .scoopit-tile {
+    margin-left: -15px;
     background-color: orange;
     height: 200px;
 }
 
 .scoopit-control {
-  border: 0px black solid !important;
+    border: 0px black solid !important;
 }
 
 .photos-tile {
+    margin-left: -15px;
     margin-top: 20px;
     background-color: lightgray;
     height: 200px;
 }
 
 .links-tile {
+    margin-left: -15px;
     margin-top: 20px;
     background-color: #E73664;
     height: 200px;
 }
 
+.opened-links-activity {
+    background-color: #E73664;
+    height: 640px;
+    width: 610px;
+    max-width: 610px;
+    margin-left: -15px;
+    margin-top: 0px;
+}
+
 .youtube-title {
-  text-align: center;
-  font-size: 27px;
-  margin-top: 55px;
-  color: white;
+    text-align: center;
+    font-size: 27px;
+    margin-top: 65px;
+    color: white;
 }
 
 @media (min-width: 992px) {
-  .new-homepage {
-    width: 945px;
-  }
+    .new-homepage {
+        width: 945px;
+    }
 }

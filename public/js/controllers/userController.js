@@ -8,13 +8,11 @@ function userController($scope, $http, userService, contactService, linkService,
     // Overlay margin & wrap tiles
     if (window.innerWidth >= 1143) {
         $(".hamburger").focusin(function() {
-            $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
             $('.accueilOne').css({
                 flexWrap: 'nowrap'
             });
         });
         $(".hamburger").focusout(function() {
-            $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
             $('.accueilOne').css({
                 flexWrap: 'nowrap'
             });
@@ -23,14 +21,12 @@ function userController($scope, $http, userService, contactService, linkService,
 
     if (window.innerWidth < 1143) {
         $(".hamburger").focusin(function() {
-            $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
             $('.columnThree').hide();
             $('.accueilOne').css({
                 flexWrap: 'nowrap'
             });
         });
         $(".hamburger").focusout(function() {
-            $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
             $('.columnThree').show();
             $('.accueilOne').css({
                 flexWrap: 'wrap'
@@ -94,6 +90,91 @@ function userController($scope, $http, userService, contactService, linkService,
         });
 
     }
+
+    $scope.contactInfo = 0;
+    $scope.openedLinksTile = 'closedLinks';
+
+    $scope.contact = function(action) {
+        if (action == "show") {
+            $scope.contactInfo = 1;
+        } else {
+            $scope.contactInfo = 0;
+        }
+    }
+
+    $scope.openTile = function(tile) {
+        if (tile == "create") {
+            $scope.openedTile = 'createActivity';
+            $scope.contactInfo = 1;
+            $scope.showContactCloseButton = 1;
+            $scope.closeCreate = 1;
+            $('.take-activity-tile').hide();
+            $('.youtube-tile').hide();
+            $('.scoopit-tile').hide();
+            $('.photos-tile').hide();
+            $('.links-tile').hide();
+        }
+        if (tile == "take") {
+            $scope.openedTile = 'takeActivity';
+            $scope.contactInfo = 1;
+            $scope.showContactCloseButton = 1;
+            $scope.closeTake = 1;
+            $('.create-activity-tile').hide();
+            $('.youtube-tile').hide();
+            $('.scoopit-tile').hide();
+            $('.photos-tile').hide();
+            $('.links-tile').hide();
+        }
+        if (tile == "links") {
+            $scope.openedLinksTile = 'linksActivity';
+            $scope.closeLinks = 1;
+            $('.create-activity-tile').hide();
+            $('.take-activity-tile').hide();
+            $('.youtube-tile').hide();
+            $('.scoopit-tile').hide();
+            $('.photos-tile').hide();
+        }
+    }
+
+    $scope.closeTile = function(tile) {
+        if (tile == "create") {
+          $scope.openedTile = 'closed';
+          $scope.contactInfo = 0;
+          $scope.showContactCloseButton = 0;
+          $scope.closeCreate = 0;
+          $('.take-activity-tile').show();
+          $('.youtube-tile').show();
+          $('.scoopit-tile').show();
+          $('.photos-tile').show();
+          $('.links-tile').show();
+        }
+        if (tile == "take") {
+          $scope.openedTile = 'closed';
+          $scope.contactInfo = 0;
+          $scope.showContactCloseButton = 0;
+          $scope.closeTake = 0;
+          $('.create-activity-tile').show();
+          $('.youtube-tile').show();
+          $('.scoopit-tile').show();
+          $('.photos-tile').show();
+          $('.links-tile').show();
+        }
+        if (tile == "links") {
+          $scope.closeLinks = 0;
+          $scope.openedLinksTile = 'closedLinks';
+          $('.create-activity-tile').show();
+          $('.take-activity-tile').show();
+          $('.youtube-tile').show();
+          $('.scoopit-tile').show();
+          $('.photos-tile').show();
+        }
+    }
+
+
+
+
+
+
 
     //Change Phone display
     $scope.buttonClassPhone = 'noDisplay';
@@ -230,11 +311,11 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.smSociety = "society";
 
     $scope.changeSocietySize = function() {
-      $scope.takeActivity = 1;
-      $scope.isCreationBigger = 1;
-      $scope.IsClickEnable = false;
-      $scope.bigOrSmall = "noDisplay";
-      $scope.showContent = "societyContent";
+        $scope.takeActivity = 1;
+        $scope.isCreationBigger = 1;
+        $scope.IsClickEnable = false;
+        $scope.bigOrSmall = "noDisplay";
+        $scope.showContent = "societyContent";
 
         if (window.innerWidth <= 800) {
             $scope.hideSocietyForCreation = "mediumSociety";
