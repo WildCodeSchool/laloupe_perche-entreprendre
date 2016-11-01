@@ -1444,6 +1444,9 @@ body {
 }
 
 @media (max-width: 991px) {
+    .new-homepage {
+        padding-right: 20px;
+    }
     .special-no-padding {
         padding: 0px;
     }
@@ -1511,7 +1514,7 @@ body {
         width: 300px;
     }
     .agenda-details {
-      margin-left: -65px;
+        margin-left: -65px;
     }
     .agenda-points {
         margin-top: 10px;
@@ -1525,4 +1528,30 @@ body {
     .sm-changing-tile {
         margin-left: -120px;
     }
+}
+
+@media (max-width: 767px) {
+    .sm-changing-tile {
+        margin-left: 0px;
+    }
+    .create-activity-tile {
+        max-width: 100%;
+        margin-top: 20px;
+        margin-left: 0px;
+        width: 100%;
+    }
+    .xs-no-padding {
+        padding: 0px;
+    }
+    .tiles {
+        max-width: 1000px;
+    }
+    .take-activity-tile {
+        margin-left: 0px;
+        width: 100%;
+    }
+    .links-tile {
+    margin-left: 0px;
+    width: 100%;
+}
 }
