@@ -119,6 +119,11 @@ function userController($scope, $http, userService, contactService, linkService,
             $('.scoopit-tile').hide(100);
             $('.photos-tile').hide(100);
             $('.links-tile').hide(100);
+            if (window.innerWidth < 992) {
+              $('.photos-tile').show(100);
+              $('.youtube-tile').show(100);
+              $('.scoopit-tile').show(100);
+            }
         }
         if (tile == "take") {
             $scope.openedTile = 'takeActivity';
@@ -131,6 +136,11 @@ function userController($scope, $http, userService, contactService, linkService,
             $('.scoopit-tile').hide(100);
             $('.photos-tile').hide(100);
             $('.links-tile').hide(100);
+            if (window.innerWidth < 992) {
+              $('.photos-tile').show(100);
+              $('.youtube-tile').show(100);
+              $('.scoopit-tile').show(100);
+            }
         }
         if (tile == "links") {
             $scope.openedLinksTile = 'linksActivity';
@@ -143,6 +153,11 @@ function userController($scope, $http, userService, contactService, linkService,
             $('.youtube-tile').hide(100);
             $('.scoopit-tile').hide(100);
             $('.photos-tile').hide(100);
+            if (window.innerWidth < 992) {
+              $('.photos-tile').show(100);
+              $('.youtube-tile').show(100);
+              $('.scoopit-tile').show(100);
+            }
         }
         if (tile == "agenda") {
             $scope.openedTile = 'agendaActivity';
@@ -154,6 +169,10 @@ function userController($scope, $http, userService, contactService, linkService,
             $('.photos-tile').hide(0);
             $('.links-tile').hide(0);
             $('.text-agenda-apparition').show(100);
+            if (window.innerWidth < 992) {
+              $('.photos-tile').show(100);
+              $('.youtube-tile').show(100);
+            }
         }
     }
 
@@ -190,6 +209,7 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.closeLinks = 0;
             $scope.openedLinksTile = 'closedLinks';
             $scope.linksTile = 0;
+            $scope.contactInfo = 0;
             $('.create-activity-tile').show(100);
             $('.take-activity-tile').show(100);
             $('.youtube-tile').show(100);

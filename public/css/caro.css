@@ -1046,7 +1046,7 @@ body {
 }
 
 .p-t-10 {
-  padding-top: 10px
+    padding-top: 10px
 }
 
 .t-left {
@@ -1187,6 +1187,7 @@ body {
 }
 
 .create-activity-tile {
+    cursor: pointer;
     background-color: #38B8C8;
     height: 200px;
     margin-left: -15px;
@@ -1262,6 +1263,7 @@ body {
 }
 
 .take-activity-tile {
+    cursor: pointer;
     margin-left: -15px;
     margin-top: 20px;
     background-color: #F6A327;
@@ -1327,7 +1329,6 @@ body {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    text-align: justify;
     -moz-text-align-last: center;
     text-align-last: center;
     padding: 5px;
@@ -1343,9 +1344,9 @@ body {
 }
 
 .sub-bureauDescription {
-  margin-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .society-pagination {
@@ -1385,6 +1386,7 @@ body {
 }
 
 .links-tile {
+    cursor: pointer;
     margin-left: -15px;
     margin-top: 20px;
     background-color: #E73664;
@@ -1392,22 +1394,22 @@ body {
 }
 
 .links {
-  color: #060606 !important;
-  transition: 0.3s;
+    color: #060606 !important;
+    transition: 0.3s;
 }
 
 .links:hover {
-  color: #0e7496 !important;
+    color: #0e7496 !important;
 }
 
 .links-button {
-  box-shadow: 1px 1px 3px black;
-  transition: 0.3s;
+    box-shadow: 1px 1px 3px black;
+    transition: 0.3s;
 }
 
 .links-button:hover {
-  box-shadow: 1px 1px 3px black;
-  color: lightblue;
+    box-shadow: 1px 1px 3px black;
+    color: lightblue;
 }
 
 .opened-links-activity {
@@ -1438,5 +1440,89 @@ body {
 @media (min-width: 992px) {
     .new-homepage {
         width: 945px;
+    }
+}
+
+@media (max-width: 991px) {
+    .special-no-padding {
+        padding: 0px;
+    }
+    .create-activity-tile {
+        margin-left: 50px;
+        max-width: 425px;
+        width: 425px;
+    }
+    .take-activity-tile {
+        margin-left: 50px;
+        max-width: 425px;
+        width: 425px;
+    }
+    .links-tile {
+        margin-left: 50px;
+        max-width: 425px;
+        width: 425px;
+    }
+    .testimonial-image {
+        margin-top: 5px;
+        width: 160px;
+        height: 160px;
+    }
+    .testiFunction {
+        margin-top: 0px;
+    }
+    .testimonial-description {
+        margin-top: 15px;
+    }
+    .good-close-create-activity {
+        margin-left: 450px;
+    }
+    .testimonial-pagination {
+        left: 5px;
+    }
+    .society-pagination {
+        margin-left: 0px;
+    }
+    .scoopit-tile {
+        margin-top: 20px;
+        margin-left: 0px;
+        width: 220px;
+        max-width: 220px;
+        min-width: 220px;
+    }
+    .photos-tile {
+        width: 220px;
+        min-width: 220px;
+    }
+    .youtube-tile {
+        width: 266px;
+        max-width: 266px;
+        min-width: 266px;
+    }
+    .youtube-title {
+        margin-top: 80px;
+    }
+    .content-create-tile>h1 {
+        font-size: 30px;
+    }
+    .opened-agenda {
+        width: 735px;
+    }
+    .agenda-image {
+        width: 300px;
+    }
+    .agenda-details {
+      margin-left: -65px;
+    }
+    .agenda-points {
+        margin-top: 10px;
+    }
+    .agenda-pagination {
+        left: 300px;
+    }
+    .good-close-agenda {
+        margin-left: 725px;
+    }
+    .sm-changing-tile {
+        margin-left: -120px;
     }
 }
