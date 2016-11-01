@@ -271,18 +271,6 @@
         -ms-flex-direction: column;
         flex-direction: column;
     }
-    .good-close {
-        margin-left: calc(100% - 50px);
-    }
-    .good-close-agenda {
-        margin-left: calc(100% - 50px);
-    }
-    .good-close-take {
-        margin-left: calc(100% - 50px);
-    }
-    .good-close-links {
-        margin-left: calc(100% - 50px);
-    }
     .mediumCreationClose {
         cursor: pointer;
         width: 50px;

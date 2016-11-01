@@ -14,9 +14,9 @@
             </div>
         </div>
 
-        <div class="tiles agenda-tile">
+        <div class="tiles agenda-tile" ng-class="{'opened-agenda' : openedTile == 'agendaActivity'}" ng-click="openTile('agenda')">
             <div class="content-create-tile">
-                <div class="agendaImgContainer" ng-if="contactInfo == 0">
+                <div class="agendaImgContainer" ng-if="contactInfo == 0 && agendaInfo == 0">
                     <div id="my_carousel3" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <!-- Page 1 -->
@@ -29,18 +29,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="agendaContent" ng-class="switchAgendaContent" dir-paginate="agenda in agendalist|itemsPerPage:1" ng-if="contactInfo == 0" pagination-id="agendaPaginate">
-                    <img class="imgAgenda imgAgendaAfter" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
-                    <div class="infoAgenda">
-                        <h1>{{agenda.agendaTitle}}</h1>
-                        <p>{{agenda.agendaDescription}}</p>
-                        <p>{{agenda.agendaDate | date: 'dd-MM-yyyy'}}</p>
-                        <p>{{agenda.agendaHour | date: 'HH:mm'}}</p>
-                        <p>{{agenda.agendaCity}}</p>
-                        <p>{{agenda.agendaPrice}}</p>
-                        <a ng-href="{{agenda.agendaLink}}" target="_blank">Reservez vos billets !</a>
+                <div class="agendaContent" dir-paginate="agenda in agendalist|itemsPerPage:1" ng-show="agendaInfo == 1" pagination-id="agendaPaginate">
+                    <div class="col-xs-6 no-padding t-left">
+                        <img class="agenda-image" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
                     </div>
-                    <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate" class="pagination-button3"></dir-pagination-controls>
+                    <div class="col-xs-6">
+                        <div class="agenda-details text-agenda-apparition">
+                            <h1>{{agenda.agendaTitle}}</h1>
+                            <div class="agenda-points">
+                                <p>{{agenda.agendaDescription}}</p>
+                                <p>{{agenda.agendaDate | date: 'dd-MM-yyyy'}}</p>
+                                <p>{{agenda.agendaHour | date: 'HH:mm'}}</p>
+                                <p>{{agenda.agendaCity}}</p>
+                                <p>{{agenda.agendaPrice}}</p>
+                            </div>
+                            <button class="btn" ng-if="agenda.agendaLink"><a ng-href="{{agenda.agendaLink}}" target="_blank">Reservez vos billets !</a></button>
+                        </div>
+                    </div>
+                    <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate" class="agenda-pagination"></dir-pagination-controls>
                 </div>
 
                 <div class="activityContent" ng-if="contactInfo == 1">
@@ -63,13 +69,29 @@
                 </div>
             </div>
         </div>
+        <div class="good-close-agenda" ng-if="closeAgenda == 1" ng-click="closeTile('agenda')">X</div>
     </div>
 
     <div class="col-xs-8">
         <div class="col-xs-6">
             <div class="tiles create-activity-tile" ng-class="{'opened-create-activity' : openedTile == 'createActivity'}" ng-click="openTile('create')">
-                <div class="col-xs-12 create-activity-title">
+                <div class="col-xs-12 create-activity-title" ng-show="createTile == 0">
                     Je créé une activité
+                </div>
+                <div class="col-xs-12 content-create-tile" ng-show="createTile == 1">
+                    <h1>Je crée mon activité</h1>
+                    <p>Vous êtes porteur de projet et souhaitez des informations ou obtenir un rendez-vous, contactez-nous via le formulaire ou le numéro de téléphone.</p>
+                    <p><u>Quelques témoignages</u></p>
+                    <div class="temoignage" pagination-id="testiPaginate" dir-paginate="temoignage in temoignagelist |itemsPerPage:1">
+                        <img class="testimonial-image" src="{{temoignage.temoignageImg}}" />
+                        <div class="testimonial-details">
+                            <p class="testiName">{{temoignage.temoignageName}} {{temoignage.temoignageFirstname}}, {{temoignage.temoignageAge}} ans</p>
+                            <p class="testiFunction">{{temoignage.temoignageFunction}}, {{temoignage.temoignageSecteur}}</p>
+                            <p class="testimonial-description"><img class="quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> {{temoignage.temoignageDescription}}<img class="endQuote quote"
+                                    src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> </p>
+                        </div>
+                    </div>
+                    <dir-pagination-controls class="testimonial-pagination" pagination-id="testiPaginate" max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
                 </div>
             </div>
             <div class="good-close-create-activity" ng-if="contactInfo == 1 && closeCreate == 1" ng-click="closeTile('create')">X</div>
@@ -77,7 +99,7 @@
         <div class="col-xs-6">
             <div class="col-xs-12">
                 <div class="tiles scoopit-tile">
-                    <iframe class="scoopit-control" height="205px" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=200"></iframe>
+                    <iframe class="scoopit-control" height="250px" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=200"></iframe>
                 </div>
             </div>
         </div>
@@ -86,8 +108,29 @@
     <div class="col-xs-8">
         <div class="col-xs-6">
             <div class="tiles take-activity-tile" ng-class="{'opened-take-activity' : openedTile == 'takeActivity'}" ng-click="openTile('take')">
-                <div class="col-xs-12 take-activity-title">
+                <div class="col-xs-12 take-activity-title" ng-show="takeTile == 0">
                     Je reprends une entreprise
+                </div>
+                <div class="col-xs-12 content-create-tile no-padding" ng-show="takeTile == 1">
+                    <h1>Je reprends une entreprise</h1>
+                    <p>Retrouvez ici une sélection d'entreprises ou de locaux à acheter. Pour plus d'informations, n'hésitez pas à nous contacter.</p>
+                    <div class="society-content">
+                        <div class="societies-details" pagination-id="bureauPaginate" dir-paginate="bureau in bureaulist | itemsPerPage:1">
+                            <div class="societies-details-container">
+                                <p class="bureauType">{{bureau.bureauType}}</p>
+                                <p class="bureauSecteur">{{bureau.bureauSecteur}}</p>
+                                <p class="bureauSurface">{{bureau.bureauSurface}}</p>
+                                <p class="bureauPrice">{{bureau.bureauPrice}}</p>
+                            </div>
+                            <div class="societies-image">
+                                <img class="society-image img-responsive" src="{{bureau.bureauImg || 'https://cdn3.iconfinder.com/data/icons/buildings-places/512/Corporation-512.png'}}" alt="Photo de l'entreprise" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="sub-bureauDescription" pagination-id="bureauPaginate" dir-paginate="bureau in bureaulist | itemsPerPage:1">{{bureau.bureauDescription}}</div>
+                    </div>
+                    <dir-pagination-controls class="society-pagination" max-size="5" direction-links="true" boundary-links="true" pagination-id="bureauPaginate"></dir-pagination-controls>
                 </div>
             </div>
             <div class="good-close-create-activity" ng-if="contactInfo == 1 && closeTake == 1" ng-click="closeTile('take')">X</div>
@@ -152,8 +195,69 @@
         <div ng-class="{'col-xs-12' : openedLinksTile == 'linksActivity', 'col-xs-6' : openedLinksTile == 'closedLinks'}">
             <div class="col-xs-12">
                 <div class="tiles links-tile" ng-class="{'opened-links-activity' : openedLinksTile == 'linksActivity'}" ng-click="openTile('links')">
-                    <div class="col-xs-12 youtube-title">
+                    <div class="col-xs-12 youtube-title" ng-show="linksTile == 0">
                         S'installer dans le Perche
+                    </div>
+                    <div class="content-create-tile p-t-10" ng-show="linksTile == 1">
+                        <h1>Je m'installe dans le Perche</h1>
+                        <div class="link" style="margin-top: 5%">
+                            <div class="linkContent" ng-repeat="link in linklist" style="margin-top: 2%">
+                              <button class="btn btn-lg links-button">
+                                <a class="links" ng-href="{{link.linkValue}}" target="_blank">{{link.linkName}}</a>
+                              </button>
+                            </div>
+                            <div style="width: 80%; margin-top: 10%; margin-left: 10%">
+                                <div id="my_carousel2" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#my_carousel2" data-slide-to="0" class="active"></li>
+                                        <li data-target="#my_carousel2" data-slide-to="1"></li>
+                                        <li data-target="#my_carousel2" data-slide-to="2"></li>
+                                        <li data-target="#my_carousel2" data-slide-to="3"></li>
+                                        <li data-target="#my_carousel2" data-slide-to="4"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <div class="carousel-page">
+                                                <img src="/img/senonches.486.jpg" class="img-responsive" />
+                                            </div>
+                                            <div class="carousel-caption"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="carousel-page">
+                                                <img src="/img/belleme_trafiquée.jpg" class="img-responsive" />
+                                            </div>
+                                            <div class="carousel-caption"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="carousel-page">
+                                                <img src="/img/paysage.28_perche.50.jpg" class="img-responsive" />
+                                            </div>
+                                            <div class="carousel-caption"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="carousel-page">
+                                                <img src="/img/thiron.jardin.18.jpg" class="img-responsive" />
+                                            </div>
+                                            <div class="carousel-caption"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="carousel-page">
+                                                <img src="/img/paysage.28_perche.16.JPG" class="img-responsive" />
+                                            </div>
+                                            <div class="carousel-caption"></div>
+                                        </div>
+                                    </div>
+                                    <a class="left carousel-control" data-target="#my_carousel2" role="button" data-slide="prev">
+                                        <span class="icon-prev" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" data-target="#my_carousel2" role="button" data-slide="next">
+                                        <span class="icon-next" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="good-close-create-activity" ng-if="closeLinks == 1" ng-click="closeTile('links')">X</div>

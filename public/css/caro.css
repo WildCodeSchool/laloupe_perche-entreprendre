@@ -746,7 +746,7 @@ body {
 .carousel-caption {
     top: 20px !important;
     font-size: 20px !important;
-    text-shadow: 3px 3px 1px black !important;
+    text-shadow: 2px 2px 1px black !important;
 }
 
 #my_carousel3 {
@@ -1041,6 +1041,18 @@ body {
 
 /* New Homepage */
 
+.no-padding {
+    padding: 0px
+}
+
+.p-t-10 {
+  padding-top: 10px
+}
+
+.t-left {
+    text-align: left;
+}
+
 .new-homepage {
     margin-top: 140px;
 }
@@ -1050,10 +1062,6 @@ body {
     min-width: 300px;
     max-width: 300px;
     transition: 0.3s;
-}
-
-.tiles:hover {
-    transform: translateY(-10px);
 }
 
 .contact-tile {
@@ -1116,6 +1124,58 @@ body {
     height: 420px;
 }
 
+.agenda-image {
+    height: 420px;
+    width: 455px;
+}
+
+.opened-agenda {
+    background-color: white;
+    width: 920px;
+    max-width: 920px;
+}
+
+.agenda-points {
+    margin-top: 45px;
+}
+
+.agenda-pagination {
+    display: block;
+    width: 230px;
+    height: 100px;
+    position: absolute;
+    border-radius: 4px;
+    opacity: 1;
+    bottom: -55px;
+    left: 489px;
+}
+
+.good-close-agenda {
+    position: absolute;
+    top: 215px;
+    left: 0;
+    margin-left: 900px;
+    margin-top: -20px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: -1px 1px 3px black, 1px 0px 6px black;
+    text-shadow: 0px 0px 2px black;
+    opacity: 1;
+    z-index: 800;
+    transition: 0.3s;
+}
+
+.good-close-agenda:hover {
+    transform: translateY(-5px);
+}
+
 .form-message {
     height: 45px !important;
 }
@@ -1145,6 +1205,35 @@ body {
     font-size: 27px;
     margin-top: 80px;
     color: white;
+}
+
+.testimonial-details {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.testimonial-image {
+    margin-top: 5px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 0px 1px black;
+}
+
+.testimonial-description {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 20px;
+    font-style: italic;
+    text-align: justify;
+    -moz-text-align-last: center;
+    text-align-last: center;
+}
+
+.testimonial-pagination {
+    display: block;
+    position: absolute;
+    bottom: 45px;
+    left: 89px;
 }
 
 .good-close-create-activity {
@@ -1195,6 +1284,79 @@ body {
     margin-top: 0px;
 }
 
+.society-content {
+    margin-top: 50px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.societies-details {
+    color: black;
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    background-color: lightgray;
+}
+
+.societies-details-container {
+    width: 210px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: justify;
+    -moz-text-align-last: center;
+    text-align-last: center;
+    padding: 5px;
+}
+
+.societies-image {
+    width: auto;
+}
+
+.society-image {
+    width: 550px;
+    height: 250px;
+}
+
+.sub-bureauDescription {
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.society-pagination {
+    display: block;
+    position: absolute;
+    margin-top: 190px;
+    margin-left: 88px;
+    border-radius: 4px;
+    opacity: 1;
+}
+
 .youtube-tile {
     margin-left: -15px;
     margin-top: 20px;
@@ -1210,6 +1372,9 @@ body {
 
 .scoopit-control {
     border: 0px black solid !important;
+    overflow: hidden;
+    transform: scaleY(0.81) scaleX(1.004);
+    margin-top: -24px;
 }
 
 .photos-tile {
@@ -1226,13 +1391,32 @@ body {
     height: 200px;
 }
 
+.links {
+  color: #060606 !important;
+  transition: 0.3s;
+}
+
+.links:hover {
+  color: #0e7496 !important;
+}
+
+.links-button {
+  box-shadow: 1px 1px 3px black;
+  transition: 0.3s;
+}
+
+.links-button:hover {
+  box-shadow: 1px 1px 3px black;
+  color: lightblue;
+}
+
 .opened-links-activity {
     background-color: #E73664;
     height: 640px;
     width: 610px;
     max-width: 610px;
     margin-left: -15px;
-    margin-top: 0px;
+    margin-top: -3px;
 }
 
 .youtube-title {
@@ -1240,6 +1424,15 @@ body {
     font-size: 27px;
     margin-top: 65px;
     color: white;
+}
+
+.scoop_wrapper.format_square {
+    width: 300px !important;
+    height: 200px !important;
+}
+
+.scoop_title {
+    height: 20px !important;
 }
 
 @media (min-width: 992px) {

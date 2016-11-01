@@ -93,6 +93,10 @@ function userController($scope, $http, userService, contactService, linkService,
 
     $scope.contactInfo = 0;
     $scope.openedLinksTile = 'closedLinks';
+    $scope.agendaInfo = 0;
+    $scope.createTile = 0;
+    $scope.takeTile = 0;
+    $scope.linksTile = 0;
 
     $scope.contact = function(action) {
         if (action == "show") {
@@ -108,31 +112,45 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.contactInfo = 1;
             $scope.showContactCloseButton = 1;
             $scope.closeCreate = 1;
-            $('.take-activity-tile').hide();
-            $('.youtube-tile').hide();
-            $('.scoopit-tile').hide();
-            $('.photos-tile').hide();
-            $('.links-tile').hide();
+            $scope.createTile = 1;
+            $('.take-activity-tile').hide(100);
+            $('.youtube-tile').hide(100);
+            $('.scoopit-tile').hide(100);
+            $('.photos-tile').hide(100);
+            $('.links-tile').hide(100);
         }
         if (tile == "take") {
             $scope.openedTile = 'takeActivity';
             $scope.contactInfo = 1;
             $scope.showContactCloseButton = 1;
             $scope.closeTake = 1;
-            $('.create-activity-tile').hide();
-            $('.youtube-tile').hide();
-            $('.scoopit-tile').hide();
-            $('.photos-tile').hide();
-            $('.links-tile').hide();
+            $scope.takeTile = 1;
+            $('.create-activity-tile').hide(100);
+            $('.youtube-tile').hide(100);
+            $('.scoopit-tile').hide(100);
+            $('.photos-tile').hide(100);
+            $('.links-tile').hide(100);
         }
         if (tile == "links") {
             $scope.openedLinksTile = 'linksActivity';
             $scope.closeLinks = 1;
-            $('.create-activity-tile').hide();
-            $('.take-activity-tile').hide();
-            $('.youtube-tile').hide();
-            $('.scoopit-tile').hide();
-            $('.photos-tile').hide();
+            $scope.linksTile = 1;
+            $('.create-activity-tile').hide(100);
+            $('.take-activity-tile').hide(100);
+            $('.youtube-tile').hide(100);
+            $('.scoopit-tile').hide(100);
+            $('.photos-tile').hide(100);
+        }
+        if (tile == "agenda") {
+            $scope.openedTile = 'agendaActivity';
+            $scope.showContactCloseButton = 1;
+            $scope.closeAgenda = 1;
+            $scope.agendaInfo = 1;
+            $('.take-activity-tile').hide(0);
+            $('.youtube-tile').hide(0);
+            $('.photos-tile').hide(0);
+            $('.links-tile').hide(0);
+            $('.text-agenda-apparition').show(100);
         }
     }
 
@@ -142,31 +160,45 @@ function userController($scope, $http, userService, contactService, linkService,
           $scope.contactInfo = 0;
           $scope.showContactCloseButton = 0;
           $scope.closeCreate = 0;
-          $('.take-activity-tile').show();
-          $('.youtube-tile').show();
-          $('.scoopit-tile').show();
-          $('.photos-tile').show();
-          $('.links-tile').show();
+          $scope.createTile = 0;
+          $('.take-activity-tile').show(100);
+          $('.youtube-tile').show(100);
+          $('.scoopit-tile').show(100);
+          $('.photos-tile').show(100);
+          $('.links-tile').show(100);
         }
         if (tile == "take") {
           $scope.openedTile = 'closed';
           $scope.contactInfo = 0;
           $scope.showContactCloseButton = 0;
           $scope.closeTake = 0;
-          $('.create-activity-tile').show();
-          $('.youtube-tile').show();
-          $('.scoopit-tile').show();
-          $('.photos-tile').show();
-          $('.links-tile').show();
+          $scope.takeTile = 0;
+          $('.create-activity-tile').show(100);
+          $('.youtube-tile').show(100);
+          $('.scoopit-tile').show(100);
+          $('.photos-tile').show(100);
+          $('.links-tile').show(100);
         }
         if (tile == "links") {
           $scope.closeLinks = 0;
           $scope.openedLinksTile = 'closedLinks';
-          $('.create-activity-tile').show();
-          $('.take-activity-tile').show();
-          $('.youtube-tile').show();
-          $('.scoopit-tile').show();
-          $('.photos-tile').show();
+          $scope.linksTile = 0;
+          $('.create-activity-tile').show(100);
+          $('.take-activity-tile').show(100);
+          $('.youtube-tile').show(100);
+          $('.scoopit-tile').show(100);
+          $('.photos-tile').show(100);
+        }
+        if (tile == "agenda") {
+          $scope.openedTile = 'closed';
+          $scope.contactInfo = 0;
+          $scope.showContactCloseButton = 0;
+          $scope.closeAgenda = 0;
+          $scope.agendaInfo = 0;
+          $('.take-activity-tile').show(100);
+          $('.youtube-tile').show(100);
+          $('.photos-tile').show(100);
+          $('.links-tile').show(100);
         }
     }
 
