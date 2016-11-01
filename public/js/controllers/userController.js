@@ -97,16 +97,17 @@ function userController($scope, $http, userService, contactService, linkService,
     $scope.createTile = 0;
     $scope.takeTile = 0;
     $scope.linksTile = 0;
-
-    $scope.contact = function(action) {
-        if (action == "show") {
-            $scope.contactInfo = 1;
-        } else {
-            $scope.contactInfo = 0;
-        }
-    }
+    $scope.clickEnabled = true;
 
     $scope.openTile = function(tile) {
+        if (!$scope.clickEnabled) {
+            return false;
+        } else {
+            $scope.clickEnabled = false;
+        }
+        if (tile == "contact") {
+            $scope.contactInfo = 1;
+        }
         if (tile == "create") {
             $scope.openedTile = 'createActivity';
             $scope.contactInfo = 1;
@@ -135,6 +136,8 @@ function userController($scope, $http, userService, contactService, linkService,
             $scope.openedLinksTile = 'linksActivity';
             $scope.closeLinks = 1;
             $scope.linksTile = 1;
+            $scope.contactInfo = 1;
+            $scope.showContactCloseButton = 1;
             $('.create-activity-tile').hide(100);
             $('.take-activity-tile').hide(100);
             $('.youtube-tile').hide(100);
@@ -155,268 +158,56 @@ function userController($scope, $http, userService, contactService, linkService,
     }
 
     $scope.closeTile = function(tile) {
+        $scope.clickEnabled = true;
+        if (tile == "contact") {
+            $scope.contactInfo = 0;
+        }
         if (tile == "create") {
-          $scope.openedTile = 'closed';
-          $scope.contactInfo = 0;
-          $scope.showContactCloseButton = 0;
-          $scope.closeCreate = 0;
-          $scope.createTile = 0;
-          $('.take-activity-tile').show(100);
-          $('.youtube-tile').show(100);
-          $('.scoopit-tile').show(100);
-          $('.photos-tile').show(100);
-          $('.links-tile').show(100);
+            $scope.openedTile = 'closed';
+            $scope.contactInfo = 0;
+            $scope.showContactCloseButton = 0;
+            $scope.closeCreate = 0;
+            $scope.createTile = 0;
+            $('.take-activity-tile').show(100);
+            $('.youtube-tile').show(100);
+            $('.scoopit-tile').show(100);
+            $('.photos-tile').show(100);
+            $('.links-tile').show(100);
         }
         if (tile == "take") {
-          $scope.openedTile = 'closed';
-          $scope.contactInfo = 0;
-          $scope.showContactCloseButton = 0;
-          $scope.closeTake = 0;
-          $scope.takeTile = 0;
-          $('.create-activity-tile').show(100);
-          $('.youtube-tile').show(100);
-          $('.scoopit-tile').show(100);
-          $('.photos-tile').show(100);
-          $('.links-tile').show(100);
+            $scope.openedTile = 'closed';
+            $scope.contactInfo = 0;
+            $scope.showContactCloseButton = 0;
+            $scope.closeTake = 0;
+            $scope.takeTile = 0;
+            $('.create-activity-tile').show(100);
+            $('.youtube-tile').show(100);
+            $('.scoopit-tile').show(100);
+            $('.photos-tile').show(100);
+            $('.links-tile').show(100);
         }
         if (tile == "links") {
-          $scope.closeLinks = 0;
-          $scope.openedLinksTile = 'closedLinks';
-          $scope.linksTile = 0;
-          $('.create-activity-tile').show(100);
-          $('.take-activity-tile').show(100);
-          $('.youtube-tile').show(100);
-          $('.scoopit-tile').show(100);
-          $('.photos-tile').show(100);
+            $scope.closeLinks = 0;
+            $scope.openedLinksTile = 'closedLinks';
+            $scope.linksTile = 0;
+            $('.create-activity-tile').show(100);
+            $('.take-activity-tile').show(100);
+            $('.youtube-tile').show(100);
+            $('.scoopit-tile').show(100);
+            $('.photos-tile').show(100);
         }
         if (tile == "agenda") {
-          $scope.openedTile = 'closed';
-          $scope.contactInfo = 0;
-          $scope.showContactCloseButton = 0;
-          $scope.closeAgenda = 0;
-          $scope.agendaInfo = 0;
-          $('.take-activity-tile').show(100);
-          $('.youtube-tile').show(100);
-          $('.photos-tile').show(100);
-          $('.links-tile').show(100);
+            $scope.openedTile = 'closed';
+            $scope.contactInfo = 0;
+            $scope.showContactCloseButton = 0;
+            $scope.closeAgenda = 0;
+            $scope.agendaInfo = 0;
+            $('.take-activity-tile').show(100);
+            $('.youtube-tile').show(100);
+            $('.photos-tile').show(100);
+            $('.links-tile').show(100);
         }
     }
-
-
-
-
-
-
-
-    //Change Phone display
-    $scope.buttonClassPhone = 'noDisplay';
-    $scope.changePhone = function()  {
-        $scope.IsClickEnable = false;
-        $scope.isCreationBigger = 1;
-        $scope.showOnlyNumber = 1;
-        $('.activityContent').css({
-            cursor: 'auto'
-        });
-        $scope.buttonClassPhone = "bigPhoneClose";
-    }
-    $scope.phoneRevert = function() {
-        $scope.IsClickEnable = true;
-        $scope.showOnlyNumber = 0;
-        $scope.isCreationBigger = 0;
-        $('.activityContent').css({
-            cursor: 'pointer'
-        });
-        $scope.buttonClassPhone = 'noDisplay';
-    }
-
-    // NG-CLASS MANIPULATION OF CREATION TILE
-    $scope.IsClickEnable = true;
-    $scope.bigOrSmall = "theCreation";
-    $scope.hidePagination = "noDisplay";
-    $scope.hideContent = "noDisplay";
-    $scope.hideSocietyForCreation = "theSociety";
-    $scope.hideYoutubeForCreation = "theYoutube";
-    $scope.hidecolumnThreeForCreation = "columnThree";
-    $scope.changeHeight = "columnTwo";
-    $scope.marginRegulation = "free";
-    $scope.showOnlyNumber = 0;
-
-    $scope.changeClass = function() {
-        $scope.createActivity = 1;
-        $scope.IsClickEnable = false;
-        $scope.hideSocietyForCreation = "noDisplay";
-        $scope.hideYoutubeForCreation = "noDisplay";
-        $scope.hideContent = "display";
-        $scope.hidePagination = "pagination-button";
-
-        if (window.innerWidth <= 1143) {
-            $scope.bigOrSmall = "mediumCreation";
-            $scope.isCreationBigger = 1;
-            $scope.sizeAgenda = "theAgenda";
-        } else {
-            $scope.isCreationBigger = 1;
-            $scope.sizeAgenda = "theAgenda";
-            $scope.bigOrSmall = "bigCreation";
-            $scope.hidecolumnThreeForCreation = "noDisplay";
-            $scope.changeHeight = "columnTwoTer";
-            $scope.marginRegulation = "accueilOneTile";
-            $scope.hidePhoto = "noDisplay";
-            $scope.showOnlyNumber = 1;
-        }
-    };
-    $scope.returnCreationClass = function() {
-        $scope.createActivity = 0;
-        $scope.isCreationBigger = 0;
-        $scope.IsClickEnable = true;
-        $scope.bigOrSmall = 'theCreation';
-        $scope.hideContent = 'noDisplay';
-        $scope.hideSocietyForCreation = 'theSociety';
-        $scope.hideYoutubeForCreation = 'theYoutube';
-        $scope.changeHeight = "columnTwo";
-        $scope.hidecolumnThreeForCreation = 'columnThree';
-        $scope.hidePhoto = 'thePhoto';
-        $scope.hideScoupit = 'theScoupit';
-        $scope.hideLinks = 'theLinks';
-        $scope.marginRegulation = 'free';
-        $scope.showOnlyNumber = 0;
-    }
-
-    //NG-CLASS AGENDA MANIPULATION
-    $scope.sizeAgenda = "theAgenda";
-    $scope.switchAgenda = "subAgenda";
-    $scope.switchAgendaContent = "noDisplay";
-    $scope.hideScoupit = "theScoupit";
-    $scope.hidePhoto = "thePhoto";
-    $scope.hideLinks = "theLinks";
-
-    $scope.changeAgendaSize = function() {
-        $scope.IsClickEnable = false;
-        $scope.agendaTile = 1;
-        $scope.isCreationBigger = 2;
-        $scope.IsClickEnable = false;
-
-        if (window.innerWidth <= 800) {
-            $scope.sizeAgenda = "littleAgenda";
-            $scope.switchAgenda = "noDisplay";
-            $scope.switchAgendaContent = "textEvent";
-        } else if ((window.innerWidth >= 800) && (window.innerWidth <= 1143)) {
-            $scope.sizeAgenda = "mediumAgenda";
-            $scope.switchAgenda = "noDisplay";
-            $scope.switchAgendaContent = "textEvent";
-            $scope.hideSocietyForCreation = "noDisplay";
-            $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.changeHeight = "columnTwoBisBis";
-            $scope.bigOrSmall = "mediumCreationAgenda";
-        } else if (window.innerWidth > 1143) {
-            $scope.showOnlyNumber = 1;
-            $scope.sizeAgenda = "bigAgenda";
-            $scope.switchAgenda = "noDisplay";
-            $scope.switchAgendaContent = "textEvent";
-            $scope.hideSocietyForCreation = "noDisplay";
-            $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.hideScoupit = "noDisplay";
-            $scope.hideLinks = "noDisplay";
-            $scope.changeHeight = "columnTwoBis";
-            $scope.hidecolumnThreeForCreation = "columnThreeBis";
-        }
-    }
-
-    $scope.returnCreationClass2 = function() {
-        $scope.isCreationBigger = 0;
-        $scope.agendaTile = 0;
-        $scope.IsClickEnable = true;
-        $scope.showOnlyNumber = 0;
-        $scope.sizeAgenda = 'theAgenda';
-        $scope.switchAgenda = 'subAgenda';
-        $scope.switchAgendaContent = 'noDisplay';
-        $scope.hideSocietyForCreation = 'theSociety';
-        $scope.hideScoupit = 'theScoupit';
-        $scope.hidePhoto = 'thePhoto';
-        $scope.hideLinks = 'theLinks';
-        $scope.changeHeight = 'columnTwo';
-        $scope.hidecolumnThreeForCreation = 'columnThree';
-    }
-
-    //NG-CLASS SOCIETY MANIPULATION
-    $scope.hidePagination2 = "noDisplay";
-    $scope.showContent = "noDisplay";
-    $scope.smSociety = "society";
-
-    $scope.changeSocietySize = function() {
-        $scope.takeActivity = 1;
-        $scope.isCreationBigger = 1;
-        $scope.IsClickEnable = false;
-        $scope.bigOrSmall = "noDisplay";
-        $scope.showContent = "societyContent";
-
-        if (window.innerWidth <= 800) {
-            $scope.hideSocietyForCreation = "mediumSociety";
-            $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.smSociety = "mediumContentSociety";
-            $scope.hidePagination2 = "pagination-button2";
-        } else if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
-            $scope.hideSocietyForCreation = "mediumSociety";
-            $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.smSociety = "mediumContentSociety";
-            $scope.hidePagination2 = "pagination-button2";
-        } else if (window.innerWidth > 1143) {
-            $scope.hideSocietyForCreation = "bigSociety";
-            $scope.hidePagination2 = "pagination-button2";
-            $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.hidecolumnThreeForCreation = "noDisplay";
-            $scope.changeHeight = "columnTwoTer";
-            $scope.marginRegulation = "accueilOneTile";
-            $scope.showOnlyNumber = 1;
-        }
-    }
-    $scope.returnCreationClass3 = function() {
-        $scope.takeActivity = 0;
-        $scope.IsClickEnable = true;
-        $scope.bigOrSmall = "theCreation";
-        $scope.hidePagination2 = 'noDisplay';
-        $scope.hideSocietyForCreation = 'theSociety';
-        $scope.showContent = 'noDisplay';
-        $scope.hideYoutubeForCreation = 'theYoutube';
-        $scope.changeHeight = "columnTwo";
-        $scope.hidecolumnThreeForCreation = 'columnThree';
-        $scope.marginRegulation = 'free';
-        $scope.showOnlyNumber = 0;
-    }
-
-    //NG-CLASS LINKS MANIPULATION
-    $scope.changeLinksSize = function() {
-        $scope.linksContent = 1;
-        $scope.linksTile = 1;
-        $scope.hideScoupit = 'noDisplay';
-        $scope.hidePhoto = 'noDisplay';
-        $scope.IsClickEnable = false;
-        $scope.isCreationBigger = 1;
-        if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
-            $scope.hideLinks = 'mediumLinks';
-            $scope.hidecolumnThreeForCreation = "columnThreeTerbis";
-
-        } else {
-            $scope.hideLinks = 'bigLinks';
-            $scope.changeHeight = 'noDisplay';
-            $scope.marginRegulation = "accueilOneTile";
-            $scope.hidecolumnThreeForCreation = "columnThreeTer";
-            $scope.showOnlyNumber = 1;
-        }
-    }
-    $scope.returnCreationClass4 = function() {
-        $scope.linksContent = 0;
-        $scope.linksTile = 0;
-        $scope.IsClickEnable = true;
-        $scope.isCreationBigger = 0;
-        $scope.hideLinks = 'theLinks';
-        $scope.changeHeight = 'columnTwo';
-        $scope.hidecolumnThreeForCreation = "columnThree";
-        $scope.hideScoupit = 'theScoupit';
-        $scope.hidePhoto = 'thePhoto';
-        $scope.marginRegulation = "free";
-        $scope.showOnlyNumber = 0;
-    }
-
 
     $scope.add = function() {
         var data = {};

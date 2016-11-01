@@ -1,15 +1,14 @@
 <div class="container new-homepage">
     <div class="col-xs-4">
-
         <div class="tiles contact-tile">
             <div class="col-xs-12">
                 <div class="col-xs-12 contact-title">
                     Contact
                 </div>
                 <div class="col-xs-12 contact-icon">
-                    <div class="phoneIcon" ng-if="contactInfo == 0" ng-click="contact('show')"></div>
+                    <div class="phoneIcon" ng-if="contactInfo == 0" ng-click="openTile('contact')"></div>
                     <div class="phoneWithoutIcon" ng-if="contactInfo == 1">02 37 29 09 29</div>
-                    <div class="good-close-contact" ng-if="contactInfo == 1" ng-hide="showContactCloseButton == 1" ng-click="contact('hide')">X</div>
+                    <div class="good-close-contact" ng-if="contactInfo == 1" ng-hide="showContactCloseButton == 1" ng-click="closeTile('contact')">X</div>
                 </div>
             </div>
         </div>
