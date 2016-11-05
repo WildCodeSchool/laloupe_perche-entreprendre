@@ -8,16 +8,25 @@
         </div>
 
         <div class="cardContent">
-            <h1 class="item fullName">{{" " + connexion.userFirstname + " " + connexion.userName }}</h1>
-            <h3 class="item function">fonction :{{" " + connexion.userFunction }} à {{ connexion.userEnterprise }}</h3>
-            <h3 class="item ville">localité :{{" " + connexion.userVille }}</h3>
-            <h3 class="item phone">téléphone :{{" " +connexion.userPhone }}</h3>
-            <h3 class="item mail">mail :{{" " +connexion.userEmail }}</h3>
-            <h3 class="item note">remarques :{{" " +connexion.userNote}}</h3>
-            <div class="qqrcode">
-<!--            <a href="#/formulaire/{{connexion._id}}" class="contactus">Cliquez ici pour nous contacter</a>-->
+            <h1 class="item fullName">{{connexion.userFirstname}} {{connexion.userName }}</h1>
+            <div class="col-xs-12">
+              <div class="col-xs-4 no-padding">
+                <h4 class="item function"><b>Fonction :</b></h4>
+                <h4 class="item function"><b>Structure :</b></h4>
+                <h4 class="item ville"><b>Localité :</b></h4>
+                <h4 class="item phone"><b>Téléphone :</b></h4>
+                <h4 class="item mail"><b>E-mail :</b></h4>
+                <h4 class="item note"><b>Remarques :</b></h4>
+              </div>
+              <div class="col-xs-8">
+                <h4 class="item function">{{connexion.userFunction }}</h4>
+                <h4 class="item function">{{ connexion.userEnterprise }}</h4>
+                <h4 class="item ville">{{connexion.userVille }}</h4>
+                <h4 class="item phone">{{connexion.userPhone }}</h4>
+                <h4 class="item mail">{{connexion.userEmail }}</h4>
+                <h4 class="item note">{{connexion.userNote}}</h4>
+              </div>
             </div>
-
         </div>
     </div>
 </div>

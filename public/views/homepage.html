@@ -29,10 +29,10 @@
                     </div>
                 </div>
                 <div class="agendaContent" dir-paginate="agenda in agendalist|itemsPerPage:1" ng-show="agendaInfo == 1" pagination-id="agendaPaginate">
-                    <div class="col-xs-6 no-padding t-left">
+                    <div class="hidden-xs col-sm-6 no-padding t-left">
                         <img class="agenda-image" src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" alt="" />
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-12 col-sm-6">
                         <div class="agenda-details text-agenda-apparition">
                             <h1>{{agenda.agendaTitle}}</h1>
                             <div class="agenda-points">
@@ -264,15 +264,9 @@
         </div>
     </div>
 
-    <div class="col-sm-12 visible-xs visible-sm">
-        <div class="col-xs-12 col-sm-4 no-padding">
-            <div class="col-xs-12 no-padding">
-                <div class="tiles scoopit-tile">
-                    <iframe class="scoopit-control" height="250px" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=220&amp;height=200"></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 visible-xs visible-sm">
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-4 col-sm-offset-0">
             <div class="col-xs-12 no-padding">
                 <div class="tiles photos-tile">
                     <div id="my_carousel" class="carousel slide" data-ride="carousel">
@@ -320,7 +314,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 no-padding">
+            <div class="col-xs-12 no-padding">
+                <div class="tiles scoopit-tile">
+                    <iframe class="scoopit-control" height="250px" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=220&amp;height=200"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-11 col-xs-offset-1 col-sm-4 col-sm-offset-0">
             <div class="tiles youtube-tile">
                 <iframe width="266" height="200" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
             </div>

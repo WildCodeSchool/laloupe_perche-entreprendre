@@ -1437,6 +1437,20 @@ body {
     height: 20px !important;
 }
 
+#wrapper.toggled #sidebar-wrapper {
+    background-color: white;
+    background-image: none;
+    background-size: 150%;
+}
+
+.card {
+    text-align: left !important;
+    border-radius: 5px;
+    padding: 20px;
+    margin-left: 50%;
+    width: 445px;
+}
+
 @media (min-width: 992px) {
     .new-homepage {
         width: 945px;
@@ -1480,10 +1494,10 @@ body {
         margin-left: 450px;
     }
     .testimonial-pagination {
-        left: 5px;
+      left: -400px;
     }
     .society-pagination {
-        margin-left: 0px;
+        margin-left: -400px;
     }
     .scoopit-tile {
         margin-top: 20px;
@@ -1520,7 +1534,7 @@ body {
         margin-top: 10px;
     }
     .agenda-pagination {
-        left: 300px;
+        left: -200px;
     }
     .good-close-agenda {
         margin-left: 725px;
@@ -1531,6 +1545,28 @@ body {
 }
 
 @media (max-width: 767px) {
+    .new-homepage {
+        padding: right: 0px;
+    }
+    .good-close-agenda {
+        margin-left: calc(100% - 45px);
+    }
+    .good-close-create-activity {
+        margin-left: calc(100% - 25px);
+        margin-top: 0px;
+    }
+    .agenda-image {
+        width: 100%;
+    }
+    .agenda-pagination {
+        left: -515px;
+    }
+    .testimonial-pagination {
+        left: -515px;
+    }
+    .society-pagination {
+        left: -515px;
+    }
     .sm-changing-tile {
         margin-left: 0px;
     }
@@ -1544,14 +1580,23 @@ body {
         padding: 0px;
     }
     .tiles {
-        max-width: 1000px;
+        max-width: 100%;
+        min-width: 0;
     }
     .take-activity-tile {
+        margin-top: 20px;
         margin-left: 0px;
         width: 100%;
     }
+    .photos-tile {
+        width: 100% !important;
+    }
     .links-tile {
-    margin-left: 0px;
-    width: 100%;
-}
+        margin-top: 20px;
+        margin-left: 0px;
+        width: 100%;
+    }
+    .scoopit-control {
+        width: 100%;
+    }
 }
