@@ -638,68 +638,6 @@
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
     }
-    /*-----------------------PAGINATION----------------------*/
-
-    .pagination {
-        display: block;
-        width: 300px;
-        height: 100px;
-        position: absolute;
-        margin-top: 0px;
-        margin-left: 120px;
-        border-radius: 4px;
-        opacity: 1;
-        z-index: 999;
-    }
-
-    .pagination2 {
-        display: block;
-        width: 230px;
-        height: 100px;
-        position: absolute;
-        bottom: -30px;
-        margin-left: 17%;
-        border-radius: 4px;
-        opacity: 1;
-        z-index: 999;
-    }
-
-    .pagination-button {
-        display: block;
-        width: 200px;
-        height: 100px;
-        position: fixed;
-        margin-top: 515px;
-        margin-left: -110px;
-        border-radius: 4px;
-        opacity: 1;
-        z-index: 999;
-    }
-
-    .pagination-button2 {
-        display: block;
-        width: 230px;
-        height: 100px;
-        position: absolute;
-        margin-top: -43px;
-        margin-left: 110px;
-        border-radius: 4px;
-        opacity: 1;
-        z-index: 999;
-    }
-
-    .pagination-button3 {
-        display: block;
-        width: 230px;
-        height: 100px;
-        -webkit-transform: translateX(455px) translateY(-43px);
-        transform: translateX(455px) translateY(-43px);
-        position: absolute;
-        border-radius: 4px;
-        opacity: 1;
-        z-index: 999;
-        margin-top: -30px;
-    }
     /* Formulaire mail après aggrandissement "créer activité" */
 
     .form-signin-activity {
@@ -1111,8 +1049,8 @@
         position: absolute;
         border-radius: 4px;
         opacity: 1;
-        bottom: -55px;
-        left: 489px;
+        bottom: -40px;
+        left: 590px;
     }
 
     .good-close-agenda {
@@ -1198,8 +1136,8 @@
     .testimonial-pagination {
         display: block;
         position: absolute;
-        bottom: 45px;
-        left: 89px;
+        bottom: -15px;
+        left: 205px;
     }
 
     .good-close-create-activity {
@@ -1317,10 +1255,8 @@
     .society-pagination {
         display: block;
         position: absolute;
-        margin-top: 190px;
-        margin-left: 88px;
-        border-radius: 4px;
-        opacity: 1;
+        bottom: -15px;
+        left: 205px;
     }
 
     .youtube-tile {
@@ -1459,10 +1395,10 @@
             margin-left: 450px;
         }
         .testimonial-pagination {
-            left: -400px;
+            left: 115px;
         }
         .society-pagination {
-            margin-left: -400px;
+            left: 115px;
         }
         .scoopit-tile {
             margin-top: 20px;
@@ -1499,7 +1435,7 @@
             margin-top: 10px;
         }
         .agenda-pagination {
-            left: -200px;
+            left: 420px;
         }
         .good-close-agenda {
             margin-left: 725px;
@@ -1531,10 +1467,10 @@
             box-shadow: 1px 1px 5px black;
         }
         .opened-create-activity {
-          height: auto;
+            height: auto;
         }
         .opened-take-activity {
-          height: auto;
+            height: auto;
         }
         .opened-links-activity {
             height: auto;
