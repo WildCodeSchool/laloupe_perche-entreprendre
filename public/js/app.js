@@ -1,4 +1,4 @@
-function config($routeProvider ,$httpProvider) {
+function config($routeProvider, $httpProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/homepage.html',
@@ -37,8 +37,7 @@ function config($routeProvider ,$httpProvider) {
                 connected: checkIsConnected
             }
         })
-
-    .when('/mon-profil', {
+        .when('/mon-profil', {
             templateUrl: 'views/mon-profil.html',
             controller: 'profilController',
             resolve: {
@@ -57,32 +56,32 @@ function config($routeProvider ,$httpProvider) {
         });
 
 
-        $httpProvider.interceptors.push(function ($q, $location, $rootScope) {
-         return {
-             'request': function (config) {
-                 config.headers = config.headers || {};
-                 if ($rootScope.token) {
-                     config.headers.authorization = $rootScope.token;
-                 }
-                 return config;
-             },
-             'responseError': function (response) {
-                 if (response.status === 401 || response.status === 403) {
-                     $location.path('/');
-                 }
-                 return $q.reject(response);
-             }
-         };
-      });
+    $httpProvider.interceptors.push(function($q, $location, $rootScope) {
+        return {
+            'request': function(config) {
+                config.headers = config.headers || {};
+                if ($rootScope.token) {
+                    config.headers.authorization = $rootScope.token;
+                }
+                return config;
+            },
+            'responseError': function(response) {
+                if (response.status === 401 || response.status === 403) {
+                    $location.path('/');
+                }
+                return $q.reject(response);
+            }
+        };
+    });
 }
 
 function checkIsConnected($q, $http, $rootScope, $location) {
     var deferred = $q.defer();
 
-    $http.get('/loggedin').success(function () {
+    $http.get('/loggedin').success(function() {
         // Authenticated
         deferred.resolve();
-    }).error(function () {
+    }).error(function() {
         // Not Authenticated
         deferred.reject();
         $location.url('/connexion');
@@ -95,7 +94,7 @@ function checkIsAdmin($q, $http, $rootScope, $location) {
     var deferred = $q.defer();
 
     if ($rootScope.user && $rootScope.user.isAdmin)
-      deferred.resolve();
+        deferred.resolve();
     else {
         deferred.reject();
         $location.url('/');
@@ -105,22 +104,22 @@ function checkIsAdmin($q, $http, $rootScope, $location) {
 };
 
 function run($rootScope, $location) {
-  $rootScope.loginMessage = {};
-	$rootScope.loginMessage.title = '';
-	$rootScope.loginMessage.message = '';
+    $rootScope.loginMessage = {};
+    $rootScope.loginMessage.title = '';
+    $rootScope.loginMessage.message = '';
 
-	// Watch path
+    // Watch path
     var path = function() {
         return $location.path();
     };
     $rootScope.$watch(path, function(newVal, oldVal) {
         $rootScope.activetab = newVal;
     });
-    $rootScope.logout = function(){
-      $rootScope.token = null;
-      $rootScope.user = null;
-      $rootScope.loginMessage.title = '';
-      $rootScope.loginMessage.message = '';
+    $rootScope.logout = function() {
+        $rootScope.token = null;
+        $rootScope.user = null;
+        $rootScope.loginMessage.title = '';
+        $rootScope.loginMessage.message = '';
     }
 }
 
@@ -128,7 +127,7 @@ function filterBySearchFriend() {
     return function(filterBySearchFriend, searchFriend, user) {
         var newArray = [];
         !!filterBySearchFriend && filterBySearchFriend.forEach(function(e) {
-          var hasPush = false;
+            var hasPush = false;
             if (e._id != user._id) {
                 if (!searchFriend) {
                     newArray.push(e);
@@ -136,25 +135,25 @@ function filterBySearchFriend() {
                 } else {
                     if (!!e.contactEnterprise) {
                         if (e.contactEnterprise.toLowerCase().indexOf(searchFriend.toLowerCase()) != -1) {
-                            if(!hasPush) newArray.push(e);
+                            if (!hasPush) newArray.push(e);
                             hasPush = true;
                         }
                     }
                     if (!!e.contactFunction) {
                         if (e.contactFunction.toLowerCase().indexOf(searchFriend.toLowerCase()) != -1) {
-                            if(!hasPush) newArray.push(e);
+                            if (!hasPush) newArray.push(e);
                             hasPush = true;
                         }
                     }
                     if (!!e.contactVille) {
                         if (e.contactVille.toLowerCase().indexOf(searchFriend.toLowerCase()) != -1) {
-                            if(!hasPush) newArray.push(e);
+                            if (!hasPush) newArray.push(e);
                             hasPush = true;
                         }
                     }
                     if (!!e.contactName) {
                         if (e.contactName.toLowerCase().indexOf(searchFriend.toLowerCase()) != -1) {
-                            if(!hasPush) newArray.push(e);
+                            if (!hasPush) newArray.push(e);
                             hasPush = true;
                         }
                     }
@@ -172,7 +171,7 @@ function filterBySearchFriend() {
 
 
 
-angular.module('app', ['ngRoute','monospaced.qrcode','flow', 'angularUtils.directives.dirPagination'])
+angular.module('app', ['ngRoute', 'monospaced.qrcode', 'flow', 'angularUtils.directives.dirPagination'])
     .config(config)
     .controller('mainController', mainController)
     .controller('contactController', contactController)
@@ -189,17 +188,16 @@ angular.module('app', ['ngRoute','monospaced.qrcode','flow', 'angularUtils.direc
     .service('linkService', linkService)
     .filter('filterBySearchFriend', filterBySearchFriend)
     /*.factory('', )*/
-    .config(['flowFactoryProvider', function (flowFactoryProvider) {
-  flowFactoryProvider.defaults = {
-    target: '/upload',
-    permanentErrors: [404, 500, 501]
-  };
-  // You can also set default events:
-  flowFactoryProvider.on('catchAll', function (event) {
-  });
-  // Can be used with different implementations of Flow.js
-  // flowFactoryProvider.factory = fustyFlowFactory;
-}])
+    .config(['flowFactoryProvider', function(flowFactoryProvider) {
+        flowFactoryProvider.defaults = {
+            target: '/upload',
+            permanentErrors: [404, 500, 501]
+        };
+        // You can also set default events:
+        flowFactoryProvider.on('catchAll', function(event) {});
+        // Can be used with different implementations of Flow.js
+        // flowFactoryProvider.factory = fustyFlowFactory;
+    }])
 
 
-    .run(run);
+.run(run);

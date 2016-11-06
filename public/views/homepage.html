@@ -49,9 +49,9 @@
                     <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate" class="agenda-pagination hidden-xs"></dir-pagination-controls>
                 </div>
 
-                <div class="activityContent" ng-if="contactInfo == 1">
+                <div class="activityContent" ng-show="contactInfo == 1">
                     <div class="account-wall-activity">
-                        <p style="font-size: 12px">Remplissez simplement ce formulaire et nous vous contacterons très prochainement.</p>
+                        <p style="font-size: 12px">{{contactName}}</p>
                         <form style="text-align:center;">
                             <h3 style="margin-top: 0px;"> Vos informations </h3>
                             <input type="name" class="form-control" ng-model="contactName" placeholder="Votre nom" required>

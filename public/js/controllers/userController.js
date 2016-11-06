@@ -249,6 +249,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.contactEnterprise = "";
         $scope.contactFirstname = "";
         $scope.contactPhone = "";
+
     }
     $scope.addAgenda = function() {
         var data = {};
