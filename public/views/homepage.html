@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <div class="tiles agenda-tile" ng-class="{'opened-agenda' : openedTile == 'agendaActivity'}" ng-click="openTile('agenda')">
+        <div class="tiles agenda-tile clearfix" ng-class="{'opened-agenda' : openedTile == 'agendaActivity'}" ng-click="openTile('agenda')">
             <div class="content-create-tile content-agenda">
                 <div class="agendaImgContainer" ng-if="contactInfo == 0 && agendaInfo == 0">
                     <div id="my_carousel3" class="carousel slide" data-ride="carousel">
@@ -43,9 +43,10 @@
                                 <p>{{agenda.agendaPrice}}</p>
                             </div>
                             <button class="btn" ng-if="agenda.agendaLink"><a ng-href="{{agenda.agendaLink}}" target="_blank">Reservez vos billets !</a></button>
+                            <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate" class="agenda-pagination-xs visible-xs"></dir-pagination-controls>
                         </div>
                     </div>
-                    <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate" class="agenda-pagination"></dir-pagination-controls>
+                    <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate" class="agenda-pagination hidden-xs"></dir-pagination-controls>
                 </div>
 
                 <div class="activityContent" ng-if="contactInfo == 1">
@@ -89,8 +90,9 @@
                             <p class="testimonial-description"><img class="quote" src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> {{temoignage.temoignageDescription}}<img class="endQuote quote"
                                     src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/classica/classica_square-close-quote/classica_square-close-quote_simple-black_512x512.png" /> </p>
                         </div>
+                        <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="testiPaginate" class="agenda-pagination-xs visible-xs"></dir-pagination-controls>
                     </div>
-                    <dir-pagination-controls class="testimonial-pagination" pagination-id="testiPaginate" max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
+                    <dir-pagination-controls class="testimonial-pagination hidden-xs" pagination-id="testiPaginate" max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
                 </div>
             </div>
             <div class="good-close-create-activity" ng-if="contactInfo == 1 && closeCreate == 1" ng-click="closeTile('create')">X</div>
@@ -129,7 +131,8 @@
                     <div class="col-xs-12">
                         <div class="sub-bureauDescription" pagination-id="bureauPaginate" dir-paginate="bureau in bureaulist | itemsPerPage:1">{{bureau.bureauDescription}}</div>
                     </div>
-                    <dir-pagination-controls class="society-pagination" max-size="5" direction-links="true" boundary-links="true" pagination-id="bureauPaginate"></dir-pagination-controls>
+                    <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="bureauPaginate" class="agenda-pagination-xs visible-xs"></dir-pagination-controls>
+                    <dir-pagination-controls class="society-pagination hiden-xs" max-size="5" direction-links="true" boundary-links="true" pagination-id="bureauPaginate"></dir-pagination-controls>
                 </div>
             </div>
             <div class="good-close-create-activity" ng-if="contactInfo == 1 && closeTake == 1" ng-click="closeTile('take')">X</div>
@@ -205,7 +208,7 @@
                                 <a class="links" ng-href="{{link.linkValue}}" target="_blank">{{link.linkName}}</a>
                               </button>
                             </div>
-                            <div style="width: 80%; margin-top: 10%; margin-left: 10%">
+                            <div style="width: 80%; margin-top: 10%; margin-left: 10%; padding-bottom: 10px;">
                                 <div id="my_carousel2" class="carousel slide" data-ride="carousel">
                                     <ol class="carousel-indicators">
                                         <li data-target="#my_carousel2" data-slide-to="0" class="active"></li>

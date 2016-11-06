@@ -1423,6 +1423,7 @@
             font-size: 30px;
         }
         .opened-agenda {
+            height: auto;
             width: 735px;
         }
         .agenda-image {
@@ -1541,5 +1542,8 @@
         .youtube-tile {
             margin-left: 50%;
             transform: translate(-50%);
+        }
+        .youtube-title {
+            margin-top: 65px;
         }
     }

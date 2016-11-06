@@ -44,6 +44,7 @@
 }
 
 #sidebar-wrapper {
+  position:fixed;
     z-index: 1000;
     left: 220px;
     width: 0;

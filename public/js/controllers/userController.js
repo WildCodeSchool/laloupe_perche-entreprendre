@@ -5,68 +5,37 @@ function userController($scope, $http, userService, contactService, linkService,
         scrollTop: 0
     }, 'swing');
 
+
     // Overlay margin & wrap tiles
-    if (window.innerWidth >= 1143) {
-        $(".hamburger").focusin(function() {
-            $('.accueilOne').css({
-                flexWrap: 'nowrap'
-            });
-        });
-        $(".hamburger").focusout(function() {
-            $('.accueilOne').css({
-                flexWrap: 'nowrap'
-            });
-        });
+
+    $(".hamburger").focusin(function() {
+      $('.pe-footer').css({
+        marginLeft: '220px'
+      });
+    });
+    $(".hamburger").focusin(function() {
+      $('.pe-footer').css({
+        marginLeft: '0px'
+      });
+    });
+
+
+    if (window.innerWidth < 768) {
+      $(".hamburger").focusin(function() {
+        $('.new-homepage').hide(100);
+      });
+      $(".hamburger").focusout(function() {
+          $('.new-homepage').show(610);
+      });
+      $(".hamburger").focusin(function() {
+        $('.pe-footer').hide(100);
+      });
+      $(".hamburger").focusout(function() {
+          $('.pe-footer').show(300);
+      });
     }
 
-    if (window.innerWidth < 1143) {
-        $(".hamburger").focusin(function() {
-            $('.columnThree').hide();
-            $('.accueilOne').css({
-                flexWrap: 'nowrap'
-            });
-        });
-        $(".hamburger").focusout(function() {
-            $('.columnThree').show();
-            $('.accueilOne').css({
-                flexWrap: 'wrap'
-            });
-        });
-    }
-
-    if (window.innerWidth < 800) {
-        $(".hamburger").focusin(function() {
-            $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
-            $('.columnThree').hide();
-            $('.columnTwo').hide();
-            $('.accueilOne').css({
-                flexWrap: 'nowrap'
-            });
-        });
-        $(".hamburger").focusout(function() {
-            $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
-            $('.columnThree').show();
-            $('.columnTwo').show();
-            $('.accueilOne').css({
-                flexWrap: 'wrap'
-            });
-        });
-    }
     // Fin Overlay margin & wrap tiles
-
-
-
-    // ng-click function to change Agenda views
-    $scope.changeAgendaView = function() {
-        $('.subAgenda').fadeOut(300);
-        $('.textEvent').fadeIn(700);
-    }
-
-    // Window Resize
-    /*  $(window).resize(function() {
-
-      });*/
-
 
 
     function load() {
@@ -120,9 +89,9 @@ function userController($scope, $http, userService, contactService, linkService,
             $('.photos-tile').hide(100);
             $('.links-tile').hide(100);
             if (window.innerWidth < 992) {
-              $('.photos-tile').show(100);
-              $('.youtube-tile').show(100);
-              $('.scoopit-tile').show(100);
+                $('.photos-tile').show(100);
+                $('.youtube-tile').show(100);
+                $('.scoopit-tile').show(100);
             }
         }
         if (tile == "take") {
@@ -137,9 +106,9 @@ function userController($scope, $http, userService, contactService, linkService,
             $('.photos-tile').hide(100);
             $('.links-tile').hide(100);
             if (window.innerWidth < 992) {
-              $('.photos-tile').show(100);
-              $('.youtube-tile').show(100);
-              $('.scoopit-tile').show(100);
+                $('.photos-tile').show(100);
+                $('.youtube-tile').show(100);
+                $('.scoopit-tile').show(100);
             }
         }
         if (tile == "links") {
@@ -154,9 +123,9 @@ function userController($scope, $http, userService, contactService, linkService,
             $('.scoopit-tile').hide(100);
             $('.photos-tile').hide(100);
             if (window.innerWidth < 992) {
-              $('.photos-tile').show(100);
-              $('.youtube-tile').show(100);
-              $('.scoopit-tile').show(100);
+                $('.photos-tile').show(100);
+                $('.youtube-tile').show(100);
+                $('.scoopit-tile').show(100);
             }
         }
         if (tile == "agenda") {
@@ -170,8 +139,8 @@ function userController($scope, $http, userService, contactService, linkService,
             $('.links-tile').hide(0);
             $('.text-agenda-apparition').show(100);
             if (window.innerWidth < 992) {
-              $('.photos-tile').show(100);
-              $('.youtube-tile').show(100);
+                $('.photos-tile').show(100);
+                $('.youtube-tile').show(100);
             }
         }
     }

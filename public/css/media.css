@@ -86,20 +86,7 @@
         margin-left: 5%;
         width: 95% !important;
     }
-    .pagination {
-        display: inline !important;
-        width: 300px !important;
-        position: absolute !important;
-        margin-top: -45px !important;
-        margin-left: 417px !important;
-    }
-    .pagination2 {
-        display: inline !important;
-        width: 280px !important;
-        position: absolute !important;
-        margin-top: 65px !important;
-        margin-left: -647px !important;
-    }
+    
     .testimonialImg {
         width: 150px !important;
         height: 150px !important;
