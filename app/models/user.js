@@ -122,10 +122,10 @@ var User = {
 
 
             var mailOptions = {
-                from: 'poleperche28@gmail.com',
+                from: 'entreprendre@perche28.fr',
                 to: users[0].userEmail,
                 subject: 'Mot de passe oublié !',
-                html: 'Bonjour ' + users[0].userFirstname + ', <p>Vous avez tenté de vous connecter au site web du Pôle Perche en vain. Voici donc votre nouveau mot de passe : <strong>' + Password + '</strong>.</p> <p> Si vous rencontrez d`autres problèmes, vous pouvez contacter nos conseillers par téléphone au 02 37 29 09 29 ou par mail à l`adresse suivante : paysperche.sia@wanadoo.fr </p> <p> À bientôt !</p> <p>L\'équipe du <a href="perche-entreprendre.fr">Pôle Perche</a></p>'
+                html: 'Bonjour ' + users[0].userFirstname + ', <p>Vous avez tenté de vous connecter au site web du Pôle Perche en vain. Voici donc votre nouveau mot de passe : <strong>' + Password + '</strong>.</p> <p> Si vous rencontrez d`autres problèmes, vous pouvez contacter nos conseillers par téléphone au 02 37 29 09 29 ou par mail à l`adresse suivante : entreprendre@perche28.fr </p> <p> À bientôt !</p> <p>L\'équipe du <a href="perche-entreprendre.fr">Pôle Perche</a></p>'
             };
             transporter.sendMail(mailOptions, function(error, info) {
                 if (error) {

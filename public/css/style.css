@@ -7,19 +7,7 @@
     text-align: center;
     padding-left: 0px !important;
 }
-button {
-    display: block;
-    color: black;
-    font-weight: bold;
-    height: 30px;
-    line-height: 29px;
-    margin-bottom: 14px;
-    margin-left: 220px;
-    text-decoration: none;
-    width: 300px;
-    background-color: #1F6F6F;
-    padding-bottom: 35px;
-}
+
 .password {
     text-align: center;
     color: #F6A327;
@@ -56,6 +44,7 @@ button {
 }
 
 #sidebar-wrapper {
+  position:fixed;
     z-index: 1000;
     left: 220px;
     width: 0;

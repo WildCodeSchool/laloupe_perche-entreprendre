@@ -5,72 +5,37 @@ function userController($scope, $http, userService, contactService, linkService,
         scrollTop: 0
     }, 'swing');
 
+
     // Overlay margin & wrap tiles
-    if (window.innerWidth >= 1143) {
-        $(".hamburger").focusin(function() {
-            $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
-            $('.accueilOne').css({
-                flexWrap: 'nowrap'
-            });
-        });
-        $(".hamburger").focusout(function() {
-            $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
-            $('.accueilOne').css({
-                flexWrap: 'nowrap'
-            });
-        });
+
+    $(".hamburger").focusin(function() {
+      $('.pe-footer').css({
+        marginLeft: '220px'
+      });
+    });
+    $(".hamburger").focusin(function() {
+      $('.pe-footer').css({
+        marginLeft: '0px'
+      });
+    });
+
+
+    if (window.innerWidth < 768) {
+      $(".hamburger").focusin(function() {
+        $('.new-homepage').hide(100);
+      });
+      $(".hamburger").focusout(function() {
+          $('.new-homepage').show(610);
+      });
+      $(".hamburger").focusin(function() {
+        $('.pe-footer').hide(100);
+      });
+      $(".hamburger").focusout(function() {
+          $('.pe-footer').show(300);
+      });
     }
 
-    if (window.innerWidth < 1143) {
-        $(".hamburger").focusin(function() {
-            $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
-            $('.columnThree').hide();
-            $('.accueilOne').css({
-                flexWrap: 'nowrap'
-            });
-        });
-        $(".hamburger").focusout(function() {
-            $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
-            $('.columnThree').show();
-            $('.accueilOne').css({
-                flexWrap: 'wrap'
-            });
-        });
-    }
-
-    if (window.innerWidth < 800) {
-        $(".hamburger").focusin(function() {
-            $(".tiles").css("margin-left", "150px").css("transition", "0.6s");
-            $('.columnThree').hide();
-            $('.columnTwo').hide();
-            $('.accueilOne').css({
-                flexWrap: 'nowrap'
-            });
-        });
-        $(".hamburger").focusout(function() {
-            $(".tiles").css("margin-left", "0px").css("transition", "0.6s");
-            $('.columnThree').show();
-            $('.columnTwo').show();
-            $('.accueilOne').css({
-                flexWrap: 'wrap'
-            });
-        });
-    }
     // Fin Overlay margin & wrap tiles
-
-
-
-    // ng-click function to change Agenda views
-    $scope.changeAgendaView = function() {
-        $('.subAgenda').fadeOut(300);
-        $('.textEvent').fadeIn(700);
-    }
-
-    // Window Resize
-    /*  $(window).resize(function() {
-
-      });*/
-
 
 
     function load() {
@@ -95,270 +60,143 @@ function userController($scope, $http, userService, contactService, linkService,
 
     }
 
-    //Change Phone display
-    $scope.buttonClassPhone = 'noDisplay';
-    $scope.changePhone = function()  {
-        $scope.IsClickEnable = false;
-        $scope.isCreationBigger = 1;
-        $scope.showOnlyNumber = 1;
-        $('.activityContent').css({
-            cursor: 'auto'
-        });
-        $scope.buttonClassPhone = "bigPhoneClose";
-    }
-    $scope.phoneRevert = function() {
-        $scope.IsClickEnable = true;
-        $scope.showOnlyNumber = 0;
-        $scope.isCreationBigger = 0;
-        $('.activityContent').css({
-            cursor: 'pointer'
-        });
-        $scope.buttonClassPhone = 'noDisplay';
-    }
+    $scope.contactInfo = 0;
+    $scope.openedLinksTile = 'closedLinks';
+    $scope.agendaInfo = 0;
+    $scope.createTile = 0;
+    $scope.takeTile = 0;
+    $scope.linksTile = 0;
+    $scope.clickEnabled = true;
 
-    // NG-CLASS MANIPULATION OF CREATION TILE
-    $scope.IsClickEnable = true;
-    $scope.bigOrSmall = "theCreation";
-    $scope.buttonClass = "noDisplay";
-    $scope.buttonClass2 = "noDisplay";
-    $scope.hidePagination = "noDisplay";
-    $scope.hideContent = "noDisplay";
-    $scope.hideSocietyForCreation = "theSociety";
-    $scope.hideYoutubeForCreation = "theYoutube";
-    $scope.hidecolumnThreeForCreation = "columnThree";
-    $scope.changeHeight = "columnTwo";
-    $scope.marginRegulation = "free";
-    $scope.showOnlyNumber = 0;
-
-    $scope.changeClass = function() {
-
-        if (window.innerWidth <= 1143) {
-            $scope.IsClickEnable = false;
-            $scope.bigOrSmall = "mediumCreation";
-            $scope.hideSocietyForCreation = "noDisplay";
-            $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.buttonClass = "mediumCreationClose";
-            $scope.isCreationBigger = 1;
-            $scope.sizeAgenda = "theAgenda";
-            $scope.hidePagination = "pagination-button";
-            $scope.hideContent = "display";
+    $scope.openTile = function(tile) {
+        if (!$scope.clickEnabled) {
+            return false;
         } else {
-            $scope.IsClickEnable = false;
-            $scope.isCreationBigger = 1;
-            $scope.sizeAgenda = "theAgenda";
-            $scope.bigOrSmall = "bigCreation";
-            $scope.buttonClass = "bigCreationClose";
-            $scope.hidePagination = "pagination-button";
-            $scope.hideContent = "display";
-            $scope.hideSocietyForCreation = "noDisplay";
-            $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.hidecolumnThreeForCreation = "noDisplay";
-            $scope.changeHeight = "columnTwoTer";
-            $scope.marginRegulation = "accueilOneTile";
-            $scope.hidePhoto = "noDisplay";
-            $scope.buttonClass2 = 'noDisplay';
-            $scope.showOnlyNumber = 1;
+            $scope.clickEnabled = false;
         }
-    };
-
-    $scope.returnCreationClass = function() {
-        $scope.IsClickEnable = true;
-        //Tile create activity
-        $scope.bigOrSmall = 'theCreation';
-        //Close Button
-        $scope.buttonClass = 'noDisplay';
-        //Pagination Button
-        $scope.hideContent = 'noDisplay';
-        //Society tile
-        $scope.hideSocietyForCreation = 'theSociety';
-        //Youtube tile
-        $scope.hideYoutubeForCreation = 'theYoutube';
-        $scope.changeHeight = "columnTwo";
-        //Column 3
-        $scope.hidecolumnThreeForCreation = 'columnThree';
-        $scope.hidePhoto = 'thePhoto';
-        $scope.hideScoupit = 'theScoupit';
-        $scope.hideLinks = 'theLinks';
-        //Margin Regulation
-        $scope.marginRegulation = 'free';
-        $scope.showOnlyNumber = 0;
-    }
-
-    //NG-CLASS AGENDA MANIPULATION
-    $scope.sizeAgenda = "theAgenda";
-    $scope.switchAgenda = "subAgenda";
-    $scope.switchAgendaContent = "noDisplay";
-    $scope.hideScoupit = "theScoupit";
-    $scope.hidePhoto = "thePhoto";
-    $scope.hideLinks = "theLinks";
-
-    $scope.changeAgendaSize = function() {
-        if (window.innerWidth <= 800) {
-            $scope.isCreationBigger = 2;
-            $scope.IsClickEnable = false;
-            $scope.sizeAgenda = "littleAgenda";
-            $scope.buttonClass2 = "mediumCreationClose2";
-            $scope.switchAgenda = "noDisplay";
-            $scope.switchAgendaContent = "textEvent";
-        } else if ((window.innerWidth >= 800) && (window.innerWidth <= 1143)) {
-            $scope.isCreationBigger = 2;
-            $scope.IsClickEnable = false;
-            $scope.sizeAgenda = "mediumAgenda";
-            $scope.switchAgenda = "noDisplay";
-            $scope.switchAgendaContent = "textEvent";
-            $scope.hideSocietyForCreation = "noDisplay";
-            $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.changeHeight = "columnTwoBisBis";
-            $scope.bigOrSmall = "mediumCreationAgenda";
-            $scope.buttonClass2 = "mediumCreationClose2";
-        } else if (window.innerWidth > 1143) {
-            $scope.isCreationBigger = 2;
-            $scope.showOnlyNumber = 1;
-            $scope.IsClickEnable = false;
-            $scope.sizeAgenda = "bigAgenda";
-            $scope.switchAgenda = "noDisplay";
-            $scope.switchAgendaContent = "textEvent";
-            $scope.hideSocietyForCreation = "noDisplay";
-            $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.hideScoupit = "noDisplay";
-            $scope.hideLinks = "noDisplay";
-            $scope.changeHeight = "columnTwoBis";
-            $scope.hidecolumnThreeForCreation = "columnThreeBis";
-            $scope.buttonClass2 = "bigCreationClose2";
+        if (tile == "contact") {
+            $scope.contactInfo = 1;
         }
-
-    }
-
-    $scope.returnCreationClass2 = function() {
-        $scope.IsClickEnable = true;
-
-        //Tile agenda
-        $scope.showOnlyNumber = 0;
-        $scope.sizeAgenda = 'theAgenda';
-        $scope.switchAgenda = 'subAgenda';
-        $scope.switchAgendaContent = 'noDisplay';
-        $scope.hideSocietyForCreation = 'theSociety';
-        $scope.hideYoutubeForCreation = 'theYoutube';
-        $scope.hideScoupit = 'theScoupit';
-        $scope.hidePhoto = 'thePhoto';
-        $scope.hideLinks = 'theLinks';
-        $scope.changeHeight = 'columnTwo';
-        $scope.hidecolumnThreeForCreation = 'columnThree';
-        $scope.buttonClass2 = 'noDisplay';
-    }
-
-    //NG-CLASS SOCIETY MANIPULATION
-    $scope.hidePagination2 = "noDisplay";
-    $scope.buttonClass3 = "noDisplay";
-    $scope.showContent = "noDisplay";
-    $scope.smSociety = "society";
-
-
-    $scope.changeSocietySize = function() {
-        if (window.innerWidth <= 800) {
-            $scope.isCreationBigger = 1;
-            $scope.IsClickEnable = false;
-            $scope.hideSocietyForCreation = "mediumSociety";
-            $scope.bigOrSmall = "noDisplay";
-            $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.showContent = "societyContent";
-            $scope.smSociety = "mediumContentSociety";
-            $scope.hidePagination2 = "pagination-button2";
-            $scope.buttonClass3 = "mediumCreationClose3";
-        } else if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
-            $scope.isCreationBigger = 1;
-            $scope.IsClickEnable = false;
-            $scope.hideSocietyForCreation = "mediumSociety";
-            $scope.bigOrSmall = "noDisplay";
-            $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.showContent = "societyContent";
-            $scope.smSociety = "mediumContentSociety";
-            $scope.hidePagination2 = "pagination-button2";
-            $scope.buttonClass3 = "mediumCreationClose3";
-        } else if (window.innerWidth > 1143) {
-            $scope.isCreationBigger = 1;
-            $scope.IsClickEnable = false;
-            $scope.hideSocietyForCreation = "bigSociety";
-            $scope.buttonClass3 = "bigCreationClose3";
-            $scope.hidePagination2 = "pagination-button2";
-            $scope.bigOrSmall = "noDisplay";
-            $scope.hideYoutubeForCreation = "noDisplay";
-            $scope.hidecolumnThreeForCreation = "noDisplay";
-            $scope.changeHeight = "columnTwoTer";
-            $scope.marginRegulation = "accueilOneTile";
-            $scope.showContent = "societyContent";
-            $scope.showOnlyNumber = 1;
+        if (tile == "create") {
+            $scope.openedTile = 'createActivity';
+            $scope.contactInfo = 1;
+            $scope.showContactCloseButton = 1;
+            $scope.closeCreate = 1;
+            $scope.createTile = 1;
+            $('.take-activity-tile').hide(100);
+            $('.youtube-tile').hide(100);
+            $('.scoopit-tile').hide(100);
+            $('.photos-tile').hide(100);
+            $('.links-tile').hide(100);
+            if (window.innerWidth < 992) {
+                $('.photos-tile').show(100);
+                $('.youtube-tile').show(100);
+                $('.scoopit-tile').show(100);
+            }
+        }
+        if (tile == "take") {
+            $scope.openedTile = 'takeActivity';
+            $scope.contactInfo = 1;
+            $scope.showContactCloseButton = 1;
+            $scope.closeTake = 1;
+            $scope.takeTile = 1;
+            $('.create-activity-tile').hide(100);
+            $('.youtube-tile').hide(100);
+            $('.scoopit-tile').hide(100);
+            $('.photos-tile').hide(100);
+            $('.links-tile').hide(100);
+            if (window.innerWidth < 992) {
+                $('.photos-tile').show(100);
+                $('.youtube-tile').show(100);
+                $('.scoopit-tile').show(100);
+            }
+        }
+        if (tile == "links") {
+            $scope.openedLinksTile = 'linksActivity';
+            $scope.closeLinks = 1;
+            $scope.linksTile = 1;
+            $scope.contactInfo = 1;
+            $scope.showContactCloseButton = 1;
+            $('.create-activity-tile').hide(100);
+            $('.take-activity-tile').hide(100);
+            $('.youtube-tile').hide(100);
+            $('.scoopit-tile').hide(100);
+            $('.photos-tile').hide(100);
+            if (window.innerWidth < 992) {
+                $('.photos-tile').show(100);
+                $('.youtube-tile').show(100);
+                $('.scoopit-tile').show(100);
+            }
+        }
+        if (tile == "agenda") {
+            $scope.openedTile = 'agendaActivity';
+            $scope.showContactCloseButton = 1;
+            $scope.closeAgenda = 1;
+            $scope.agendaInfo = 1;
+            $('.take-activity-tile').hide(0);
+            $('.youtube-tile').hide(0);
+            $('.photos-tile').hide(0);
+            $('.links-tile').hide(0);
+            $('.text-agenda-apparition').show(100);
+            if (window.innerWidth < 992) {
+                $('.photos-tile').show(100);
+                $('.youtube-tile').show(100);
+            }
         }
     }
-    $scope.returnCreationClass3 = function() {
-        $scope.IsClickEnable = true;
-        //Tile create activity
-        $scope.bigOrSmall = "theCreation";
-        //Close Button
-        $scope.buttonClass3 = 'noDisplay';
-        //Pagination Button
-        $scope.hidePagination2 = 'noDisplay';
-        //Society tile
-        $scope.hideSocietyForCreation = 'theSociety';
-        $scope.showContent = 'noDisplay';
-        //Youtube tile
-        $scope.hideYoutubeForCreation = 'theYoutube';
-        $scope.changeHeight = "columnTwo";
-        //Column 3
-        $scope.hidecolumnThreeForCreation = 'columnThree';
-        //Margin Regulation
-        $scope.marginRegulation = 'free';
-        $scope.showOnlyNumber = 0;
-    }
 
-    //NG-CLASS LINKS MANIPULATION
-    $scope.buttonClass4 = "noDisplay";
-    $scope.fillerbloc = "noDisplay";
-    if (window.innerWidth <= 1143) {
-        $scope.fillerbloc = "newBloc";
-    }
-
-    $scope.changeLinksSize = function() {
-
-        if ((window.innerWidth > 800) && (window.innerWidth <= 1143)) {
-
-            $scope.IsClickEnable = false;
-            $scope.blabla = 1;
-            $scope.isCreationBigger = 1;
-            $scope.hideScoupit = 'noDisplay';
-            $scope.hidePhoto = 'noDisplay';
-            $scope.hideLinks = 'mediumLinks';
-            $scope.buttonClass4 = "bigCreationClose4bis";
-            $scope.hidecolumnThreeForCreation = "columnThreeTerbis";
-
-        } else {
-            $scope.IsClickEnable = false;
-            $scope.blabla = 1;
-            $scope.isCreationBigger = 1;
-            $scope.hideLinks = 'bigLinks';
-            $scope.changeHeight = 'noDisplay';
-            $scope.hideScoupit = 'noDisplay';
-            $scope.hidePhoto = 'noDisplay';
-            $scope.marginRegulation = "accueilOneTile";
-            $scope.buttonClass4 = "bigCreationClose4";
-            $scope.hidecolumnThreeForCreation = "columnThreeTer";
-            $scope.showOnlyNumber = 1;
+    $scope.closeTile = function(tile) {
+        $scope.clickEnabled = true;
+        if (tile == "contact") {
+            $scope.contactInfo = 0;
+        }
+        if (tile == "create") {
+            $scope.openedTile = 'closed';
+            $scope.contactInfo = 0;
+            $scope.showContactCloseButton = 0;
+            $scope.closeCreate = 0;
+            $scope.createTile = 0;
+            $('.take-activity-tile').show(100);
+            $('.youtube-tile').show(100);
+            $('.scoopit-tile').show(100);
+            $('.photos-tile').show(100);
+            $('.links-tile').show(100);
+        }
+        if (tile == "take") {
+            $scope.openedTile = 'closed';
+            $scope.contactInfo = 0;
+            $scope.showContactCloseButton = 0;
+            $scope.closeTake = 0;
+            $scope.takeTile = 0;
+            $('.create-activity-tile').show(100);
+            $('.youtube-tile').show(100);
+            $('.scoopit-tile').show(100);
+            $('.photos-tile').show(100);
+            $('.links-tile').show(100);
+        }
+        if (tile == "links") {
+            $scope.closeLinks = 0;
+            $scope.openedLinksTile = 'closedLinks';
+            $scope.linksTile = 0;
+            $scope.contactInfo = 0;
+            $('.create-activity-tile').show(100);
+            $('.take-activity-tile').show(100);
+            $('.youtube-tile').show(100);
+            $('.scoopit-tile').show(100);
+            $('.photos-tile').show(100);
+        }
+        if (tile == "agenda") {
+            $scope.openedTile = 'closed';
+            $scope.contactInfo = 0;
+            $scope.showContactCloseButton = 0;
+            $scope.closeAgenda = 0;
+            $scope.agendaInfo = 0;
+            $('.take-activity-tile').show(100);
+            $('.youtube-tile').show(100);
+            $('.photos-tile').show(100);
+            $('.links-tile').show(100);
         }
     }
-    $scope.returnCreationClass4 = function() {
-        $scope.IsClickEnable = true;
-        $scope.isCreationBigger = 0;
-
-        $scope.hideLinks = 'theLinks';
-        $scope.changeHeight = 'columnTwo';
-        $scope.hidecolumnThreeForCreation = "columnThree";
-        $scope.hideScoupit = 'theScoupit';
-        $scope.hidePhoto = 'thePhoto';
-        $scope.marginRegulation = "free";
-        $scope.buttonClass4 = 'noDisplay';
-        $scope.showOnlyNumber = 0;
-    }
-
 
     $scope.add = function() {
         var data = {};
@@ -411,6 +249,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.contactEnterprise = "";
         $scope.contactFirstname = "";
         $scope.contactPhone = "";
+
     }
     $scope.addAgenda = function() {
         var data = {};
