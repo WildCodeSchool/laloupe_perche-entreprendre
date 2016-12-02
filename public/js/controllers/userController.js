@@ -6,38 +6,6 @@ function userController($scope, $http, userService, contactService, linkService,
     }, 'swing');
 
 
-    // Overlay margin & wrap tiles
-
-    $(".hamburger").focusin(function() {
-      $('.pe-footer').css({
-        marginLeft: '220px'
-      });
-    });
-    $(".hamburger").focusin(function() {
-      $('.pe-footer').css({
-        marginLeft: '0px'
-      });
-    });
-
-
-    if (window.innerWidth < 768) {
-      $(".hamburger").focusin(function() {
-        $('.new-homepage').hide(100);
-      });
-      $(".hamburger").focusout(function() {
-          $('.new-homepage').show(610);
-      });
-      $(".hamburger").focusin(function() {
-        $('.pe-footer').hide(100);
-      });
-      $(".hamburger").focusout(function() {
-          $('.pe-footer').show(300);
-      });
-    }
-
-    // Fin Overlay margin & wrap tiles
-
-
     function load() {
         userService.get().then(function(res) {
             $scope.userlist = res.data
@@ -177,6 +145,7 @@ function userController($scope, $http, userService, contactService, linkService,
         if (tile == "links") {
             $scope.closeLinks = 0;
             $scope.openedLinksTile = 'closedLinks';
+            $scope.showContactCloseButton = 0;
             $scope.linksTile = 0;
             $scope.contactInfo = 0;
             $('.create-activity-tile').show(100);
@@ -226,6 +195,7 @@ function userController($scope, $http, userService, contactService, linkService,
         $scope.userPhone = "";
     }
     $scope.addContact = function() {
+        alert("L'envoi d'E-mail fonctionne, patientez quelques minutes ;)");
         var data = {};
         data.contactVille = $scope.contactVille;
         data.contactFunction = $scope.contactFunction;
@@ -236,9 +206,7 @@ function userController($scope, $http, userService, contactService, linkService,
         data.contactFirstname = $scope.contactFirstname;
         data.contactEnterprise = $scope.contactEnterprise;
         data.contactPhone = $scope.contactPhone;
-        contactService.create(data).then(function(res) {
-
-        });
+        contactService.create(data).then(function(res) {});
         $scope.contactEmail = "";
         $scope.contactMdp = "";
         $scope.contactVille = "";

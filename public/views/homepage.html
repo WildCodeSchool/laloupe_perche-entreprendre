@@ -15,13 +15,13 @@
 
         <div class="tiles agenda-tile clearfix" ng-class="{'opened-agenda' : openedTile == 'agendaActivity'}" ng-click="openTile('agenda')">
             <div class="content-create-tile content-agenda">
-                <div class="agendaImgContainer" ng-if="contactInfo == 0 && agendaInfo == 0">
+                <div class="agendaImgContainer" ng-show="contactInfo == 0 && agendaInfo == 0">
                     <div id="my_carousel3" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <!-- Page 1 -->
                             <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="agenda in agendalist">
                                 <div class="carousel-page">
-                                    <img src="{{agenda.agendaImg}}" class="imgAgenda" />
+                                    <img src="{{agenda.agendaImg || 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png'}}" class="imgAgenda" />
                                 </div>
                                 <div class="carousel-caption">Cliquez pour plus d'informations !</div>
                             </div>
@@ -43,7 +43,7 @@
                                 <p>{{agenda.agendaPrice}}</p>
                             </div>
                             <button class="btn" ng-if="agenda.agendaLink"><a ng-href="{{agenda.agendaLink}}" target="_blank">Reservez vos billets !</a></button>
-                            <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate" class="agenda-pagination-xs visible-xs"></dir-pagination-controls>
+                            <dir-pagination-controls max-size="3" direction-links="true" boundary-links="true" pagination-id="agendaPaginate" class="agenda-pagination-xs visible-xs"></dir-pagination-controls>
                         </div>
                     </div>
                     <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="agendaPaginate" class="agenda-pagination hidden-xs"></dir-pagination-controls>
@@ -51,17 +51,17 @@
 
                 <div class="activityContent" ng-show="contactInfo == 1">
                     <div class="account-wall-activity">
-                        <p style="font-size: 12px">{{contactName}}</p>
                         <form style="text-align:center;">
                             <h3 style="margin-top: 0px;"> Vos informations </h3>
-                            <input type="name" class="form-control" ng-model="contactName" placeholder="Votre nom" required>
-                            <input type="firstname" class="form-control" ng-model="contactFirstname" placeholder="Votre prénom" required>
-                            <input type="fonction" class="form-control" ng-model="contactFunction" placeholder="Votre fonction" required>
-                            <input type="enterprise2" class="form-control" ng-model="contactEnterprise" placeholder="Votre structure" required>
-                            <input type="ville2" class="form-control" ng-model="contactVille" placeholder="Votre ville" required>
-                            <input type="mail" class="form-control" ng-model="contactEmail" placeholder="Votre email" required>
-                            <input type="phone" class="form-control" ng-model="contactPhone" placeholder="Votre numéro de téléphone" required>
-                            <textarea style="resize:vertical;" class="form-control form-message" ng-model="contactNote" placeholder="Message..." rows="6" name="comment" required></textarea>
+                            <p class="form-text">Remplissez simplement ce formulaire et nous vous rappellerons très prochainement.</p>
+                            <input type="name" class="form-control" ng-model="contactName" placeholder="Votre nom">
+                            <input type="firstname" class="form-control" ng-model="contactFirstname" placeholder="Votre prénom">
+                            <input type="fonction" class="form-control" ng-model="contactFunction" placeholder="Votre fonction">
+                            <input type="enterprise2" class="form-control" ng-model="contactEnterprise" placeholder="Votre structure">
+                            <input type="ville2" class="form-control" ng-model="contactVille" placeholder="Votre ville">
+                            <input type="mail" class="form-control" ng-model="contactEmail" placeholder="Votre email">
+                            <input type="phone" class="form-control" ng-model="contactPhone" placeholder="Votre numéro de téléphone">
+                            <textarea style="resize:vertical;" class="form-control form-message" ng-model="contactNote" placeholder="Message..." rows="6" name="comment"></textarea>
                             <button class="btn btn-success add-contact-button" ng-click="addContact()" type="submit">
                               Envoi !</button>
                         </form>
@@ -100,7 +100,7 @@
         <div class="hidden-xs hidden-sm col-md-6">
             <div class="col-xs-12">
                 <div class="tiles scoopit-tile">
-                    <iframe class="scoopit-control" height="250px" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=200"></iframe>
+                    <iframe class="scoopit-control" height="250px" src="https://www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=300&amp;height=200"></iframe>
                 </div>
             </div>
         </div>
@@ -208,7 +208,7 @@
                                 <a class="links" ng-href="{{link.linkValue}}" target="_blank">{{link.linkName}}</a>
                               </button>
                             </div>
-                            <div style="width: 80%; margin-top: 10%; margin-left: 10%; padding-bottom: 10px;">
+                            <div style="width: 80%; margin-top: 6%; margin-left: 10%; padding-bottom: 10px;">
                                 <div id="my_carousel2" class="carousel slide" data-ride="carousel">
                                     <ol class="carousel-indicators">
                                         <li data-target="#my_carousel2" data-slide-to="0" class="active"></li>
@@ -320,14 +320,51 @@
         <div class="col-xs-12 col-sm-4 no-padding">
             <div class="col-xs-12 no-padding">
                 <div class="tiles scoopit-tile">
-                    <iframe class="scoopit-control" height="250px" src="//www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=220&amp;height=200"></iframe>
+                    <iframe class="scoopit-control" height="250px" src="https://www.scoop.it/t/l-actualite-economique-du-perche/js?format=square&amp;numberOfPosts=5&amp;title=Actualites+ECO&amp;speed=3&amp;mode=normal&amp;width=220&amp;height=200"></iframe>
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-4 youtube-margin">
             <div class="tiles youtube-tile">
                 <iframe width="266" height="200" src="https://www.youtube.com/embed/iVN6f8-Vkvw?&autoplay=1&controls=0&modestbranding=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=iVN6f8-Vkvw" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
+    </div>
+</div>
+
+<div id="footer" class="pe-footer col-xs-12">
+
+    <div class="lineUp">
+        <div class="site">
+            <a href="#/">Perche Entreprendre ©</a>
+        </div>
+        <div class="mentions">
+            <a href="#/mentions">Mentions légales</a>
+        </div>
+        <div class="crédit">Réalisé par la
+            <a href="http://wildcodeschool.fr/">Wild Code School</a> de la Loupe</div>
+        <div><img class="logoWCS" src="http://leperche.perche-entreprendre.fr/wp-content/themes/pays-perche/img/WCS.png" alt="Logo WCS" /></div>
+    </div>
+
+    <div class="lineDown">
+
+        <a target="_blank" href="http://www.oreeduperche.com/"><img class="logoPartenaire" src="img/logo-oréeperche.jpg" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://www.cc-perche.fr" /> <img class="logoPartenaire" src="img/Logo%20CDC%20du%20Perche.png" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://www.perchethironnais.com/"><img class="logoPartenaire" src="img/Logo%20P.%20Thironnais%20%5B50%25%5D.jpg" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://senonches.fr/"><img class="logoPartenaire" src="img/Logo%20P.%20Senonchois.jpg" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://www.cdc-desportesduperche.com/"><img class="logoPartenaire" src="img/logo%20CCPP.jpg" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://europa.eu/index_fr.htm"><img class="logoPartenaire" src="img/logo%20UE%20normal.JPG" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://www.europe-centre.eu/"><img class="logoPartenaire" src="img/logo-general-europe-cvdl.jpg" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://www.europe-centre.eu/fr/42/Le_programme_LEADER.html"><img class="logoPartenaire" src="img/leaderlogo.jpg" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://www.regioncentre-valdeloire.fr/accueil.html"><img class="logoPartenaire" src="img/logo%20-%20R%C3%A9gion%20Centre-Val%20de%20Loire-%202015.jpg" alt="Logo parteraire" /></a>
+
     </div>
 </div>

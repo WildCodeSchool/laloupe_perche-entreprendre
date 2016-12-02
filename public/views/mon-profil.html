@@ -1,40 +1,54 @@
 <div class="container">
-
     <div class="row  col-md-6 col-md-offset-3">
-
-            <form class="form-signin" style="text-align:center; margin-top: 40px">
-                <input type="text" class="form-control" ng-model="user.userName" placeholder="Votre nom" required>
-                <input type="text" class="form-control" ng-model="user.userFirstname" placeholder="Votre prénom" required>
-                <input type="password" class="form-control" ng-model="user.userMdp" placeholder="Votre mot de passe" required>
-                <input type="password" class="form-control" ng-model="user.userConfirm" placeholder="Confirmez votre mot de passe" required>
-                <input type="text" class="form-control" ng-model="user.userFunction" placeholder="Votre fonction" required>
-                <input type="text" class="form-control" ng-model="user.userEnterprise" placeholder="Votre structure" required>
-                <input type="text" class="form-control" ng-model="user.userVille" placeholder="Votre ville" required>
-                <input type="text" class="form-control" ng-model="user.userPhone" placeholder="Votre numéro de téléphone" required>
-                <textarea style="resize:vertical;" class="form-control form-message" ng-model="user.userNote" placeholder="Note à propos de l'élu" required></textarea>
-
-                <h3> Votre photo </h3>
-                <div flow-init flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFileUser($files)">
-
-                      <center>
-                        <button flow-btn flow-attrs="{accept:'image/*'}" type="file" class="btn btn-success">Télécharger une image</button>
-                      </center>
-
-
-                      <center>
-                        <img class="preview" flow-img="{{user.userImg}}" />
-                        <img class="preview" ng-src="{{user.userImg}}" />
-</center>
-
-
-                    </div>
-                <a href="#/">
-                    <button class="btn btn-lg btn-success" style="padding-bottom: 35px; margin-top: 60px" ng-click="update(user)" type="submit">
+        <form class="form-signin" style="text-align:center; margin-top: 40px">
+            <input type="text" class="form-control" ng-model="user.userName" placeholder="Votre nom" required>
+            <input type="text" class="form-control" ng-model="user.userFirstname" placeholder="Votre prénom" required>
+            <input type="password" class="form-control" ng-model="user.userMdp" placeholder="Votre mot de passe" required>
+            <input type="password" class="form-control" ng-model="user.userConfirm" placeholder="Confirmez votre mot de passe" required>
+            <input type="text" class="form-control" ng-model="user.userFunction" placeholder="Votre fonction" required>
+            <input type="text" class="form-control" ng-model="user.userEnterprise" placeholder="Votre structure" required>
+            <input type="text" class="form-control" ng-model="user.userVille" placeholder="Votre ville" required>
+            <input type="text" class="form-control" ng-model="user.userPhone" placeholder="Votre numéro de téléphone" required>
+            <textarea style="resize:vertical;" class="form-control form-message" ng-model="user.userNote" placeholder="Note à propos de l'élu" required></textarea>
+            <h3> Votre photo </h3>
+            <div flow-init flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFileUser($files)">
+                <center>
+                    <button flow-btn flow-attrs="{accept:'image/*'}" type="file" class="btn btn-success">Télécharger une image</button>
+                </center>
+                <center>
+                    <img class="preview" flow-img="{{user.userImg}}" />
+                    <img class="preview" ng-src="{{user.userImg}}" />
+                </center>
+            </div>
+            <a href="#/">
+                <button class="btn btn-lg btn-success" style="margin-top: 60px" ng-click="update(user)" type="submit">
                         Mettre à jour</button>
-                </a>
+            </a>
+        </form>
+    </div>
+</div>
 
-            </form>
-
-
+<div id="footer" class="pe-footer col-xs-12">
+    <div class="lineUp">
+        <div class="site">
+            <a href="#/">Perche Entreprendre ©</a>
+        </div>
+        <div class="mentions">
+            <a href="#/mentions">Mentions légales</a>
+        </div>
+        <div class="crédit">Réalisé par la
+            <a href="http://wildcodeschool.fr/">Wild Code School</a> de la Loupe</div>
+        <div><img class="logoWCS" src="http://leperche.perche-entreprendre.fr/wp-content/themes/pays-perche/img/WCS.png" alt="Logo WCS" /></div>
+    </div>
+    <div class="lineDown">
+        <a target="_blank" href="http://www.oreeduperche.com/"><img class="logoPartenaire" src="img/logo-oréeperche.jpg" alt="Logo parteraire" /></a>
+        <a target="_blank" href="http://www.cc-perche.fr" /> <img class="logoPartenaire" src="img/Logo%20CDC%20du%20Perche.png" alt="Logo parteraire" /></a>
+        <a target="_blank" href="http://www.perchethironnais.com/"><img class="logoPartenaire" src="img/Logo%20P.%20Thironnais%20%5B50%25%5D.jpg" alt="Logo parteraire" /></a>
+        <a target="_blank" href="http://senonches.fr/"><img class="logoPartenaire" src="img/Logo%20P.%20Senonchois.jpg" alt="Logo parteraire" /></a>
+        <a target="_blank" href="http://www.cdc-desportesduperche.com/"><img class="logoPartenaire" src="img/logo%20CCPP.jpg" alt="Logo parteraire" /></a>
+        <a target="_blank" href="http://europa.eu/index_fr.htm"><img class="logoPartenaire" src="img/logo%20UE%20normal.JPG" alt="Logo parteraire" /></a>
+        <a target="_blank" href="http://www.europe-centre.eu/"><img class="logoPartenaire" src="img/logo-general-europe-cvdl.jpg" alt="Logo parteraire" /></a>
+        <a target="_blank" href="http://www.europe-centre.eu/fr/42/Le_programme_LEADER.html"><img class="logoPartenaire" src="img/leaderlogo.jpg" alt="Logo parteraire" /></a>
+        <a target="_blank" href="http://www.regioncentre-valdeloire.fr/accueil.html"><img class="logoPartenaire" src="img/logo%20-%20R%C3%A9gion%20Centre-Val%20de%20Loire-%202015.jpg" alt="Logo parteraire" /></a>
     </div>
 </div>

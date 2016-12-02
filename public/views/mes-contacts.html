@@ -1,11 +1,13 @@
 
-<div class="container" style="margin-top: 15%">
-    <input type="text" id="inputMessage" class="filter" ng-model="searchFriend" placeholder="Recherchez directement par nom, fonction ou lieu !">
-    <ul class="contactlist">
+<div class="container" style="margin-top: 150px">
+  <div class="col-xs-12">
+<input type="text" id="inputMessage" class="filter" ng-model="searchFriend" placeholder="Recherchez directement par nom, fonction ou lieu !">
+  </div>
+    <ul class="col-xs-12 contactlist">
       <div>
         <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
       </div>
-        <li class="col-sm-2 friend" dir-paginate="friend in friendlist|itemsPerPage:10 | filterBySearchFriend:searchFriend:user" data-toggle="modal" data-target=".profil-{{friend._id}}" >
+        <li class="col-sm-3 col-md-2 friend" dir-paginate="friend in friendlist|itemsPerPage:10 | filterBySearchFriend:searchFriend:user" data-toggle="modal" data-target=".profil-{{friend._id}}" >
             <div class="item-img-wrap ">
                 <div ng-show='!friend.contactImg'>
                     <img class="imgCard" style="height:156px" src="http://www.clipartbest.com/cliparts/4ib/Kz7/4ibKz78KT.gif" alt="Photo de profil" />
@@ -47,5 +49,42 @@
                     </div>
                 </div>
         </div>
+    </div>
+</div>
+
+<div id="footer" class="pe-footer col-xs-12">
+
+    <div class="lineUp">
+        <div class="site">
+            <a href="#/">Perche Entreprendre ©</a>
+        </div>
+        <div class="mentions">
+            <a href="#/mentions">Mentions légales</a>
+        </div>
+        <div class="crédit">Réalisé par la
+            <a href="http://wildcodeschool.fr/">Wild Code School</a> de la Loupe</div>
+        <div><img class="logoWCS" src="http://leperche.perche-entreprendre.fr/wp-content/themes/pays-perche/img/WCS.png" alt="Logo WCS" /></div>
+    </div>
+
+    <div class="lineDown">
+
+        <a target="_blank" href="http://www.oreeduperche.com/"><img class="logoPartenaire" src="img/logo-oréeperche.jpg" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://www.cc-perche.fr" /> <img class="logoPartenaire" src="img/Logo%20CDC%20du%20Perche.png" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://www.perchethironnais.com/"><img class="logoPartenaire" src="img/Logo%20P.%20Thironnais%20%5B50%25%5D.jpg" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://senonches.fr/"><img class="logoPartenaire" src="img/Logo%20P.%20Senonchois.jpg" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://www.cdc-desportesduperche.com/"><img class="logoPartenaire" src="img/logo%20CCPP.jpg" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://europa.eu/index_fr.htm"><img class="logoPartenaire" src="img/logo%20UE%20normal.JPG" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://www.europe-centre.eu/"><img class="logoPartenaire" src="img/logo-general-europe-cvdl.jpg" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://www.europe-centre.eu/fr/42/Le_programme_LEADER.html"><img class="logoPartenaire" src="img/leaderlogo.jpg" alt="Logo parteraire" /></a>
+
+        <a target="_blank" href="http://www.regioncentre-valdeloire.fr/accueil.html"><img class="logoPartenaire" src="img/logo%20-%20R%C3%A9gion%20Centre-Val%20de%20Loire-%202015.jpg" alt="Logo parteraire" /></a>
+
     </div>
 </div>

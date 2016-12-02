@@ -46,7 +46,7 @@ var User = {
                         _id: user._id,
                         isAdmin: user.isAdmin
                     }, 'tokenSecret', {
-                        expiresIn: 1440 // expires in 24 hours
+                        expiresIn: '2h' // expires in 24 hours
                     });
 
                     // return the information including token as JSON
@@ -111,30 +111,26 @@ var User = {
                 Password = Password + ListeCar[Math.floor(Math.random() * ListeCar.length)];
             }
 
-            var nodemailer = require('nodemailer');
-            var transporter = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                    user: process.env.SMTP_USER,
-                    pass: process.env.SMTP_PASS
-                }
+            var helper = require('sendgrid').mail;
+            var from_email = new helper.Email('entreprendre@poleperche28.fr');
+            var to_email = new helper.Email(users[0].userEmail);
+            var subject = 'Mot de passe oublié';
+            var content = new helper.Content('text/plain', 'Vous avez tenté de vous connecter au site web du Pôle Perche en vain. Voici donc votre nouveau mot de passe : ' + Password + '.Si vous rencontrez d`autres problèmes, vous pouvez contacter nos conseillers par téléphone au 02 37 29 09 29 ou par mail à l`adresse suivante : entreprendre@perche28.fr. À bientôt ! L\'équipe du Pôle Perche');
+            var mail = new helper.Mail(from_email, subject, to_email, content);
+
+            var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+            var request = sg.emptyRequest({
+              method: 'POST',
+              path: '/v3/mail/send',
+              body: mail.toJSON(),
             });
 
-
-            var mailOptions = {
-                from: 'entreprendre@perche28.fr',
-                to: users[0].userEmail,
-                subject: 'Mot de passe oublié !',
-                html: 'Bonjour ' + users[0].userFirstname + ', <p>Vous avez tenté de vous connecter au site web du Pôle Perche en vain. Voici donc votre nouveau mot de passe : <strong>' + Password + '</strong>.</p> <p> Si vous rencontrez d`autres problèmes, vous pouvez contacter nos conseillers par téléphone au 02 37 29 09 29 ou par mail à l`adresse suivante : entreprendre@perche28.fr </p> <p> À bientôt !</p> <p>L\'équipe du <a href="perche-entreprendre.fr">Pôle Perche</a></p>'
-            };
-            transporter.sendMail(mailOptions, function(error, info) {
-                if (error) {
-                    return console.log(error);
-                }
-                console.log(process.env.SMTP_USER + process.env.SMTP_PASS);
+            sg.API(request, function(error, response) {
+              console.log(response.statusCode);
+              console.log(response.body);
+              console.log(response.headers);
             });
 
-            transporter.close();
 
             users[0].userMdp = Password;
             users[0].save();
