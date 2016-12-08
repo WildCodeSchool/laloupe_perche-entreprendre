@@ -52,13 +52,15 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+    <base href="/">
+
 </head>
 
 <body>
     <header>
         <div class="container">
             <div class="col-xs-12 col-sm-6">
-                <a href="#/"><img src="img/logo_pole.png" class="logo-perche-width" alt="logo Perche" /></a>
+                <a href="/"><img src="img/logo_pole.png" class="logo-perche-width" alt="logo Perche" /></a>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <h1 style="color: #F6A327">L'effet réseau</h1>
@@ -73,26 +75,26 @@
         <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#/" class="links">Home</a>
+                    <a href="/" class="links">Home</a>
                 </li>
                 <li>
-                    <a href="#ma-carte" ng-if='token' class="links">Ma carte de visite</a>
+                    <a href="ma-carte" ng-if='token' class="links">Ma carte de visite</a>
                 </li>
                 <li>
-                    <a href="#mes-contacts" ng-if='token' class="links">Mes contacts</a>
+                    <a href="mes-contacts" ng-if='token' class="links">Mes contacts</a>
                 </li>
                 <li>
-                    <a href="#connexion" ng-if="!token || token == ''" class="links">Je me connecte !</a>
+                    <a href="connexion" ng-if="!token || token == ''" class="links">Je me connecte !</a>
                 </li>
                 <li>
-                    <a href="#/" ng-if='token' class="links" ng-click="logout()">Je me déconnecte !</a>
+                    <a href="/" ng-if='token' class="links" ng-click="logout()">Je me déconnecte !</a>
                 </li>
                 <li class="dropdown" ng-if='token'>
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">Mon compte <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#mon-profil" class="links">Editer mon profil</a></li>
+                        <li><a href="mon-profil" class="links">Editer mon profil</a></li>
                         <li><a href="pdf/guide%20d'utilisation%20perche-entreprendre.fr.pdf" target="_blank" class="links" download>Mon guide d'utilisation</a></li>
-                        <li><a href="#administration" ng-if='user.isAdmin' class="links">Mon panneau d'administration</a></li>
+                        <li><a href="administration" ng-if='user.isAdmin' class="links">Mon panneau d'administration</a></li>
                     </ul>
                 </li>
 
